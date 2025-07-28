@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/landing/HeroSection.astro";
+import WhatIs from "@/components/landing/WhatIs.astro";
+import Specialists from "@/components/landing/Specialists.astro";
+import FeaturedService from "@/components/landing/FeaturedService.astro";
+import WhyUs from "@/components/landing/WhyUs.astro";
+import Applications from "@/components/landing/Applications.astro";
+import ServiceCatalog from "@/components/landing/ServiceCatalog.astro";
+---
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+	<HeroSection />
+	<WhatIs />
+	<Specialists />
+	<FeaturedService />
+	<WhyUs />
+	<Applications />
+	<ServiceCatalog />
+  </main>
+
+  <Footer />
+</Layout>

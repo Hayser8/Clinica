@@ -1,0 +1,41 @@
+---
+import "../styles/global.css";
+const {
+  title = 'DeltaScan – Clínica de Ultrasonido en Guatemala',
+  description = 'DeltaScan ofrece servicios de ultrasonido abdominal, mamario, pélvico, prostático, doppler y más. Atención profesional y resultados inmediatos.',
+  url = 'https://deltascan.gt/',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title & Description -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+
+    <!-- JSON-LD para SEO médico -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "DeltaScan",
+        "description": description,
+        "url": url,
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "GT"
+        },
+        "medicalSpecialty": "DiagnosticImaging",
+        "image": `${url}logo.webp`
+      })}
+    </script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-b from-sky-50 to-white text-gray-800">
+    <slot />
+  </body>
+</html>

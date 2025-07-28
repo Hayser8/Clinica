@@ -1,0 +1,177 @@
+---
+import {
+  Heart,
+  Baby,
+  Bone,
+  Eye,
+  Activity,
+  User,
+  Shield,
+  Users,
+  BabyIcon as Kidney,
+  LeafIcon as Liver,
+  TestTube,
+  Syringe,
+  ArrowRight,
+} from "@lucide/astro";
+
+  const services = [
+    {
+      icon: Liver,
+      title: "Ultrasonido Abdominal",
+      description:
+        "Evaluación no invasiva de hígado, vesícula biliar, vía biliar y páncreas. Útil para detectar hígado graso, quistes, masas o cálculos.",
+      href: "#ultrasonido-abdominal",
+    },
+    {
+      icon: Baby,
+      title: "Ultrasonido Obstétrico",
+      description:
+        "Control del embarazo con imágenes seguras para la madre y el bebé. Evalúa crecimiento fetal, placenta y líquido amniótico.",
+      href: "#ultrasonido-obstetrico",
+    },
+    {
+      icon: Bone,
+      title: "Ultrasonido Musculoesquelético",
+      description:
+        "Diagnóstico de lesiones en tendones, músculos y articulaciones. Ideal para detectar desgarros o rupturas.",
+      href: "#ultrasonido-musculoesqueletico",
+    },
+    {
+      icon: Eye,
+      title: "Ultrasonido Endocavitario",
+      description:
+        "Evaluación detallada por vía endovaginal o endorectal. Permite visualizar útero, ovarios o próstata con mayor precisión.",
+      href: "#ultrasonido-endocavitario",
+    },
+    {
+      icon: Activity,
+      title: "Doppler Vascular",
+      description:
+        "Estudio del flujo sanguíneo arterial y venoso. Aplica en miembros, riñones, abdomen, cuello o control de fístulas.",
+      href: "#doppler-vascular",
+    },
+    {
+      icon: User,
+      title: "Ultrasonido Prostático",
+      description:
+        "Evaluación de la próstata vía suprapúbica o endorectal. Detecta crecimiento, nódulos o alteraciones urinarias.",
+      href: "#ultrasonido-prostatico",
+    },
+    {
+      icon: Shield,
+      title: "Ultrasonido Tiroideo",
+      description:
+        "Estudio no invasivo del tiroides para detectar nódulos, quistes o alteraciones estructurales. Seguimiento con TI-RADS.",
+      href: "#ultrasonido-tiroideo",
+    },
+    {
+      icon: Users,
+      title: "Ultrasonido Pélvico",
+      description:
+        "Visualización del útero, ovarios y vejiga. Se realiza por vía suprapúbica o endovaginal, según la indicación clínica.",
+      href: "#ultrasonido-pelvico",
+    },
+    {
+      icon: Kidney,
+      title: "Ultrasonido Renal",
+      description:
+        "Evalúa riñones y vías urinarias. Detecta inflamaciones, quistes, masas o litos. Incluye vejiga pre y post micción.",
+      href: "#ultrasonido-renal",
+    },
+    {
+      icon: Liver,
+      title: "Ultrasonido Hepatobiliar",
+      description:
+        "Examen del hígado, vesícula biliar, vía biliar y páncreas. Útil para detectar hígado graso, cálculos o masas.",
+      href: "#ultrasonido-hepatobiliar",
+    },
+    {
+      icon: TestTube,
+      title: "Ultrasonido Testicular",
+      description:
+        "Estudio de testículos y estructuras adyacentes. Permite identificar masas, inflamación, varicocele o torsión.",
+      href: "#ultrasonido-testicular",
+    },
+    {
+      icon: Heart,
+      title: "Biopsia de Mama",
+      description:
+        "Biopsia guiada por ultrasonido (TRUCUT o aspiración). Precisión diagnóstica con clasificación BI-RADS y seguimiento.",
+      href: "#biopsia-mama",
+    },
+    {
+      icon: Syringe,
+      title: "Biopsia de Tiroides",
+      description:
+        "Aspiración con aguja fina (BAAF) guiada por ultrasonido. Aplica protocolos TI-RADS y entrega resultados al tratante.",
+      href: "#biopsia-tiroides",
+    },
+  ]
+---
+<section id="servicios" class="py-20 bg-white ">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">
+        Explora nuestro catálogo de <span class="text-pink-600">servicios</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Ofrecemos una amplia gama de estudios de ultrasonido especializados,
+        cada uno adaptado a necesidades específicas de diagnóstico.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        services.map((service, index) => (
+          <div
+            key={index}
+            onClick={() => handleServiceClick(service.href)}
+            class="group bg-gradient-to-br from-gray-50 to-pink-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer border border-transparent hover:border-pink-200"
+          >
+            <div class="flex items-start gap-4 mb-4">
+              <div class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <service.icon class="w-6 h-6 text-white" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors">
+                  {service.title}
+                </h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div class="flex items-center justify-between pt-4 border-t border-gray-200/50">
+              <span class="text-sm font-medium text-pink-600 group-hover:text-pink-700 transition-colors">
+                Ver más información
+              </span>
+              <ArrowRight class="w-4 h-4 text-pink-600 group-hover:text-pink-700 group-hover:translate-x-1 transition-all duration-300" />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 text-center">
+      <div
+        class="bg-gradient-to-r from-pink-600 to-pink-700 rounded-3xl p-8 text-white"
+      >
+        <h3 class="text-2xl font-bold mb-4">¿No sabes que estudio necesitas?</h3>
+        <p class="text-lg text-pink-100 mb-6">
+          Llámanos y te ayudaremos a elegir el estudio adecuado para ti.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="bg-white text-pink-600 px-8 py-3 rounded-xl font-semibold hover:bg-pink-50 transition-colors"
+          >
+            Contactar Especialista
+          </button>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

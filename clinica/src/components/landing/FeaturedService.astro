@@ -1,0 +1,79 @@
+---
+import { Heart, Phone, CheckCircle } from "@lucide/astro";
+
+const includes = [
+  "Patología mamaria en general",
+  "Seguimiento y control de nódulos sospechosos",
+];
+---
+
+<section
+  class="py-20 bg-gradient-to-br from-pink-600 to-pink-700"
+>
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="text-white space-y-8">
+        <div class="space-y-4">
+          <div
+            class="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2"
+          >
+            <Heart class="w-5 h-5" />
+            <span class="font-semibold">Servicio Destacado</span>
+          </div>
+          <h2 class="text-4xl font-bold leading-tight">
+            Ultrasonido de <span class="text-pink-100">Mama</span>
+          </h2>
+          <p class="text-xl text-pink-100 leading-relaxed">
+            Nuestra ecografía de mama es un estudio no invasivo que incluye una
+            evaluación detallada de ambas glándulas mamarias y regiones
+            axilares.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-pink-100">
+            Este servicio te incluye:
+          </h3>
+          <div class="space-y-3">
+            {
+              includes.map((item, index) => (
+                <div key={index} class="flex items-start gap-3">
+                  <CheckCircle class="w-6 h-6 text-pink-100 flex-shrink-0 mt-0.5" />
+                  <span class="text-pink-100">{item}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <button
+          class="inline-flex items-center justify-center h-11 px-8 bg-white text-pink-600 hover:bg-pink-50 font-semibold rounded-md transition-colors"
+        >
+          <Phone class="w-5 h-5 mr-2" />
+          Hacer Cita
+        </button>
+      </div>
+
+      <div class="relative">
+        <div class="absolute inset-0 bg-white/10 rounded-3xl blur-3xl"></div>
+        <div
+          class="relative bg-white/20 backdrop-blur-sm rounded-3xl p-8 border border-white/30"
+        >
+          <div class="text-center space-y-6">
+            <div
+              class="w-24 h-24 bg-white rounded-2xl flex items-center justify-center mx-auto"
+            >
+              <Heart class="w-12 h-12 text-pink-600" />
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-2xl font-bold text-white">Detección Temprana</h3>
+              <p class="text-pink-100">
+                La clave para un tratamiento exitoso es la detección oportuna
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

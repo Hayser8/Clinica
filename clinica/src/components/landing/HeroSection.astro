@@ -1,0 +1,88 @@
+---
+import { Phone, Calendar, Stethoscope, Award } from "@lucide/astro";
+---
+
+<section
+  id="inicio"
+  class="relative overflow-hidden bg-gradient-to-br from-pink-600 via-pink-500 to-pink-700"
+>
+  <div class="absolute inset-0 bg-black/10"></div>
+  <div class="relative max-w-7xl mx-auto p-8 py-20">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="text-white space-y-8">
+        <div class="space-y-4">
+          <div
+            class="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 mb-4"
+          >
+            <Stethoscope class="w-5 h-5" />
+            <span class="font-semibold">Clínica Especializada</span>
+          </div>
+          <div class="space-y-2">
+            <h1 class="text-5xl lg:text-6xl font-bold leading-tight text-white">
+              Clínica de <span class="text-pink-100">Ultrasonidos</span>
+            </h1>
+            <div
+              class="text-5xl lg:text-6xl font-bold leading-tight text-white"
+              aria-label="DeltaScan"
+            >
+              <span class="text-pink-100">Delta</span>Scan
+            </div>
+          </div>
+          <p class="text-xl text-pink-100 leading-relaxed">
+            Más de una década de experiencia en imágenes diagnósticas con
+            tecnología de vanguardia y protocolos actualizados. Dos médicos
+            radiólogos especializados trabajando en equipo para tu diagnóstico.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button
+            class="inline-flex items-center justify-center h-11 px-8 bg-white text-pink-600 hover:bg-pink-50 font-semibold rounded-md transition-colors"
+          >
+            <Phone class="w-5 h-5 mr-2" />
+            Hacer Cita
+          </button>
+          <a href="#servicios">
+            <button
+              class="inline-flex items-center justify-center h-11 px-8 border border-white bg-transparent text-white hover:bg-white/10 rounded-md transition-colors"
+            >
+              <Calendar class="w-5 h-5 mr-2" />
+              Ver Servicios
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="relative">
+          <div class="absolute inset-0 bg-white/20 rounded-3xl blur-3xl"></div>
+          <div
+            class="relative bg-white/20 backdrop-blur-sm rounded-3xl p-12 border border-white/30"
+          >
+            <div class="text-center space-y-8">
+              <div
+                class="w-32 h-32 bg-white rounded-3xl flex items-center justify-center mx-auto"
+              >
+                <Award class="w-16 h-16 text-pink-600" />
+              </div>
+              <div class="space-y-4">
+                <h3 class="text-3xl font-bold text-white">+11 años</h3>
+                <p class="text-pink-100 text-lg">
+                  de experiencia en imágenes diagnósticas
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-white">2</div>
+                    <div class="text-pink-100 text-sm">Radiólogos</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-white">14</div>
+                    <div class="text-pink-100 text-sm">Servicios</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

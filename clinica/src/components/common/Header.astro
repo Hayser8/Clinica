@@ -1,0 +1,193 @@
+---
+import { Menu, X, Phone, Calendar, ChevronDown } from '@lucide/astro'
+
+const navItems = [
+  {
+    name: "Servicios",
+    href: "#servicios",
+    submenu: [
+      { name: "Ultrasonido de Mama", href: "#ultrasonido-mama" },
+      { name: "Ultrasonido Abdominal", href: "#ultrasonido-abdominal" },
+      { name: "Ultrasonido Obstétrico", href: "#ultrasonido-obstetrico" },
+      { name: "Doppler Vascular", href: "#doppler-vascular" },
+      { name: "Biopsia de Mama", href: "#biopsia-mama" },
+      { name: "Ver todos los servicios", href: "#servicios" },
+    ],
+  },
+  {
+    name: "Especialistas",
+    href: "#especialistas",
+    submenu: [
+      { name: "Dr. Estuardo Pérez Reyes", href: "#dr-estuardo" },
+      { name: "Dra. Berta Coto", href: "#dra-berta" },
+      { name: "Nuestro Equipo", href: "#especialistas" },
+    ],
+  },
+  {
+    name: "Sobre Nosotros",
+    href: "#sobre-nosotros",
+    submenu: [
+      { name: "¿Por qué elegirnos?", href: "#por-que-elegirnos" },
+      { name: "Nuestra Experiencia", href: "#experiencia" },
+      { name: "Tecnología", href: "#tecnologia" },
+      { name: "Contacto", href: "#contacto" },
+    ],
+  },
+]
+---
+
+<nav class="hidden lg:block bg-white/95 backdrop-blur-sm border-b border-pink-100 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="#inicio" class="hover:opacity-80 transition-opacity">
+          <img src="/logoprueba.webp" alt="DeltaScan" class="h-16 w-auto -mt-2 -mb-2" />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="flex items-center space-x-8">
+        {navItems.map(item => (
+          <div class="relative group" key={item.name}>
+            <a
+              href={item.href}
+              class="flex items-center gap-1 text-gray-700 hover:text-pink-600 font-medium transition-colors duration-200 py-2"
+            >
+              {item.name}
+            </a>
+            <!-- Dropdown persistente con group-hover -->
+            <div class="absolute top-full left-0 w-64 bg-white rounded-lg shadow-lg border border-pink-100 py-2 hidden group-hover:block z-50">
+              {item.submenu.map((sub, i) => (
+                <a
+                  key={i}
+                  href={sub.href}
+                  class="block px-4 py-2 text-sm text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-colors duration-200"
+                >
+                  {sub.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Contact & CTA -->
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2 text-sm text-gray-600">
+          <Phone class="w-4 h-4 text-pink-600" />
+          <span>+502 1234-5678</span>
+        </div>
+        <button class="inline-flex items-center justify-center h-11 px-8 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white rounded-md text-sm font-medium transition-colors">
+          <Calendar class="w-4 h-4 mr-2" />
+          Hacer Cita
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Floating Menu Button -->
+<button
+  id="mobile-menu-btn"
+  class="lg:hidden fixed bottom-2 right-6 z-50 w-14 h-14 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
+>
+  <Menu class="w-6 h-6" />
+  <X class="w-6 h-6 hidden" />
+</button>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobile-nav" class="hidden lg:hidden fixed inset-0 z-40 flex justify-end">
+  <!-- Background overlay -->
+  <div id="mobile-nav-overlay" class="absolute inset-0 bg-black/20"></div>
+
+  <!-- Panel -->
+  <div class="relative w-80 bg-white h-full shadow-xl flex flex-col">
+    <!-- Logo -->
+    <div class="p-6 border-b border-pink-100">
+      <img src="/logoprueba.webp" alt="DeltaScan" width="150" height="50" class="h-16 w-auto" />
+    </div>
+
+    <!-- Items (submenus abiertos por defecto) -->
+    <div class="flex-1 overflow-y-auto p-6 space-y-4">
+      {navItems.map((item, idx) => (
+        <div class="space-y-2" key={idx}>
+          <div class="flex items-center justify-between">
+            <a
+              href={item.href}
+              class="text-lg font-semibold text-gray-900 hover:text-pink-600 transition-colors"
+            >
+              {item.name}
+            </a>
+            <!-- Icono inicialmente hacia abajo -->
+            <button class="toggle-submenu p-1 hover:bg-pink-50 rounded">
+              <ChevronDown class="w-4 h-4 transition-transform" />
+            </button>
+          </div>
+          <!-- Visible por defecto -->
+          <div class="submenu pl-4 space-y-2 border-l-2 border-pink-100">
+            {item.submenu.map((sub, i2) => (
+              <a
+                key={i2}
+                href={sub.href}
+                class="block text-sm text-gray-600 hover:text-pink-600 py-1 transition-colors"
+              >
+                {sub.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Contact & CTA -->
+    <div class="p-6 border-t border-pink-100 space-y-4">
+      <div class="flex items-center space-x-3 text-gray-600">
+        <Phone class="w-4 h-4 text-pink-600 flex-shrink-0" />
+        <span class="text-sm">+502 1234-5678</span>
+      </div>
+      <button
+        class="w-full h-11 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white rounded-md font-semibold transition-colors flex items-center justify-center gap-2"
+      >
+        <Calendar class="w-4 h-4" />
+        Hacer Cita
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn')
+  const nav = document.getElementById('mobile-nav')
+  const overlay = document.getElementById('mobile-nav-overlay')
+  const [iconOpen, iconClose] = btn.querySelectorAll('svg')
+
+  function toggle() {
+    const wasHidden = nav.classList.contains('hidden')
+    nav.classList.toggle('hidden')
+    iconOpen.classList.toggle('hidden')
+    iconClose.classList.toggle('hidden')
+
+    // Al abrir: sube más el botón (6rem = bottom-24); al cerrar: vuelve a bottom-2
+    if (wasHidden) {
+      btn.classList.remove('bottom-2')
+      btn.classList.add('bottom-24')
+    } else {
+      btn.classList.remove('bottom-24')
+      btn.classList.add('bottom-2')
+    }
+  }
+
+  btn.addEventListener('click', toggle)
+  overlay.addEventListener('click', toggle)
+
+  document.querySelectorAll('.toggle-submenu').forEach(b => {
+    b.addEventListener('click', () => {
+      const icon = b.firstElementChild
+      const submenu = b.closest('div.space-y-2').querySelector('.submenu')
+      submenu.classList.toggle('hidden')
+      // alterna la rotación: 0° (abierto) ↔ 180° (cerrado)
+      icon.classList.toggle('rotate-180')
+    })
+  })
+</script>

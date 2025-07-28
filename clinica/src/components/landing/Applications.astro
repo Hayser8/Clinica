@@ -1,0 +1,72 @@
+---
+import { Search, Monitor, Activity, Zap, Clock, Shield } from "@lucide/astro";
+
+const benefits = [
+  {
+    icon: Search,
+    title: "Diagnóstico preciso",
+    description: "Podemos detectar anomalías internas como quistes, tumores, cálculos renales o biliares, también inflamaciones y otras alteraciones en tejidos blandos. Son realmente útiles para evaluar órganos como el hígado, los riñones, el páncreas, el útero y la tiroides.",
+  },
+  {
+    icon: Monitor,
+    title: "Seguimiento fetal",
+    description: "A través de ecografías obstétricas podemos monitorear los latidos del corazón, medir el crecimiento fetal, estimar la fecha del parto y detectar posibles malformaciones congénitas.",
+  },
+  {
+    icon: Activity,
+    title: "Evaluación Doppler",
+    description: "Para diagnosticar enfermedades vasculares utilizamos la modalidad Doppler ya que nos permite analizar el flujo sanguíneo en arterias y venas en tiempo real.",
+  },
+  {
+    icon: Zap,
+    title: "Guía procedimientos",
+    description: "También los utilizamos como herramienta de guía en procedimientos invasivos como biopsias. Su uso en tiempo real nos permite visualizar la aguja y dirigirla con precisión al objetivo que deseamos.",
+  },
+  {
+    icon: Clock,
+    title: "Resultados rápidos",
+    description: "Uno de los grandes beneficios de los ultrasonidos es que los resultados se obtienen de inmediato, lo que nos permite una rápida toma de decisiones clínicas.",
+  },
+  {
+    icon: Shield,
+    title: "Sin efectos secundarios",
+    description: "Por último, el ultrasonido no utiliza radiación ionizante, lo cual lo hace seguro incluso para pacientes vulnerables como mujeres embarazadas, recién nacidos y personas con enfermedades crónicoas.",
+  },
+];
+---
+
+<section class="py-20 bg-gradient-to-br from-gray-50 to-pink-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">
+        Aplicaciones y <span class="text-pink-600">beneficios</span> del ultrasonido
+      </h2>
+      <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        Los ultrasonidos tienen varias aplicaciones, se pueden utilizar para
+        diagnosticar, monitorear y para guiar procedimientos con resultados
+        confiables y sin efectos secundarios.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        benefits.map((benefit, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 group"
+          >
+            <div class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <benefit.icon class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              {benefit.title}
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              {benefit.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
