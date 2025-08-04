@@ -1,0 +1,85 @@
+---
+import { Phone, Heart, Shield, Clock, Award } from "@lucide/astro";
+---
+
+<section
+  class="bg-gradient-to-br from-pink-600 to-pink-700 text-white py-20 relative overflow-hidden"
+>
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <h1 class="text-4xl lg:text-6xl font-bold leading-tight">
+          Ultrasonido
+          <br />
+          <span class="text-pink-200">Obstétrico</span>
+        </h1>
+
+        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6">
+          <p class="text-lg text-white leading-relaxed">
+            Nuestro ultrasonido obstétrico combina la precisión de dos
+            especialistas para mostrarte, en minutos, cada detalle de tu
+            embarazo. Con resultados el mismo día y un informe que habla con
+            claridad, podrás dejar atrás la incertidumbre y disfrutar de la
+            experiencia de ver crecer a tu bebé con confianza.
+          </p>
+        </div>
+
+        <button
+          class="bg-white text-pink-600 px-8 py-4 rounded-lg font-semibold hover:bg-pink-50 transition-colors flex items-center justify-center gap-2 text-lg shadow-lg"
+        >
+          <Phone class="w-5 h-5" />
+          Hacer Cita
+        </button>
+      </div>
+
+      <div class="relative">
+        {/* Mini cards flotantes */}
+        <div
+          class="absolute -top-4 -left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-10"
+        >
+          <div class="flex items-center gap-2">
+            <Heart class="w-5 h-5 text-pink-600" />
+            <span class="text-sm font-semibold text-gray-800"
+              >2 Especialistas</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="absolute -top-4 -right-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-10"
+        >
+          <div class="flex items-center gap-2">
+            <Clock class="w-5 h-5 text-pink-600" />
+            <span class="text-sm font-semibold text-gray-800">Mismo día</span>
+          </div>
+        </div>
+
+        <div
+          class="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-10"
+        >
+          <div class="flex items-center gap-2">
+            <Shield class="w-5 h-5 text-pink-600" />
+            <span class="text-sm font-semibold text-gray-800"
+              >Sin radiación</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="absolute -bottom-4 -right-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg z-10"
+        >
+          <div class="flex items-center gap-2">
+            <Award class="w-5 h-5 text-pink-600" />
+            <span class="text-sm font-semibold text-gray-800">+10 años</span>
+          </div>
+        </div>
+
+        <img
+          src="/obstetrico/doctoramostrandoresultados.webp"
+          alt="Doctora especialista mostrando imágenes de ultrasonido obstétrico"
+          class="w-full h-auto rounded-2xl shadow-2xl relative z-0"
+        />
+      </div>
+    </div>
+  </div>
+</section>

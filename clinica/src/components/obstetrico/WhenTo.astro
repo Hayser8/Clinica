@@ -1,0 +1,87 @@
+---
+import { Calendar, Clock } from "@lucide/astro";
+
+const timeline = [
+  {
+    weeks: "6 - 12 semanas",
+    title: "Primera ecografía",
+    description: "Confirmar la viabilidad y fecha gestacional",
+    color: "bg-pink-500",
+  },
+  {
+    weeks: "14 - 26 semanas",
+    title: "Segunda ecografía",
+    description: "Evaluar la anatomía fetal, crecimiento y placentación",
+    color: "bg-pink-600",
+  },
+  {
+    weeks: "27 - 40 semanas",
+    title: "Tercera ecografía",
+    description: "Monitorear el crecimiento, líquido amniótico y función placentaria",
+    color: "bg-pink-700",
+  },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <!-- Cabecera -->
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-medium mb-6"
+      >
+        <Calendar class="w-4 h-4" />
+        Cronograma Recomendado
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        ¿Cuándo hacerse un <span class="text-pink-600">ultrasonido obstétrico</span>?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Te recomendamos seguir el siguiente itinerario para poder llevar el mejor control durante tu embarazo:
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="space-y-8">
+      {timeline.map((item, index) => (
+        <div
+          key={index}
+          class="flex flex-col lg:flex-row items-start lg:items-center gap-6"
+        >
+          <!-- Nº y semanas -->
+          <div class="flex items-center gap-4 flex-shrink-0">
+            <div
+              class={`${item.color} w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg`}
+            >
+              {index + 1}
+            </div>
+            <div class="bg-gray-100 px-4 py-2 rounded-lg">
+              <div class="text-sm text-gray-600 flex items-center gap-1">
+                <Clock class="w-4 h-4" />
+                {item.weeks}
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta gris con borde a la derecha excepto en el último -->
+          <div
+            class={`flex-1 bg-gray-50 rounded-xl p-6 ${
+              index < timeline.length - 1 ? "border-r border-gray-50" : ""
+            }`}
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-gray-700">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Nota final -->
+    <div class="mt-12 bg-pink-50 rounded-xl p-6">
+      <p class="text-gray-700 text-center">
+        <span class="font-semibold">Importante:</span> Pueden existir otros ultrasonidos
+        entre los periodos antes descritos, según indicación de tu médico tratante.
+      </p>
+    </div>
+  </div>
+</section>

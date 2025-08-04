@@ -1,0 +1,95 @@
+---
+import {
+  Phone,
+  Users,
+  Shirt,
+  Bed,
+  Eye,
+  FileText,
+  CheckCircle,
+} from "@lucide/astro";
+
+const steps = [
+  {
+    icon: Phone,
+    title: "Hacer cita",
+    description:
+      "Resuelve tus inquietudes y agenta tu cita llamando o escribiéndonos.",
+  },
+  {
+    icon: Users,
+    title: "Recepción",
+    description:
+      "Te damos la bienvenida y puedes esperar en nuestra sala de espera mientras llega la hora de tu cita.",
+  },
+  {
+    icon: Shirt,
+    title: "Preparación",
+    description:
+      "Viste prendas cómodas y sueltas. Evita joyas de la zona a evaluar. Evite la ingesta de alimentos de 8 a 12 horas antes del examen. E ingiere de 4 a 6 vasos de líquido (preferentemente agua pura), aproximadamente 1 hora antes del examen.",
+  },
+  {
+    icon: Bed,
+    title: "Colocación en la camilla",
+    description:
+      "Te acostarás boca arriba en la camilla. En ocasiones, el radiólogo te pedirá colocarse de costado para mejorar la calidad de la imagen de ciertos órganos. El médico te aplicará un gel a base de agua sobre la piel; esto facilita el contacto y la transmisión de las ondas sonoras.",
+  },
+  {
+    icon: Eye,
+    title: "Exploración en tiempo real",
+    description:
+      "Te colocamos el transductor sobre el abdomen y lo iremos desplazando hasta capturar todas las imágenes necesarias. Durante 15-20 minutos monitoreamos cada imagen, te comentamos hallazgos y respondemos tus dudas al instante.",
+  },
+  {
+    icon: FileText,
+    title: "Limpieza y elaboración del informe",
+    description:
+      "Una vez finalizada la exploración, se limpia el gel de la piel e inmediatamente procedemos a redactar tu informe radiológico.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Entrega de informe",
+    description:
+      "Te entregamos tu informe radiológico el mismo día, en un folder físico, listo para tu consulta médica.",
+  },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">
+        ¿Cómo es un ultrasonido abdominal en DeltaScan?
+      </h2>
+    </div>
+
+    <div class="relative">
+      {/* Línea vertical */}
+      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-pink-200"></div>
+
+      <div class="space-y-12">
+        {
+          steps.map((step, index) => (
+            <div key={index} class="relative flex gap-8 items-start">
+              {/* Número del paso */}
+              <div class="relative z-10 bg-pink-600 rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                <span class="text-white font-bold text-lg">{index + 1}</span>
+              </div>
+
+              {/* Contenido del paso */}
+              <div class="flex-1 bg-white rounded-xl p-6 shadow-lg border-l-4 border-pink-600">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="bg-pink-100 rounded-lg p-2">
+                    <step.icon class="w-5 h-5 text-pink-600" />
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900">{step.title}</h3>
+                </div>
+                <p class="text-gray-600 leading-relaxed">{step.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

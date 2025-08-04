@@ -1,0 +1,72 @@
+---
+import { Syringe, Zap, Route, Target } from "@lucide/astro";
+const equipment = [
+  {
+    icon: Syringe,
+    name: "Aguja fina",
+    description:
+      "Adherida a una jeringa, más pequeña que las agujas generalmente utilizadas para extraer sangre.",
+  },
+  {
+    icon: Target,
+    name: "Aguja de núcleo (TRUCUT)",
+    description:
+      "Aguja automática accionada por resorte, que consiste en una aguja interna conectada a un recipiente poco profundo.",
+  },
+  {
+    icon: Zap,
+    name: "Dispositivo asistido por vacío (BAV)",
+    description:
+      "Instrumento activado por vacío que utiliza presión para extraer el tejido hacia la aguja.",
+  },
+  {
+    icon: Route,
+    name: "Alambre guía",
+    description:
+      "Alambre guía delgado que se utiliza para biopsias quirúrgicas.",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+        ¿Cómo es el equipo?
+      </h2>
+      <div class="bg-pink-50 border-l-4 border-pink-500 p-6 rounded-r-lg mb-12">
+        <p class="text-lg text-gray-800 leading-relaxed">
+          Es necesario el uso de una máquina de ultrasonido, la cual por medio
+          de un transductor generará las imágenes. Se aplica un poco de gel en
+          el área a estudiar y al observar la lesión o nódulo en tiempo real, se
+          puede visualizar el paso de la aguja a través de la lesión y que la
+          toma de muestras sea lo más confiable.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {
+          equipment.map((item, index) => (
+            <div
+              key={index}
+              class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-pink-100 p-3 rounded-lg flex-shrink-0">
+                  <item.icon class="w-6 h-6 text-pink-600" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                    {item.name}
+                  </h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

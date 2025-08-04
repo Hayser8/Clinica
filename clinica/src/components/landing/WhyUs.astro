@@ -1,67 +1,76 @@
 ---
 import { Clock, BookOpen, Users, Target } from "@lucide/astro";
 
-const reasons = [
-  {
-    icon: Clock,
-    title: "Más de una década de experiencia",
-    description:
-      "Somos 2 médicos radiólogos que contamos con más de 11 años interpretando estudios con precisión profesional. Te garantizamos que tus resultados se analizarán con criterio, calma y responsabilidad.",
-  },
-  {
-    icon: BookOpen,
-    title: "Protocolos actualizados",
-    description:
-      "Aplicamos guías clínicas reconocidas como BI-RADS y TI-RADS, y usamos tecnología moderna con procesos definidos por la literatura médica más reciente.",
-  },
-  {
-    icon: Users,
-    title: "Divide y vencerás",
-    description:
-      "A diferencia de muchas clínicas donde una sola persona se encarga de todo el procedimiento, nosotros preferimos trabajar en equipo. Mientras uno se concentra exclusivamente en detectar y analizar con el mayor detalle posible, el otro se dedica a aplicar las mejores prácticas del procedimiento.",
-  },
-];
+  const reasons = [
+    {
+      icon: Clock,
+      title: "Más de una década de servicio",
+      points: [
+        "10 años interpretando estudios con precisión diagnóstica",
+        "Garantizamos que tu servicio será personalizado y confiable",
+      ],
+    },
+    {
+      icon: BookOpen,
+      title: "Protocolos actualizados",
+      points: [
+        "Utilizamos guías radiológicas para mejorar el diagnóstico",
+        "Tecnología moderna que ayuda al proceso de obtención de imágenes, que mejora el diagnóstico médico",
+      ],
+    },
+    {
+      icon: Users,
+      title: "Dos mentes piensan mejor que una",
+      points: [
+        "2 médicos radiólogos enfocados al mismo tiempo en un mismo paciente, lo que ayuda a la optimización del diagnóstico, así como a la disminución del tiempo de estudio y la pronta entrega de resultados",
+      ],
+    },
+  ]
 ---
 
 <section id="sobre-nosotros" class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto p-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-6">
-        ¿Por qué elegir a <span class="text-pink-600">Delta Scan</span>?
-      </h2>
-    </div>
+      <div class="max-w-7xl mx-auto p-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">
+            ¿Por qué elegir a <span class="text-pink-600">DeltaScan</span>?
+          </h2>
+        </div>
 
-    <div class="grid lg:grid-cols-3 gap-8 mb-12">
-      {
-        reasons.map((reason, index) => (
-          <div key={index} class="group">
-            <div class="bg-gradient-to-br from-pink-100 to-pink-50 rounded-3xl p-8 h-full hover:shadow-lg transition-shadow duration-300">
-              <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-pink-600 to-pink-700 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                <reason.icon class="w-8 h-8 text-white" />
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+          {reasons.map((reason, index) => (
+            <div key={index} class="group">
+              <div class="bg-gradient-to-br from-pink-100 to-pink-50 rounded-3xl p-8 h-full hover:shadow-lg transition-shadow duration-300">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-pink-600 to-pink-700 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <reason.icon class="w-8 h-8 text-white" />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-6  tracking-wide">{reason.title}</h3>
+                <div class="space-y-4">
+                  {reason.points.map((point, pointIndex) => (
+                    <div key={pointIndex} class="flex items-start gap-3">
+                      <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p class="text-gray-600 leading-relaxed">{point}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-4">
-                {reason.title}
-              </h3>
-              <p class="text-gray-600 leading-relaxed">{reason.description}</p>
             </div>
-          </div>
-        ))
-      }
-    </div>
+          ))}
+        </div>
 
-    <div
-      class="bg-gradient-to-r from-pink-600 to-pink-700 rounded-3xl p-8 text-white"
-    >
-      <div class="flex items-center gap-4 mb-4">
-        <Target class="w-8 h-8 text-pink-200" />
-        <h3 class="text-2xl font-bold">Nuestro compromiso</h3>
+        <div class="bg-gradient-to-r from-pink-600 to-pink-700 rounded-3xl p-8 text-white">
+          <div class="flex items-center gap-4 mb-6">
+            <Target class="w-8 h-8 text-pink-200" />
+            <h3 class="text-2xl font-bold tracking-wide">Nuestro compromiso</h3>
+          </div>
+          <div class="space-y-4">
+            <p class="text-lg leading-relaxed text-pink-100 font-semibold">
+              Atención personalizada, diagnóstico certero y entrega inmediata de tus resultados:
+            </p>
+            <p class="text-lg leading-relaxed text-pink-100">
+              Un buen diagnóstico no es solo el resultado, es la forma en la que llegamos a él y te hacemos sentir
+              durante el proceso.
+            </p>
+          </div>
+        </div>
       </div>
-      <p class="text-lg leading-relaxed text-pink-100">
-        Por lo tanto, elegirnos no es solo optar por experiencia o tecnología.
-        Es confiar en un método pensado para hacer bien las cosas desde el
-        principio. Porque para nosotros, un buen diagnóstico no es solo un
-        resultado, es la forma en la que llegamos a él.
-      </p>
-    </div>
-  </div>
-</section>
+    </section>

@@ -1,0 +1,61 @@
+---
+import { AlertCircle, Clock, Droplets } from "@lucide/astro";
+
+const preparations = [
+  {
+    icon: Droplets,
+    type: "Abdominal",
+    instructions:
+      "Te recomendamos llegar con la vejiga moderadamente llena para mejor visualización y no se requiere ayuno.",
+  },
+  {
+    icon: AlertCircle,
+    type: "Endovaginal",
+    instructions:
+      "Es necesario contar con la vejiga vacía y evita orinar 30 minutos antes del estudio.",
+  },
+  {
+    icon: Clock,
+    type: "Doppler",
+    instructions:
+      "Sin preparación especial, se combina con la ecografía abdominal y endovaginal, siguiendo las mismas indicaciones.",
+  },
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Preparación para el <span class="text-pink-600">ultrasonido</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      {
+        preparations.map((prep, index) => (
+          <div key={index} class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-pink-600 w-12 h-12 rounded-lg flex items-center justify-center">
+                <prep.icon class="w-6 h-6 text-white" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">{prep.type}</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">{prep.instructions}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="bg-pink-600 rounded-xl p-8 text-center text-white">
+      <h3 class="text-2xl font-bold mb-4">Información del Procedimiento</h3>
+      <p class="text-xl text-pink-100">
+        El procedimiento dura entre <span class="font-semibold"
+          >15 y 30 minutos</span
+        >, es{" "}
+        <span class="font-semibold">indoloro</span> y{" "}
+        <span class="font-semibold">no utiliza radiación ionizante</span>
+      </p>
+    </div>
+  </div>
+</section>

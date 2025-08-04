@@ -1,0 +1,61 @@
+---
+import { Coffee, Droplets, Shirt, FileText } from "@lucide/astro";
+
+const preparations = [
+  {
+    icon: Coffee,
+    title: "Ayuno ligero",
+    description:
+      "Si tu estudio incluye hígado o vías biliares, evita comer y beber durante 6 horas previas al examen.",
+  },
+  {
+    icon: Droplets,
+    title: "Hidratación controlada",
+    description:
+      "Para evaluación renal y de vías urinarias, bebe cerca de 1 litro de agua una hora antes y procura no orinar hasta finalizar el ultrasonido.",
+  },
+  {
+    icon: Shirt,
+    title: "Ropa cómoda",
+    description:
+      "Elige prendas holgadas que faciliten el acceso al abdomen y te permitan relajarte durante el procedimiento.",
+  },
+  {
+    icon: FileText,
+    title: "Documentación e indicaciones",
+    description:
+      "Ten a mano informes previos o estudios complementarios, así como cualquier pauta médica que hayas recibido.",
+  },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">
+        Preparación para el examen
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Sigue estos pasos antes de tu cita para garantizar imágenes de alta
+        calidad.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        preparations.map((prep, index) => (
+          <div
+            key={index}
+            class="bg-pink-50 rounded-xl p-8 hover:shadow-lg transition-shadow"
+          >
+            <div class="bg-pink-600 rounded-lg p-3 w-fit mb-6">
+              <prep.icon class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{prep.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{prep.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

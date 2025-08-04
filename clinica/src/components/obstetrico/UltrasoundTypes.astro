@@ -1,0 +1,142 @@
+---
+import { Monitor, Search, Activity } from "@lucide/astro";
+
+const types = [
+  {
+    icon: Monitor,
+    type: "Abdominal",
+    timing: "20 a 40 semanas",
+    purpose: "Evaluar anatomía general, crecimiento y posición fetal",
+    advantages: [
+      "Visión amplia de útero y feto",
+      "Procedimiento cómodo y no invasivo",
+      "Ideal para control rutinario de segundo y tercer trimestre",
+    ],
+  },
+  {
+    icon: Search,
+    type: "Endovaginal",
+    timing: "6 – 12 semanas",
+    purpose:
+      "Confirmar embarazo, fecha de gestación y detectar múltiples anomalías",
+    advantages: [
+      "Alta resolución en etapas tempranas",
+      "Permite ver con detalle estructuras iniciales (saco gestacional, embrión, saco vitelino)",
+      "Requiere vejiga vacía",
+    ],
+  },
+  {
+    icon: Activity,
+    type: "Doppler materno-fetal",
+    timing: "20 – 40 semanas o según indicación",
+    purpose:
+      "Valorar flujo sanguíneo umbilical y cerebral fetal; detectar riesgo de retraso de crecimiento",
+    advantages: [
+      "Analiza circulación placentaria y fetal",
+      "Ayuda a identificar insuficiencia placentaria o estrés fetal",
+      "Se combina con transabdominal para informe completo",
+    ],
+  },
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        ¿Cuándo elegir qué <span class="text-pink-600">tipo de ecografía</span>?
+      </h2>
+    </div>
+
+    {/* Mobile-friendly cards */}
+    <div class="lg:hidden space-y-6">
+      {
+        types.map((type, index) => (
+          <div key={index} class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-pink-600 w-12 h-12 rounded-lg flex items-center justify-center">
+                <type.icon class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">{type.type}</h3>
+                <p class="text-pink-600 font-medium">{type.timing}</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">
+                  Para qué sirve:
+                </h4>
+                <p class="text-gray-700 text-sm">{type.purpose}</p>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">
+                  Descripción y ventajas:
+                </h4>
+                <ul class="space-y-1">
+                  {type.advantages.map((advantage, i) => (
+                    <li
+                      key={i}
+                      class="text-gray-700 text-sm flex items-start gap-2"
+                    >
+                      <div class="w-1.5 h-1.5 bg-pink-600 rounded-full mt-2 flex-shrink-0" />
+                      {advantage}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    {/* Desktop table */}
+    <div class="hidden lg:block bg-white rounded-xl shadow-lg overflow-hidden">
+      <div class="bg-pink-600 text-white">
+        <div class="grid grid-cols-4 gap-4 p-6 font-semibold">
+          <div>Tipo</div>
+          <div>Momento óptimo</div>
+          <div>Para qué sirve</div>
+          <div>Descripción y ventajas</div>
+        </div>
+      </div>
+
+      {
+        types.map((type, index) => (
+          <div
+            key={index}
+            class={`grid grid-cols-4 gap-4 p-6 ${index !== types.length - 1 ? "border-b border-gray-200" : ""}`}
+          >
+            <div class="flex items-center gap-3">
+              <div class="bg-pink-600 w-10 h-10 rounded-lg flex items-center justify-center">
+                <type.icon class="w-5 h-5 text-white" />
+              </div>
+              <span class="font-semibold text-gray-900">{type.type}</span>
+            </div>
+
+            <div class="text-pink-600 font-medium">{type.timing}</div>
+
+            <div class="text-gray-700 text-sm">{type.purpose}</div>
+
+            <div>
+              <ul class="space-y-1">
+                {type.advantages.map((advantage, i) => (
+                  <li
+                    key={i}
+                    class="text-gray-700 text-sm flex items-start gap-2"
+                  >
+                    <div class="w-1.5 h-1.5 bg-pink-600 rounded-full mt-2 flex-shrink-0" />
+                    {advantage}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

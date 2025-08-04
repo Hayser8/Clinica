@@ -1,0 +1,68 @@
+---
+import { Stethoscope, Target, Zap, MapPin } from "@lucide/astro";
+
+const types = [
+  {
+    icon: Target,
+    name: "Aspiración por aguja fina (BAAF)",
+    description:
+      "Utiliza una aguja muy pequeña para extraer fluidos o células del área anormal.",
+  },
+  {
+    icon: Stethoscope,
+    name: "Aguja de núcleo o tipo TRUCUT",
+    description:
+      "Utiliza una aguja hueca gruesa para extraer una muestra de tejido mamario por inserción.",
+  },
+  {
+    icon: Zap,
+    name: "Terapia asistida por vacío (VAD)",
+    description:
+      "Utiliza un instrumento activado por vacío para recoger diversas muestras de tejido durante la inserción de una aguja.",
+  },
+  {
+    icon: MapPin,
+    name: "Localización con alambre",
+    description:
+      "Se ubica un alambre guía en el área sospechosa para ayudar al cirujano a localizar la lesión para someterla a biopsia quirúrgica.",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+        Tipos de biopsia guiada por ultrasonido que te ofrecemos
+      </h2>
+      <p class="text-lg text-gray-700 mb-12 text-center leading-relaxed">
+        El diagnóstico guiado por ultrasonido se utiliza en cuatro
+        procedimientos de biopsias:
+      </p>
+      <div class="grid md:grid-cols-2 gap-8">
+        {
+          types.map((type, index) => (
+            <div
+              key={index}
+              class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-pink-100 p-3 rounded-lg flex-shrink-0">
+                  <type.icon class="w-6 h-6 text-pink-600" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    {type.name}
+                  </h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    {type.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

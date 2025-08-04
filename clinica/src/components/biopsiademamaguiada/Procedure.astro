@@ -1,0 +1,167 @@
+---
+const steps = [
+  {
+    number: 1,
+    title: "Posicionamiento",
+    description:
+      "Te recostarás boca arriba en la mesa de examen o levemente de costado.",
+  },
+  {
+    number: 2,
+    title: "Anestesia local",
+    description:
+      "El médico inyectará un anestésico local adentro de la piel y más profundamente adentro del seno para adormecerlo.",
+  },
+  {
+    number: 3,
+    title: "Localización",
+    description:
+      "Al presionar el transductor contra la mama, el médico radiólogo localizará la lesión.",
+  },
+  {
+    number: 4,
+    title: "Incisión",
+    description:
+      "El médico te hará una incisión muy pequeña en la piel en el lugar en el que te insertarán la aguja de biopsia, tan pequeña que no es necesario el uso de suturas posteriores.",
+  },
+  {
+    number: 5,
+    title: "Inserción de aguja",
+    description:
+      "El médico radiólogo, mientras monitorea el sitio de la lesión mediante la sonda de ultrasonido, inserta la aguja y la hace avanzar directamente hasta adentro de la masa, lesión o área de interés.",
+  },
+  {
+    number: 6,
+    title: "Extracción de muestras",
+    description:
+      "El médico extrae muestras de tejido utilizando uno de los tres métodos: aspiración por aguja fina, biopsia de tipo TRUCUT, o dispositivo asistido por vacío (BAV).",
+  },
+  {
+    number: 7,
+    title: "Retiro de aguja",
+    description: "Tras este muestreo, el médico retirará la aguja.",
+  },
+  {
+    number: 8,
+    title: "Finalización",
+    description:
+      "Una vez completada la biopsia, el médico radiólogo aplicará presión para detener cualquier sangrado. Cubrirán la abertura en la piel con una venda. No se necesitan suturas.",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+        ¿Cómo se lleva a cabo el procedimiento?
+      </h2>
+      <p class="text-lg text-gray-700 mb-12 text-center leading-relaxed">
+        Los procedimientos guiados por imágenes mínimamente invasivos, tales
+        como la biopsia de mama guiada por ultrasonido, se llevan a cabo por
+        medio de un radiólogo especialmente capacitado.
+      </p>
+
+      {/* Mobile Timeline */}
+      <div class="block md:hidden">
+        <div class="relative">
+          {/* Línea vertical para mobile */}
+          <div class="absolute left-8 top-8 bottom-8 w-0.5 bg-pink-300"></div>
+
+          <div class="space-y-8">
+            {
+              steps.map((step, index) => (
+                <div key={index} class="relative flex items-start gap-6">
+                  {/* Círculo numerado */}
+                  <div class="relative z-10 flex-shrink-0">
+                    <div class="w-16 h-16 bg-pink-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
+                      {step.number}
+                    </div>
+                  </div>
+
+                  {/* Contenido del paso */}
+                  <div class="flex-1 bg-white p-6 rounded-xl shadow-sm border border-gray-100 mt-2">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                      {step.title}
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Timeline */}
+      <div class="hidden md:block">
+        <div class="relative max-w-5xl mx-auto">
+          {/* Línea central vertical */}
+          <div
+            class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-pink-300 transform -translate-x-px"
+          >
+          </div>
+
+          <div class="space-y-12">
+            {
+              steps.map((step, index) => {
+                const isEven = index % 2 === 0;
+                return (
+                  <div key={index} class="relative flex items-center">
+                    {/* Card izquierda (pasos pares) */}
+                    {isEven ? (
+                      <div class="w-1/2 pr-12">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                          <h3 class="text-xl font-semibold text-gray-900 mb-3 text-right">
+                            {step.title}
+                          </h3>
+                          <p class="text-gray-700 leading-relaxed text-right">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div class="w-1/2" />
+                    )}
+
+                    {/* Círculo central - SIEMPRE en el centro */}
+                    <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+                      <div class="w-16 h-16 bg-pink-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
+                        {step.number}
+                      </div>
+                    </div>
+
+                    {/* Card derecha (pasos impares) */}
+                    {!isEven ? (
+                      <div class="w-1/2 pl-12">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                            {step.title}
+                          </h3>
+                          <p class="text-gray-700 leading-relaxed">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div class="w-1/2" />
+                    )}
+                  </div>
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-pink-50 border-l-4 border-pink-500 p-6 rounded-r-lg">
+        <p class="text-lg text-pink-800 font-medium">
+          Este procedimiento por lo general se completa en una hora y
+          regularmente se llevan a cabo de forma ambulatoria.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

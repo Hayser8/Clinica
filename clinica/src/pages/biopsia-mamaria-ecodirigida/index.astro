@@ -1,0 +1,81 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/biopsiademamaguiada/HeroSection.astro";
+import WhatIs from "@/components/biopsiademamaguiada/WhatIs.astro";
+import CommonUses from "@/components/biopsiademamaguiada/CommonUses.astro";
+import BiopsyTypes from "@/components/biopsiademamaguiada/BiopsyTypes.astro";
+import Preparation from "@/components/biopsiademamaguiada/Preparation.astro";
+import Equipment from "@/components/biopsiademamaguiada/Equipment.astro";
+import Procedure from "@/components/biopsiademamaguiada/Procedure.astro";
+import Experience from "@/components/biopsiademamaguiada/Experience.astro";
+import Results from "@/components/biopsiademamaguiada/Results.astro";
+import CTA from "@/components/obstetrico/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Se puede visualizar el saco gestacional y el embrión en una ecografía endovaginal a las 4 semanas?",
+    answer:
+      "A las 4 semanas el saco gestacional mide apenas unos milímetros, por lo que resulta difícil distinguirlo con claridad. Por eso, te recomendamos realizar la ecografía endovaginal a partir de la semana 6 o 7, cuando el saco crece lo suficiente para verse con nitidez.",
+  },
+  {
+    id: 2,
+    question: "¿Es posible confirmar un embarazo por ecografía antes de las 5 semanas?",
+    answer:
+      "Antes de la semana 5 la ecografía puede mostrar únicamente un pequeño engrosamiento endometrial, pero sin detalles definitivos de saco ni embrión. Para confirmar viabilidad lo ideal es esperar hasta la semana 6-7, cuando el embrión es más fácil de identificar y se reduce la probabilidad de resultados inconclusos o falsos negativos.",
+  },
+  {
+    id: 3,
+    question: "¿En qué consiste el ultrasonido estructural y en qué semana se realiza exactamente?",
+    answer:
+      "La anatomía fetal es un estudio detallado de todos los órganos y sistemas del bebé. El ultrasonido estructural que realizamos es de nivel I, se programa entre las semanas 12-14 para evaluar pliegue nucal y huesos propios de la nariz, viabilidad fetal y edad gestacional.  El ultrasonido estructural nivel II (semana 20 en adelante), es realizado por médico especialista en medicina materno fetal, por lo que es de referencia.",
+  },
+  {
+    id: 4,
+    question: "¿A partir de qué semana la ecografía permite identificar con fiabilidad el sexo del bebé?",
+    answer:
+      "Aunque el tubérculo genital comienza a formarse antes, la visión clara de los órganos sexuales es más fiable después de la semana 16. A partir de la semana 18–20 el ángulo y la proporción de las estructuras hacen posible la determinación del sexo con más del 95 % de certeza.",
+  },
+  {
+    id: 5,
+    question: "¿Qué tan precisa es la determinación de la edad gestacional en el primer ultrasonido?",
+    answer:
+      "La medición de la longitud cráneo-caudal (CC) entre la semana 7 y la 11 es considerada la mejor referencia para fechar tu embarazo. En ese rango, la precisión alcanza un margen de error de apenas 3–5 días.",
+  },
+  {
+    id: 6,
+    question: "¿En qué situaciones se indica un Doppler materno-fetal adicional además del estudio rutinario?",
+    answer:
+      "Más allá del protocolo estándar, añadimos Doppler si existe sospecha de restricción de crecimiento, presión alta materna, antecedentes de preeclampsia o inserción inadecuada de la placenta. También lo recomendamos en embarazos múltiples o cuando tu médico tratante los solicite.",
+  },
+];
+
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <CommonUses />
+    <BiopsyTypes />
+    <Preparation />
+    <Equipment />
+    <Procedure />
+    <Experience />
+    <Results />
+    <CTA />
+    <FAQ title="Preguntas Frecuentes sobre Ultrasonidos Obstétricos" description="Encuentra respuestas a las preguntas más comunes sobre ecografías maternalesgi" faqData={faqData} />
+    
+  </main>
+
+  <Footer />
+</Layout>

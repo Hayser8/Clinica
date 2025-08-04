@@ -1,0 +1,59 @@
+---
+import { Users, Award, BookOpen, Heart } from "@lucide/astro";
+
+const reasons = [
+  {
+    icon: Users,
+    title: "Dos mentes mejor que una",
+    description:
+      "Somos dos especialistas que analizaremos tu estudio simultáneamente, brindándote mejores resultados.",
+  },
+  {
+    icon: Award,
+    title: "Más de una década de experiencia",
+    description:
+      "Tenemos más de 10 años haciendo imágenes diagnósticas, interpretándolas con precisión y confianza.",
+  },
+  {
+    icon: BookOpen,
+    title: "Protocolos actualizados",
+    description:
+      "Seguimos guías radiológicas vigentes para ofrecerte la mejor calidad.",
+  },
+  {
+    icon: Heart,
+    title: "Atención personalizada",
+    description:
+      "Entendemos tus inquietudes y te acompañamos durante todo el proceso, resolviéndote todas las dudas que te surjan del procedimiento.",
+  },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        ¿Por qué <span class="text-pink-600">DeltaScan</span> es tu clínica de ecografías
+        maternales?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        reasons.map((reason, index) => (
+          <div key={index} class="flex gap-6 p-6 bg-gray-50 rounded-xl">
+            <div class="bg-pink-600 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
+              <reason.icon class="w-7 h-7 text-white" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                {reason.title}
+              </h3>
+              <p class="text-gray-700 leading-relaxed">{reason.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

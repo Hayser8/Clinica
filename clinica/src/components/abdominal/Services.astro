@@ -1,0 +1,70 @@
+---
+import { Eye, Users, Heart, Zap, FileText, ImageIcon } from "@lucide/astro";
+
+const services = [
+  {
+    icon: Eye,
+    title: "Visualización en tiempo real",
+    description:
+      "De hígado, vesícula biliar, páncreas, bazo, riñones y aorta abdominal",
+  },
+  {
+    icon: Users,
+    title: "Realizado por profesionales",
+    description: "Somos radiólogos especializados",
+  },
+  {
+    icon: Heart,
+    title: "Trato personalizado",
+    description: "En cada etapa del estudio",
+  },
+  {
+    icon: Zap,
+    title: "Procedimiento rápido e indoloro",
+    description: "Sin radiación ionizante",
+  },
+  {
+    icon: FileText,
+    title: "Folder con la hoja del informe",
+    description: "Documentación completa",
+  },
+  {
+    icon: ImageIcon,
+    title: "Imágenes del estudio",
+    description: "En otra hoja impresas",
+  },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">
+        ¿Qué servicios te ofrecemos?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Nuestro estudio se adapta a tu ritmo y necesidades, con resultados
+        inmediatos que facilitan tu diagnóstico.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        services.map((service, index) => (
+          <div
+            key={index}
+            class="bg-pink-50 rounded-xl p-6 hover:shadow-lg transition-shadow"
+          >
+            <div class="bg-pink-600 rounded-lg p-3 w-fit mb-4">
+              <service.icon class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              {service.title}
+            </h3>
+            <p class="text-gray-600">{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

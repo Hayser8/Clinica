@@ -1,0 +1,81 @@
+---
+import {
+  FileText,
+  ImageIcon,
+  Activity,
+  Folder,
+  Calendar,
+  CheckCircle,
+} from "@lucide/astro";
+
+const services = [
+  {
+    icon: ImageIcon,
+    title: "Ecografía abdominal",
+    description: "Evaluación completa del embarazo",
+  },
+  {
+    icon: Activity,
+    title: "Ecografía endovaginal",
+    description: "Mayor precisión en etapas tempranas",
+  },
+  {
+    icon: Activity,
+    title: "Doppler materno-fetal",
+    description: "Análisis del flujo sanguíneo",
+  },
+  {
+    icon: Folder,
+    title: "Folder con informe completo",
+    description: "Documentación impresa detallada",
+  },
+  {
+    icon: FileText,
+    title: "Hoja con todas las imágenes",
+    description: "Registro visual del estudio",
+  },
+  {
+    icon: Calendar,
+    title: "Resultados el mismo día",
+    description: "Para decisiones rápidas y seguras",
+  },
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-medium mb-6"
+      >
+        <CheckCircle class="w-4 h-4" />
+        Servicios Completos
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        ¿Qué <span class="text-pink-600">servicios</span> te ofrecemos?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        En DeltaScan encontrarás:
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        services.map((service, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <div class="bg-pink-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <service.icon class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              {service.title}
+            </h3>
+            <p class="text-gray-600">{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

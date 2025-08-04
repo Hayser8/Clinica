@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/abdominal/HeroSection.astro";
+import WhenTo from "@/components/abdominal/WhenTo.astro";
+import Services from "@/components/abdominal/Services.astro";
+import WhyDeltaScan from "@/components/abdominal/WhyDeltaScan.astro";
+import HowItIs from "@/components/abdominal/HowItIs.astro";
+import UltrasoundTypes from "@/components/abdominal/UltrasoundTypes.astro";
+import Preparation from "@/components/abdominal/Preparation.astro";
+import CTA from "@/components/abdominal/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Necesito una indicación médica o receta para programar un ultrasonido abdominal?",
+    answer:
+      "No es necesario contar con orden médico; sin embargo, si se cuenta con ella presentarla al momento del estudio.",
+  },
+  {
+    id: 2,
+    question: "¿Cómo puedo conocer el precio de un ultrasonido abdominal completo?",
+    answer:
+      "Llámanos al 2448 1110 o escríbenos al WhatsApp 4565-0865 y te informaremos al instante, para que puedas planificar tu cita sin sorpresas.",
+  },
+  {
+    id: 3,
+    question: "¿Existen contraindicaciones o limitaciones para someterme a un ultrasonido abdominal?",
+    answer:
+      "Al ser un examen no invasivo y bien tolerado por la mayoría de las personas no existe contraindicaciones. Si existen heridas recientes en la zona a evaluar, podría requerirse un pequeño ajuste. Comparte con nosotros tu historial médico y te orientaremos para que todo transcurra con seguridad.",
+  },
+  {
+    id: 4,
+    question: "¿El ultrasonido abdominal es seguro durante el embarazo y para niños?",
+    answer:
+      "Sí. Los equipos que utilizamos no emiten radiación ionizante, por lo que el procedimiento es apto para mujeres embarazadas y para pacientes pediátricos.",
+  },
+  {
+    id: 5,
+    question: "¿Cómo interpretar y leer los resultados de mi ultrasonido abdominal?",
+    answer:
+      "Al finalizar el estudio, recibirás un informe detallado con imágenes y hallazgos explicados de forma clara. Tu médico tratante es el responsable de explicar adecuadamente los resultados, ya que el informe radiológico es parte de estudios complementarios que solicita tu médico.",
+  },
+  {
+    id: 6,
+    question: "¿Puedo llevar un acompañante durante el procedimiento?",
+    answer:
+      "Por supuesto. Entendemos la importancia de tu comodidad, puedes venir acompañado de un familiar o amigo. Solo pedimos que tu acompañante respete el espacio en la sala de espera.",
+  },
+  {
+    id: 7,
+    question: "¿Qué hago si no cumplo adecuadamente el ayuno antes del examen?",
+    answer:
+      "Si llegas habiendo ingerido alimentos recientemente, la calidad de las imágenes podría verse afectada. Contáctanos tan pronto lo notes y evaluaremos si reprogramar tu cita o usar técnicas complementarias, para asegurarnos de que obtengas un diagnóstico preciso.",
+  },
+];
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhenTo />
+    <Services />
+    <WhyDeltaScan />
+    <HowItIs />
+    <UltrasoundTypes />
+    <Preparation />
+    <CTA />
+    <FAQ title="Preguntas Frecuentes sobre Ultrasonidos Abdominales" description="Encuentra respuestas a las preguntas más comunes sobre ecografías abdominales" faqData={faqData} />
+    
+  </main>
+
+  <Footer />
+</Layout>

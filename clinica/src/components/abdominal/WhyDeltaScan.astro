@@ -1,0 +1,60 @@
+---
+import { Clock, BookOpen, Users, Calendar } from "@lucide/astro";
+
+const reasons = [
+  {
+    icon: Clock,
+    title: "Más de una década de servicio",
+    points: [
+      "10 años interpretando estudios con precisión diagnóstica",
+      "Garantizamos que tu servicio será personalizado y confiable",
+    ],
+  },
+  {
+    icon: BookOpen,
+    title: "Protocolos actualizados",
+    points: [
+      "Los ultrasonidos no son solo el resultado, sino como llegamos a él. Por lo tanto, aplicamos guías radiológicas vigentes y tecnología avanzada para obtener mejor calidad de imagen y mejorar tu diagnóstico.",
+    ],
+  },
+  {
+    icon: Users,
+    title: "Dos mentes piensan mejor que una",
+    points: [
+      "Somos dos radiólogos que evalúan al mismo tiempo tus imágenes, de esta forma, aceleramos la interpretación y elevamos la precisión de tus resultados.",
+    ],
+  },
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">
+        ¿Por qué <span class="text-pink-600">DeltaScan</span> es tu clínica de ultrasonidos
+        para patología abdominal?
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 mb-12">
+      {
+        reasons.map((reason, index) => (
+          <div key={index} class="bg-white rounded-xl p-8 shadow-lg">
+            <div class="bg-pink-600 rounded-lg p-3 w-fit mb-6">
+              <reason.icon class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{reason.title}</h3>
+            <ul class="space-y-3">
+              {reason.points.map((point, pointIndex) => (
+                <li key={pointIndex} class="text-gray-600 leading-relaxed">
+                  • {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

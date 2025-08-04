@@ -1,0 +1,98 @@
+---
+import {
+  Phone,
+  ClipboardList,
+  Droplets,
+  Eye,
+  Users,
+  FileText,
+} from "@lucide/astro";
+
+const steps = [
+  {
+    icon: Phone,
+    title: "Hacer cita",
+    description: "Llámanos o escríbenos para poder agendar tu cita.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Evaluación clínica previa",
+    description: "Revisamos tu historia y motivos de tu consulta.",
+  },
+  {
+    icon: Droplets,
+    title: "Aplicación del gel conductor",
+    description: "Garantizamos contacto óptimo para imágenes nítidas.",
+  },
+  {
+    icon: Eye,
+    title: "Exploración en tiempo real",
+    description:
+      "Monitoreamos cada imagen, te comentamos lo que encontramos y respondemos tus dudas e inquietudes que te surjan.",
+  },
+  {
+    icon: Users,
+    title: "Interpretación conjunta",
+    description:
+      "Analizamos los hallazgos con tu historial y antecedentes para poder ofrecerte el mejor diagnóstico posible.",
+  },
+  {
+    icon: FileText,
+    title: "Entrega de resultados",
+    description: "Recibes un informe detallado al salir, listo para tu médico.",
+  },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        ¿Cómo es una ecografía obstétrica en <span class="text-pink-600"
+          >DeltaScan</span
+        >?
+      </h2>
+    </div>
+
+    {/* Timeline vertical */}
+    <div class="relative max-w-4xl mx-auto">
+      {/* Línea vertical */}
+      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-pink-200"></div>
+
+      <div class="space-y-12">
+        {
+          steps.map((step, index) => (
+            <div key={index} class="relative flex items-start gap-8">
+              {/* Número y línea */}
+              <div class="relative flex-shrink-0">
+                <div class="bg-pink-600 w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg z-10 relative">
+                  {index + 1}
+                </div>
+
+              </div>
+
+              {/* Contenido */}
+              <div class="flex-1 pb-8">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-sm border-l-4 border-pink-600">
+                  <div class="flex items-start gap-4">
+                    <div class="bg-pink-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <step.icon class="w-6 h-6 text-pink-600" />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-gray-900 mb-2">
+                        {step.title}
+                      </h3>
+                      <p class="text-gray-700 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,69 @@
+---
+import { Baby, Ruler } from "@lucide/astro";
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Ecografía obstétrica según <span class="text-pink-600">trimestre</span>
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="bg-pink-50 rounded-xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="bg-pink-600 w-14 h-14 rounded-xl flex items-center justify-center"
+          >
+            <Baby class="w-7 h-7 text-white" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Primer trimestre</h3>
+            <p class="text-pink-600 font-medium">(6 – 12 sem)</p>
+          </div>
+        </div>
+
+        <p class="text-gray-700 leading-relaxed">
+          En la etapa inicial, entre la semana 6 y 13, realizamos el primer
+          ultrasonido materno para confirmar el embarazo. Aquí medimos la
+          longitud cráneo-caudal, contamos sacos gestacionales y latidos.
+          Además, desde este punto podemos detectar si es 1 o varios embriones.
+        </p>
+      </div>
+
+      <div class="bg-pink-50 rounded-xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="bg-pink-600 w-14 h-14 rounded-xl flex items-center justify-center"
+          >
+            <Ruler class="w-7 h-7 text-white" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">
+              Segundo y tercer trimestre
+            </h3>
+            <p class="text-pink-600 font-medium">(a partir de la semana 13)</p>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-gray-700">
+          <p>
+            A partir de la semana 13, la ecografía transabdominal de anatomía
+            fetal cobra protagonismo.
+          </p>
+          <p>
+            <span class="font-semibold">Desde la semana 13:</span> tomamos biometrías
+            completas (diámetro biparietal, circunferencia abdominal, longitud femoral),
+            así como grado de placentación.
+          </p>
+          <p>
+            <span class="font-semibold">Hacia la semana 32:</span> verificamos de
+            manera cuantitativa el volumen de líquido amniótico para un seguimiento
+            preciso.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

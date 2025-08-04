@@ -1,0 +1,59 @@
+---
+import { AlertCircle, Shirt, Pill, Car } from "@lucide/astro";
+
+const preparations = [
+  {
+    icon: Shirt,
+    title: "Vestimenta",
+    description:
+      "Viste prendas cómodas y sueltas. Quizá tengas que quitarte toda la vestimenta de la parte superior y las joyas de la zona a examinar. Además, podrías tener que ponerte una bata para el procedimiento.",
+  },
+  {
+    icon: Pill,
+    title: "Medicamentos",
+    description:
+      "Habla con tu médico sobre todos los medicamentos que estés tomando. Menciona todas las alergias, especialmente a la anestesia. Podrías necesitar dejar de tomar aspirina o anticoagulantes 3-5 días antes para disminuir el riesgo de sangrado",
+  },
+  {
+    icon: AlertCircle,
+    title: "Condiciones de salud",
+    description:
+      "Informa a tu médico acerca de enfermedades recientes u otros problemas de salud.",
+  },
+  {
+    icon: Car,
+    title: "Transporte",
+    description:
+      "Podrías necesitar que alguien te lleve de vuelta a tu casa en automóvil luego del procedimiento.",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"
+      >
+        ¿Cómo debo prepararme?
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {
+          preparations.map((prep, index) => (
+            <div key={index} class="flex gap-4 p-6 bg-gray-50 rounded-xl">
+              <div class="bg-pink-100 p-3 rounded-lg flex-shrink-0">
+                <prep.icon class="w-6 h-6 text-pink-600" />
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                  {prep.title}
+                </h3>
+                <p class="text-gray-700 leading-relaxed">{prep.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

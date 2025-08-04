@@ -1,0 +1,88 @@
+---
+import { Clock, Heart, AlertTriangle, Phone } from "@lucide/astro";
+
+const experiences = [
+  {
+    icon: Heart,
+    title: "Durante el procedimiento",
+    description:
+      "Permanecerás despierta durante la biopsia y deberías experimentar pocas molestias. Muchas mujeres comunican que tienen poco o ningún dolor, y ninguna cicatriz en la mama.",
+  },
+  {
+    icon: Clock,
+    title: "Sensaciones normales",
+    description:
+      "Al recibir el anestésico local sentirás un leve pinchazo seguido por una sensación moderada de escozor. A medida que se extraen muestras de tejido, puedes escuchar clics o sonidos como zumbidos provenientes del instrumento de muestreo.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Después del procedimiento",
+    description:
+      "En caso de experimentar hinchazón o hematomas tras la biopsia, tu médico podría pedirte que tomes un analgésico de venta libre y que utilices una compresa fría o caliente.",
+  },
+];
+
+const warnings = [
+  "Hinchazón excesiva",
+  "Sangrado",
+  "Drenaje",
+  "Enrojecimiento",
+  "Calor en el seno",
+];
+---
+
+<section class="py-16 md:py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"
+      >
+        ¿Qué experimentarás durante y después del procedimiento?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        {
+          experiences.map((exp, index) => (
+            <div
+              key={index}
+              class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+            >
+              <div class="bg-pink-100 p-3 rounded-lg w-fit mb-4">
+                <exp.icon class="w-6 h-6 text-pink-600" />
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                {exp.title}
+              </h3>
+              <p class="text-gray-700 leading-relaxed">{exp.description}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <div class="flex items-start gap-4">
+          <Phone class="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
+          <div>
+            <h3 class="text-xl font-semibold text-red-800 mb-3">
+              Llama a tu médico si presentas:
+            </h3>
+            <div class="grid md:grid-cols-2 gap-2">
+              {
+                warnings.map((warning, index) => (
+                  <div key={index} class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-red-500 rounded-full" />
+                    <span class="text-red-700">{warning}</span>
+                  </div>
+                ))
+              }
+            </div>
+            <p class="text-red-700 mt-4 font-medium">
+              Evita actividades intensas por al menos 24-48 horas luego de la
+              biopsia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

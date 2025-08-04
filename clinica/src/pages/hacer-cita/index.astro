@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/cita/HeroSection.astro";
+import ContactBentoGrid from "@/components/cita/ContactBentoGrid.astro";
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto p-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Información de <span class="text-pink-600">Contacto</span>
+          </h2>
+        </div>
+
+        <ContactBentoGrid />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,155 @@
+---
+const comparisons = [
+  {
+    characteristic: "Alcance",
+    complete: "Evaluación de todos los órganos intraabdominales (hígado, vesícula, páncreas, bazo, riñones, aorta) en una sola sesión.",
+    specific: "Estudio focalizado en zona superior (hígado, vesícula, páncreas, bazo, riñón) o inferior (próstata en el caso de hombres y útero y ovarios en caso de mujeres)."
+  },
+  {
+    characteristic: "Indicaciones",
+    complete: "Control anual, evaluación inicial de dolor o distensión generalizada, seguimiento de patologías sistémicas.",
+    specific: "Seguimiento puntual de hallazgos previos o indicación médica específica en un órgano o región."
+  },
+  {
+    characteristic: "Duración aproximada",
+    complete: "15–20 minutos, cubre todo el abdomen en una sola exploración.",
+    specific: "10–15 minutos, según la extensión de la zona evaluada."
+  },
+  {
+    characteristic: "Ideal para",
+    complete: "Diagnóstico global, screening y seguimiento de patologías que afectan múltiples órganos abdominales.",
+    specific: "Monitoreo de lesiones localizadas (quistes, masas) y seguimiento de tratamientos específicos."
+  },
+  {
+    characteristic: "Resultados",
+    complete: "Informe inmediato el mismo día, en formato físico.",
+    specific: "Informe inmediato el mismo día, listo para su médico tratante."
+  }
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6">
+        Tipos de ultrasonido abdominal: Completo vs. Órgano específico
+      </h2>
+    </div>
+
+    <!-- Desktop Table -->
+    <div class="hidden lg:block bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-pink-600 text-white">
+              <th class="px-6 py-4 text-left font-semibold">Característica</th>
+              <th class="px-6 py-4 text-left font-semibold">Ultrasonido Abdominal Completo</th>
+              <th class="px-6 py-4 text-left font-semibold">Ultrasonido Abdominal órgano específico</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisons.map((row, index) => (
+              <tr class={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                <td class="px-6 py-4 font-semibold text-gray-900 border-r border-gray-200">
+                  {row.characteristic}
+                </td>
+                <td class="px-6 py-4 text-gray-600 border-r border-gray-200">
+                  {row.complete}
+                </td>
+                <td class="px-6 py-4 text-gray-600">
+                  {row.specific}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Mobile Tabs -->
+    <div class="lg:hidden">
+      <!-- Tab Navigation -->
+      <div class="flex bg-white rounded-t-2xl shadow-lg overflow-hidden mb-0">
+        <button id="tab-complete" class="flex-1 px-4 py-4 text-sm font-semibold transition-colors bg-pink-600 text-white">
+          Ultrasonido Completo
+        </button>
+        <button id="tab-specific" class="flex-1 px-4 py-4 text-sm font-semibold transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200">
+          Órgano Específico
+        </button>
+      </div>
+
+      <!-- Tab Content -->
+      <div id="tab-content" class="bg-white rounded-b-2xl shadow-lg">
+        <div class="p-6 space-y-6">
+          {comparisons.map((item, index) => (
+            <div class="border-b border-gray-100 last:border-b-0 pb-4 last:pb-0">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <div class="w-2 h-2 bg-pink-600 rounded-full"></div>
+                {item.characteristic}
+              </h3>
+              <p class="text-gray-600 leading-relaxed pl-4 complete">
+                {item.complete}
+              </p>
+              <p class="text-gray-600 leading-relaxed pl-4 specific hidden">
+                {item.specific}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Mobile Comparison Cards -->
+      <div class="mt-8 space-y-4">
+        <h3 class="text-xl font-bold text-gray-900 text-center mb-6">Comparación rápida</h3>
+        <div class="grid gap-4">
+          <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-pink-600">
+            <h4 class="font-bold text-pink-600 mb-2">Ultrasonido Completo</h4>
+            <p class="text-sm text-gray-600 mb-3">Evaluación integral de todos los órganos abdominales</p>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-500">Duración:</span>
+              <span class="font-semibold">15-20 min</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-pink-500">
+            <h4 class="font-bold text-pink-500 mb-2">Órgano Específico</h4>
+            <p class="text-sm text-gray-600 mb-3">Estudio focalizado en zona específica</p>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-500">Duración:</span>
+              <span class="font-semibold">10-15 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    const completeBtn = document.getElementById("tab-complete");
+    const specificBtn = document.getElementById("tab-specific");
+    const completeParas = document.querySelectorAll("#tab-content .complete");
+    const specificParas = document.querySelectorAll("#tab-content .specific");
+
+    function showComplete() {
+      completeBtn.classList.add("bg-pink-600", "text-white");
+      completeBtn.classList.remove("bg-gray-100", "text-gray-600", "hover:bg-gray-200");
+      specificBtn.classList.remove("bg-pink-600", "text-white");
+      specificBtn.classList.add("bg-gray-100", "text-gray-600");
+
+      completeParas.forEach(p => p.classList.remove("hidden"));
+      specificParas.forEach(p => p.classList.add("hidden"));
+    }
+
+    function showSpecific() {
+      specificBtn.classList.add("bg-pink-600", "text-white");
+      specificBtn.classList.remove("bg-gray-100", "text-gray-600", "hover:bg-gray-200");
+      completeBtn.classList.remove("bg-pink-600", "text-white");
+      completeBtn.classList.add("bg-gray-100", "text-gray-600");
+
+      completeParas.forEach(p => p.classList.add("hidden"));
+      specificParas.forEach(p => p.classList.remove("hidden"));
+    }
+
+    completeBtn.addEventListener("click", showComplete);
+    specificBtn.addEventListener("click", showSpecific);
+  </script>
+</section>

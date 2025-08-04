@@ -1,0 +1,90 @@
+---
+import { FileText, Clock, User, ArrowRight } from "@lucide/astro";
+const steps = [
+  {
+    icon: User,
+    title: "Análisis",
+    description:
+      "Un médico patólogo examina la muestra extraída y realiza un diagnóstico final.",
+    time: "Proceso especializado",
+  },
+  {
+    icon: Clock,
+    title: "Tiempo",
+    description:
+      "El resultado tarda 10 días aproximadamente para ser enviado con su médico tratante.",
+    time: "10 días aprox.",
+  },
+  {
+    icon: FileText,
+    title: "Entrega",
+    description:
+      "Su médico tratante es el encargado de entregarle el resultado y guiar su procedimiento posterior.",
+    time: "Consulta médica",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"
+      >
+        ¿Quién interpreta los resultados y cómo los obtengo?
+      </h2>
+
+      {/* Process flow */}
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        {
+          steps.map((step, index) => (
+            <div key={index} class="relative">
+              <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 h-full">
+                <div class="bg-pink-100 p-3 rounded-lg w-fit mb-4">
+                  <step.icon class="w-8 h-8 text-pink-600" />
+                </div>
+                <div class="bg-pink-600 text-white px-3 py-1 rounded-full text-sm font-medium mb-3 w-fit">
+                  {step.time}
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                  {step.title}
+                </h3>
+                <p class="text-gray-700 leading-relaxed">{step.description}</p>
+              </div>
+
+              {/* Arrow between steps */}
+              {index < steps.length - 1 && (
+                <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                  <ArrowRight class="w-8 h-8 text-pink-400" />
+                </div>
+              )}
+            </div>
+          ))
+        }
+      </div>
+
+      {/* Additional information */}
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-lg">
+          <h3 class="text-lg font-semibold text-orange-800 mb-3">
+            Casos especiales
+          </h3>
+          <p class="text-orange-700 leading-relaxed">
+            En algunos casos, incluso cuando no se diagnostica cáncer, se podría
+            recomendar la extirpación quirúrgica de toda el área de la biopsia
+            si la patología no condice con los hallazgos en las imágenes.
+          </p>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+          <h3 class="text-lg font-semibold text-blue-800 mb-3">Seguimiento</h3>
+          <p class="text-blue-700 leading-relaxed">
+            Podría ser necesario hacer un examen de seguimiento. Los exámenes de
+            seguimiento son la mejor forma de ver si el tratamiento está
+            funcionando o si un problema requiere de atención.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,5 @@
 ---
-import { GraduationCap, Award, Users } from "@lucide/astro";
+import { GraduationCap, Award, Users, MapPin } from "@lucide/astro";
 
 const specialists = [
   {
@@ -8,7 +8,7 @@ const specialists = [
     experience: "11 años de experiencia en Imágenes Diagnósticas",
     specialty: "8 años de experiencia en biopsia de mama",
     image: "/doctorprueba.webp",
-    education: "Universidad de San Carlos de Guatemala",
+    education: "Universidad de San Carlos de Guatemala (2015)",
     certifications: ["BI-RADS", "TI-RADS", "Doppler Vascular"],
   },
   {
@@ -17,7 +17,7 @@ const specialists = [
     experience: "11 años de experiencia en Imágenes Diagnósticas",
     specialty: "8 años de experiencia en biopsia de mama",
     image: "/doctora.webp",
-    education: "Universidad Rafael Landívar",
+    education: "Universidad de San Carlos de Guatemala (2015)",
     certifications: ["BI-RADS", "TI-RADS", "Ultrasonido Obstétrico"],
   },
 ];
@@ -45,74 +45,68 @@ const specialists = [
     </div>
 
     <div class="grid md:grid-cols-2 gap-8">
-      {specialists.map((specialist, index) => (
-        <div
-          key={index}
-          class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
-        >
-          {/* Doctor Image */}
-          <div class="flex flex-col items-center mb-6">
-            <div class="relative mb-4">
-              <div
-                class="w-32 h-32 rounded-full overflow-hidden border-4 border-pink-200 group-hover:border-pink-300 transition-colors duration-300"
-              >
-                <img
-                  src={specialist.image || "/placeholder.svg"}
-                  alt={specialist.name}
-                  class="w-full h-full object-cover object-[center_20%]"
-                />
+      {
+        specialists.map((specialist, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
+          >
+            {/* Doctor Image */}
+            <div class="flex flex-col items-center mb-6">
+              <div class="relative mb-4">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-pink-200 group-hover:border-pink-300 transition-colors duration-300">
+                  <img
+                    src={specialist.image || "/placeholder.svg"}
+                    alt={specialist.name}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center">
+                  <GraduationCap class="w-5 h-5 text-white" />
+                </div>
               </div>
-              <div
-                class="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-pink-600 to-pink-700 rounded-full flex items-center justify-center"
-              >
-                <GraduationCap class="w-5 h-5 text-white" />
+              <div class="text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">
+                  {specialist.name}
+                </h3>
+                <p class="text-pink-600 font-semibold text-lg">
+                  {specialist.title}
+                </p>
               </div>
             </div>
-            <div class="text-center">
-              <h3 class="text-2xl font-bold text-gray-900 mb-1">
-                {specialist.name}
-              </h3>
-              <p class="text-pink-600 font-semibold text-lg">
-                {specialist.title}
-              </p>
-            </div>
-          </div>
 
-          {/* Experience & Specialty */}
-          <div class="space-y-4 mb-6">
-            <div class="flex items-start gap-3">
-              <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0" />
-              <p class="text-gray-700">{specialist.experience}</p>
+            {/* Experience & Specialty */}
+            <div class="space-y-4 mb-6">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0" />
+                <p class="text-gray-700">{specialist.experience}</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0" />
+                <p class="text-gray-700">{specialist.specialty}</p>
+              </div>
             </div>
-            <div class="flex items-start gap-3">
-              <div class="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0" />
-              <p class="text-gray-700">{specialist.specialty}</p>
-            </div>
-          </div>
 
-          {/* Certifications */}
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <Award class="w-4 h-4 text-pink-600" />
-              <span class="text-sm font-semibold text-gray-900">
-                Certificaciones
-              </span>
-            </div>
-            <div class="flex flex-wrap gap-2 pl-6">
-              {specialist.certifications.map((cert, certIndex) => (
-                <span
-                  key={certIndex}
-                  class="px-3 py-1 bg-pink-100 text-pink-700 text-xs font-medium rounded-full"
-                >
-                  {cert}
+            {/* Education */}
+            <div class="mb-6">
+              <div class="flex items-center gap-2 mb-2">
+                <MapPin class="w-4 h-4 text-pink-600" />
+                <span class="text-sm font-semibold text-gray-900">
+                 Maestría en Radiología e Imágenes Diagnósticas
                 </span>
-              ))}
+              </div>
+              <p class="text-sm text-gray-600 pl-6">{specialist.education}</p>
             </div>
+
+ 
+
+
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
-
+    {/* Team Stats */}
+   
   </div>
 </section>
