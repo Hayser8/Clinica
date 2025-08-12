@@ -1,0 +1,77 @@
+---
+import { Info, ChevronRight } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center space-y-6 mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+        ¿Por qué existen <span class="text-pink-600">dos variantes</span> del estudio
+        pélvico?
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-pink-50 rounded-2xl p-8 border-2 border-pink-100 h-full flex flex-col">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Info class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 lg:pt-2">
+              Ultrasonido Pélvico Suprapúbico
+            </h3>
+          </div>
+        </div>
+
+        <p class="text-gray-700 leading-relaxed">
+          El ultrasonido pélvico por vía suprapúbica es un estudio que se
+          realiza con una sonda convexa a través de la región abdominal, es
+          menos invasivo y está reservado especialmente para niñas y pacientes
+          que aún no tienen una vida sexual activa.
+        </p>
+
+        <a
+          href="#"
+          aria-label="Ver más información sobre Ultrasonido Pélvico Suprapúbico"
+          class="mt-auto pt-4 inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 font-medium text-sm transition-all duration-200 transform hover:scale-[1.03] focus:scale-[1.03]"
+        >
+          Ver más información
+          <ChevronRight class="w-4 h-4" />
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-pink-50 rounded-2xl p-8 border-2 border-pink-100 h-full flex flex-col">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Info class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 lg:pt-2">
+              Ultrasonido Pélvico Endocavitario
+            </h3>
+          </div>
+        </div>
+
+        <p class="text-gray-700 leading-relaxed">
+          El ultrasonido pélvico endocavitario es un estudio un poco más
+          invasivo, ya que utiliza una sonda endovaginal de pequeño tamaño,
+          cubierta de material protector desechable y que se introduce en el
+          canal vaginal. Este estudio a pesar de ser más invasivo es más
+          confiable al momento de evaluar el útero y los ovarios por su cercanía
+          a los órganos internos.
+        </p>
+
+        <a
+          href="#"
+          aria-label="Ver más información sobre Ultrasonido Pélvico Endocavitario"
+          class="mt-auto pt-4 inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 font-medium text-sm transition-all duration-200 transform hover:scale-[1.03] focus:scale-[1.03]"
+        >
+          Ver más información
+          <ChevronRight class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

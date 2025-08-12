@@ -1,0 +1,76 @@
+---
+import { AlertTriangle, Zap, Bone, Gem, RefreshCw, Activity } from '@lucide/astro';
+
+const pathologies = [
+  {
+    icon: AlertTriangle,
+    title: "Esguinces y desgarros",
+    description: "de ligamentos y tendones"
+  },
+  {
+    icon: Zap,
+    title: "Tendinitis y bursitis",
+    description: "en hombro, codo, rodilla y tobillo"
+  },
+  {
+    icon: Bone,
+    title: "Artrosis y cambios degenerativos",
+    description: "evaluación de articulaciones"
+  },
+  {
+    icon: Gem,
+    title: "Calcificaciones",
+    description: "y depósitos de cristales"
+  },
+  {
+    icon: RefreshCw,
+    title: "Lesiones por sobreuso",
+    description: "por ejemplo, túnel carpiano"
+  },
+  {
+    icon: Activity,
+    title: "Traumatismos musculares",
+    description: "y atrapamientos nerviosos"
+  }
+]
+---
+<section class="py-16 lg:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        ¿Qué patologías y lesiones se pueden detectar?
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Este estudio es útil para detectar las siguientes patologías y lesiones:
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        pathologies.map((pathology, index) => {
+          const Icon = pathology.icon;
+          return (
+            <div
+              key={index}
+              class="bg-gray-50 rounded-xl p-6 hover:bg-pink-50 transition-colors group"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center group-hover:bg-pink-700 transition-colors">
+                    <Icon class="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2">
+                    {pathology.title}
+                  </h3>
+                  <p class="text-gray-600 text-sm">{pathology.description}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

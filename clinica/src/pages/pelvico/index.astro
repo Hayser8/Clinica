@@ -1,0 +1,83 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/pelvico/HeroSection.astro";
+import WhatIs from "@/components/pelvico/WhatIs.astro";
+import WhyTwo from "@/components/pelvico/WhyTwo.astro";
+import Pathologies from "@/components/pelvico/Pathologies.astro";
+import WhyDeltaScan from "@/components/pelvico/WhyDeltaScan.astro";
+import HowItIs from "@/components/pelvico/HowItIs.astro";
+import Results from "@/components/pelvico/Results.astro";
+import CTA from "@/components/common/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Puedo hacerme el ultrasonido si estoy menstruando?",
+    answer:
+      "Sí, muchos médicos tratantes solicitan que se realice durante el tercer día post menstruación para valorar las características del endometrio, sin embargo, esto es por indicación médico.\nSe puede realizar en cualquier momento del periodo menstrual o fuera de él, para no causar incomodidades.",
+  },
+  {
+    id: 2,
+    question: "¿Desde qué semana suele verse el embarazo por vía transvaginal?",
+    answer:
+      "El saco gestacional puede ser visible a las 4 semanas, sin embargo, el feto no es visible hasta entrada la 5 o 6ta semana. A veces si es muy temprano el embarazo es necesario repetir el estudio 3 semanas después para valorar vitalidad del embrión.",
+  },
+  {
+    id: 3,
+    question: "¿Puedo solicitar atención por una radióloga mujer o entrar con acompañante?",
+    answer:
+      "Sí, contamos con dos médicos radiólogos (mujer y hombre), puedes solicitar sin ningún problema con quien te sientas cómoda, al igual que una persona puede acompañarte.",
+  },
+  {
+    id: 4,
+    question: "¿Qué hallazgos sugiere el estudio en endometriosis y cuándo se requiere otro método complementario?",
+    answer:
+      "En el caso de la endometriosis, existe múltiples hallazgos que pueden hacer sospechar, desde un quiste complejo hasta una masa sospechosa e inclusive no puede encontrarse ningún hallazgo especifico, sin embargo, si existen molestias o sospecha clínica de endometriosis se pueden sugerir estudios complementarios como la resonancia magnética.",
+  },
+  {
+    id: 5,
+    question: "¿Necesito orden médica o puedo agendar directo y llevar el informe a mi ginecólogo?",
+    answer:
+      "No es necesaria orden médica, sin embargo, antes de iniciar el estudio te realizaremos unas breves preguntas para orientarnos al momento de realizar el estudio.",
+  },
+  {
+    id: 6,
+    question: "¿Qué información y estudios previos debo llevar a la cita para aprovechar mejor el examen?",
+    answer:
+      "Si llevas control de tus órganos pélvicos, es muy importante que puedas tener a la mano los últimos estudios (un año aproximadamente), para realizar comparaciones que pueden ayudar al estudio y diagnóstico.\nPero no son necesarios, ya que realizamos un examen detallado en pacientes que no cuenten con estudios previos o sea su primer ultrasonido ",
+  },
+];
+
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <WhyTwo />
+    <Pathologies />
+    <WhyDeltaScan />
+    <HowItIs />
+    <Results />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Pélvico"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Pélvicos"
+      description="Encuentra respuestas a las preguntas más comunes sobre Ultrasonidos Pélvicos"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,139 @@
+---
+import {
+  Users,
+  Award,
+  Stethoscope,
+  Eye,
+  Heart,
+  FileText,
+  Clock,
+  UserCheck,
+} from "@lucide/astro";
+
+const reasons = [
+  {
+    icon: Users,
+    title: "Equipo médico especializado",
+    description:
+      "Contamos con dos médicos radiólogos que trabajan al mismo tiempo en la realización de las biopsias, lo que evita complicaciones inmediatas",
+    highlight: "2 médicos radiólogos",
+  },
+  {
+    icon: Award,
+    title: "Experiencia comprobada",
+    description:
+      "10 años de experiencia como médicos radiólogos de los cuales 7 años han sido dedicados a la práctica privada, así como más de 650 biopsias mamarias desde entonces",
+    highlight: "650+ biopsias realizadas",
+  },
+  {
+    icon: Stethoscope,
+    title: "Red de especialistas",
+    description:
+      "Trabajamos con médicos especialistas en cirugía de mama y/o ginecólogos que nos han confiado sus pacientes para realización de biopsia de mama",
+    highlight: "Especialistas de confianza",
+  },
+  {
+    icon: UserCheck,
+    title: "Patólogo experimentado",
+    description:
+      "Médico Patólogo con mucho tiempo de experiencia en el diagnóstico de cáncer de mama",
+    highlight: "Diagnóstico especializado",
+  },
+  {
+    icon: Eye,
+    title: "Tecnología avanzada",
+    description:
+      "Utilizamos imágenes en tiempo real para la localización precisa de las lesiones",
+    highlight: "Imágenes en tiempo real",
+  },
+  {
+    icon: Heart,
+    title: "Ambiente cálido y seguro",
+    description:
+      "Te proporcionamos un ambiente cálido y seguro para la realización de tu examen",
+    highlight: "Atención personalizada",
+  },
+  {
+    icon: FileText,
+    title: "Comunicación clara",
+    description:
+      "Explicación clara y concisa antes, durante y después del procedimiento",
+    highlight: "Información transparente",
+  },
+  {
+    icon: Clock,
+    title: "Entrega inmediata",
+    description:
+      "Entrega de informe antes de retirarte y 10 días después el informe patológico llega a tu médico tratante para seguir con tu tratamiento",
+    highlight: "Resultados rápidos",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          ¿Por qué DeltaScan es el mejor lugar para realizar tu biopsia de mama
+          con guía de ultrasonido?
+        </h2>
+        <div class="w-24 h-1 bg-pink-600 rounded-full mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        {
+          reasons.map((reason, index) => (
+            <div
+              key={index}
+              class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-pink-200 transition-all duration-300"
+            >
+              <div class="flex items-start gap-4">
+                <div class="bg-pink-100 p-3 rounded-lg flex-shrink-0 group-hover:bg-pink-200 transition-colors">
+                  <reason.icon class="w-6 h-6 text-pink-600" />
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-3">
+                    <h3 class="text-xl font-semibold text-gray-900">
+                      {reason.title}
+                    </h3>
+                    <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-xs font-medium">
+                      {reason.highlight}
+                    </span>
+                  </div>
+                  <p class="text-gray-700 leading-relaxed">
+                    {reason.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      {/* Stats Section */}
+      <div class="bg-pink-600 rounded-2xl p-8 text-white">
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+          <div class="space-y-2">
+            <div class="text-3xl md:text-4xl font-bold">10</div>
+            <div class="text-pink-200 text-sm">Años de experiencia</div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-3xl md:text-4xl font-bold">650+</div>
+            <div class="text-pink-200 text-sm">Biopsias realizadas</div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-3xl md:text-4xl font-bold">2</div>
+            <div class="text-pink-200 text-sm">Radiólogos especializados</div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-3xl md:text-4xl font-bold">7</div>
+            <div class="text-pink-200 text-sm">Años en práctica privada</div>
+          </div>
+        </div>
+      </div>
+
+  
+    </div>
+  </div>
+</section>

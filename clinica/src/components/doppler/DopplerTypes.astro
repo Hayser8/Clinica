@@ -1,0 +1,68 @@
+---
+import { Palette, BarChart3, Zap, Brain, LeafIcon as Leg, BabyIcon as Kidney, Baby } from "@lucide/astro";
+  const types = [
+    {
+      icon: Palette,
+      title: "Doppler Color",
+      description: "codifica en tonos la dirección de la sangre, perfecto para un vistazo rápido.",
+    },
+    {
+      icon: BarChart3,
+      title: "Doppler Espectral",
+      description: "presenta graficas de velocidad que muestran picos y valles del flujo en detalle.",
+    },
+    {
+      icon: Zap,
+      title: "Doppler Power",
+      description: "más sensible a flujos de bajo volumen, ideal en vasos pequeños.",
+    },
+    {
+      icon: Brain,
+      title: "Transcraneal",
+      description: "estudia la circulación cerebral sin necesidad de contrastes (útil en paciente pediatrico).",
+    },
+    {
+      icon: Leg,
+      title: "Vascular de extremidades",
+      description: "arterial y venoso en brazos y piernas.",
+    },
+    {
+      icon: Kidney,
+      title: "Renal y porto-esplénico",
+      description: "evalúa flujo hacia los riñones, hígado y vías de drenaje abdominal.",
+    },
+    {
+      icon: Baby,
+      title: "Materno-Fetal",
+      description: "optimiza el cuidado en cada etapa del embarazo.",
+    },
+  ]
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+         Tipos de <span class="text-pink-600"
+          > Ultrasonidos Doppler</span
+        > que te Ofrecemos
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        types.map((type, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-pink-200 transition-all duration-300 group"
+          >
+            <div class="bg-pink-600 rounded-2xl p-4 w-fit mb-6 group-hover:bg-pink-700 transition-colors">
+              <type.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{type.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{type.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

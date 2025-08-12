@@ -1,0 +1,53 @@
+---
+import { Waves, Zap, Eye } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        ¿Qué es el <span class="text-pink-600">Ultrasonido Doppler</span>?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div
+        class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow"
+      >
+        <div class="bg-pink-100 rounded-2xl p-4 w-fit mb-6">
+          <Waves class="w-8 h-8 text-pink-600" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Tiempo Real</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Visualización instantánea del flujo sanguíneo mientras se realiza el
+          estudio, permitiendo evaluaciones precisas y dinámicas.
+        </p>
+      </div>
+
+      <div
+        class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow"
+      >
+        <div class="bg-pink-100 rounded-2xl p-4 w-fit mb-6">
+          <Zap class="w-8 h-8 text-pink-600" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Sin Radiación</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Tecnología completamente segura que no utiliza radiación ionizante,
+          ideal para estudios frecuentes y pacientes sensibles.
+        </p>
+      </div>
+
+      <div
+        class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow"
+      >
+        <div class="bg-pink-100 rounded-2xl p-4 w-fit mb-6">
+          <Eye class="w-8 h-8 text-pink-600" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Detección Precisa</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Identifica irregularidades sutiles y estrechamientos que otros métodos
+          podrían pasar por alto.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

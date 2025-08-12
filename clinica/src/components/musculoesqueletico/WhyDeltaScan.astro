@@ -1,0 +1,58 @@
+---
+import { Award, Users, Clock, UserCheck } from '@lucide/astro';
+
+const reasons = [
+  {
+    icon: Award,
+    title: "Más de 10 años de experiencia",
+    description: "interpretando cada estudio con rigor y precisión."
+  },
+  {
+    icon: Users,
+    title: "Dos radiólogos especializados",
+    description: "que revisan tu estudio simultáneamente optimizando la calidad diagnóstica."
+  },
+  {
+    icon: Clock,
+    title: "Informe completo inmediato",
+    description: "Recibirás el informe completo antes de salir de la clínica, para que puedas tomar decisiones informadas y sin esperar."
+  },
+  {
+    icon: UserCheck,
+    title: "Médicos de referencia",
+    description: "Si no tienes un médico, nosotros contamos con médicos de referencia para que pueda dar seguimiento a tus problemas."
+  }
+]
+---
+<section class="py-16 lg:py-20 bg-pink-600 text-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+        ¿Por qué DeltaScan es tu clínica de ultrasonidos musculoesqueléticos?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        reasons.map((reason, index) => {
+          const Icon = reason.icon;
+          return (
+            <div key={index} class="flex items-start gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Icon class="w-6 h-6 text-white" />
+                </div>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">{reason.title}</h3>
+                <p class="text-pink-100 leading-relaxed">
+                  {reason.description}
+                </p>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

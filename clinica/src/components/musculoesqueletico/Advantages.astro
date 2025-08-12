@@ -1,0 +1,66 @@
+---
+import { TrendingUp, Shield, Play, Zap } from '@lucide/astro';
+
+const advantages = [
+  {
+    icon: TrendingUp,
+    title: "Ideal para seguimientos",
+    description: "Este estudio es ideal para seguimientos y controles en patologías establecidas"
+  },
+  {
+    icon: Shield,
+    title: "Sin radiación ionizante",
+    description: "No utiliza radiación ionizante."
+  },
+  {
+    icon: Play,
+    title: "Estudio dinámico",
+    description: "Es un estudio dinámico, por lo que detecta alteraciones funcionales mediante maniobras en tiempo real."
+  },
+  {
+    icon: Zap,
+    title: "Examen ambulatorio",
+    description: "Es un examen ambulatorio, por lo que es accesible y rápido"
+  }
+]
+
+---
+<section class="py-16 lg:py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        Ventajas y beneficios frente a otras técnicas de imagen
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {
+        advantages.map((advantage, index) => {
+          const Icon = advantage.icon;
+          return (
+            <div
+              key={index}
+              class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center">
+                    <Icon class="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-2">
+                    {advantage.title}
+                  </h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    {advantage.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

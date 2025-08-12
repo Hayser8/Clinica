@@ -1,0 +1,55 @@
+---
+import { Shirt, Coffee, FileText, Clock } from "@lucide/astro";
+const preparations = [
+  {
+    icon: Shirt,
+    title: "Ropa cómoda",
+    description: "elige prendas que faciliten el acceso a la zona a estudiar.",
+  },
+  {
+    icon: Coffee,
+    title: "Ayuno o hidratación",
+    description:
+      "para Doppler abdominal ayuna 6 horas; para estudios pélvicos, bebe agua según indicación.",
+  },
+  {
+    icon: FileText,
+    title: "Documentación previa",
+    description:
+      "trae ultrasonidos o estudios anteriores para comparar hallazgos.",
+  },
+  {
+    icon: Clock,
+    title: "Llegada puntual",
+    description:
+      "así garantizamos tiempo suficiente para contar con el mayor número de imágenes que ayuda al diagnostico",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <span class="text-pink-600">Preparación</span> para el Examen
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        preparations.map((prep, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-pink-200 transition-all duration-300 text-center"
+          >
+            <div class="bg-pink-600 rounded-2xl p-4 w-fit mx-auto mb-6">
+              <prep.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{prep.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{prep.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+---
+import { Target, Baby, Navigation, Shield } from "@lucide/astro";
+const benefits = [
+  {
+    icon: Target,
+    title: "Diagnóstico preciso",
+    description:
+      "Identifica trombos (coágulos), áreas de estrechamiento o insuficiencia venosa",
+  },
+  {
+    icon: Baby,
+    title: "Monitoreo en embarazo",
+    description:
+      "Vigila el flujo materno-fetal para asegurar que tu bebé reciba el oxígeno que necesita.",
+  },
+  {
+    icon: Navigation,
+    title: "Guía de intervenciones",
+    description:
+      "Acompaña biopsias y colocación de catéteres con una vista en directo del vaso sanguíneo.",
+  },
+  {
+    icon: Shield,
+    title: "Seguimiento sin radiación",
+    description:
+      "Permite controles frecuentes sin exponer tu cuerpo a rayos X, ideal para chequeos periódicos.",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Beneficios y <span class="text-pink-600">Aplicaciones</span> del Ultrasonido Doppler
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        benefits.map((benefit, index) => (
+          <div key={index} class="group">
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-3xl p-8 h-full hover:from-pink-100 hover:to-pink-200 transition-all duration-300">
+              <div class="bg-pink-600 rounded-2xl p-4 w-fit mb-6 group-hover:scale-110 transition-transform">
+                <benefit.icon class="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">
+                {benefit.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed">{benefit.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

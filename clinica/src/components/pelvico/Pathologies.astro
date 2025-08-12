@@ -1,0 +1,83 @@
+---
+const pathologies = [
+    {
+      category: "Útero / endometrio",
+      items: [
+        "Miomas (leiomiomas): submucosos, intramurales o subserosos.",
+        "Pólipos endometriales y engrosamiento/hiperplasia endometrial.",
+        "Endometriosis y hematometra (coágulos/líquido en cavidad).",
+        "Adenomiosis (hallazgos sugestivos en pared uterina).",
+        "Malformaciones Müllerianas (variaciones de la forma del útero).",
+      ],
+    },
+    {
+      category: "Ovarios / anexos",
+      items: [
+        "Quistes funcionales (folicular, cuerpo lúteo) y quiste hemorrágico.",
+        "Endometrioma (quiste por endometriosis).",
+        "Teratoma quístico maduro (dermoide) y otras masas anexiáleses que ameritan caracterización/seguimiento.",
+        "Torsión ovárica (signos indirectos: aumento de tamaño, alteraciones de eco).",
+      ],
+    },
+    {
+      category: "Trompas y pelvis",
+      items: [
+        "Hidrosálpinx, salpingitis y absceso tubo-ovárico (colecciones complejas).",
+        "Líquido libre pélvico (fisiológico o patológico, según contexto).",
+      ],
+    },
+    {
+      category: "Embarazo temprano (preferentemente via endovaginal)",
+      items: [
+        "Gestación intrauterina temprana (saco/embrión y su vitalidad).",
+        "Embarazo ectópico (masa anexial/líquido libre; criterio clínico-imagen + beta-hCG).",
+        "Hematoma subcoriónico y hallazgos en amenaza de aborto.",
+      ],
+    },
+    {
+      category: "Cuello uterino y dispositivos",
+      items: [
+        "Pólipos cervicales y alteraciones del canal cervical (longitud, cambios).",
+        "DIU: posición y malposición/expulsión parcial (valoración de ubicación).",
+      ],
+    },
+  ]
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center space-y-6 mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+        ¿Cuáles <span class="text-pink-600">patologías</span> puede identificar?
+      </h2>
+
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        Se solicita para evaluar el sistema reproductor femenino y patologías
+        relacionadas.
+      </p>
+    </div>
+
+    <div class="grid gap-8">
+      {
+        pathologies.map((section, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100"
+          >
+            <h3 class="text-xl md:text-2xl font-bold text-pink-600 mb-6">
+              {section.category}
+            </h3>
+
+            <div class="grid gap-4">
+              {section.items.map((item, itemIndex) => (
+                <div key={itemIndex} class="flex items-start gap-3">
+                  <div class="w-2 h-2 bg-pink-600 rounded-full mt-3 flex-shrink-0" />
+                  <p class="text-gray-700 leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

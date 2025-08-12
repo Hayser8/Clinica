@@ -1,0 +1,90 @@
+---
+import { AlertCircle, Eye, Target, Zap } from "@lucide/astro";
+
+const limitations = [
+  {
+    icon: Target,
+    title: "Precisión diagnóstica",
+    description:
+      "A los procedimientos por biopsias de mama ocasionalmente se les escapa una lesión o subestiman el grado de la enfermedad presente.",
+    solution:
+      "En caso de diagnóstico incierto, será necesaria una biopsia quirúrgica.",
+  },
+  {
+    icon: Eye,
+    title: "Visualización por ultrasonido",
+    description:
+      "El método no se puede utilizar a menos que la lesión se pueda visualizar mediante ultrasonido.",
+    solution: "Las calcificaciones agrupadas se ven mejor mediante mamografía.",
+  },
+  {
+    icon: Zap,
+    title: "Lesiones muy pequeñas",
+    description:
+      "Las lesiones muy pequeñas podrían resultar difíciles de localizar con precisión.",
+    solution: "Se evalúa caso por caso el método más apropiado.",
+  },
+];
+---
+
+<section class="py-16 md:py-20">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center"
+      >
+        ¿Cuáles son las limitaciones de la biopsia de seno guiada por
+        ultrasonido?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        {
+          limitations.map((limitation, index) => (
+            <div
+              key={index}
+              class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <div class="bg-pink-100 p-4">
+                <div class="flex items-center gap-3">
+                  <limitation.icon class="w-6 h-6 text-pink-600" />
+                  <h3 class="text-lg font-semibold text-pink-800">
+                    {limitation.title}
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  {limitation.description}
+                </p>
+                <div class="bg-pink-50 border-l-4 border-pink-500 p-4 rounded-r-lg">
+                  <p class="text-pink-800 text-sm font-medium">
+                    {limitation.solution}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="bg-pink-50 border border-pink-200 rounded-xl p-6 mb-12">
+        <div class="flex items-start gap-4">
+          <AlertCircle class="w-6 h-6 text-pink-600 flex-shrink-0 mt-1" />
+          <div>
+            <h3 class="text-xl font-semibold text-pink-800 mb-3">
+              Consideración importante
+            </h3>
+            <p class="text-pink-700 leading-relaxed">
+              A pesar de estas limitaciones, la biopsia de mama guiada por
+              ultrasonido sigue siendo una herramienta diagnóstica muy valiosa y
+              efectiva. Nuestro equipo médico evaluará cada caso individualmente
+              para determinar el método más apropiado.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>

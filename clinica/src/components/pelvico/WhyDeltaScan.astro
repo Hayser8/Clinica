@@ -1,0 +1,95 @@
+---
+import { Award, Zap, Users, Clock, Heart, Shield } from "@lucide/astro";
+
+  const reasons = [
+    {
+      icon: Award,
+      title: "Experiencia Comprobada",
+      text: "Más de una década de experiencia en ecografía diagnóstica con médicos radiólogos especializados a cargo de cada estudio.",
+      color: "from-pink-500 to-rose-500",
+    },
+    {
+      icon: Zap,
+      title: "Tecnología Avanzada",
+      text: "Protocolos actualizados y tecnología de última generación que garantiza la máxima calidad diagnóstica.",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: Users,
+      title: "Doble Revisión",
+      text: "Dos radiólogos trabajan en conjunto en cada estudio para optimizar el diagnóstico y reducir tiempos de espera.",
+      color: "from-blue-500 to-purple-500",
+    },
+    {
+      icon: Clock,
+      title: "Resultados Inmediatos",
+      text: "Obtén tus resultados el mismo día con orientación clara y comprensible de todos los hallazgos encontrados.",
+      color: "from-emerald-500 to-blue-500",
+    },
+  ]
+
+---
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center space-y-6 mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+        ¿Por qué <span class="text-pink-600">DeltaScan</span> es tu mejor opción?
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Combinamos experiencia, tecnología y un enfoque humano para brindarte la
+        mejor atención médica
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        reasons.map((reason, index) => (
+          <div
+            key={index}
+            class="group relative overflow-hidden bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+          >
+            {/* Gradient background overlay */}
+            <div
+              class={`absolute inset-0 bg-gradient-to-br ${reason.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+            />
+
+            <div class="relative z-10">
+              <div
+                class={`w-16 h-16 bg-gradient-to-br ${reason.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <reason.icon class="w-8 h-8 text-white" />
+              </div>
+
+              <h3 class="text-xl font-bold text-gray-900 mb-4">
+                {reason.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed">{reason.text}</p>
+
+              {/* Decorative element */}
+              <div
+                class={`absolute -bottom-2 -right-2 w-20 h-20 bg-gradient-to-br ${reason.color} rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    {/* Trust indicators */}
+    <div class="mt-16 text-center">
+      <div
+        class="inline-flex items-center gap-8 bg-white rounded-2xl px-8 py-6 shadow-sm border border-gray-100"
+      >
+        <div class="flex items-center gap-3">
+          <Heart class="w-6 h-6 text-pink-600" />
+          <span class="text-gray-700 font-medium">Atención personalizada</span>
+        </div>
+        <div class="w-px h-8 bg-gray-200"></div>
+        <div class="flex items-center gap-3">
+          <Shield class="w-6 h-6 text-pink-600" />
+          <span class="text-gray-700 font-medium">Máxima privacidad</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import { Shirt, Droplets, Clock } from '@lucide/astro';
+
+const preparations = [
+  {
+    icon: Shirt,
+    title: "Viste ropa cómoda y suelta",
+    description: "que permita exponer libremente la zona a estudiar"
+  },
+  {
+    icon: Droplets,
+    title: "Evita cremas o lociones",
+    description: "en la piel el día de tu cita"
+  },
+  {
+    icon: Clock,
+    title: "Llega 10 minutos antes",
+    description: "para revistar tu historial clínico y detalles del procedimiento"
+  }
+]
+---
+<section class="py-16 lg:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        Preparación antes del ultrasonido
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        preparations.map((prep, index) => {
+          const Icon = prep.icon;
+          return (
+            <div key={index} class="text-center">
+              <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon class="w-8 h-8 text-white" />
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">{prep.title}</h3>
+              <p class="text-gray-600">{prep.description}</p>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

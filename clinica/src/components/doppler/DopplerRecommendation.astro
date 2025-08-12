@@ -1,0 +1,74 @@
+---
+import {
+  LeafIcon as Leg,
+  Brain,
+  StickerIcon as Stomach,
+  Baby,
+} from "@lucide/astro";
+const recommendations = [
+  {
+    icon: Leg,
+    title: "Pesadez o calambres en las piernas",
+    description:
+      "Si sientes edema (hinchazón), venas varicosas (varices) o dolor al caminar, te recomendamos un Doppler venoso y/o arterial de extremidades ya que detecta flujos lentos o trombos (coágulos)",
+  },
+  {
+    icon: Brain,
+    title: "Dolor o mareos en el cuello y cabeza",
+    description:
+      "Ante cefaleas frecuentes, vértigos o hallazgos en estudios como tomografías y/o resonancias cerebrales, tu médico te puede sugerir un Doppler carotídeo o transcraneal. Así evaluamos posibles estrechamientos o alteraciones en la circulación cerebral.",
+  },
+  {
+    icon: Stomach,
+    title: "Dolor abdominal o sospecha hepato-renal",
+    description:
+      "Cuando existe sospecha de hipertensión de origen desconocido y se quiera descartar que sea de origen renal. O cuando se sospecha de presión alta, trombos o seguimiento en paciente con problemas hepáticas y que conlleva a una alteración en el sistema porto-esplenico.",
+  },
+  {
+    icon: Baby,
+    title: "Seguimiento en el embarazo",
+    description:
+      "Para vigilar el bienestar fetal y la perfusión placentaria, es probable que tu médico requiera un Doppler materno-fetal. Con él se ayuda ver un adecuado flujo al feto y útil en pacientes con sospecha de restricción de crecimiento",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        ¿Qué <span class="text-pink-600">Doppler</span> te recomendamos según tus
+        síntomas?
+      </h2>
+      <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+        El Doppler es un estudio más completo y complejo que un ultrasonido
+        convencional, por lo que la mayoría de las veces está indicado por parte
+        de tu médico tratante para evaluar una patología especifica, sin
+        embargo, acá una lista de indicaciones que pueden ayudar a orientarte
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      {
+        recommendations.map((rec, index) => (
+          <div
+            key={index}
+            class="bg-gradient-to-r from-pink-50 to-transparent rounded-3xl p-8 border border-pink-100 hover:from-pink-100 transition-all duration-300"
+          >
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="bg-pink-600 rounded-2xl p-4 flex-shrink-0">
+                <rec.icon class="w-8 h-8 text-white" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+                  {rec.title}
+                </h3>
+                <p class="text-gray-600 leading-relaxed">{rec.description}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+---
+import { Phone, MessageCircle } from "@lucide/astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+}
+const { title, subtitle } = Astro.props as Props;
+---
+
+<section class="py-20 bg-gradient-to-br from-pink-600 to-pink-700">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center text-white">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-8">
+        {title}
+      </h2>
+      <p class="text-2xl text-pink-100 mb-12">
+        {subtitle}
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <!-- Botón WhatsApp -->
+        <a
+          href="https://wa.me/50245650865"
+          class="bg-white text-gray-900 px-8 py-6 rounded-xl font-bold hover:bg-gray-100 transition-colors flex items-center justify-center gap-3 text-lg shadow-xl border-2 border-gray-200"
+        >
+          <MessageCircle class="w-7 h-7 text-pink-600" />
+          <div class="text-left">
+            <div class="text-xl font-bold text-gray-900">WhatsApp</div>
+            <div class="text-lg font-semibold text-pink-600">4565 0865</div>
+          </div>
+        </a>
+
+        <!-- Botón Teléfono -->
+        <a
+          href="tel:+50224481110"
+          class="bg-white text-gray-900 px-8 py-6 rounded-xl font-bold hover:bg-gray-100 transition-colors flex items-center justify-center gap-3 text-lg shadow-xl border-2 border-gray-200"
+        >
+          <Phone class="w-7 h-7 text-pink-600" />
+          <div class="text-left">
+            <div class="text-xl font-bold text-gray-900">Teléfono</div>
+            <div class="text-lg font-semibold text-pink-600">2448 1110</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+import { Users, BookOpen, Clock } from "@lucide/astro";
+const reasons = [
+  {
+    icon: Users,
+    title: "Dos es mejor que uno",
+    description:
+      "Contamos con dos radiólogos analizan tu estudio al mismo tiempo, reduciendo márgenes de error.",
+  },
+  {
+    icon: BookOpen,
+    title: "Protocolos vigentes",
+    description:
+      "Seguimos las guías internacionales más recientes para un estándar de calidad.",
+  },
+  {
+    icon: Clock,
+    title: "Entrega inmediata",
+    description:
+      "Te damos tus resultados disponibles el mismo día, porque valoramos tu tiempo y tranquilidad.",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        ¿Por qué <span class="text-pink-600">DeltaScan</span> es tu Clínica de Ecografías
+        Doppler?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        reasons.map((reason, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+          >
+            <div class="bg-pink-600 rounded-2xl p-4 w-fit mb-6">
+              <reason.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+              {reason.title}
+            </h3>
+            <p class="text-gray-700 leading-relaxed">{reason.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

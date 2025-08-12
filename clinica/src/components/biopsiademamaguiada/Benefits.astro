@@ -1,0 +1,147 @@
+---
+import { CheckCircle, AlertTriangle } from "@lucide/astro";
+
+const benefits = [
+  {
+    title: "Procedimiento menos invasivo",
+    description:
+      "Menos invasivo que la biopsia quirúrgica, deja poca o ninguna cicatriz y se completa en menos de una hora.",
+  },
+  {
+    title: "Sin radiación ionizante",
+    description:
+      "El diagnóstico por ultrasonido no utiliza radiación ionizante, siendo más seguro para el paciente.",
+  },
+  {
+    title: "Diagnóstico preciso",
+    description:
+      "Proporciona muestras seguras que determinan si un nódulo es benigno o maligno de forma confiable.",
+  },
+  {
+    title: "Método más rápido",
+    description:
+      "Comparado con la biopsia estereotáxica, es más rápido y evita la exposición a radiación.",
+  },
+  {
+    title: "Seguimiento en tiempo real",
+    description:
+      "Permite seguir el movimiento de la aguja a través del tejido mamario durante el procedimiento.",
+  },
+  {
+    title: "Acceso completo",
+    description:
+      "Evalúa nódulos bajo el brazo o cerca de la pared torácica, inaccesibles por otros métodos.",
+  },
+  {
+    title: "Costo-efectivo",
+    description:
+      "Menos costoso que otros métodos como biopsia por cirugía abierta o estereotáxica.",
+  },
+  {
+    title: "Recuperación rápida",
+    description:
+      "Período de recuperación breve, las pacientes retoman actividades habituales pronto.",
+  },
+];
+
+const risks = [
+  {
+    title: "Sangrado y hematomas",
+    description:
+      "Riesgo de sangrado y formación de hematomas en el sitio de biopsia.",
+    probability: "< 1%",
+  },
+  {
+    title: "Molestias menores",
+    description:
+      "Ocasionalmente pueden presentarse molestias controlables con medicación de venta libre.",
+    probability: "Raro",
+  },
+  {
+    title: "Riesgo de infección",
+    description: "Riesgo de infección que requiera tratamiento antibiótico.",
+    probability: "< 0.1%",
+  },
+  {
+    title: "Perforación torácica",
+    description:
+      "Leve riesgo de que la aguja atraviese la pared del pecho causando colapso pulmonar.",
+    probability: "Extremadamente raro",
+  },
+  {
+    title: "Resultado no definitivo",
+    description:
+      "Pequeña posibilidad de que el procedimiento no brinde respuesta definitiva.",
+    probability: "Mínimo",
+  },
+];
+---
+
+<div class="min-h-screen bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center">
+      ¿Cuáles son los beneficios y los riesgos?
+    </h2>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Tabla de Beneficios -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="bg-pink-600 text-white px-6 py-4">
+          <h3 class="text-xl font-semibold flex items-center gap-3">
+            <CheckCircle class="w-6 h-6" />
+            Beneficios
+          </h3>
+        </div>
+        <div class="divide-y divide-gray-200">
+          {benefits.map((benefit, index) => (
+            <div
+              key={index}
+              class={`p-4 hover:bg-pink-50 transition-colors ${
+                index % 2 === 0 ? "bg-white" : "bg-gray-50"
+              }`}
+            >
+              <h4 class="font-semibold text-gray-900 mb-2">
+                {benefit.title}
+              </h4>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                {benefit.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tabla de Riesgos -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="bg-pink-700 text-white px-6 py-4">
+          <h3 class="text-xl font-semibold flex items-center gap-3">
+            <AlertTriangle class="w-6 h-6" />
+            Riesgos
+          </h3>
+        </div>
+        <div class="divide-y divide-gray-200">
+          {risks.map((risk, index) => (
+            <div
+              key={index}
+              class={`p-4 hover:bg-pink-50 transition-colors ${
+                index % 2 === 0 ? "bg-white" : "bg-gray-50"
+              }`}
+            >
+              <div class="flex items-start justify-between mb-2">
+                <h4 class="font-semibold text-gray-900">{risk.title}</h4>
+                <span class="text-xs bg-pink-100 text-pink-700 px-2 py-1 rounded-full font-medium ml-2">
+                  {risk.probability}
+                </span>
+              </div>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                {risk.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

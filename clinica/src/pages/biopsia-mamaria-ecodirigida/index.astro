@@ -11,45 +11,42 @@ import Equipment from "@/components/biopsiademamaguiada/Equipment.astro";
 import Procedure from "@/components/biopsiademamaguiada/Procedure.astro";
 import Experience from "@/components/biopsiademamaguiada/Experience.astro";
 import Results from "@/components/biopsiademamaguiada/Results.astro";
-import CTA from "@/components/obstetrico/CTA.astro";
+import Benefits from "@/components/biopsiademamaguiada/Benefits.astro";
+import Limitations from "@/components/biopsiademamaguiada/Limitations.astro";
+import WhyChooseUs from "@/components/biopsiademamaguiada/WhyChooseUs.astro";
+import CTA from "@/components/common/CTA.astro";
 import FAQ from "@/components/common/FAQ.astro";
 
 const faqData = [
   {
     id: 1,
-    question: "¿Se puede visualizar el saco gestacional y el embrión en una ecografía endovaginal a las 4 semanas?",
+    question: "¿Debo estar en ayunas antes del procedimiento?",
     answer:
-      "A las 4 semanas el saco gestacional mide apenas unos milímetros, por lo que resulta difícil distinguirlo con claridad. Por eso, te recomendamos realizar la ecografía endovaginal a partir de la semana 6 o 7, cuando el saco crece lo suficiente para verse con nitidez.",
+      "No es necesario ayuno para el procedimiento, ya que es una estudio invasivo menor, solo se usa anestesia local",
   },
   {
     id: 2,
-    question: "¿Es posible confirmar un embarazo por ecografía antes de las 5 semanas?",
+    question: "¿Qué no debo hacer después del procedimiento?",
     answer:
-      "Antes de la semana 5 la ecografía puede mostrar únicamente un pequeño engrosamiento endometrial, pero sin detalles definitivos de saco ni embrión. Para confirmar viabilidad lo ideal es esperar hasta la semana 6-7, cuando el embrión es más fácil de identificar y se reduce la probabilidad de resultados inconclusos o falsos negativos.",
+      "Recomendamos un reposo relativo de 48 horas post procedimiento que consiste en no cargar cosas pesadas, ejercicios o movimientos a repetición para evitar un sangrado post biopsia.",
   },
   {
     id: 3,
-    question: "¿En qué consiste el ultrasonido estructural y en qué semana se realiza exactamente?",
+    question: "¿Cuáles son las contraindicaciones para someterse a este procedimiento?",
     answer:
-      "La anatomía fetal es un estudio detallado de todos los órganos y sistemas del bebé. El ultrasonido estructural que realizamos es de nivel I, se programa entre las semanas 12-14 para evaluar pliegue nucal y huesos propios de la nariz, viabilidad fetal y edad gestacional.  El ultrasonido estructural nivel II (semana 20 en adelante), es realizado por médico especialista en medicina materno fetal, por lo que es de referencia.",
+      "No existe contraindicaciones, sin embargo, se tiene en cuenta antecedentes médicos de pacientes, especialmente aquellos que puedan provocar un sangrado excesivo (uso de anticoagulantes, enfermedades hemofílicas), por eso, al momento de agendar tu cita se estudian todas las posibilidades para ayudar a brindar el mejor método diagnóstico.",
   },
   {
     id: 4,
-    question: "¿A partir de qué semana la ecografía permite identificar con fiabilidad el sexo del bebé?",
+    question: "¿Se puede realizar la biopsia si estoy embarazada o amamantando?",
     answer:
-      "Aunque el tubérculo genital comienza a formarse antes, la visión clara de los órganos sexuales es más fiable después de la semana 16. A partir de la semana 18–20 el ángulo y la proporción de las estructuras hacen posible la determinación del sexo con más del 95 % de certeza.",
+      "Si, muchas lesiones mamarias aparecen durante estas dos etapas y está indicado la realización de biopsia para evaluar su causa.",
   },
   {
     id: 5,
-    question: "¿Qué tan precisa es la determinación de la edad gestacional en el primer ultrasonido?",
+    question: "¿Puede recibir sedación o solo se usa anestesia local?",
     answer:
-      "La medición de la longitud cráneo-caudal (CC) entre la semana 7 y la 11 es considerada la mejor referencia para fechar tu embarazo. En ese rango, la precisión alcanza un margen de error de apenas 3–5 días.",
-  },
-  {
-    id: 6,
-    question: "¿En qué situaciones se indica un Doppler materno-fetal adicional además del estudio rutinario?",
-    answer:
-      "Más allá del protocolo estándar, añadimos Doppler si existe sospecha de restricción de crecimiento, presión alta materna, antecedentes de preeclampsia o inserción inadecuada de la placenta. También lo recomendamos en embarazos múltiples o cuando tu médico tratante los solicite.",
+      "Por ser un procedimiento invasivo menor, nosotros utilizamos sedación local, existen otros sitios donde ofrecen sedación, sin embargo, esto implica el uso de encamamiento, equipo especial y médico anestesiólogo para colocar la sedación, así como una monitorización cardiovascular constante, por lo que esta variante no la ofrecemos en nuestra clínica diagnostica.",
   },
 ];
 
@@ -67,14 +64,23 @@ const faqData = [
     <WhatIs />
     <CommonUses />
     <BiopsyTypes />
+    <WhyChooseUs />
     <Preparation />
     <Equipment />
     <Procedure />
     <Experience />
     <Results />
-    <CTA />
-    <FAQ title="Preguntas Frecuentes sobre Ultrasonidos Obstétricos" description="Encuentra respuestas a las preguntas más comunes sobre ecografías maternalesgi" faqData={faqData} />
-    
+    <Benefits />
+    <Limitations />
+    <CTA
+      title="Reserva ahora tu biopsia de mama guiada"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Biopsias Mamarias Ecodirigidas"
+      description="Encuentra respuestas a las preguntas más comunes sobre Biopsias Mamarias Ecodirigidas"
+      faqData={faqData}
+    />
   </main>
 
   <Footer />

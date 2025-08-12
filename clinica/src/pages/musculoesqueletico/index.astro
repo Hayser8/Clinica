@@ -1,0 +1,85 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/musculoesqueletico/HeroSection.astro";
+import WhatIs from "@/components/musculoesqueletico/WhatIs.astro";
+import ExamProcess from "@/components/musculoesqueletico/ExamProcess.astro";
+import Pathologies from "@/components/musculoesqueletico/Pathologies.astro";
+import WhyDeltaScan from "@/components/musculoesqueletico/WhyDeltaScan.astro"
+import Advantages from "@/components/musculoesqueletico/Advantages.astro";
+import Results from "@/components/musculoesqueletico/Results.astro";
+import Preparation from "@/components/musculoesqueletico/Preparation.astro";
+import CTA from "@/components/common/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Necesito una orden médica para agendarme el ultrasonido musculoesquelético?",
+    answer:
+      "No requieres una orden médica para tu cita de tu ultrasonido musculoesquelético. Solo contáctanos por WhatsApp o teléfono, cuéntanos brevemente tu motivo y coordinaremos tu cita.",
+  },
+  {
+    id: 2,
+    question: "¿Es doloroso o incómodo el ultrasonido musculoesquelético?",
+    answer:
+      "Durante el examen sentirás una suave presión cuando deslizamos la sonda sobre tu piel, y en raras ocasiones, un leve cosquilleo al aplicar el gel conductor. La exploración no causa dolor agudo y muchos pacientes la describen como menos molesta que un masaje profundo.",
+  },
+  {
+    id: 3,
+    question: "¿Cuáles son las principales limitaciones o desventajas del ultrasonido musculoesquelético?",
+    answer:
+      "En lo referente a fracturas es preferible utilizar otros métodos de diagnósticos, como las radiografías o tomografía computarizada; sin embargo el ultrasonido es superior para la evaluación de tendones, músculos y ligamentos. La calidad de imagen puede verse afectara por edemas o cicatrices extensas, lo que dificulta el contacto y la evaluación del área. Nosotros te orientamos con transparencia sobre cuándo combinar estudios para asegurar un diagnóstico completo.",
+  },
+  {
+    id: 4,
+    question: "¿Cuál es la prueba diagnóstica más común para los trastornos musculoesqueléticos y en qué casos se prefiere la ecografía?",
+    answer:
+      "El ultrasonido destaca cuando se buscan valoraciones dinámicas y seguimientos rápidos, en lo que respecta a la evaluación de tendones, músculos o articulaciones.",
+  },
+  {
+    id: 5,
+    question: "¿Para qué se utiliza específicamente el ultrasonido musculoesquelético en el pie?",
+    answer:
+      "En el pie, se identifica fascitis plantar y tendinitis aquílea. Al monitorear el movimiento y la inflamación de tendones en tiempo real, nos ayuda a realizar un mejor diagnostico",
+  },
+  {
+    id: 6,
+    question: "¿En qué casos se prefiere el ultrasonido musculoesquelético sobre la resonancia magnética?",
+    answer:
+      "El ultrasonido es menos invasivo, más dinámico y para una evaluación rápida; sin embargo, la resonancia magnética, muchas veces es el estudio de elección para evaluar una articulación en su totalidad. Tu médico tratante será el encargado de elegir cual es el estudio que más se acople a tu situación.",
+  },
+];
+
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <ExamProcess />
+    <Pathologies />
+    <WhyDeltaScan />
+    <Advantages />
+    <Results />
+    <Preparation />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Musculoesquelético"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Musculoesqueléticos"
+      description="Encuentra respuestas a las preguntas más comunes sobre Ultrasonidos Musculoesqueléticos"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,93 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/doppler/HeroSection.astro";
+import WhatIsDoppler from "@/components/doppler/WhatIsDoppler.astro";
+import Benefits from "@/components/doppler/Benefits.astro";
+import DopplerTypes from "@/components/doppler/DopplerTypes.astro";
+import DopplerRecommendation from "@/components/doppler/DopplerRecommendation.astro";
+import WhyDeltaScan from "@/components/doppler/WhyDeltaScan.astro";
+import HowItIs from "@/components/doppler/HowItIs.astro";
+import Pathologies from "@/components/doppler/Pathologies.astro";
+import ExamPreparation from "@/components/doppler/ExamPreparation.astro";
+import Results from "@/components/doppler/Results.astro";
+import CTA from "@/components/common/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question:
+      "¿Puedo retomar mi rutina (caminar, conducir o hacer ejercicio suave) justo después del examen Doppler?",
+    answer:
+      "Sí, el Doppler no es un estudio invasivo, es una función especial del ultrasonido, por lo que no tiene efectos secundarios que te impidan llevar tu vida normal.",
+  },
+  {
+    id: 2,
+    question:
+      "¿Cómo afectan al Doppler mis medicamentos anticoagulantes o antiinflamatorios?",
+    answer:
+      "No afecta, ya que no se introduce ningún tipo de medicamento o agujas para realizar el estudio no interactúa con ningún medicamento que se esté utilizando",
+  },
+  {
+    id: 3,
+    question: "¿Qué pasa si tengo prótesis metálicas o marcapasos?",
+    answer:
+      "No afecta, ya que no usa radiación y las imágenes no dependen de esta. Tampoco se utiliza magnetos que puedan suponer algún problema con objetos metálicos o interferir con otros aparatos que utilizan energía.",
+  },
+  {
+    id: 4,
+    question:
+      "¿Cada cuánto debería repetir un estudio Doppler para seguimiento?",
+    answer:
+      "Regularmente por ser un estudio solicitado por patologías específicas, es tu médico tratante quien determina la periodicidad para realizar estos estudios.",
+  },
+  {
+    id: 5,
+    question:
+      "¿El Doppler me informa sobre la elasticidad y salud de mis vasos, además del flujo?",
+    answer:
+      "No, el Doppler es solicitado para evaluar presencia, alteración o ausencia de flujo.",
+  },
+  {
+    id: 6,
+    question:
+      "¿Se puede realizar a niños, adultos mayores o pacientes con movilidad limitada?",
+    answer:
+      "Sí, no tiene contraindicación en ningún grupo poblacional. Muchas veces son niños y adultos mayores a los que más se les realiza estos tipos de estudios.",
+  },
+];
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhatIsDoppler />
+    <Benefits />
+    <DopplerTypes />
+    <DopplerRecommendation />
+    <WhyDeltaScan />
+    <HowItIs />
+    <Pathologies />
+    <ExamPreparation />
+    <Results />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Doppler"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Doppler"
+      description="Encuentra respuestas a las preguntas más comunes sobre Ultrasonidos Doppler"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,101 @@
+---
+import { Bed, Droplets, Search, FileText, FolderOpen } from '@lucide/astro';
+
+const steps = [
+  {
+    number: 1,
+    title: "Colocación en la camilla",
+    description: "Te recostarás boca arriba o en una posición que se le pueda dar énfasis a tu lesión",
+    icon: Bed
+  },
+  {
+    number: 2,
+    title: "Colocación de gel conductor",
+    description: "Se te aplicará un gel sobre la piel para garantizar el contacto óptimo entre la sonda y el área a evaluar",
+    icon: Droplets
+  },
+  {
+    number: 3,
+    title: "Evaluación",
+    description: "Observamos el área de interés, desde tejidos blandos, tendones y músculos en acción; en algún momento se te pedirá por ejemplo a flexionar una articulación, para poder detectar lesiones que podrían pasar desapercibidas en estudios estáticos.",
+    icon: Search
+  },
+  {
+    number: 4,
+    title: "Análisis",
+    description: "En base al examen y a las imágenes obtenidas, se realiza un informe el cual lo puedes presentar a tu médico tratante para que te ayude al diagnóstico y/o tratamiento",
+    icon: FileText
+  },
+  {
+    number: 5,
+    title: "Entrega",
+    description: "Te entregamos tu informe en un folder y en una hoja impresa que contiene todas las imágenes obtenidas.",
+    icon: FolderOpen
+  }
+]
+---
+<section class="py-16 lg:py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        ¿En qué consiste el examen?
+      </h2>
+    </div>
+
+    <div class="relative">
+      {/* Timeline line - hidden on mobile */}
+      <div
+        class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-pink-200 h-full"
+      >
+      </div>
+
+      <div class="space-y-8 lg:space-y-12">
+        {
+          steps.map((step, index) => {
+            const Icon = step.icon;
+            const isEven = index % 2 === 0;
+
+            return (
+              <div
+                key={step.number}
+                class={`relative flex items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+              >
+                {/* Timeline dot */}
+                <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-pink-600 rounded-full border-4 border-white shadow-lg z-10" />
+
+                {/* Content */}
+                <div
+                  class={`w-full lg:w-5/12 ${isEven ? "lg:pr-8" : "lg:pl-8"}`}
+                >
+                  <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="flex items-start gap-4">
+                      <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                          {step.number}
+                        </div>
+                      </div>
+                      <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                          <Icon class="w-6 h-6 text-pink-600" />
+                          <h3 class="text-xl font-semibold text-gray-900">
+                            {step.title}
+                          </h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Spacer for desktop */}
+                <div class="hidden lg:block w-2/12" />
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>

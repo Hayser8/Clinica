@@ -1,0 +1,47 @@
+---
+import { FileText, Image, CheckCircle } from '@lucide/astro';
+---
+<section class="py-16 lg:py-20 bg-pink-600 text-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+          Resultados e interpretación
+        </h2>
+        <p class="text-lg text-pink-100 leading-relaxed mb-8">
+          Recibirás un informe escrito el mismo día, con imágenes clave, así
+          como todos los hallazgos encontrados, detallándolos adecuadamente para
+          que tu médico tratante pueda optimizar el tratamiento.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <CheckCircle class="w-6 h-6 text-pink-200" />
+            <span class="text-pink-100">Informe completo el mismo día</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <CheckCircle class="w-6 h-6 text-pink-200" />
+            <span class="text-pink-100">Imágenes clave incluidas</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <CheckCircle class="w-6 h-6 text-pink-200" />
+            <span class="text-pink-100">Hallazgos detallados</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+          <FileText class="w-12 h-12 text-white mx-auto mb-4" />
+          <h3 class="font-semibold mb-2">Informe Escrito</h3>
+          <p class="text-pink-100 text-sm">Detallado y profesional</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+          <Image class="w-12 h-12 text-white mx-auto mb-4" />
+          <h3 class="font-semibold mb-2">Imágenes Clave</h3>
+          <p class="text-pink-100 text-sm">Evidencia visual clara</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

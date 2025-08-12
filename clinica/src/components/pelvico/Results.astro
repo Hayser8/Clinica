@@ -1,0 +1,72 @@
+---
+import { Clock, FileText } from "@lucide/astro";
+---
+<section class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center space-y-6 mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+        <span class="text-pink-600">Resultados</span> y tiempos de entrega
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <div
+            class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center flex-shrink-0"
+          >
+            <Clock class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Entrega el mismo día
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Entregamos el mismo día para no retrasar decisiones clínicas.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div
+            class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center flex-shrink-0"
+          >
+            <FileText class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Explicación clara
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Tras el estudio, te explicamos los hallazgos en lenguaje claro y
+              si el médico tratante lo solicita, coordinamos la información para
+              su seguimiento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-gradient-to-br from-pink-600 to-pink-700 rounded-2xl p-8 text-white"
+      >
+        <div class="text-center space-y-6">
+          <div
+            class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto"
+          >
+            <Clock class="w-10 h-10 text-white" />
+          </div>
+
+          <div>
+            <div class="text-4xl md:text-5xl font-bold mb-2">Mismo día</div>
+            <div class="text-pink-100 text-lg">Resultados inmediatos</div>
+          </div>
+
+          <p class="text-pink-50 leading-relaxed">
+            No esperes semanas por tus resultados. En DeltaScan priorizamos tu
+            tranquilidad con diagnósticos rápidos y precisos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
