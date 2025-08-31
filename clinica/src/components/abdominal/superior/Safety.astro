@@ -1,0 +1,55 @@
+---
+import { Shield, RefreshCw, Users, Phone } from "@lucide/astro";
+  const safetyFeatures = [
+    {
+      icon: Shield,
+      text: "No utiliza radiación ionizante.",
+    },
+    {
+      icon: RefreshCw,
+      text: "Puede repetirse tantas veces como el médico lo considere necesario.",
+    },
+    {
+      icon: Users,
+      text: "Es apto para adultos, adultos mayores, embarazadas y pacientes pediátricos.",
+    },
+  ]
+
+---
+<section class="py-16">
+  <div class="max-w-7xl mx-auto p-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">
+      La seguridad del ultrasonido abdominal superior
+    </h2>
+
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        {
+          safetyFeatures.map((feature, index) => (
+            <div key={index} class="text-center">
+              <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <feature.icon class="w-8 h-8 text-white" />
+              </div>
+              <p class="text-gray-700 font-medium">{feature.text}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="text-lg text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+        Su seguridad lo convierte en una de las primeras opciones de diagnóstico
+        cuando se busca cuidar la salud sin exponer al paciente a riesgos
+        innecesarios.
+      </p>
+
+      <div class="text-center">
+        <button
+          class="bg-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-pink-700 transition-colors inline-flex items-center gap-2"
+        >
+          <Phone class="w-5 h-5" />
+          Agenda tu cita
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

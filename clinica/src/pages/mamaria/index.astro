@@ -1,0 +1,146 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/mamaria/HeroSection.astro";
+import WhatIs from "@/components/mamaria/WhatIs.astro";
+import WhatIsUsedFor from "@/components/mamaria/WhatIsUsedFor.astro";
+import WhoShouldGetIt from "@/components/mamaria/WhoShouldGetIt.astro";
+import WhyDeltaScan from "@/components/mamaria/WhyDeltaScan.astro";
+import HowItIs from "@/components/common/HowItIs.astro";
+import Anomalies from "@/components/mamaria/Anomalies.astro";
+import Safety from "@/components/mamaria/Safety.astro";
+import Preparation from "@/components/mamaria/Preparation.astro";
+import CTA from "@/components/common/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+import {
+  Phone,
+  User,
+  Droplets,
+  Search,
+  FileText,
+  CheckCircle,
+  Clock,
+} from "@lucide/astro";
+
+const steps = [
+  {
+    number: 1,
+    icon: Phone,
+    title: "Agendar tu cita",
+    description:
+      "Contáctanos vía WhatsApp o llámanos para elegir tu horario y recibir indicaciones previas",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    icon: User,
+    title: "Posicionamiento",
+    description:
+      "Te pediremos que te recuestes boca arriba, con el brazo ligeramente elevado para exponer la región axilar.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    icon: Droplets,
+    title: "Aplicación de gel",
+    description:
+      "Aplicaremos un gel acuoso que extenderemos suavemente sobre ambas glándulas mamarias y axilas, para poder asegurar un buen contacto con la piel.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    icon: Search,
+    title: "Exploración de alta resolución",
+    description:
+      "Recorreremos sistemáticamente las mamas y regiones axilares capturando imágenes en tiempo real. Además, si es necesario activamos Doppler para evaluar vascularización de lesiones.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    icon: FileText,
+    title: "Interpretación de resultados",
+    description:
+      "Interpretaremos cada hallazgo de tu estudio y te lo iremos comentando.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 6,
+    icon: CheckCircle,
+    title: "Entrega de resultados",
+    description:
+      "Recibirás un informe detallado al finalizar el estudio, junto con imágenes clave en alta resolución.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 7,
+    icon: Clock,
+    title: "Duración del estudio",
+    description:
+      "El ultrasonido mamario tiene una duración de aproximadamente 15 a 30 minutos",
+    color: "from-pink-500 to-pink-600",
+  },
+];
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿En qué se diferencia el ultrasonido mamario de la mamografía?",
+    answer:
+      "El estudio indicado o “Gold Standar” para la evaluación de la mama, sigue siendo la mamografía; sin embargo, el ultrasonido complementa la mamografía sin usar radiación, distingue quistes de masas sólidas y con Doppler, ofrece visión en tiempo real que mejora el diagnóstico especialmente en mamas densas, en donde la mamografía se ve limitada.",
+  },
+  {
+    id: 2,
+    question: "¿A qué edad conviene realizar el primer ultrasonido mamario?",
+    answer:
+      "Sugerimos hacerlo cerca de los 40 años, pero si tienes antecedentes familiares o bultos palpables, considera desde los 30 para establecer una referencia temprana sin radiación.\nY ante la aparición de irregularidades de la mama, crecimiento repentino o dolor, no existe edad para no realizar un ultrasonido que ayude en el diagnostico de tus molestias.",
+  },
+  {
+    id: 3,
+    question:
+      "¿Cómo influye la densidad mamaria en la precisión del ultrasonido?",
+    answer:
+      "A diferencia de la mamografía, el ultrasonido mantiene nitidez en tejidos densos, asegurando una mayor precisión a evaluar el tejido mamario",
+  },
+  {
+    id: 4,
+    question:
+      "¿Con qué frecuencia se recomienda repetir un ultrasonido mamario?",
+    answer:
+      "Para pacientes sin hallazgos previos y con resultados benignos un ultrasonido anual coincide con chequeos de rutina, sin embargo, si aparece una lesión sospechosa, orientamos revisiones trimestrales y/o semestrales para un seguimiento puntual.",
+  },
+];
+const timeEstimate = "20 a 30 minutos";
+const heading ="¿Cómo es un ultrasonido mamario en DeltaScan?"
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <WhatIsUsedFor />
+    <WhoShouldGetIt />
+    <WhyDeltaScan />
+    <HowItIs steps={steps} timeEstimate={timeEstimate} heading={heading} />
+    <Anomalies />
+    <Preparation />
+    <Safety />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Mamario"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Mamarios"
+      description="Encuentra respuestas a las preguntas más comunes sobre Ultrasonidos Mamarios"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

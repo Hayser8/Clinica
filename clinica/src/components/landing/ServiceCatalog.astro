@@ -21,91 +21,77 @@ const services = [
     title: "Ultrasonido Abdominal",
     description:
       "Ayuda a diagnosticar el dolor o la distención y para evaluar los riñones, hígado, la vesícula biliar, los conductos biliares, el páncreas, el bazo y la aorta abdominal. ",
-    href: "#ultrasonido-abdominal",
+    href: "/abdominal",
   },
   {
-    icon: Baby,
-    title: "Ultrasonido Obstétrico",
+    icon: Heart,
+    title: "Biopsia Mamaria Ecodirigida",
     description:
-      "Útil para producir imágenes de un bebe (embrión o feto) que está dentro de una mujer embarazada, así como también del útero y los ovarios de la madre.",
-    href: "#ultrasonido-obstetrico",
+      "Ayuda a localizar un bulto, nódulo o anormalidad y extraer una muestra de tejidos para poder ser examinada por microscopio por un médico patólogo. Es menos invasiva que la biopsia quirúrgica.",
+    href: "/biopsia-mamaria-ecodirigida",
   },
   {
-    icon: Bone,
-    title: "Ultrasonido Musculoesquelético",
+    icon: Syringe,
+    title: "Biopsia Tiroidea Ecodirigida",
     description:
-      "Se utiliza para ayudar a diagnosticar esguinces, roturas, nervios pinzados, artritis y otras afecciones musculoesqueléticas comunes y dolorosas.",
-    href: "#ultrasonido-musculoesqueletico",
-  },
-  {
-    icon: Eye,
-    title: "Ultrasonido Endocavitario",
-    description:
-      "Indicado para la visualización detallada de los órganos internos de la cavidad pélvica en mujeres, así como de la próstata y posibles alteraciones en hombres.",
-    href: "#ultrasonido-endocavitario",
+      "El ultrasonido ayuda a ubicar una aguja adentro de un nódulo o anormalidad en la glándula tiroides y así extraer una muestra de tejido para su análisis bajo el microscopio por un médico patólogo.",
+    href: "/biopsia-tiroidea-ecodirigida",
   },
   {
     icon: Activity,
     title: "Doppler Vascular",
     description:
       "Estudio detallado del flujo sanguíneo arterial y venoso, aplicable en miembros, riñones, abdomen, cuello o para el control de fístulas.",
-    href: "#doppler-vascular",
+    href: "/doppler",
   },
   {
-    icon: User,
-    title: "Ultrasonido Prostático",
+    icon: Bone,
+    title: "Ultrasonido Musculoesquelético",
     description:
-      "Se utiliza para investigar un nódulo descubierto durante un examen rectal, detectar anormalidades y determinar si la glándula está agrandada.",
-    href: "#ultrasonido-prostatico",
+      "Se utiliza para ayudar a diagnosticar esguinces, roturas, nervios pinzados, artritis y otras afecciones musculoesqueléticas comunes y dolorosas.",
+    href: "/musculoesqueletico",
   },
   {
-    icon: Shield,
-    title: "Ultrasonido Tiroideo",
+    icon: Baby,
+    title: "Ultrasonido Obstétrico",
     description:
-      "No utiliza radiación ionizante y se utiliza para evaluar “bultos” o nódulos detectados durante un examen físico rutinario u otros exámenes por imágenes.",
-    href: "#ultrasonido-tiroideo",
+      "Útil para producir imágenes de un bebe (embrión o feto) que está dentro de una mujer embarazada, así como también del útero y los ovarios de la madre.",
+    href: "/obstetrico",
   },
   {
     icon: Users,
     title: "Ultrasonido Pélvico",
     description:
       "Para la obtención de imágenes de las estructuras y órganos de la parte inferior del abdomen y pelvis. Se utilizan para evaluar los sistemas reproductivo y urinario.",
-    href: "#ultrasonido-pelvico",
+    href: "/pelvico",
+  },
+  {
+    icon: User,
+    title: "Ultrasonido Prostático",
+    description:
+      "Se utiliza para investigar un nódulo descubierto durante un examen rectal, detectar anormalidades y determinar si la glándula está agrandada.",
+    href: "/prostatico",
   },
   {
     icon: Kidney,
     title: "Ultrasonido Renal",
     description:
       "Adecuado para evaluar con precisión el interior de los riñones, permitiendo diagnosticar problemas y alteraciones del sistema urinario.",
-    href: "#ultrasonido-renal",
-  },
-  {
-    icon: Liver,
-    title: "Ultrasonido Hepatobiliar",
-    description:
-      "Estudio que permite a través de imágenes observar el hígado, la vía biliar incluida la vesícula. Permite detectar si existe agradamiento, reducción o anomalías den la forma del hígado.",
-    href: "#ultrasonido-hepatobiliar",
+    href: "/renal",
   },
   {
     icon: TestTube,
     title: "Ultrasonido Testicular",
     description:
       "Es el principal método utilizado para ayudar a evaluar los trastornos de los testículos, el epidídimo (los tubos inmediatamente adyacentes a los testículos que colectan el esperma) y el escroto ",
-    href: "#ultrasonido-testicular",
+    href: "/testicular",
   },
   {
-    icon: Heart,
-    title: "Biopsia de Mama",
+    icon: Shield,
+    title: "Ultrasonido Tiroideo",
     description:
-      "Ayuda a localizar un bulto, nódulo o anormalidad y extraer una muestra de tejidos para poder ser examinada por microscopio por un médico patólogo. Es menos invasiva que la biopsia quirúrgica.",
-    href: "#biopsia-mama",
-  },
-  {
-    icon: Syringe,
-    title: "Biopsia de Tiroides",
-    description:
-      "El ultrasonido ayuda a ubicar una aguja adentro de un nódulo o anormalidad en la glándula tiroides y así extraer una muestra de tejido para su análisis bajo el microscopio por un médico patólogo.",
-    href: "#biopsia-tiroides",
+      "No utiliza radiación ionizante y se utiliza para evaluar “bultos” o nódulos detectados durante un examen físico rutinario u otros exámenes por imágenes.",
+    href: "/tiroideo",
   },
 ];
 ---
@@ -122,15 +108,16 @@ const services = [
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
       {
         services.map((service, index) => (
-          <div
+          <a
             key={index}
-            onClick={() => handleServiceClick(service.href)}
-            class="group bg-gradient-to-br from-gray-50 to-pink-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer border border-transparent hover:border-pink-200"
+            href={service.href}
+            aria-label={`Ir a ${service.title}`}
+            class="group h-full flex flex-col bg-gradient-to-br from-gray-50 to-pink-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 border border-transparent hover:border-pink-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-600/50"
           >
-            <div class="flex items-start gap-4 mb-4">
+            <div class="flex items-start gap-4">
               <div class="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <service.icon class="w-6 h-6 text-white" />
               </div>
@@ -144,22 +131,20 @@ const services = [
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div class="flex items-center justify-between pt-4 border-t border-gray-200/50">
+            {/* CTA alineado al fondo */}
+            <div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-200/50">
               <span class="text-sm font-medium text-pink-600 group-hover:text-pink-700 transition-colors">
                 Ver más información
               </span>
               <ArrowRight class="w-4 h-4 text-pink-600 group-hover:text-pink-700 group-hover:translate-x-1 transition-all duration-300" />
             </div>
-          </div>
+          </a>
         ))
       }
     </div>
 
     <div class="mt-16 text-center">
-      <div
-        class="bg-gradient-to-r from-pink-600 to-pink-700 rounded-3xl p-8 text-white"
-      >
+      <div class="bg-gradient-to-r from-pink-600 to-pink-700 rounded-3xl p-8 text-white">
         <h3 class="text-2xl font-bold mb-4">
           ¿No sabes que estudio necesitas?
         </h3>

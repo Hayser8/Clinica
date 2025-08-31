@@ -1,0 +1,92 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/common/Header.astro";
+import Footer from "../../../components/common/Footer.astro";
+import HeroSection from "../../../components/abdominal/hepatobiliar/HeroSection.astro";
+import WhatIs from "../../../components/abdominal/hepatobiliar/WhatIs.astro";
+import WhatEvaluates from "../../../components/abdominal/hepatobiliar/WhatEvaluates.astro";
+import WhatDetects from "../../../components/abdominal/hepatobiliar/WhatDetects.astro";
+import Indications from "../../../components/abdominal/hepatobiliar/Indications.astro";
+import WhyDeltaScan from "../../../components/abdominal/hepatobiliar/WhyDeltaScan.astro";
+import HowItIs from "../../../components/abdominal/hepatobiliar/HowItIs.astro";
+import Preparation from "../../../components/abdominal/hepatobiliar/Preparation.astro";
+import Safety from "../../../components/abdominal/hepatobiliar/Safety.astro";
+import Results from "../../../components/abdominal/hepatobiliar/Results.astro";
+import CTA from "../../../components/common/CTA.astro";
+import FAQ from "../../../components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Cuándo se añade Doppler en un estudio hepatobiliar?",
+    answer:
+      "El Doppler se utiliza cuando no basta con ver la forma de los órganos, sino también su flujo sanguíneo en tiempo real. En un estudio hepático y vía biliar puede añadirse si tu médico quiere evaluar el sistema porta, la arteria hepática o signos de hipertensión portal.",
+  },
+  {
+    id: 2,
+    question:
+      "¿Un ultrasonido hepatobiliar puede hacerse si ya me operaron de la vesícula (colecistectomía)?",
+    answer:
+      "Sí, de hecho, es bastante común. Tras una colecistectomía, el estudio se centra en el hígado y la vía biliar principal, porque pueden seguir apareciendo molestias por dilataciones, cálculos residuales o cambios en el flujo. Aunque no tengas vesícula, el ultrasonido hepatobiliar sigue siendo una herramienta segura para descartar complicaciones y dar seguimiento a tu salud digestiva.",
+  },
+  {
+    id: 3,
+    question:
+      "¿Qué tan confiable es el ultrasonido hepático y vía biliar para detectar problemas en el hígado graso?",
+    answer:
+      "El hígado graso es una de las condiciones que mejor se identifican con ecografía, porque los cambios en la textura del tejido son bastante visibles. El ultrasonido hepatobiliar no reemplaza a una biopsia ni a exámenes de laboratorio, pero sí funciona como primer paso confiable para confirmar sospechas, clasificar el grado de afectación y decidir si necesitas estudios complementarios o solo seguimiento periódico.",
+  },
+  {
+    id: 4,
+    question:
+      "¿Qué pasa si tengo síntomas pero mi ultrasonido hepático y vía biliar sale normal?",
+    answer:
+      "Puede suceder que tengas dolor, náusea o ictericia y que el ultrasonido no muestre hallazgos claros. Esto no significa que tu malestar no exista, sino que el origen podría estar en otra estructura (como estómago, intestinos o incluso páncreas) o que la alteración aún sea muy inicial. En estos casos, el ultrasonido sirve como filtro seguro ya que descarta problemas evidentes y ayuda a tu médico a decidir si conviene otro estudio o una correlación con análisis de sangre.",
+  },
+  {
+    id: 5,
+    question:
+      "¿Cada cuánto tiempo conviene repetir un ultrasonido hepatobiliar si tengo una enfermedad crónica?",
+    answer:
+      "La frecuencia depende de la condición y de lo que indique tu médico. En enfermedades como hígado graso, cirrosis o pólipos de vesícula, suele recomendarse un control periódico para vigilar cambios con el tiempo. No existe un calendario universal, pero el ultrasonido hepatobiliar es una herramienta práctica para dar seguimiento porque es seguro, accesible y no implica radiación.",
+  },
+  {
+    id: 6,
+    question: "¿El ultrasonido hepatobiliar sirve para descartar cáncer?",
+    answer:
+      "La ecografía hepatobiliar ayuda a detectar lesiones sospechosas en hígado, vesícula o vía biliar, pero no puede confirmar por sí sola si son cáncer. Si aparece algo dudoso, tu médico puede solicitar estudios adicionales como tomografía, resonancia o biopsia.",
+  },
+];
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <WhatEvaluates />
+    <WhatDetects />
+    <Indications />
+    <WhyDeltaScan />
+    <HowItIs />
+    <Preparation />
+    <Safety />
+    <Results />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Hepatobiliar"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Hepatobiliares"
+      description="Encuentra respuestas a las preguntas más comunes sobre ecografías hepatobiliares"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,110 @@
+---
+import { AlertTriangle, Baby, Stethoscope } from "@lucide/astro";
+---
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        ¿Quiénes se lo deben realizar?
+      </h2>
+      <div class="w-24 h-1 bg-pink-500 mx-auto mb-6"></div>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Especialmente recomendado para mujeres en situaciones específicas que
+        requieren evaluación especializada
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-pink-50 rounded-2xl p-8">
+        <div class="flex items-center mb-6">
+          <div class="bg-pink-500 rounded-full p-3 mr-4">
+            <AlertTriangle class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Casos prioritarios</h3>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <div
+              class="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"
+            >
+            </div>
+            <span class="text-gray-700"
+              >Mujeres que han notado irregularidades tras un examen físico</span
+            >
+          </li>
+          <li class="flex items-start">
+            <div
+              class="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"
+            >
+            </div>
+            <span class="text-gray-700"
+              >Antecedentes familiares de cáncer de mama</span
+            >
+          </li>
+          <li class="flex items-start">
+            <div
+              class="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"
+            >
+            </div>
+            <span class="text-gray-700">
+              Pacientes con mamas densas donde la mamografía es menos
+              concluyente
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-blue-50 rounded-2xl p-8">
+        <div class="flex items-center mb-6">
+          <div class="bg-blue-500 rounded-full p-3 mr-4">
+            <Baby class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Grupos especiales</h3>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <div
+              class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"
+            >
+            </div>
+            <span class="text-gray-700"
+              >Mujeres embarazadas que necesitan evaluación mamaria</span
+            >
+          </li>
+          <li class="flex items-start">
+            <div
+              class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"
+            >
+            </div>
+            <span class="text-gray-700"
+              >Mujeres jóvenes que buscan un método libre de radiación</span
+            >
+          </li>
+          <li class="flex items-start">
+            <div
+              class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"
+            >
+            </div>
+            <span class="text-gray-700"
+              >Seguimiento de condiciones benignas conocidas</span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="bg-gradient-to-r from-gray-50 to-pink-50 rounded-2xl p-8 text-center"
+    >
+      <div class="flex items-center justify-center mb-4">
+        <Stethoscope class="w-8 h-8 text-pink-600 mr-3" />
+        <h3 class="text-xl font-bold text-gray-900">Consulta personalizada</h3>
+      </div>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        Cada caso es único. Nuestros especialistas evaluarán tu situación
+        particular para determinar si el ultrasonido mamario es la mejor opción
+        para ti.
+      </p>
+    </div>
+  </div>
+</section>

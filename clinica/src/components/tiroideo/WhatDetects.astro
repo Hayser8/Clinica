@@ -1,0 +1,68 @@
+---
+import { Search, Droplets, Activity, Zap, Heart } from "@lucide/astro";
+const detections = [
+  {
+    icon: Search,
+    title: "Nódulos",
+    description:
+      "Identifica nódulos benignos o sospechosos en la glándula tiroides",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    icon: Droplets,
+    title: "Quistes",
+    description: "Detecta formaciones quísticas y evalúa su contenido",
+    color: "from-pink-400 to-pink-500",
+  },
+  {
+    icon: Activity,
+    title: "Inflamaciones",
+    description: "Identifica tiroiditis y otros procesos inflamatorios",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    icon: Zap,
+    title: "Flujo sanguíneo",
+    description: "Con Doppler, muestra la circulación dentro de la tiroides",
+    color: "from-pink-500 to-pink-700",
+  },
+];
+---
+
+<section class="py-20 bg-gradient-to-b from-pink-50/50 to-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
+        ¿Qué detecta un ultrasonido tiroideo?
+      </h2>
+      <div
+        class="w-20 h-1.5 bg-gradient-to-r from-pink-500 to-pink-600 mx-auto rounded-full"
+      >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      {
+        detections.map((detection, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-pink-100/50 group"
+          >
+            <div
+              class={`w-20 h-20 bg-gradient-to-br ${detection.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+            >
+              <detection.icon class="w-10 h-10 text-white" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              {detection.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-md">
+              {detection.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

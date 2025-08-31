@@ -1,0 +1,102 @@
+---
+import { ClipboardCheck, Bed, Droplets, Search, RotateCcw, FileText } from "@lucide/astro";
+const steps = [
+  {
+    icon: ClipboardCheck,
+    title: "Recepción y preparación",
+    description:
+      "Se verifica la indicación, así como el tipo de ultrasonido prostático que es requerido. En el caso de ser suprapúbico es necesario que la vejiga esté llena para optimizar la imagen. Y en el estudio de vía endorectal es óptimo tener la vejiga vacía.",
+  },
+  {
+    icon: Bed,
+    title: "Posicionamiento en la camilla",
+    description: "Te colocamos en una posición cómoda para exponer correctamente la zona a evaluar.",
+  },
+  {
+    icon: Droplets,
+    title: "Aplicación de gel",
+    description: "Se aplica gel conductor para asegurar un contacto óptimo con la sonda.",
+  },
+  {
+    icon: Search,
+    title: "Exploración guiada",
+    description: "Se realiza por vía suprapúbica, transrectal o ambas, según la indicación clínica.",
+  },
+  {
+    icon: RotateCcw,
+    title: "Evaluación postmiccional",
+    description:
+      "En caso de ser necesario, se te pedirá orinar y se repetirá la exploración para medir si queda residuo de orina en la vejiga.",
+  },
+  {
+    icon: FileText,
+    title: "Entrega de resultados",
+    description:
+      "Recibes informe e imágenes clave con explicaciones claras y, de ser necesario, recomendaciones de seguimiento.",
+  },
+];
+---
+
+<section class="py-20 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+        ¿Cómo es un ultrasonido prostático en DeltaScan?
+      </h2>
+      <div class="inline-flex items-center gap-3 bg-pink-100 px-6 py-3 rounded-full">
+        <div class="w-3 h-3 bg-pink-600 rounded-full"></div>
+        <p class="text-md md:text-lg text-pink-700 font-bold">
+          Duración: 15 a 20 minutos
+        </p>
+      </div>
+    </div>
+
+    <!-- Sin max-w interno para que prevalezca 7xl -->
+    <div>
+      <div class="relative">
+        <!-- Línea de tiempo solo en desktop/tablet -->
+        <div
+          class="absolute left-10 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-600 to-pink-300 rounded-full hidden md:block"
+        ></div>
+
+        <div class="space-y-12">
+          {steps.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <div key={index} class="relative flex items-start gap-8">
+                <!-- Número grande y icono: SOLO md+ (desktop queda igual) -->
+                <div class="flex-shrink-0 relative hidden md:block">
+                  <div class="bg-gradient-to-br from-pink-600 to-pink-700 text-white w-20 h-20 rounded-2xl flex items-center justify-center font-bold text-xl relative z-10 shadow-lg">
+                    {index + 1}
+                  </div>
+                  <div class="absolute inset-2 bg-pink-100 rounded-xl flex items-center justify-center">
+                    <Icon class="w-8 h-8 text-pink-600" />
+                  </div>
+                </div>
+
+                <!-- Card -->
+                <div class="bg-gray-50 rounded-2xl p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow flex-1">
+                  <!-- Número pequeño dentro de la card: SOLO en mobile -->
+                  <div class="md:hidden mb-3">
+                    <span
+                      class="inline-flex items-center justify-center bg-gradient-to-br from-pink-600 to-pink-700 text-white w-8 h-8 rounded-lg text-sm font-bold shadow"
+                    >
+                      {index + 1}
+                    </span>
+                  </div>
+
+                  <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-4">
+                    {step.title}
+                  </h3>
+                  <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

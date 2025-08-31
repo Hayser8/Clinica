@@ -1,0 +1,129 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/testicular/HeroSection.astro";
+import WhatIs from "@/components/testicular/WhatIs.astro";
+import WhatIsFor from "@/components/testicular/WhatIsFor.astro";
+import WhenDoppler from "@/components/testicular/WhenDoppler.astro";
+import WhenToGet from "@/components/testicular/WhenToGet.astro";
+import WhyDeltaScan from "@/components/testicular/WhyDeltaScan.astro";
+import HowItIs from "@/components/common/HowItIs.astro";
+import Preparation from "@/components/testicular/Preparation.astro";
+import Results from "@/components/testicular/Results.astro";
+import CTA from "@/components/common/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+import { Phone, FileText, Droplets, Search, Clock } from "@lucide/astro";
+const steps = [
+  {
+    number: 1,
+    icon: Phone,
+    title: "Agenda tu cita",
+    description:
+      "Llámanos al 2448-1110 o escríbenos por WhatsApp 4565-0865. Trabajamos con cita previa para atenderte sin esperas y coordinar el horario que mejor se adapte a ti.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    icon: FileText,
+    title: "Preparación simple",
+    description:
+      "El ultrasonido testicular no requiere ayuno ni cuidados especiales. Solo te recomendamos usar ropa cómoda y evitar cremas o talcos en la zona el día del examen.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    icon: Droplets,
+    title: "Aplicación de gel",
+    description:
+      "Aplicamos un gel conductor en el área escrotal y deslizamos suavemente el transductor sobre la piel para obtener imágenes claras y detalladas en tiempo real.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    icon: Search,
+    title: "Exploración en tiempo real",
+    description:
+      "Evaluamos ambos testículos, el epidídimo y estructuras cercanas. Si tu médico lo solicita, integramos Doppler para valorar el flujo sanguíneo y descartar torsión testicular o varicocele.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    icon: Clock,
+    title: "Entrega de resultados",
+    description:
+      "Al finalizar, te entregamos los resultados el mismo día, listos para tu médico tratante.",
+    color: "from-pink-500 to-pink-600",
+  },
+];
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Necesito orden médica o puedo solicitarlo directamente?",
+    answer:
+      "No es indispensable llevar una orden médica para realizar un ultrasonido testicular. Muchas personas lo solicitan de forma preventiva o ante molestias recientes. Sin embargo, si tu médico ya te indicó el estudio, llevar la orden ayuda a enfocar mejor la evaluación. En ambos casos recibirás imágenes e informe detallado que podrás compartir con tu especialista de confianza.",
+  },
+  {
+    id: 2,
+    question: "¿Cuándo es urgencia un dolor súbito e intenso?",
+    answer:
+      "Puede tratarse de torsión testicular, una condición que requiere atención inmediata para proteger la función del órgano. Ante esta situación lo más recomendable es acudir de inmediato a la clínica o a emergencias, sin esperar a que el dolor disminuya por sí solo.",
+  },
+  {
+    id: 3,
+    question: "¿Puedo retomar actividad física el mismo día del examen?",
+    answer:
+      "Sí, el ultrasonido testicular es un estudio no invasivo que no limita tus actividades. Una vez finalizado, puedes continuar con tu rutina diaria, incluyendo ejercicio. La única excepción ocurre si el examen fue solicitado después de un golpe o inflamación: en ese caso, es conveniente seguir las recomendaciones médicas para evitar molestias adicionales.",
+  },
+  {
+    id: 4,
+    question: "¿Qué son las microcalcificaciones testiculares y cómo se controlan en el tiempo?",
+    answer:
+      "Las microcalcificaciones son pequeños puntos brillantes que a veces aparecen en el ultrasonido. Por sí solas no representan una enfermedad, pero su hallazgo motiva un seguimiento regular. Te indicaremos cada cuánto repetir el estudio según tu edad, síntomas y antecedentes médicos, para garantizar que cualquier cambio sea detectado de forma temprana.",
+  },
+  {
+    id: 5,
+    question: "¿Cuándo se complementa el ultrasonido testicular con resonancia magnética o tomografía?",
+    answer:
+      "En algunos casos puede ser útil añadir resonancia o tomografía, por ejemplo, si se necesita evaluar estructuras profundas, confirmar la extensión de una lesión o planificar una cirugía. La decisión la tomaremos siempre buscando la mayor claridad en el diagnóstico sin exámenes innecesarios.",
+  },
+];
+
+const timeEstimate="20 a 25 minutos";
+const heading="¿Cómo es un Ultrasonido Testicular en DeltaScan?"
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <WhatIsFor />
+    <WhenDoppler />
+    <WhenToGet />
+    <WhyDeltaScan />
+    <HowItIs 
+    steps={steps}
+    timeEstimate={timeEstimate}
+    heading={heading}
+    />
+    <Preparation />
+    <Results />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Testicular"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Testiculares"
+      description="Encuentra respuestas a las preguntas más comunes sobre Ultrasonidos Testiculares"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

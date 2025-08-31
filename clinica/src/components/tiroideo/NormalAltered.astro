@@ -1,0 +1,60 @@
+---
+import { CheckCircle, AlertCircle } from "@lucide/astro";
+---
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        ¿Qué significa un ultrasonido tiroideo normal o alterado?
+      </h2>
+      <div class="w-16 h-1 bg-pink-600 mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div
+        class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-xl p-8 hover:shadow-lg transition-shadow"
+      >
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center"
+          >
+            <CheckCircle class="w-8 h-8 text-green-600" />
+          </div>
+          <h3 class="text-2xl font-bold text-green-800">Resultado Normal</h3>
+        </div>
+        <p class="text-green-700 leading-relaxed text-lg">
+          La tiroides mantiene su forma y tamaño habitual, con una textura
+          homogénea y sin nódulos sospechosos.
+        </p>
+        <div class="mt-6 p-4 bg-green-200/50 rounded-lg">
+          <p class="text-green-800 font-medium text-sm">
+            ✓ Tranquilidad y seguimiento rutinario
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-xl p-8 hover:shadow-lg transition-shadow"
+      >
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center"
+          >
+            <AlertCircle class="w-8 h-8 text-orange-600" />
+          </div>
+          <h3 class="text-2xl font-bold text-orange-800">Resultado Alterado</h3>
+        </div>
+        <p class="text-orange-700 leading-relaxed text-lg">
+          Puede mostrar inflamación, agrandamiento (bocio), nódulos sólidos o
+          quísticos, o cambios en la vascularización.
+        </p>
+        <div class="mt-6 p-4 bg-orange-200/50 rounded-lg">
+          <p class="text-orange-800 font-medium text-sm">
+            ⚠ Requiere evaluación médica especializada
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

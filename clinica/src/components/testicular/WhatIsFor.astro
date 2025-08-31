@@ -1,0 +1,91 @@
+---
+import { AlertTriangle, Search, Activity, TrendingUp } from "@lucide/astro";
+const detections = [
+  {
+    icon: AlertTriangle,
+    title: "Dolor testicular",
+    description:
+      "Confirma causas testiculares del dolor en la zona baja del escroto",
+  },
+  {
+    icon: Search,
+    title: "Infecciones recurrentes",
+    description:
+      "Determina afección testicular en infecciones urinarias repetitivas",
+  },
+  {
+    icon: Activity,
+    title: "Sangre en orina",
+    description: "Evalúa posibles causas de hematuria y alteraciones urinarias",
+  },
+  {
+    icon: TrendingUp,
+    title: "Control de enfermedades",
+    description: "Seguimiento de enfermedades crónicas y función testicular",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="space-y-12">
+      <div class="text-center space-y-4">
+        <div class="inline-block">
+          <span
+            class="bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-medium"
+          >
+            Aplicaciones clínicas
+          </span>
+        </div>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
+          ¿Para qué sirve el ultrasonido testicular?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          detections.map((detection, index) => {
+            const IconComponent = detection.icon;
+            return (
+              <div
+                key={index}
+                class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="space-y-4">
+                  <div class="w-12 h-12 bg-pink-600 rounded-2xl flex items-center justify-center">
+                    <IconComponent class="w-6 h-6 text-white" />
+                  </div>
+                  <div class="space-y-2">
+                    <h3 class="font-bold text-gray-900 text-lg">
+                      {detection.title}
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                      {detection.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+
+      <div class="bg-pink-600 rounded-3xl p-8 md:p-12 text-center">
+        <div class="space-y-6">
+          <h3 class="text-2xl md:text-3xl font-bold text-white">
+            ¿Tienes síntomas o necesitas un chequeo?
+          </h3>
+          <p class="text-white/90 text-lg">
+            Agenda tu ultrasonido testicular y obtén respuestas claras
+          </p>
+          <a
+            href="/hacer-cita"
+            class="inline-flex items-center bg-white hover:bg-gray-50 text-pink-600 px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105"
+          >
+            Agenda tu cita →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

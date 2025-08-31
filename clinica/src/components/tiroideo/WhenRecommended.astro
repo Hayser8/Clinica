@@ -1,0 +1,75 @@
+---
+import {
+  CheckCircle,
+  AlertTriangle,
+  Users,
+  Activity,
+  Eye,
+  TrendingUp,
+} from "@lucide/astro";
+const recommendations = [
+  {
+    icon: Eye,
+    text: "Bultos o nódulos visibles o palpables en la parte frontal del cuello.",
+  },
+  {
+    icon: AlertTriangle,
+    text: "Inflamación de la glándula tiroides.",
+  },
+  {
+    icon: Activity,
+    text: "Resultados de laboratorio alterados (TSH, T3, T4).",
+  },
+  {
+    icon: Users,
+    text: "Antecedentes familiares de enfermedad tiroidea.",
+  },
+  {
+    icon: TrendingUp,
+    text: "Seguimiento de nódulos previamente detectados.",
+  },
+  {
+    icon: CheckCircle,
+    text: "Monitoreo de bocio o tiroiditis crónica.",
+  },
+];
+---
+
+<section class="py-20 bg-gradient-to-b from-white to-pink-50/30">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
+        ¿Cuándo se recomienda realizar una ecografía de tiroides?
+      </h2>
+      <div
+        class="w-20 h-1.5 bg-gradient-to-r from-pink-500 to-pink-600 mx-auto mb-8 rounded-full"
+      >
+      </div>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        Se recomienda en situaciones como:
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        recommendations.map((recommendation, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-pink-100/50 group hover:-translate-y-1"
+          >
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-pink-100 to-pink-200 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <recommendation.icon class="w-6 h-6 text-pink-600" />
+              </div>
+              <p class="text-gray-700 leading-relaxed flex-1">
+                {recommendation.text}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+  
+  </div>
+</section>

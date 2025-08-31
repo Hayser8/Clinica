@@ -7,12 +7,68 @@ import WhatIs from "@/components/obstetrico/WhatIs.astro";
 import WhenTo from "@/components/obstetrico/WhenTo.astro";
 import Services from "@/components/obstetrico/Services.astro";
 import WhyDeltaScan from "@/components/obstetrico/WhyDeltaScan.astro";
-import HowItIs from "@/components/obstetrico/HowItIs.astro";
+import HowItIs from "@/components/common/HowItIs.astro";
 import UltrasoundTypes from "@/components/obstetrico/UltrasoundTypes.astro";
 import UltraSoundByTrimestre from "@/components/obstetrico/UltrasoundByTrimestre.astro";
 import Preparation from "@/components/obstetrico/Preparation.astro";
 import CTA from "@/components/obstetrico/CTA.astro";
 import FAQ from "@/components/common/FAQ.astro";
+
+import {
+  Phone,
+  ClipboardList,
+  Droplets,
+  Eye,
+  Users,
+  FileText,
+} from "@lucide/astro";
+
+const steps = [
+  {
+    number: 1,
+    icon: Phone,
+    title: "Hacer cita",
+    description: "Llámanos o escríbenos para poder agendar tu cita.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    icon: ClipboardList,
+    title: "Evaluación clínica previa",
+    description: "Revisamos tu historia y motivos de tu consulta.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    icon: Droplets,
+    title: "Aplicación del gel conductor",
+    description: "Garantizamos contacto óptimo para imágenes nítidas.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    icon: Eye,
+    title: "Exploración en tiempo real",
+    description:
+      "Monitoreamos cada imagen, te comentamos lo que encontramos y respondemos tus dudas e inquietudes que te surjan.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    icon: Users,
+    title: "Interpretación conjunta",
+    description:
+      "Analizamos los hallazgos con tu historial y antecedentes para poder ofrecerte el mejor diagnóstico posible.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 6,
+    icon: FileText,
+    title: "Entrega de resultados",
+    description: "Recibes un informe detallado al salir, listo para tu médico.",
+    color: "from-pink-600 to-pink-700",
+  },
+];
 
 const faqData = [
   {
@@ -58,6 +114,8 @@ const faqData = [
       "Más allá del protocolo estándar, añadimos Doppler si existe sospecha de restricción de crecimiento, presión alta materna, antecedentes de preeclampsia o inserción inadecuada de la placenta. También lo recomendamos en embarazos múltiples o cuando tu médico tratante los solicite.",
   },
 ];
+const timeEstimate="15 a 30 minutos";
+const heading="¿Cómo es un ultrasonido obstétrico en DeltaScan?"
 ---
 
 <Layout
@@ -73,7 +131,11 @@ const faqData = [
     <WhenTo />
     <Services />
     <WhyDeltaScan />
-    <HowItIs />
+    <HowItIs 
+    steps={steps}
+    timeEstimate={timeEstimate}
+    heading={heading}
+    />
     <UltrasoundTypes />
     <UltraSoundByTrimestre />
     <Preparation />

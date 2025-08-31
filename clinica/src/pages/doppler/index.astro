@@ -8,12 +8,57 @@ import Benefits from "@/components/doppler/Benefits.astro";
 import DopplerTypes from "@/components/doppler/DopplerTypes.astro";
 import DopplerRecommendation from "@/components/doppler/DopplerRecommendation.astro";
 import WhyDeltaScan from "@/components/doppler/WhyDeltaScan.astro";
-import HowItIs from "@/components/doppler/HowItIs.astro";
+import HowItIs from "@/components/common/HowItIs.astro";
 import Pathologies from "@/components/doppler/Pathologies.astro";
 import ExamPreparation from "@/components/doppler/ExamPreparation.astro";
 import Results from "@/components/doppler/Results.astro";
 import CTA from "@/components/common/CTA.astro";
 import FAQ from "@/components/common/FAQ.astro";
+import { Calendar, Bed, Droplets, Search, FileText } from "@lucide/astro";
+
+const steps = [
+  {
+    icon: Calendar,
+    title: "Agenda tu cita",
+    description:
+      "Contáctanos vía WhatsApp o llámanos para poder resolver tus dudas y agendar tu cita en el horario que te quede mejor.",
+    number: 1,
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    icon: Bed,
+    title: "Posicionamiento en la camilla",
+    description:
+      "Te acomodamos para que la zona a examinar quede perfectamente expuesta.",
+    number: 2,
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    icon: Droplets,
+    title: "Aplicación de gel",
+    description:
+      "Te aplicamos gel sobre la zona a evaluar, para garantizar un contacto perfecto con la sonda.",
+    number: 3,
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    icon: Search,
+    title: "Exploración guiada",
+    description:
+      "El radiólogo posiciona el transductor y ajusta parámetros en pantalla, mientras conversa contigo y resuelve todas tus dudas.",
+    number: 4,
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    icon: FileText,
+    title: "Entrega de resultados",
+    description:
+      "Por último, te entregamos tus resultados en formato físico con un folder, acompañado de una interpretación para aclarar dudas.",
+    number: 5,
+    color: "from-pink-500 to-pink-600",
+  },
+];
+
 
 const faqData = [
   {
@@ -58,6 +103,8 @@ const faqData = [
       "Sí, no tiene contraindicación en ningún grupo poblacional. Muchas veces son niños y adultos mayores a los que más se les realiza estos tipos de estudios.",
   },
 ];
+const timeEstimate="20 a 30 minutos";
+const heading="¿Cómo es un Ultrasonido Doppler en DeltaScan?"
 ---
 
 <Layout
@@ -74,7 +121,11 @@ const faqData = [
     <DopplerTypes />
     <DopplerRecommendation />
     <WhyDeltaScan />
-    <HowItIs />
+    <HowItIs 
+    steps={steps}
+    timeEstimate={timeEstimate}
+    heading={heading}
+    />
     <Pathologies />
     <ExamPreparation />
     <Results />

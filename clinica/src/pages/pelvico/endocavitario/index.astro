@@ -1,0 +1,81 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/common/Header.astro";
+import Footer from "../../../components/common/Footer.astro";
+import HeroSection from "../../../components/pelvico/endocavitario/HeroSection.astro";
+import WhatIs from "../../../components/pelvico/endocavitario/WhatIs.astro";
+import Organs from "../../../components/pelvico/endocavitario/Organs.astro";
+import Indications from "../../../components/pelvico/endocavitario/Indications.astro";
+import Pain from "../../../components/pelvico/endocavitario/Pain.astro";
+import WhyDeltaScan from "../../../components/pelvico/endocavitario/WhyDeltaScan.astro";
+import HowItIs from "../../../components/pelvico/endocavitario/HowItIs.astro";
+import Results from "../../../components/pelvico/endocavitario/Results.astro";
+import Preparation from "../../../components/pelvico/endocavitario/Preparation.astro";
+import CTA from "../../../components/common/CTA.astro";
+import FAQ from "../../../components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Se puede realizar un ultrasonido endocavitario durante la menstruación?",
+    answer:
+      "Sí, el estudio puede realizarse aunque la paciente esté con su período menstrual. En muchos casos, de hecho, aporta información valiosa sobre el endometrio y el ciclo.",
+  },
+  {
+    id: 2,
+    question: "¿Puede un ultrasonido endocavitario detectar endometriosis o quistes ováricos pequeños?",
+    answer:
+      "Sí, el ultrasonido endocavitario puede detectar quistes ováricos de muy pequeño tamaño y, en algunos casos, mostrar signos sugestivos de endometriosis. Sin embargo, es importante aclarar que el diagnóstico definitivo de endometriosis suele requerir otros estudios, como la resonancia magnética o la laparoscopia.",
+  },
+  {
+    id: 3,
+    question: "¿Es normal tener un ligero sangrado después del examen?",
+    answer:
+      "En ocasiones puede aparecer un manchado leve tras el procedimiento, y suele deberse a la sensibilidad natural del cuello uterino o la vagina. Esta situación es pasajera y no representa un riesgo.",
+  },
+  {
+    id: 4,
+    question: "¿Qué es un transductor endocavitario y cómo se higieniza antes de usarse?",
+    answer:
+      "El transductor es la sonda especial que se introduce en la cavidad vaginal para generar las imágenes en tiempo real. Siempre se cubre con una funda estéril y se utiliza gel conductor para mayor comodidad. Después de cada uso, el equipo es limpiado y desinfectado siguiendo protocolos médicos estrictos, garantizando seguridad, higiene y un ambiente de total confianza.",
+  },
+  {
+    id: 5,
+    question: "¿Qué limitaciones tiene el ultrasonido endocavitario?",
+    answer:
+      "El ultrasonido endocavitario es muy útil para evaluar el útero, endometrio y ovarios, pero tiene limitaciones, no siempre detecta focos pequeños de endometriosis, no puede diferenciar con certeza si una lesión es benigna o maligna, su campo de visión se restringe a la pelvis cercana a la sonda y, en algunos casos, debe complementarse con estudios como resonancia magnética, histeroscopia o biopsia para obtener un diagnóstico completo.",
+  },
+];
+
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <Organs />
+    <Indications />
+    <Pain />
+    <WhyDeltaScan />
+    <HowItIs />
+    <Results />
+    <Preparation />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Transvaginal"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Endocavitarios"
+      description="Encuentra respuestas a las preguntas más comunes sobre ecografías endovaginales"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

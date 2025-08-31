@@ -1,0 +1,88 @@
+---
+import { Heart, Phone, Clover as Liver, Key as Kidney, Activity } from "@lucide/astro";
+  const organGroups = [
+    {
+      category: "Sistema Digestivo",
+      icon: Liver,
+      color: "pink-600",
+      organs: ["Hígado y vías biliares", "Vesícula biliar", "Páncreas"],
+    },
+    {
+      category: "Sistema Circulatorio",
+      icon: Activity,
+      color: "pink-500",
+      organs: ["Aorta y vasos sanguíneos principales"],
+    },
+    {
+      category: "Sistema Urinario",
+      icon: Kidney,
+      color: "pink-700",
+      organs: ["Riñones", "Bazo"],
+    },
+  ]
+---
+<section class="bg-white py-16">
+  <div class="max-w-7xl mx-auto p-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+      ¿Qué órganos evalúa?
+    </h2>
+    <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+      Una evaluación completa de los sistemas más importantes del abdomen
+      superior
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      {
+        organGroups.map((group, groupIndex) => {
+          const IconComponent = group.icon;
+          return (
+            <div
+              key={groupIndex}
+              class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+            >
+              <div
+                class={`w-12 h-12 bg-${group.color} rounded-xl flex items-center justify-center mb-4`}
+              >
+                <IconComponent class="w-6 h-6 text-white" />
+              </div>
+              <h3 class="font-bold text-gray-900 mb-4">{group.category}</h3>
+              <div class="space-y-3">
+                {group.organs.map((organ, index) => (
+                  <div key={index} class="flex items-center gap-3">
+                    <div class={`w-2 h-2 bg-${group.color} rounded-full`} />
+                    <span class="text-gray-700 text-sm">{organ}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    {/* Highlight box */}
+    <div
+      class="bg-gradient-to-r from-pink-50 to-pink-100 rounded-2xl p-8 text-center mb-8"
+    >
+      <div
+        class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4"
+      >
+        <Heart class="w-8 h-8 text-white" />
+      </div>
+      <p class="text-gray-700 max-w-3xl mx-auto font-medium">
+        Gracias a esta cobertura completa, es una de las evaluaciones más
+        efectivas cuando se busca entender la causa de molestias abdominales o
+        dar seguimiento a diagnósticos previos.
+      </p>
+    </div>
+
+    <div class="text-center">
+      <button
+        class="bg-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-pink-700 transition-colors inline-flex items-center gap-2"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu cita
+      </button>
+    </div>
+  </div>
+</section>

@@ -6,40 +6,114 @@ import HeroSection from "@/components/abdominal/HeroSection.astro";
 import WhenTo from "@/components/abdominal/WhenTo.astro";
 import Services from "@/components/abdominal/Services.astro";
 import WhyDeltaScan from "@/components/abdominal/WhyDeltaScan.astro";
-import HowItIs from "@/components/abdominal/HowItIs.astro";
+import HowItIs from "@/components/common/HowItIs.astro";
 import UltrasoundTypes from "@/components/abdominal/UltrasoundTypes.astro";
 import Preparation from "@/components/abdominal/Preparation.astro";
-import CTA from "@/components/abdominal/CTA.astro";
+import CTA from "@/components/common/CTA.astro";
 import FAQ from "@/components/common/FAQ.astro";
+
+import {
+  Phone,
+  Users,
+  Shirt,
+  Bed,
+  Eye,
+  FileText,
+  CheckCircle,
+} from "@lucide/astro";
+
+const steps = [
+  {
+    number: 1,
+    icon: Phone,
+    title: "Hacer cita",
+    description:
+      "Resuelve tus inquietudes y agenta tu cita llamando o escribiéndonos.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    icon: Users,
+    title: "Recepción",
+    description:
+      "Te damos la bienvenida y puedes esperar en nuestra sala de espera mientras llega la hora de tu cita.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    icon: Shirt,
+    title: "Preparación",
+    description:
+      "Viste prendas cómodas y sueltas. Evita joyas de la zona a evaluar. Evite la ingesta de alimentos de 8 a 12 horas antes del examen. E ingiere de 4 a 6 vasos de líquido (preferentemente agua pura), aproximadamente 1 hora antes del examen.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    icon: Bed,
+    title: "Colocación en la camilla",
+    description:
+      "Te acostarás boca arriba en la camilla. En ocasiones, el radiólogo te pedirá colocarse de costado para mejorar la calidad de la imagen de ciertos órganos. El médico te aplicará un gel a base de agua sobre la piel; esto facilita el contacto y la transmisión de las ondas sonoras.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    icon: Eye,
+    title: "Exploración en tiempo real",
+    description:
+      "Te colocamos el transductor sobre el abdomen y lo iremos desplazando hasta capturar todas las imágenes necesarias. Durante 15-20 minutos monitoreamos cada imagen, te comentamos hallazgos y respondemos tus dudas al instante.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 6,
+    icon: FileText,
+    title: "Limpieza y elaboración del informe",
+    description:
+      "Una vez finalizada la exploración, se limpia el gel de la piel e inmediatamente procedemos a redactar tu informe radiológico.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 7,
+    icon: CheckCircle,
+    title: "Entrega de informe",
+    description:
+      "Te entregamos tu informe radiológico el mismo día, en un folder físico, listo para tu consulta médica.",
+    color: "from-pink-500 to-pink-600",
+  },
+];
 
 const faqData = [
   {
     id: 1,
-    question: "¿Necesito una indicación médica o receta para programar un ultrasonido abdominal?",
+    question:
+      "¿Necesito una indicación médica o receta para programar un ultrasonido abdominal?",
     answer:
       "No es necesario contar con orden médico; sin embargo, si se cuenta con ella presentarla al momento del estudio.",
   },
   {
     id: 2,
-    question: "¿Cómo puedo conocer el precio de un ultrasonido abdominal completo?",
+    question:
+      "¿Cómo puedo conocer el precio de un ultrasonido abdominal completo?",
     answer:
       "Llámanos al 2448 1110 o escríbenos al WhatsApp 4565-0865 y te informaremos al instante, para que puedas planificar tu cita sin sorpresas.",
   },
   {
     id: 3,
-    question: "¿Existen contraindicaciones o limitaciones para someterme a un ultrasonido abdominal?",
+    question:
+      "¿Existen contraindicaciones o limitaciones para someterme a un ultrasonido abdominal?",
     answer:
       "Al ser un examen no invasivo y bien tolerado por la mayoría de las personas no existe contraindicaciones. Si existen heridas recientes en la zona a evaluar, podría requerirse un pequeño ajuste. Comparte con nosotros tu historial médico y te orientaremos para que todo transcurra con seguridad.",
   },
   {
     id: 4,
-    question: "¿El ultrasonido abdominal es seguro durante el embarazo y para niños?",
+    question:
+      "¿El ultrasonido abdominal es seguro durante el embarazo y para niños?",
     answer:
       "Sí. Los equipos que utilizamos no emiten radiación ionizante, por lo que el procedimiento es apto para mujeres embarazadas y para pacientes pediátricos.",
   },
   {
     id: 5,
-    question: "¿Cómo interpretar y leer los resultados de mi ultrasonido abdominal?",
+    question:
+      "¿Cómo interpretar y leer los resultados de mi ultrasonido abdominal?",
     answer:
       "Al finalizar el estudio, recibirás un informe detallado con imágenes y hallazgos explicados de forma clara. Tu médico tratante es el responsable de explicar adecuadamente los resultados, ya que el informe radiológico es parte de estudios complementarios que solicita tu médico.",
   },
@@ -56,6 +130,8 @@ const faqData = [
       "Si llegas habiendo ingerido alimentos recientemente, la calidad de las imágenes podría verse afectada. Contáctanos tan pronto lo notes y evaluaremos si reprogramar tu cita o usar técnicas complementarias, para asegurarnos de que obtengas un diagnóstico preciso.",
   },
 ];
+const timeEstimate = "15 a 20 minutos";
+const heading = "¿Cómo es un Ultrasonido Abdominal en DeltaScan?";
 ---
 
 <Layout
@@ -70,12 +146,18 @@ const faqData = [
     <WhenTo />
     <Services />
     <WhyDeltaScan />
-    <HowItIs />
+    <HowItIs steps={steps} timeEstimate={timeEstimate} heading={heading} />
     <UltrasoundTypes />
     <Preparation />
-    <CTA />
-    <FAQ title="Preguntas Frecuentes sobre Ultrasonidos Abdominales" description="Encuentra respuestas a las preguntas más comunes sobre ecografías abdominales" faqData={faqData} />
-    
+    <CTA
+      title="Reserva ahora tu Ultrasonido Abdominal Completo"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Abdominales"
+      description="Encuentra respuestas a las preguntas más comunes sobre ecografías abdominales"
+      faqData={faqData}
+    />
   </main>
 
   <Footer />

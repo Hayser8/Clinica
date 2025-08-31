@@ -1,0 +1,69 @@
+---
+import { Phone, Shirt, AlertTriangle, Smile } from "@lucide/astro";
+  const preparations = [
+    {
+      icon: Shirt,
+      title: "Ropa cómoda",
+      description: "Usar prendas fáciles de quitar y cómodas para el procedimiento",
+    },
+    {
+      icon: AlertTriangle,
+      title: "Alergias al látex",
+      description: "Informar si tienes alergia para cambiar el protector de la sonda",
+    },
+    {
+      icon: Smile,
+      title: "Mantén la calma",
+      description: "Es un estudio ambulatorio, breve y sin complicaciones",
+    },
+  ]
+---
+<section class="bg-white py-16 md:py-24">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center space-y-4 mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+        ¿Cómo me preparo para mi examen?
+      </h2>
+      <p class="text-lg text-gray-600">
+        En la mayoría de los casos, no se requiere preparación especial. Solo
+        recomendamos:
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      {
+        preparations.map((prep, index) => (
+          <div
+            key={index}
+            class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl p-6 text-center"
+          >
+            <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <prep.icon class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-3">{prep.title}</h3>
+            <p class="text-gray-700 leading-relaxed text-sm">
+              {prep.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="max-w-7xl mx-auto p-8 bg-pink-600 text-white rounded-2xl text-center"
+    >
+      <h3 class="text-xl font-semibold mb-4">
+        ¿Tienes dudas sobre la preparación?
+      </h3>
+      <p class="mb-6 text-pink-100">
+        Nuestro equipo está listo para resolver todas tus preguntas
+      </p>
+      <button
+        class="bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-50 transition-colors flex items-center gap-3 mx-auto group"
+      >
+        <Phone class="w-5 h-5 group-hover:scale-110 transition-transform" />
+        Agenda tu Cita
+      </button>
+    </div>
+  </div>
+</section>

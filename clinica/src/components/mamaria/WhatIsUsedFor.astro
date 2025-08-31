@@ -1,0 +1,70 @@
+---
+import { Droplets, Search, Shield, AlertCircle } from "@lucide/astro";
+---
+<section class="py-20 bg-pink-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        ¿Para qué se utiliza?
+      </h2>
+      <div class="w-24 h-1 bg-pink-500 mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-pink-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+          <Droplets class="w-6 h-6 text-pink-600" />
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Diferencia quistes</h3>
+        <p class="text-gray-600 text-sm">
+          Distingue con precisión entre lesiones líquidas (quistes) y masas sólidas.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-pink-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+          <Search class="w-6 h-6 text-pink-600" />
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Complementa mamografías</h3>
+        <p class="text-gray-600 text-sm">
+          Especialmente útil en mamas densas donde otros métodos son menos efectivos.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-pink-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+          <Shield class="w-6 h-6 text-pink-600" />
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Evalúa implantes</h3>
+        <p class="text-gray-600 text-sm">
+          Herramienta excelente para evaluar el estado de implantes mamarios.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-pink-100 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+          <AlertCircle class="w-6 h-6 text-pink-600" />
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Detecta irregularidades</h3>
+        <p class="text-gray-600 text-sm">
+          Identifica abscesos, cambios inflamatorios y otras alteraciones.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-pink-500 to-pink-600 rounded-2xl p-8 text-white text-center">
+      <h3 class="text-xl font-bold mb-2">Diagnóstico preciso y confiable</h3>
+      <p class="text-pink-100">
+        Una herramienta fundamental para el cuidado integral de la salud mamaria
+      </p>
+      <!-- Botón blanco para contrastar, hacia /hacer-cita -->
+      <a
+        href="/hacer-cita"
+        class="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-white text-pink-600 hover:bg-pink-50 transition-colors w-full sm:w-auto"
+        aria-label="Hacer cita"
+      >
+        Agenda tu cita
+      </a>
+    </div>
+  </div>
+</section>

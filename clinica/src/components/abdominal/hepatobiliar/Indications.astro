@@ -1,0 +1,115 @@
+---
+import { Phone, AlertCircle, Thermometer, Eye, Activity, Stethoscope, FileText } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6">
+        <Stethoscope class="w-8 h-8 text-pink-600" />
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Indicaciones y síntomas por los que te lo piden
+      </h2>
+
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Reconoce las señales que tu cuerpo te envía y actúa a tiempo
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-2xl border border-red-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+            <AlertCircle class="w-5 h-5 text-white" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Dolor abdominal</h3>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Dolor en la parte alta derecha del abdomen o que corre a la
+          espalda/hombro
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-2xl border border-yellow-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
+            <Eye class="w-5 h-5 text-white" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Ictericia</h3>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Coloración amarilla de ojos y/o piel, acompañada de náusea y vómito
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-2xl border border-orange-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+            <Thermometer class="w-5 h-5 text-white" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Fiebre y malestar</h3>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Fiebre o dolor posprandial (tras comidas grasas)
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl border border-blue-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+            <Activity class="w-5 h-5 text-white" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Pruebas alteradas</h3>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Elevación de pruebas hepáticas de laboratorio o sospecha de
+          obstrucción biliar
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-2xl border border-purple-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center">
+            <FileText class="w-5 h-5 text-white" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Control médico</h3>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Control de hígado graso o seguimiento de antecedentes hepatobiliares
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+            <Stethoscope class="w-5 h-5 text-white" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Valoración preoperatoria</h3>
+        </div>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Evaluación antes de cirugías o procedimientos médicos
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-pink-50 to-pink-100 rounded-3xl p-8 md:p-12 text-center">
+      <h3 class="text-2xl font-bold text-gray-900 mb-4">
+        ¿Reconoces alguno de estos síntomas?
+      </h3>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Si tienes uno o varios de estos síntomas, la ecografía ayuda a ordenar
+        el panorama clínico y te brinda la tranquilidad que necesitas.
+      </p>
+
+      <div class="flex justify-center">
+        <button
+          class="inline-flex items-center gap-3 bg-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        >
+          <Phone class="w-5 h-5" />
+          Agenda tu Cita
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

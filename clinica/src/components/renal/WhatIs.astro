@@ -1,0 +1,122 @@
+---
+import { Eye, Shield, Clock, Zap, Heart, CheckCircle } from "@lucide/astro";
+---
+
+<section class="py-20 bg-gradient-to-b from-gray-50 to-white relative">
+
+  <div class="max-w-7xl mx-auto p-8 relative z-10">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
+      >
+        <Heart class="w-4 h-4" />
+        Tecnología médica avanzada
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+        ¿Qué es el ultrasonido renal?
+      </h2>
+
+      <!-- Subcomponente optimizado para mobile -->
+      <div
+        class="bg-gradient-to-r from-pink-50 to-pink-100/50 rounded-3xl p-6 md:p-8 border border-pink-200/50 shadow-lg w-full text-left"
+      >
+        <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+          <!-- Icono: pequeño y arriba en mobile; a la izquierda desde md -->
+          <div
+            class="bg-pink-600 w-10 h-10 md:w-16 md:h-16 rounded-2xl flex items-center justify-center shrink-0 md:mt-1"
+          >
+            <Zap class="w-6 h-6 md:w-8 md:h-8 text-white" />
+          </div>
+
+          <div class="text-left">
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+              Es un estudio de exploración por imágenes que utiliza ondas
+              sonoras sin radiación para ver tus riñones y las vías urinarias en
+              tiempo real. Asimismo, permite observar la forma, el tamaño y la
+              textura del tejido, además, de estructuras vecinas como la vejiga.
+            </p>
+
+            <!-- Bullets: en columna en mobile, se acomodan en fila desde sm -->
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3">
+              <div
+                class="flex items-center gap-2 text-pink-700 text-sm font-medium"
+              >
+                <CheckCircle class="w-4 h-4" />
+                100% Seguro
+              </div>
+              <div
+                class="flex items-center gap-2 text-pink-700 text-sm font-medium"
+              >
+                <CheckCircle class="w-4 h-4" />
+                Sin dolor
+              </div>
+              <div
+                class="flex items-center gap-2 text-pink-700 text-sm font-medium"
+              >
+                <CheckCircle class="w-4 h-4" />
+                Resultados inmediatos
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Subcomponente -->
+    </div>
+
+    <!-- Grid de features -->
+    <div class="grid md:grid-cols-3 gap-8 mb-4 md:mb-16">
+      <div
+        class="group bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+      >
+        <div
+          class="bg-gradient-to-br from-pink-600 to-pink-700 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+        >
+          <Eye class="w-10 h-10 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">
+          Imágenes en tiempo real
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Visualización inmediata de los riñones y estructuras urinarias
+        </p>
+        <div class="w-12 h-1 bg-pink-600 rounded-full mx-auto"></div>
+      </div>
+
+      <div
+        class="group bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+      >
+        <div
+          class="bg-gradient-to-br from-pink-600 to-pink-700 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+        >
+          <Shield class="w-10 h-10 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Sin radiación</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Procedimiento seguro y no invasivo
+        </p>
+        <div class="w-12 h-1 bg-pink-600 rounded-full mx-auto"></div>
+      </div>
+
+      <div
+        class="group bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+      >
+        <div
+          class="bg-gradient-to-br from-pink-600 to-pink-700 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+        >
+          <Clock class="w-10 h-10 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">
+          Evaluación completa
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Tamaño, forma, textura y funcionamiento renal
+        </p>
+        <div class="w-12 h-1 bg-pink-600 rounded-full mx-auto"></div>
+      </div>
+    </div>
+    <!-- /Grid de features -->
+
+    <!-- Caja final eliminada como pediste -->
+  </div>
+</section>

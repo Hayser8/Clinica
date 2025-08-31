@@ -1,0 +1,65 @@
+---
+import { Clock, BookOpen, Users } from "@lucide/astro";
+const features = [
+  {
+    icon: Clock,
+    title: "Más de 10 años de experiencia",
+    description:
+      "En ecografía médica diagnóstica, con radiólogos especializados que trabajan en conjunto.",
+  },
+  {
+    icon: Users,
+    title: "Dos médicos radiólogos evaluando",
+    description:
+      "Dos miradas expertas que enriquecen la interpretación y aceleran la entrega de resultados.",
+  },
+  {
+    icon: BookOpen,
+    title: "Protocolos actualizados",
+    description:
+      "Y tecnología moderna, lo que asegura imágenes claras y confiables.",
+  },
+];
+---
+
+<section class="bg-white py-16">
+  <div class="max-w-7xl mx-auto p-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+      ¿Por qué <span class="text-pink-600">DeltaScan</span> es tu clínica de ultrasonidos
+      de abdomen superior?
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8 mt-12">
+      {
+        features.map((feature, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center"
+          >
+            <div class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <feature.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-gray-900">
+              {feature.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 mt-8">
+      <div class="flex items-start gap-3">
+        <div
+          class="w-6 h-6 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+        >
+          <Users class="w-3 h-3 text-white" />
+        </div>
+        <p class="text-gray-700">
+          <strong>Atención personalizada:</strong> donde cada paciente recibe explicación
+          clara de su estudio y un acompañamiento cercano durante el proceso.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

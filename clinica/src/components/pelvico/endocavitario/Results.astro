@@ -1,0 +1,80 @@
+---
+import { Clock, Phone, FileText, MessageCircle, Calendar } from "@lucide/astro";
+
+const resultFeatures = [
+  { icon: Clock,        title: "El mismo día",        description: "Resultados inmediatos sin esperas" },
+  { icon: FileText,     title: "Interpretación clara", description: "Lenguaje sencillo y comprensible" },
+  { icon: MessageCircle,title: "Resuelve dudas",       description: "Explicación detallada de hallazgos" },
+];
+---
+
+<section class="relative bg-gradient-to-br from-pink-600 via-pink-600 to-pink-700 text-white py-16 md:py-24 overflow-hidden">
+  <!-- decorativos suaves -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-16 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 -left-24 w-72 h-72 bg-white/5 rounded-full blur-2xl"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-8">
+    <!-- Header -->
+    <div class="text-center">
+      <div class="mx-auto w-16 h-16 rounded-2xl bg-white text-pink-600 flex items-center justify-center shadow-lg ring-1 ring-white/40">
+        <Calendar class="w-8 h-8" />
+      </div>
+      <h2 class="mt-6 text-3xl md:text-4xl font-bold tracking-tight">
+        ¿Cuándo se entregan los resultados?
+      </h2>
+    </div>
+
+    <!-- Features -->
+    <div class="mt-12 grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+      {
+        resultFeatures.map((feature, index) => (
+          <div
+            key={index}
+            class="group rounded-2xl bg-white/10 backdrop-blur-sm p-6 md:p-7
+                   ring-1 ring-white/10 shadow-sm transition
+                   hover:-translate-y-0.5 hover:shadow-lg hover:ring-white/20"
+          >
+            <div class="w-12 h-12 mb-4 mx-auto rounded-xl flex items-center justify-center
+                        bg-white text-pink-600 shadow ring-1 ring-white/40 group-hover:scale-105 transition">
+              <feature.icon class="w-6 h-6" />
+            </div>
+            <h3 class="text-base font-semibold mb-1">{feature.title}</h3>
+            <p class="text-sm text-pink-100/90 leading-relaxed">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Callout -->
+    <div class="mt-10">
+      <div class="relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-sm p-6 md:p-8 ring-1 ring-white/15">
+        <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+        <div class="relative flex items-start gap-4">
+          <div class="shrink-0 w-10 h-10 rounded-xl bg-white text-pink-600 flex items-center justify-center shadow ring-1 ring-white/40">
+            <Clock class="w-5 h-5" />
+          </div>
+          <p class="text-lg md:text-xl leading-relaxed">
+            Los resultados te los entregamos <strong class="text-white">el mismo día</strong>,
+            junto con una interpretación con un lenguaje claro. Esto significa que no tendrás
+            que esperar días para resolver o dar el siguiente paso en tu tratamiento.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <button
+        class="inline-flex items-center gap-3 bg-white text-pink-600 px-8 py-4 rounded-full
+               font-semibold text-lg shadow-md hover:shadow-lg hover:bg-pink-50 transition
+               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-300 focus:ring-offset-pink-700 group"
+        aria-label="Agendar cita"
+      >
+        <Phone class="w-5 h-5 transition-transform group-hover:scale-110" />
+        Agenda tu Cita
+      </button>
+    </div>
+  </div>
+</section>

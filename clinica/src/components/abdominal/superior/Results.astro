@@ -1,0 +1,32 @@
+---
+import { Clock, Phone } from '@lucide/astro';
+---
+<section class="py-16 bg-pink-600 text-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center">
+      <div
+        class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6"
+      >
+        <Clock class="w-10 h-10 text-white" />
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Entrega de resultados</h2>
+
+      <p class="text-lg text-pink-50 leading-relaxed mb-8 max-w-3xl mx-auto">
+        Entendemos que la espera genera incertidumbre. Por eso, tus resultados
+        se entregan
+        <strong class="text-white"> el mismo día del estudio</strong>, junto con
+        la explicación médica correspondiente. Esto facilita que tu médico
+        tratante pueda decidir los siguientes pasos sin demoras y te brinda
+        tranquilidad inmediata.
+      </p>
+
+      <button
+        class="bg-white text-pink-600 px-8 py-4 rounded-lg font-semibold hover:bg-pink-50 transition-colors inline-flex items-center gap-2"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu cita
+      </button>
+    </div>
+  </div>
+</section>

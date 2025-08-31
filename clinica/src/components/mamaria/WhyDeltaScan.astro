@@ -1,0 +1,41 @@
+---
+import { Users, Award, Eye, CheckCircle } from "@lucide/astro";
+const features = [
+  {
+    icon: Users,
+    text: "Contamos con dos médicos radiólogos que realizarán tu estudio al mismo tiempo, lo que optimizan el resultado.",
+  },
+  {
+    icon: Award,
+    text: "Tenemos 10 años de experiencia como médicos radiólogos de los cuales 7 años han sido dedicados a la práctica privada.",
+  },
+  {
+    icon: Eye,
+    text: "Utilizamos imágenes en tiempo real para la localización de las lesiones.",
+  },
+  {
+    icon: CheckCircle,
+    text: "Nuestra experiencia nos avala como una entidad confiable al momento de elegirnos como tu clínica para la realización de ecografías mamarias.",
+  },
+];
+---
+
+<section class="py-20 bg-pink-600 text-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+      ¿Por qué DeltaScan es tu clínica de ultrasonidos mamarios?
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        features.map((feature, index) => (
+          <div key={index} class="flex items-start space-x-4">
+            <div class="bg-white/20 rounded-full p-3 flex-shrink-0">
+              <feature.icon class="w-6 h-6" />
+            </div>
+            <p class="text-pink-100 leading-relaxed">{feature.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

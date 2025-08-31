@@ -4,7 +4,7 @@ import Header from "@/components/common/Header.astro";
 import Footer from "@/components/common/Footer.astro";
 import HeroSection from "@/components/musculoesqueletico/HeroSection.astro";
 import WhatIs from "@/components/musculoesqueletico/WhatIs.astro";
-import ExamProcess from "@/components/musculoesqueletico/ExamProcess.astro";
+import HowItIs from "@/components/common/HowItIs.astro";
 import Pathologies from "@/components/musculoesqueletico/Pathologies.astro";
 import WhyDeltaScan from "@/components/musculoesqueletico/WhyDeltaScan.astro"
 import Advantages from "@/components/musculoesqueletico/Advantages.astro";
@@ -12,6 +12,51 @@ import Results from "@/components/musculoesqueletico/Results.astro";
 import Preparation from "@/components/musculoesqueletico/Preparation.astro";
 import CTA from "@/components/common/CTA.astro";
 import FAQ from "@/components/common/FAQ.astro";
+
+import {
+  Bed,
+  Droplets,
+  Search,
+  FileText,
+  FolderOpen,
+} from "@lucide/astro";
+const steps = [
+  {
+    number: 1,
+    title: "Colocación en la camilla",
+    description: "Te recostarás boca arriba o en una posición que se le pueda dar énfasis a tu lesión",
+    icon: Bed,
+    color: "from-pink-500 to-pink-600"
+  },
+  {
+    number: 2,
+    title: "Colocación de gel conductor",
+    description: "Se te aplicará un gel sobre la piel para garantizar el contacto óptimo entre la sonda y el área a evaluar",
+    icon: Droplets,
+    color: "from-pink-600 to-pink-700"
+  },
+  {
+    number: 3,
+    title: "Evaluación",
+    description: "Observamos el área de interés, desde tejidos blandos, tendones y músculos en acción; en algún momento se te pedirá por ejemplo a flexionar una articulación, para poder detectar lesiones que podrían pasar desapercibidas en estudios estáticos.",
+    icon: Search,
+    color: "from-pink-500 to-pink-600"
+  },
+  {
+    number: 4,
+    title: "Análisis",
+    description: "En base al examen y a las imágenes obtenidas, se realiza un informe el cual lo puedes presentar a tu médico tratante para que te ayude al diagnóstico y/o tratamiento",
+    icon: FileText,
+    color: "from-pink-600 to-pink-700"
+  },
+  {
+    number: 5,
+    title: "Entrega",
+    description: "Te entregamos tu informe en un folder y en una hoja impresa que contiene todas las imágenes obtenidas.",
+    icon: FolderOpen,
+    color: "from-pink-500 to-pink-600"
+  }
+]
 
 const faqData = [
   {
@@ -51,7 +96,8 @@ const faqData = [
       "El ultrasonido es menos invasivo, más dinámico y para una evaluación rápida; sin embargo, la resonancia magnética, muchas veces es el estudio de elección para evaluar una articulación en su totalidad. Tu médico tratante será el encargado de elegir cual es el estudio que más se acople a tu situación.",
   },
 ];
-
+const timeEstimate="30 a 45 minutos";
+const heading="¿Cómo es un Ultrasonido Musculoesquelético en DeltaScan?"
 ---
 
 <Layout
@@ -64,9 +110,13 @@ const faqData = [
   <main>
     <HeroSection />
     <WhatIs />
-    <ExamProcess />
     <Pathologies />
     <WhyDeltaScan />
+    <HowItIs 
+      steps={steps}
+      timeEstimate={timeEstimate}
+      heading={heading}
+    />
     <Advantages />
     <Results />
     <Preparation />

@@ -1,0 +1,56 @@
+---
+import { Award, Users, BookOpen, Zap, Heart } from "@lucide/astro";
+  const features = [
+    {
+      icon: Award,
+      title: "Más de 10 años de experiencia",
+      description: "En diagnóstico por imágenes",
+    },
+    {
+      icon: Users,
+      title: "Dos médicos radiólogos",
+      description: "Trabajando juntos en cada estudio, asegurando precisión y revisión doble",
+    },
+    {
+      icon: BookOpen,
+      title: "Protocolos actualizados TI-RADS",
+      description: "Basados en guías internacionales para biopsias tiroideas",
+    },
+    {
+      icon: Zap,
+      title: "Tecnología moderna",
+      description: "Que mejora la nitidez y seguridad de cada procedimiento",
+    },
+    {
+      icon: Heart,
+      title: "Atención cercana y humana",
+      description: "Explicamos cada paso y resolvemos tus dudas con claridad",
+    },
+  ]
+---
+<section
+  class="py-16 md:py-24 bg-gradient-to-br from-pink-600 to-pink-700 text-white"
+>
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        ¿Por qué DeltaScan es tu clínica de biopsias de tiroides guiadas por
+        ultrasonido?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        features.map((feature, index) => (
+          <div key={index} class="bg-white/10 backdrop-blur-sm rounded-3xl p-6">
+            <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+              <feature.icon class="w-6 h-6 text-white" />
+            </div>
+            <h3 class="text-xl font-bold mb-3">{feature.title}</h3>
+            <p class="text-pink-100 leading-relaxed">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,5 +1,5 @@
 ---
-import { Heart, Phone, CheckCircle } from "@lucide/astro";
+import { Heart, Info, CheckCircle } from "@lucide/astro";
 
 const includes = [
   "Screening mamario",
@@ -7,16 +7,12 @@ const includes = [
 ];
 ---
 
-<section
-  class="py-20 bg-gradient-to-br from-pink-600 to-pink-700"
->
+<section class="py-20 bg-gradient-to-br from-pink-600 to-pink-700">
   <div class="max-w-7xl mx-auto p-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="text-white space-y-8">
         <div class="space-y-4">
-          <div
-            class="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2"
-          >
+          <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2">
             <Heart class="w-5 h-5" />
             <span class="font-semibold">Servicio Destacado</span>
           </div>
@@ -31,9 +27,7 @@ const includes = [
         </div>
 
         <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-pink-100">
-            Este servicio te incluye:
-          </h3>
+          <h3 class="text-xl font-semibold text-pink-100">Este servicio te incluye:</h3>
           <div class="space-y-3">
             {
               includes.map((item, index) => (
@@ -46,33 +40,37 @@ const includes = [
           </div>
         </div>
 
-        <button
-          class="inline-flex items-center justify-center h-11 px-8 bg-white text-pink-600 hover:bg-pink-50 font-semibold rounded-md transition-colors"
+        <a
+          href="/mamaria"
+          class="inline-flex items-center justify-center h-11 px-8 bg-white text-pink-600 hover:bg-pink-50 font-semibold rounded-md transition-colors w-full sm:w-auto"
         >
-          <Phone class="w-5 h-5 mr-2" />
-          Hacer Cita
-        </button>
+          <Info class="w-5 h-5 mr-2" />
+          Ver más sobre eco mamaria
+        </a>
       </div>
 
-      <div class="relative">
-        <div class="absolute inset-0 bg-white/10 rounded-3xl blur-3xl"></div>
-        <div
-          class="relative bg-white/20 backdrop-blur-sm rounded-3xl p-8 border border-white/30"
-        >
-          <div class="text-center space-y-6">
-            <div
-              class="w-24 h-24 bg-white rounded-2xl flex items-center justify-center mx-auto"
-            >
-              <Heart class="w-12 h-12 text-pink-600" />
-            </div>
-            <div class="space-y-2">
-              <h3 class="text-2xl font-bold text-white">Detección Temprana</h3>
-              <p class="text-pink-100">
-                La clave para un tratamiento exitoso es la detección oportuna
-              </p>
-            </div>
+      <!-- Imagen decorada -->
+      <div class="relative max-w-xl lg:max-w-2xl mx-auto">
+        <!-- Glow sutil detrás -->
+        <div class="absolute -inset-6 bg-white/10 rounded-[2rem] blur-3xl"></div>
+
+        <div class="relative overflow-hidden rounded-3xl border border-white/30 bg-white/10 backdrop-blur-sm shadow-2xl">
+          <div class="aspect-[4/3] lg:aspect-[5/4]">
+            <img
+              src="/mamaria/doctoradeultrasonidosmamarios.webp"
+              alt="Doctora realizando ultrasonido mamario en clínica especializada"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
+          <!-- Anillo interior sutil -->
+          <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/20"></div>
         </div>
+
+        <!-- Blobs decorativos -->
+        <div class="absolute -top-6 -right-6 w-24 h-24 bg-pink-300/40 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-8 -left-8 w-28 h-28 bg-fuchsia-400/40 rounded-full blur-2xl"></div>
       </div>
     </div>
   </div>

@@ -1,0 +1,116 @@
+---
+import { Target, ArrowRight, Shield, Clock, CheckCircle } from "@lucide/astro";
+const benefits = [
+  {
+    icon: Target,
+    title: "Precisión",
+    description: "Guía exacta hacia el área sospechosa",
+  },
+  {
+    icon: Shield,
+    title: "Seguridad",
+    description: "Procedimiento mínimamente invasivo",
+  },
+  {
+    icon: Clock,
+    title: "Rapidez",
+    description: "Resultados en tiempo real",
+  },
+];
+---
+
+<section class="py-16 bg-pink-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Ultrasonido como guía para biopsia tiroidea (PAAF)
+      </h2>
+      <div class="w-16 h-1 bg-pink-600 mx-auto"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+      <div class="space-y-6">
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-pink-100">
+          <div class="flex items-start gap-6">
+            <div
+              class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0"
+            >
+              <Target class="w-8 h-8 text-pink-600" />
+            </div>
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold text-gray-900">
+                ¿Cuándo se realiza?
+              </h3>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                Realizamos este procedimiento cuando un ultrasonido tiroideo
+                detecta un nódulo con características que requieren un análisis
+                más profundo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-pink-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">¿Cómo funciona?</h3>
+          <p class="text-gray-700 leading-relaxed">
+            A diferencia de un ultrasonido normal, aquí no solo observamos la
+            tiroides, también usamos la imagen en tiempo real para guiar una
+            aguja fina directamente al área sospechosa y obtener una muestra
+            para estudio patológico.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">
+          Ventajas del procedimiento
+        </h3>
+        <div class="grid gap-4">
+          {
+            benefits.map((benefit, index) => (
+              <div
+                key={index}
+                class="bg-white rounded-xl p-6 shadow-sm border border-pink-100 hover:shadow-md transition-shadow"
+              >
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                    <benefit.icon class="w-6 h-6 text-pink-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">{benefit.title}</h4>
+                    <p class="text-gray-600 text-sm">{benefit.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="bg-gradient-to-r from-pink-600 to-pink-700 rounded-xl p-8 text-center shadow-lg"
+    >
+      <div class="max-w-3xl mx-auto">
+        <div
+          class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6"
+        >
+          <CheckCircle class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">
+          ¿Necesitas una biopsia tiroidea guiada por ultrasonido?
+        </h3>
+        <p class="text-pink-100 text-lg mb-8 leading-relaxed">
+          Nuestro equipo especializado te brindará la atención y precisión que
+          necesitas para un diagnóstico confiable.
+        </p>
+        <button
+          class="bg-white text-pink-600 font-bold py-4 px-8 rounded-full hover:bg-pink-50 transition-colors inline-flex items-center gap-3 text-lg shadow-lg"
+        >
+          Más información
+          <ArrowRight class="w-5 h-5" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

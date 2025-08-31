@@ -1,0 +1,85 @@
+---
+import { Monitor, Stethoscope, Info } from "@lucide/astro";
+---
+<section class="py-20 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight"
+      >
+        Los dos tipos de ultrasonido prostático
+      </h2>
+      <p class="text-lg md:text-xl text-pink-600 font-semibold">
+        Suprapúbico vs Transrectal
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      <div
+        class="bg-white rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-xl transition-shadow space-y-6"
+      >
+        <div class="flex items-center gap-4">
+          <div
+            class="bg-gradient-to-br from-pink-600 to-pink-700 p-4 rounded-2xl shadow-lg"
+          >
+            <Monitor class="w-7 h-7 text-white" />
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold text-gray-900">
+            Suprapúbico
+          </h3>
+        </div>
+
+        <p class="text-md md:text-lg text-gray-700 leading-relaxed">
+          El transductor se coloca sobre la parte baja del abdomen. Permite
+          estimar el tamaño de la próstata y evaluar la vejiga, incluyendo la
+          medición del residuo de orina posterior a la micción.
+        </p>
+
+        <a
+        href="/prostatico/suprapubico"
+          class="w-full bg-pink-50 text-pink-600 py-3 px-6 rounded-xl font-semibold hover:bg-pink-100 transition-colors flex items-center justify-center gap-2"
+        >
+          <Info class="w-5 h-5" />
+          Más información
+      </a>
+      </div>
+
+      <div
+        class="bg-white rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-xl transition-shadow space-y-6"
+      >
+        <div class="flex items-center gap-4">
+          <div
+            class="bg-gradient-to-br from-pink-600 to-pink-700 p-4 rounded-2xl shadow-lg"
+          >
+            <Stethoscope class="w-7 h-7 text-white" />
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold text-gray-900">
+            Transrectal
+          </h3>
+        </div>
+
+        <p class="text-md md:text-lg text-gray-700 leading-relaxed">
+          La sonda con una protección desechable se introduce suavemente en el
+          recto para obtener imágenes de alta resolución de la próstata y las
+          vesículas seminales, siendo ideal cuando se requiere un nivel de
+          detalle mayor.
+        </p>
+
+         <a
+        href="/prostatico/transrectal"
+          class="w-full bg-pink-50 text-pink-600 py-3 px-6 rounded-xl font-semibold hover:bg-pink-100 transition-colors flex items-center justify-center gap-2"
+        >
+          <Info class="w-5 h-5" />
+          Más información
+      </a>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+        En DeltaScan ofrecemos ambas vías según el criterio médico y la
+        indicación clínica.
+      </p>
+    </div>
+  </div>
+</section>

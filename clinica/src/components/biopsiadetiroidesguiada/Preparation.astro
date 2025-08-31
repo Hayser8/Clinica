@@ -1,0 +1,77 @@
+---
+import { Pill, Shirt, Utensils, Home, Phone } from "@lucide/astro";
+const preparations = [
+  {
+    icon: Pill,
+    title: "Medicamentos",
+    description:
+      "Si tomas aspirina, anticoagulantes u otros fármacos que afecten la coagulación, infórmalo con anticipación. Indícanos para ver si es necesario ajustar la dosis antes del estudio.",
+  },
+  {
+    icon: Shirt,
+    title: "Ropa",
+    description:
+      "Usa ropa cómoda y de cuello amplio para facilitar el acceso a la zona del cuello. Evita accesorios como collares o bufandas el día de tu cita.",
+  },
+  {
+    icon: Utensils,
+    title: "Alimentación",
+    description:
+      "No se requiere ayuno ni restricciones alimenticias. Puedes comer y beber con normalidad.",
+  },
+  {
+    icon: Home,
+    title: "Hospitalización",
+    description:
+      "No es necesaria; la biopsia es un procedimiento ambulatorio y podrás regresar a tus actividades poco después.",
+  },
+];
+---
+
+<section class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        ¿Cómo me preparo para mi examen?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        La preparación es sencilla y está pensada para que llegues con
+        tranquilidad al procedimiento
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-8">
+      {
+        preparations.map((prep, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100"
+          >
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <prep.icon class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                  {prep.title}
+                </h3>
+                <p class="text-gray-700 leading-relaxed">{prep.description}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center gap-3 bg-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-700 transition-colors w-full sm:w-auto"
+        aria-label="Agenda tu Cita"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu Cita
+      </a>
+    </div>
+  </div>
+</section>

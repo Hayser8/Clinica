@@ -1,0 +1,52 @@
+---
+import { CheckCircle, Phone } from "@lucide/astro"
+  const indications = [
+    "Sangrado irregular o dolor pélvico persistente.",
+    "Control en tratamientos de fertilidad.",
+    "Valoración temprana de un embarazo.",
+    "Detección de miomas, pólipos, endometriosis o masas anexiales.",
+    "Estudio de infertilidad femenina.",
+  ]
+---
+<section class="bg-white py-16 md:py-24">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center space-y-4 mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+        Indicaciones más comunes
+      </h2>
+      <p class="text-lg text-gray-600">
+        Un ultrasonido endovaginal suele recomendarse en situaciones como:
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      {
+        indications.map((indication, index) => (
+          <div
+            key={index}
+            class="flex items-start gap-4 p-6 bg-pink-50 rounded-xl"
+          >
+            <div class="w-6 h-6 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <CheckCircle class="w-4 h-4 text-white" />
+            </div>
+            <p class="text-gray-700 leading-relaxed">{indication}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center space-y-6">
+      <p class="text-lg text-gray-700">
+        Si cuentas con alguno de estos síntomas, no dudes en contactarnos para
+        poder aclarar tu caso.
+      </p>
+
+      <button
+        class="bg-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-700 transition-colors flex items-center gap-3 mx-auto group"
+      >
+        <Phone class="w-5 h-5 group-hover:scale-110 transition-transform" />
+        Agenda tu Cita
+      </button>
+    </div>
+  </div>
+</section>

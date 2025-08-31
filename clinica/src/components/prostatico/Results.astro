@@ -1,0 +1,83 @@
+---
+import { Clock, FileCheck, Download, Calendar, CheckCircle } from "@lucide/astro";
+---
+<section class="py-20 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
+        Resultados y tiempo de entrega
+      </h2>
+      <p class="text-lg text-pink-600 font-semibold">
+        Información clara y oportuna
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white rounded-3xl p-8 shadow-lg space-y-6">
+        <div class="flex items-center gap-4">
+          <div class="bg-gradient-to-br from-pink-600 to-pink-700 p-4 rounded-2xl shadow-lg">
+            <Clock class="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900">Mismo día</h3>
+            <p class="text-sm text-pink-600 font-semibold">Entrega inmediata</p>
+          </div>
+        </div>
+        <p class="text-base text-gray-700 leading-relaxed">
+          El informe y las imágenes se entregan el mismo día de la realización
+          del estudio.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 shadow-lg space-y-6">
+        <div class="flex items-center gap-4">
+          <div class="bg-gradient-to-br from-pink-600 to-pink-700 p-4 rounded-2xl shadow-lg">
+            <FileCheck class="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900">Reporte completo</h3>
+            <p class="text-sm text-pink-600 font-semibold">Información detallada</p>
+          </div>
+        </div>
+        <p class="text-base text-gray-700 leading-relaxed">
+          Incluye recomendaciones específicas y correlación con el urólogo
+          cuando sea necesario.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-br from-pink-600 to-pink-700 rounded-3xl p-8 md:p-10 text-white">
+      <div class="text-center mb-8">
+        <h3 class="text-xl md:text-2xl font-bold mb-4">
+          ¿Qué incluye tu reporte?
+        </h3>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center space-y-4">
+          <div class="bg-white/20 backdrop-blur-sm p-4 rounded-2xl w-16 h-16 mx-auto flex items-center justify-center">
+            <Download class="w-8 h-8" />
+          </div>
+          <h4 class="text-base font-bold">Imágenes digitales</h4>
+          <p class="text-sm text-pink-100">Archivo completo de imágenes del estudio</p>
+        </div>
+
+        <div class="text-center space-y-4">
+          <div class="bg-white/20 backdrop-blur-sm p-4 rounded-2xl w-16 h-16 mx-auto flex items-center justify-center">
+            <Calendar class="w-8 h-8" />
+          </div>
+          <h4 class="text-base font-bold">Recomendaciones</h4>
+          <p class="text-sm text-pink-100">Seguimiento y próximos pasos sugeridos</p>
+        </div>
+
+        <div class="text-center space-y-4">
+          <div class="bg-white/20 backdrop-blur-sm p-4 rounded-2xl w-16 h-16 mx-auto flex items-center justify-center">
+            <CheckCircle class="w-8 h-8" />
+          </div>
+          <h4 class="text-base font-bold">Diagnóstico claro</h4>
+          <p class="text-sm text-pink-100">Resultados precisos y fáciles de entender</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

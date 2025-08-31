@@ -8,7 +8,7 @@ import CommonUses from "@/components/biopsiademamaguiada/CommonUses.astro";
 import BiopsyTypes from "@/components/biopsiademamaguiada/BiopsyTypes.astro";
 import Preparation from "@/components/biopsiademamaguiada/Preparation.astro";
 import Equipment from "@/components/biopsiademamaguiada/Equipment.astro";
-import Procedure from "@/components/biopsiademamaguiada/Procedure.astro";
+import HowItIs from "@/components/common/HowItIs.astro";
 import Experience from "@/components/biopsiademamaguiada/Experience.astro";
 import Results from "@/components/biopsiademamaguiada/Results.astro";
 import Benefits from "@/components/biopsiademamaguiada/Benefits.astro";
@@ -16,6 +16,76 @@ import Limitations from "@/components/biopsiademamaguiada/Limitations.astro";
 import WhyChooseUs from "@/components/biopsiademamaguiada/WhyChooseUs.astro";
 import CTA from "@/components/common/CTA.astro";
 import FAQ from "@/components/common/FAQ.astro";
+
+// Importa estos íconos donde declares el arreglo
+import { Bed, Syringe, Target, SliceIcon, TestTube, ArrowLeft, CheckCircle } from "@lucide/astro";
+
+const steps = [
+  {
+    number: 1,
+    title: "Posicionamiento",
+    description:
+      "Te recostarás boca arriba en la mesa de examen o levemente de costado.",
+    icon: Bed,
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    title: "Anestesia local",
+    description:
+      "El médico inyectará un anestésico local adentro de la piel y más profundamente adentro del seno para adormecerlo.",
+    icon: Syringe,
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    title: "Localización",
+    description:
+      "Al presionar el transductor contra la mama, el médico radiólogo localizará la lesión.",
+    icon: Target,
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    title: "Incisión",
+    description:
+      "El médico te hará una incisión muy pequeña en la piel en el lugar en el que te insertarán la aguja de biopsia, tan pequeña que no es necesario el uso de suturas posteriores.",
+    icon: SliceIcon,
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    title: "Inserción de aguja",
+    description:
+      "El médico radiólogo, mientras monitorea el sitio de la lesión mediante la sonda de ultrasonido, inserta la aguja y la hace avanzar directamente hasta adentro de la masa, lesión o área de interés.",
+    icon: Syringe,
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 6,
+    title: "Extracción de muestras",
+    description:
+      "El médico extrae muestras de tejido utilizando uno de los tres métodos: aspiración por aguja fina, biopsia de tipo TRUCUT, o dispositivo asistido por vacío (BAV).",
+    icon: TestTube,
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 7,
+    title: "Retiro de aguja",
+    description: "Tras este muestreo, el médico retirará la aguja.",
+    icon: ArrowLeft,
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 8,
+    title: "Finalización",
+    description:
+      "Una vez completada la biopsia, el médico radiólogo aplicará presión para detener cualquier sangrado. Cubrirán la abertura en la piel con una venda. No se necesitan suturas.",
+    icon: CheckCircle,
+    color: "from-pink-600 to-pink-700",
+  },
+];
+
 
 const faqData = [
   {
@@ -50,6 +120,9 @@ const faqData = [
   },
 ];
 
+const timeEstimate="30 a 60 minutos";
+const heading="¿Cómo es una biopsia mamaria ecodirigida en DeltaScan?"
+
 ---
 
 <Layout
@@ -65,15 +138,19 @@ const faqData = [
     <CommonUses />
     <BiopsyTypes />
     <WhyChooseUs />
+    <HowItIs 
+    steps={steps}
+    timeEstimate={timeEstimate}
+    heading={heading}
+    />
     <Preparation />
     <Equipment />
-    <Procedure />
     <Experience />
     <Results />
     <Benefits />
     <Limitations />
     <CTA
-      title="Reserva ahora tu biopsia de mama guiada"
+      title="Reserva ahora tu Biopsia de Mama Guiada"
       subtitle="y resuelve todas tus dudas con nuestros especialistas"
     />
     <FAQ

@@ -1,0 +1,58 @@
+---
+import { Shirt, Utensils, Pill, Heart } from "@lucide/astro";
+const tips = [
+  {
+    icon: Shirt,
+    title: "Ropa adecuada",
+    description:
+      "Lleva ropa cómoda y de dos piezas que facilite el acceso a la región torácica.",
+  },
+  {
+    icon: Utensils,
+    title: "Sin ayuno",
+    description: "No es necesario ayunar para el examen.",
+  },
+  {
+    icon: Pill,
+    title: "Medicamentos",
+    description: "No suspendas tus medicamentos habituales.",
+  },
+  {
+    icon: Heart,
+    title: "Tranquilidad",
+    description:
+      "Acude con la mente tranquila y, si lo deseas, un acompañante de confianza.",
+  },
+];
+---
+
+<section class="py-20 bg-pink-600 text-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+      ¿Cómo prepararse?
+    </h2>
+
+    <div class="max-w-4xl mx-auto mb-12">
+      <p class="text-xl text-pink-100 leading-relaxed text-center">
+        Para optimizar la calidad de las imágenes, evita aplicar lociones,
+        cremas o desodorantes en la zona el día del examen.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        tips.map((tip, index) => (
+          <div key={index} class="text-center">
+            <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <tip.icon class="w-8 h-8" />
+            </div>
+            <h3 class="font-semibold text-lg mb-2">{tip.title}</h3>
+            <p class="text-pink-100 text-sm leading-relaxed">
+              {tip.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

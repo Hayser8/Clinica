@@ -3,28 +3,25 @@ import {
   Phone,
   Mail,
   MapPin,
-  Clock,
   Facebook,
   Instagram,
-  Twitter,
+  Youtube,
 } from "@lucide/astro";
 
-
+// 5 servicios destacados (con enlaces a sus páginas)
 const services = [
-  "Ultrasonido Abdominal",
-  "Ultrasonido Obstétrico",
-  "Ultrasonido de Mama",
-  "Doppler Vascular",
-  "Biopsia de Mama",
-  "Ultrasonido Tiroideo",
+  { name: "Ultrasonido de mama", href: "/mamaria" },
+  { name: "Biopsia de mama con guía de ultrasonido", href: "/biopsia-mamaria-ecodirigida" },
+  { name: "Doppler vascular", href: "/doppler" },
+  { name: "Ultrasonido de abdomen completo", href: "/abdominal" },
+  { name: "Ultrasonido musculoesquelético", href: "/musculoesqueletico" },
 ];
 
+// Enlaces rápidos -> páginas (no anclas)
 const quickLinks = [
-  { name: "Inicio", href: "#inicio" },
-  { name: "Servicios", href: "#servicios" },
-  { name: "Especialistas", href: "#especialistas" },
-  { name: "¿Por qué elegirnos?", href: "#por-que-elegirnos" },
-  { name: "Contacto", href: "#contacto" },
+  { name: "Sobre Nosotros", href: "/sobre-nosotros" },
+  { name: "Dr. Estuardo Pérez", href: "/dr-estuardo-perez" },
+  { name: "Dra. Berta Coto", href: "/dra-berta-coto" },
 ];
 ---
 
@@ -62,25 +59,23 @@ const quickLinks = [
             href="#"
             class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
           >
-            <Twitter class="w-5 h-5" />
+            <Youtube class="w-5 h-5" />
           </a>
         </div>
       </div>
 
-      {/* Services */}
+      {/* Servicios Destacados */}
       <div>
-        <h3 class="text-xl font-bold mb-6 text-pink-300">
-          Servicios Principales
-        </h3>
+        <h3 class="text-xl font-bold mb-6 text-pink-300">Servicios Destacados</h3>
         <ul class="space-y-3">
           {
             services.map((service, index) => (
               <li key={index}>
                 <a
-                  href="#servicios"
+                  href={service.href}
                   class="text-gray-300 hover:text-pink-300 transition-colors"
                 >
-                  {service}
+                  {service.name}
                 </a>
               </li>
             ))
@@ -88,9 +83,9 @@ const quickLinks = [
         </ul>
       </div>
 
-      {/* Quick Links */}
+      {/* Sobre Nosotros */}
       <div>
-        <h3 class="text-xl font-bold mb-6 text-pink-300">Enlaces Rápidos</h3>
+        <h3 class="text-xl font-bold mb-6 text-pink-300">Sobre Nosotros</h3>
         <ul class="space-y-3">
           {
             quickLinks.map((link, index) => (
@@ -107,32 +102,25 @@ const quickLinks = [
         </ul>
       </div>
 
-      {/* Contact Info */}
+      {/* Contacto */}
       <div>
         <h3 class="text-xl font-bold mb-6 text-pink-300">Contacto</h3>
         <div class="space-y-4">
           <div class="flex items-start space-x-3">
             <MapPin class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" />
             <div>
-              <p class="text-gray-300">Zona 10, Ciudad de Guatemala</p>
-              <p class="text-gray-400 text-sm">Guatemala, Guatemala</p>
+              <p class="text-gray-300">Zona 14, Edificio Prospere</p>
             </div>
           </div>
           <div class="flex items-center space-x-3">
             <Phone class="w-5 h-5 text-pink-500 flex-shrink-0" />
-            <p class="text-gray-300">+502 1234-5678</p>
+            <p class="text-gray-300">2448-1110</p>
           </div>
           <div class="flex items-center space-x-3">
             <Mail class="w-5 h-5 text-pink-500 flex-shrink-0" />
             <p class="text-gray-300">info@deltascan.com.gt</p>
           </div>
-          <div class="flex items-start space-x-3">
-            <Clock class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" />
-            <div>
-              <p class="text-gray-300">Lun - Vie: 7:00 AM - 6:00 PM</p>
-              <p class="text-gray-300">Sáb: 8:00 AM - 2:00 PM</p>
-            </div>
-          </div>
+          {/* Sin horario, como solicitaste */}
         </div>
       </div>
     </div>

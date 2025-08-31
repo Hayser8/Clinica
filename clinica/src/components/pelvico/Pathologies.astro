@@ -1,48 +1,51 @@
 ---
+import { Phone } from "@lucide/astro";
+
 const pathologies = [
-    {
-      category: "Útero / endometrio",
-      items: [
-        "Miomas (leiomiomas): submucosos, intramurales o subserosos.",
-        "Pólipos endometriales y engrosamiento/hiperplasia endometrial.",
-        "Endometriosis y hematometra (coágulos/líquido en cavidad).",
-        "Adenomiosis (hallazgos sugestivos en pared uterina).",
-        "Malformaciones Müllerianas (variaciones de la forma del útero).",
-      ],
-    },
-    {
-      category: "Ovarios / anexos",
-      items: [
-        "Quistes funcionales (folicular, cuerpo lúteo) y quiste hemorrágico.",
-        "Endometrioma (quiste por endometriosis).",
-        "Teratoma quístico maduro (dermoide) y otras masas anexiáleses que ameritan caracterización/seguimiento.",
-        "Torsión ovárica (signos indirectos: aumento de tamaño, alteraciones de eco).",
-      ],
-    },
-    {
-      category: "Trompas y pelvis",
-      items: [
-        "Hidrosálpinx, salpingitis y absceso tubo-ovárico (colecciones complejas).",
-        "Líquido libre pélvico (fisiológico o patológico, según contexto).",
-      ],
-    },
-    {
-      category: "Embarazo temprano (preferentemente via endovaginal)",
-      items: [
-        "Gestación intrauterina temprana (saco/embrión y su vitalidad).",
-        "Embarazo ectópico (masa anexial/líquido libre; criterio clínico-imagen + beta-hCG).",
-        "Hematoma subcoriónico y hallazgos en amenaza de aborto.",
-      ],
-    },
-    {
-      category: "Cuello uterino y dispositivos",
-      items: [
-        "Pólipos cervicales y alteraciones del canal cervical (longitud, cambios).",
-        "DIU: posición y malposición/expulsión parcial (valoración de ubicación).",
-      ],
-    },
-  ]
+  {
+    category: "Útero / endometrio",
+    items: [
+      "Miomas (leiomiomas): submucosos, intramurales o subserosos.",
+      "Pólipos endometriales y engrosamiento/hiperplasia endometrial.",
+      "Endometriosis y hematometra (coágulos/líquido en cavidad).",
+      "Adenomiosis (hallazgos sugestivos en pared uterina).",
+      "Malformaciones Müllerianas (variaciones de la forma del útero).",
+    ],
+  },
+  {
+    category: "Ovarios / anexos",
+    items: [
+      "Quistes funcionales (folicular, cuerpo lúteo) y quiste hemorrágico.",
+      "Endometrioma (quiste por endometriosis).",
+      "Teratoma quístico maduro (dermoide) y otras masas anexiales que ameritan caracterización/seguimiento.",
+      "Torsión ovárica (signos indirectos: aumento de tamaño, alteraciones de eco).",
+    ],
+  },
+  {
+    category: "Trompas y pelvis",
+    items: [
+      "Hidrosálpinx, salpingitis y absceso tubo-ovárico (colecciones complejas).",
+      "Líquido libre pélvico (fisiológico o patológico, según contexto).",
+    ],
+  },
+  {
+    category: "Embarazo temprano (preferentemente vía endovaginal)",
+    items: [
+      "Gestación intrauterina temprana (saco/embrión y su vitalidad).",
+      "Embarazo ectópico (masa anexial/líquido libre; criterio clínico-imagen + beta-hCG).",
+      "Hematoma subcoriónico y hallazgos en amenaza de aborto.",
+    ],
+  },
+  {
+    category: "Cuello uterino y dispositivos",
+    items: [
+      "Pólipos cervicales y alteraciones del canal cervical (longitud, cambios).",
+      "DIU: posición y malposición/expulsión parcial (valoración de ubicación).",
+    ],
+  },
+];
 ---
+
 <section class="py-16 md:py-24 bg-gray-50">
   <div class="max-w-7xl mx-auto px-8">
     <div class="text-center space-y-6 mb-16">
@@ -78,6 +81,18 @@ const pathologies = [
           </div>
         ))
       }
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 transition-colors w-full sm:w-auto"
+        aria-label="Agenda tu Cita"
+      >
+        <Phone class="w-5 h-5 mr-2" />
+        Agenda tu Cita
+      </a>
     </div>
   </div>
 </section>

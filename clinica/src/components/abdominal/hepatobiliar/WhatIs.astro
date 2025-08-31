@@ -1,0 +1,78 @@
+---
+import { Phone, Waves, Shield, Eye, Clock } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6"
+      >
+        <Waves class="w-8 h-8 text-pink-600" />
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        ¿Qué es el ultrasonido hepático y vía biliar?
+      </h2>
+
+      <div class="max-w-4xl mx-auto">
+        <p class="text-xl text-gray-600 leading-relaxed mb-8">
+          Es un estudio que evalúa en tiempo real el hígado, la vesícula y las
+          vías biliares usando ondas sonoras.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div
+        class="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+      >
+        <div
+          class="inline-flex items-center justify-center w-12 h-12 bg-pink-100 rounded-full mb-4"
+        >
+          <Shield class="w-6 h-6 text-pink-600" />
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Sin radiación</h3>
+        <p class="text-gray-600 text-sm">
+          Completamente seguro, no emite radiación ionizante
+        </p>
+      </div>
+
+      <div
+        class="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+      >
+        <div
+          class="inline-flex items-center justify-center w-12 h-12 bg-pink-100 rounded-full mb-4"
+        >
+          <Eye class="w-6 h-6 text-pink-600" />
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Tiempo real</h3>
+        <p class="text-gray-600 text-sm">
+          Observa cómo se comportan las estructuras mientras respiras
+        </p>
+      </div>
+
+      <div
+        class="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+      >
+        <div
+          class="inline-flex items-center justify-center w-12 h-12 bg-pink-100 rounded-full mb-4"
+        >
+          <Clock class="w-6 h-6 text-pink-600" />
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Detalles útiles</h3>
+        <p class="text-gray-600 text-sm">
+          Información precisa para decidir los siguientes pasos
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button
+        class="inline-flex items-center gap-3 bg-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu Cita
+      </button>
+    </div>
+  </div>
+</section>

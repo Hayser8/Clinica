@@ -1,0 +1,112 @@
+---
+import {
+  AlertCircle,
+  Phone,
+  Stethoscope,
+  Calendar,
+  TrendingUp,
+} from "@lucide/astro";
+const indicationCategories = [
+  {
+    title: "Síntomas Actuales",
+    icon: Stethoscope,
+    color: "pink-600",
+    items: [
+      "Dolor o sensación de inflamación en la parte superior del abdomen",
+      "Pacientes con reflujo sin causa aparente",
+    ],
+  },
+  {
+    title: "Antecedentes Médicos",
+    icon: TrendingUp,
+    color: "pink-500",
+    items: [
+      "Antecedentes de cálculos biliares o renales",
+      "Seguimiento de enfermedades hepáticas como hígado graso o cirrosis",
+    ],
+  },
+  {
+    title: "Control y Prevención",
+    icon: Calendar,
+    color: "pink-700",
+    items: [
+      "Control de páncreas o vías biliares",
+      "Evaluación preventiva como parte de un chequeo anual",
+    ],
+  },
+];
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+      ¿Cuándo se indica una ecografía de abdomen superior?
+    </h2>
+    <p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+      Tu médico tratante puede recomendarte este estudio en las siguientes
+      situaciones:
+    </p>
+
+    <div class="grid lg:grid-cols-3 gap-8 mb-12">
+      {
+        indicationCategories.map((category, categoryIndex) => {
+          const IconComponent = category.icon;
+          return (
+            <div key={categoryIndex} class="bg-white rounded-2xl p-6 shadow-sm">
+              <div
+                class={`w-12 h-12 bg-${category.color} rounded-xl flex items-center justify-center mb-4`}
+              >
+                <IconComponent class="w-6 h-6 text-white" />
+              </div>
+              <h3 class="font-bold text-gray-900 mb-4">{category.title}</h3>
+              <div class="space-y-3">
+                {category.items.map((item, index) => (
+                  <div key={index} class="flex items-start gap-3">
+                    <div
+                      class={`w-1.5 h-1.5 bg-${category.color} rounded-full mt-2 flex-shrink-0`}
+                    />
+                    <span class="text-gray-700 text-sm leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    {/* Additional info banner */}
+    <div
+      class="bg-white rounded-2xl p-8 shadow-sm border-l-4 border-pink-600 mb-8"
+    >
+      <div class="flex items-start gap-4">
+        <div
+          class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0"
+        >
+          <AlertCircle class="w-5 h-5 text-pink-600" />
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">
+            Apoyo diagnóstico adicional
+          </h4>
+          <p class="text-gray-600">
+            También se utiliza como apoyo cuando existen síntomas digestivos o
+            urinarios que requieren imágenes claras para orientar el diagnóstico
+            y establecer el mejor plan de tratamiento.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button
+        class="bg-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-pink-700 transition-colors inline-flex items-center gap-2"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu cita
+      </button>
+    </div>
+  </div>
+</section>

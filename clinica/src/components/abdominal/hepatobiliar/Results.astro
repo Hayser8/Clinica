@@ -1,0 +1,112 @@
+---
+import { FileText, Clock, Send, CheckCircle } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6"
+      >
+        <FileText class="w-8 h-8 text-pink-600" />
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Entrega de Resultados
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Al terminar el estudio te entregaremos un informe que prioriza la
+        claridad y utilidad clínica
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="text-center p-8 bg-gray-50 rounded-3xl">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6"
+        >
+          <Clock class="w-8 h-8 text-pink-600" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Mismo día</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Recibes tu informe completo el mismo día del estudio, sin esperas
+          innecesarias
+        </p>
+      </div>
+
+      <div class="text-center p-8 bg-gray-50 rounded-3xl">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6"
+        >
+          <CheckCircle class="w-8 h-8 text-blue-600" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Lenguaje claro</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Descripción directa de los hallazgos y su posible significado, fácil
+          de entender
+        </p>
+      </div>
+
+      <div class="text-center p-8 bg-gray-50 rounded-3xl">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6"
+        >
+          <Send class="w-8 h-8 text-green-600" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Envío coordinado</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Si tu médico lo solicita, coordinamos el envío por el canal que
+          utilice
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="bg-gradient-to-r from-pink-50 to-pink-100 rounded-3xl p-8 md:p-12"
+    >
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            Informe detallado y útil
+          </h3>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Nuestros informes están diseñados para ser herramientas útiles tanto
+            para ti como para tu médico tratante. Incluyen descripciones claras,
+            mediciones precisas y recomendaciones cuando son necesarias.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span
+              class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full text-sm font-medium text-pink-700"
+            >
+              <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
+              Hallazgos principales
+            </span>
+            <span
+              class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full text-sm font-medium text-pink-700"
+            >
+              <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
+              Mediciones precisas
+            </span>
+            <span
+              class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full text-sm font-medium text-pink-700"
+            >
+              <div class="w-2 h-2 bg-pink-500 rounded-full"></div>
+              Recomendaciones
+            </span>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-white rounded-2xl p-3 shadow-lg">
+            <img
+              src="/abdominal/hepatobiliar/informedeultrasonidohepatobiliar.webp"
+              alt="Doctores interpretando informe de resultados hepatobiliares"
+              class="w-full h-auto rounded-xl"
+            />
+          </div>
+          <div
+            class="absolute -top-4 -right-4 w-20 h-20 bg-pink-200/50 rounded-full blur-xl"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

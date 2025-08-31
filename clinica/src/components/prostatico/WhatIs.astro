@@ -1,0 +1,87 @@
+---
+import { Eye, Shield, Clock, Phone } from "@lucide/astro";
+---
+
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center space-y-10">
+      <h2
+        class="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 leading-tight"
+      >
+        ¿Qué es el ultrasonido prostático?
+      </h2>
+
+      <!-- Se eliminó el max-w-4xl para respetar el ancho del contenedor principal -->
+      <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-3xl p-8 md:p-10 mb-10">
+        <p class="text-lg md:text-xl text-gray-800 font-medium leading-relaxed">
+          Es un ultrasonido que genera imágenes en tiempo real de la glándula
+          prostática y las estructuras cercanas, como la vejiga y las
+          vesículas seminales.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <div
+          class="bg-white border-2 border-pink-100 rounded-2xl p-6 text-center space-y-4 hover:border-pink-200 transition-colors"
+        >
+          <div
+            class="bg-gradient-to-br from-pink-600 to-pink-700 p-4 rounded-2xl w-16 h-16 mx-auto flex items-center justify-center"
+          >
+            <Eye class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-lg font-bold text-gray-900">Imágenes en tiempo real</h3>
+          <p class="text-gray-600">
+            Visualización inmediata de la próstata y estructuras cercanas
+          </p>
+        </div>
+
+        <div
+          class="bg-white border-2 border-pink-100 rounded-2xl p-6 text-center space-y-4 hover:border-pink-200 transition-colors"
+        >
+          <div
+            class="bg-gradient-to-br from-pink-600 to-pink-700 p-4 rounded-2xl w-16 h-16 mx-auto flex items-center justify-center"
+          >
+            <Shield class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-lg font-bold text-gray-900">Sin radiación</h3>
+          <p class="text-gray-600">Procedimiento seguro y no invasivo</p>
+        </div>
+
+        <div
+          class="bg-white border-2 border-pink-100 rounded-2xl p-6 text-center space-y-4 hover:border-pink-200 transition-colors"
+        >
+          <div
+            class="bg-gradient-to-br from-pink-600 to-pink-700 p-4 rounded-2xl w-16 h-16 mx-auto flex items-center justify-center"
+          >
+            <Clock class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-lg font-bold text-gray-900">Evaluación completa</h3>
+          <p class="text-gray-600">
+            Tamaño, forma, textura y funcionamiento vesical
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-2xl p-6 md:p-8">
+        <p class="text-lg md:text-xl leading-relaxed text-gray-700">
+          Su objetivo principal es evaluar el tamaño, la forma y la textura de
+          la próstata, detectar posibles nódulos o alteraciones, y en muchos
+          casos medir el residuo de orina posterior a la micción para valorar
+          el funcionamiento vesical.
+        </p>
+      </div>
+
+      <!-- CTA: Agenda tu Cita -->
+      <div class="text-center">
+        <a
+          href="/hacer-cita"
+          class="mt-8 inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 transition-colors w-full sm:w-auto"
+          aria-label="Agenda tu Cita"
+        >
+          <Phone class="w-5 h-5 mr-2" />
+          Agenda tu Cita
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

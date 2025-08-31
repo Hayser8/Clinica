@@ -1,0 +1,60 @@
+---
+import { Shirt, Ban, Baby } from "@lucide/astro";
+  const preparations = [
+    {
+      icon: Shirt,
+      text: "Usar ropa cómoda y fácil de retirar",
+    },
+    {
+      icon: Ban,
+      text: "Evitar cremas o talcos en la zona el día del examen",
+    },
+    {
+      icon: Baby,
+      text: "En pacientes pediátricos, es útil explicar el procedimiento antes para que el niño llegue tranquilo. Siempre algunos de los padres o encargados estará presente al momento de realizar el estudio",
+    },
+  ]
+---
+<section class="py-16 md:py-20">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="space-y-12">
+      <div class="text-center space-y-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+          ¿Cómo me preparo para mi examen?
+        </h2>
+        <p class="text-lg text-gray-600">
+          En la mayoría de los casos no se requiere preparación especial. Solo
+          recomendamos:
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        {
+          preparations.map((prep, index) => {
+            const Icon = prep.icon;
+            return (
+              <div
+                key={index}
+                class="flex items-start gap-6 bg-pink-50 p-6 rounded-2xl"
+              >
+                <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Icon class="w-6 h-6 text-white" />
+                </div>
+                <p class="text-lg text-gray-700 leading-relaxed">{prep.text}</p>
+              </div>
+            );
+          })
+        }
+      </div>
+
+      <div class="text-center">
+        <a
+          href="/hacer-cita"
+          class="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold transition-colors"
+        >
+          Agenda tu cita
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

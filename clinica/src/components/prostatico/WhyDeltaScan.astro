@@ -1,0 +1,55 @@
+---
+import { Users, Award, Heart } from "@lucide/astro";
+const features = [
+  {
+    icon: Users,
+    title: "Dos mentes en el mismo estudio",
+    description:
+      "dos médicos radiólogos trabajan de forma coordinada, lo que agiliza el proceso y favorece un diagnóstico más robusto.",
+  },
+  {
+    icon: Award,
+    title: "Experiencia comprobada",
+    description: "más de 10 años en imágenes diagnósticas.",
+  },
+  {
+    icon: Heart,
+    title: "Atención personalizada",
+    description:
+      "protocolos actualizados, trato personalizado y resultados el mismo día (con cita previa).",
+  },
+];
+---
+
+<section
+  class="py-20 md:py-24 bg-gradient-to-br from-pink-600 to-pink-700 text-white"
+>
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 leading-tight">
+        ¿Por qué DeltaScan es tu clínica de ultrasonidos prostáticos?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+      {
+        features.map((feature, index) => {
+          const Icon = feature.icon;
+          return (
+            <div key={index} class="text-center space-y-6 group">
+              <div class="bg-white/20 backdrop-blur-sm p-6 rounded-3xl w-20 h-20 mx-auto flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                <Icon class="w-10 h-10" />
+              </div>
+              <div class="space-y-4">
+                <h3 class="text-lg md:text-xl font-bold">{feature.title}:</h3>
+                <p class="text-pink-100 text-md md:text-lg leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

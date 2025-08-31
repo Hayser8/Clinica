@@ -1,0 +1,192 @@
+---
+import { Phone, Search, AlertTriangle, Eye, TrendingUp, Shield } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6"
+      >
+        <Search class="w-8 h-8 text-pink-600" />
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        ¿Para qué sirve y qué detecta?
+      </h2>
+
+      <div class="max-w-4xl mx-auto">
+        <p class="text-xl text-gray-600 leading-relaxed mb-8">
+          Es útil cuando se necesita una orientación ante escenarios frecuentes
+          y para dar seguimiento a condiciones ya conocidas.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <div
+        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+      >
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center"
+          >
+            <AlertTriangle class="w-5 h-5 text-red-600" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Cálculos biliares</h3>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Detección precisa de piedras en vesícula y vías biliares
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+      >
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center"
+          >
+            <AlertTriangle class="w-5 h-5 text-orange-600" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Inflamación vesicular</h3>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Evaluación de colecistitis y otros procesos inflamatorios
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+      >
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center"
+          >
+            <Eye class="w-5 h-5 text-yellow-600" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Hígado graso</h3>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Identificación de esteatosis hepática y su grado
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+      >
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center"
+          >
+            <TrendingUp class="w-5 h-5 text-blue-600" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Dilatación biliar</h3>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Evaluación de obstrucciones en las vías biliares
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+      >
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center"
+          >
+            <Search class="w-5 h-5 text-purple-600" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Quistes y pólipos</h3>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Detección de lesiones benignas y su caracterización
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+      >
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center"
+          >
+            <Shield class="w-5 h-5 text-pink-600" />
+          </div>
+          <h3 class="font-semibold text-gray-900">Masas sospechosas</h3>
+        </div>
+        <p class="text-gray-600 text-sm">
+          Identificación de lesiones que requieren estudio adicional
+        </p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 mb-16">
+      <div class="bg-white rounded-3xl p-8 shadow-sm">
+        <div class="flex items-center gap-3 mb-6">
+          <div
+            class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center"
+          >
+            <Search class="w-6 h-6 text-pink-600" />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Diagnóstico inicial</h3>
+        </div>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Perfecto para obtener una primera orientación ante síntomas como dolor
+          abdominal, náuseas, o cambios en la digestión.
+        </p>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2">
+            <div class="w-1.5 h-1.5 bg-pink-500 rounded-full"></div>
+            Evaluación rápida y precisa
+          </li>
+          <li class="flex items-center gap-2">
+            <div class="w-1.5 h-1.5 bg-pink-500 rounded-full"></div>
+            Sin preparación compleja
+          </li>
+          <li class="flex items-center gap-2">
+            <div class="w-1.5 h-1.5 bg-pink-500 rounded-full"></div>
+            Resultados el mismo día
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 shadow-sm">
+        <div class="flex items-center gap-3 mb-6">
+          <div
+            class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center"
+          >
+            <TrendingUp class="w-6 h-6 text-pink-600" />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Seguimiento médico</h3>
+        </div>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Ideal para verificar si los cambios de tratamiento se reflejan en las
+          imágenes y monitorear la evolución.
+        </p>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2">
+            <div class="w-1.5 h-1.5 bg-pink-500 rounded-full"></div>
+            Control de tratamientos
+          </li>
+          <li class="flex items-center gap-2">
+            <div class="w-1.5 h-1.5 bg-pink-500 rounded-full"></div>
+            Monitoreo de evolución
+          </li>
+          <li class="flex items-center gap-2">
+            <div class="w-1.5 h-1.5 bg-pink-500 rounded-full"></div>
+            Comparación con estudios previos
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button
+        class="inline-flex items-center gap-3 bg-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu Cita
+      </button>
+    </div>
+  </div>
+</section>

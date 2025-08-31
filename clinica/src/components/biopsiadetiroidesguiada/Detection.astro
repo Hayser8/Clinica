@@ -1,0 +1,64 @@
+---
+import { Shield, AlertTriangle, CheckCircle } from "@lucide/astro";
+const detections = [
+  {
+    icon: CheckCircle,
+    title: "Células benignas",
+    description: "Quistes, adenomas",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Cambios sospechosos",
+    description: "Que requieren seguimiento",
+  },
+  {
+    icon: Shield,
+    title: "Cáncer tiroideo",
+    description: "En estados tempranos",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        ¿Qué puede detectar una biopsia tiroidea guiada por ultrasonido?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        La biopsia tiroidea permite identificar alteraciones en los nódulos de
+        la glándula tiroides
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      {
+        detections.map((item, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 text-center shadow-sm border border-gray-100"
+          >
+            <div class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <item.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+            <p class="text-gray-600">({item.description})</p>
+            <div class="w-12 h-1 bg-pink-600 mx-auto mt-4 rounded-full" />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center">
+      <p class="text-lg text-gray-700 mb-6">
+        Al ofrecer un diagnóstico claro, ayuda a definir el tratamiento más
+        adecuado para cada paciente.
+      </p>
+      <button
+        class="inline-flex items-center gap-3 bg-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-700 transition-colors"
+      >
+        Agenda tu cita
+      </button>
+    </div>
+  </div>
+</section>

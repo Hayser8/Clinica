@@ -1,0 +1,97 @@
+---
+import { Phone, Droplets, Clock, FileText, AlertCircle } from "@lucide/astro"
+---
+<section class="py-16 relative overflow-hidden">
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-pink-50 via-white to-pink-100"
+  >
+  </div>
+  <div
+    class="absolute top-10 left-10 w-20 h-20 bg-pink-200 rounded-full opacity-20 animate-pulse"
+  >
+  </div>
+  <div
+    class="absolute bottom-20 right-20 w-32 h-32 bg-pink-300 rounded-full opacity-10"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto p-8 relative">
+    <div class="text-center mb-12">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
+      >
+        <FileText class="w-4 h-4" />
+        Preparación del estudio
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+        ¿Cómo debo prepararme?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div
+        class="bg-white rounded-2xl p-8 shadow-lg border border-pink-100 hover:shadow-xl transition-all duration-300"
+      >
+        <div class="flex items-start gap-4">
+          <div class="bg-pink-600 p-3 rounded-xl">
+            <Droplets class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Hidratación previa
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Para estudios renales simples, mantén una hidratación adecuada
+              antes del examen.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white rounded-2xl p-8 shadow-lg border border-pink-100 hover:shadow-xl transition-all duration-300"
+      >
+        <div class="flex items-start gap-4">
+          <div class="bg-pink-600 p-3 rounded-xl">
+            <Clock class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Vejiga llena</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Para estudios renales-vesicales, necesitarás beber agua para
+              llenar la vejiga.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="bg-gradient-to-r from-pink-600 to-pink-700 rounded-2xl p-8 md:p-12 text-white mb-8"
+    >
+      <div class="flex items-start gap-4 mb-6">
+        <div class="bg-white/20 p-3 rounded-xl">
+          <AlertCircle class="w-6 h-6 text-white" />
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Instrucciones personalizadas</h3>
+          <p class="text-pink-100 leading-relaxed text-lg">
+            Si tu médico solicitó otro tipo de ultrasonido adicional, por
+            ejemplo, el hepático, podríamos pedir ayuno. Al agendar tu cita te
+            daremos instrucciones personalizadas para tu caso específico.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a
+      href="/hacer-cita"
+        class="bg-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-700 transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu cita
+      </a>
+    </div>
+  </div>
+</section>

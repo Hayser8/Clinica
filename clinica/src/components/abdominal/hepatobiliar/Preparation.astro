@@ -1,0 +1,81 @@
+---
+import { Phone } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+        ¿Cómo me preparo para mi examen?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div class="bg-gray-50 p-6 rounded-2xl">
+        <div
+          class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center mb-4"
+        >
+          <span class="text-white text-xl">⏰</span>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-3">Ayuno de 6–8 horas</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Si necesitas tomar medicación habitual (salvo indicación distinta de
+          tu médico), bébela con pocos sorbos de agua.
+        </p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-2xl">
+        <div
+          class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center mb-4"
+        >
+          <span class="text-white text-xl">🚫</span>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-3">Evita comidas grasosas</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Desde la tarde/noche previa evita en la manera de lo posible este tipo
+          de comidas ya que ayuda a que la vesícula se observe mejor.
+        </p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-2xl">
+        <div
+          class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center mb-4"
+        >
+          <span class="text-white text-xl">💊</span>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-3">Diabetes</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          No modifiques tu tratamiento sin consejo médico, si el ayuno te
+          preocupa, avísanos al agendar para darte indicaciones seguras.
+        </p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-2xl">
+        <div
+          class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center mb-4"
+        >
+          <span class="text-white text-xl">👕</span>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-3">Ropa cómoda</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Trae ropa cómoda y que sea fácil para subir en el abdomen, esto nos
+          ayuda a agilizar el estudio y no tener complicaciones.
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center mb-8">
+      <p class="text-lg text-gray-600">
+        Si tu médico tratante te dio pautas específicas, esas prevalecen.
+      </p>
+    </div>
+
+    <div class="text-center">
+      <button
+        class="inline-flex items-center gap-2 bg-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-700 transition-colors"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu Cita
+      </button>
+    </div>
+  </div>
+</section>

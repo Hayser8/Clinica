@@ -1,0 +1,145 @@
+---
+import {
+  Award,
+  Users,
+  Clock,
+  MapPin,
+  Shield,
+  Star,
+  ArrowRight,
+  Phone,
+} from "@lucide/astro";
+
+const advantages = [
+  {
+    icon: Users,
+    title: "Dos radiólogos",
+    description:
+      "Trabajando juntos en cada estudio para mayor precisión diagnóstica",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    icon: Award,
+    title: "Tecnología moderna",
+    description:
+      "Equipos de última generación enfocados en claridad diagnóstica",
+    color: "from-blue-500 to-blue-600",
+  },
+  {
+    icon: Clock,
+    title: "Resultados inmediatos",
+    description: "Entrega el mismo día con explicación comprensible",
+    color: "from-green-500 to-green-600",
+  },
+  {
+    icon: Shield,
+    title: "Protocolos actualizados",
+    description: "Procedimientos basados en las mejores prácticas médicas",
+    color: "from-purple-500 to-purple-600",
+  },
+  {
+    icon: MapPin,
+    title: "Ubicación conveniente",
+    description: "Zona 14, fácil acceso con cita previa para tu comodidad",
+    color: "from-orange-500 to-orange-600",
+  },
+  {
+    icon: Star,
+    title: "Trato personalizado",
+    description: "Atención cercana y profesional en cada consulta",
+    color: "from-red-500 to-red-600",
+  },
+];
+---
+
+<section
+  class="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
+>
+  <div
+    class="absolute top-10 left-10 w-40 h-40 bg-pink-50 rounded-full opacity-30"
+  >
+  </div>
+  <div
+    class="absolute bottom-10 right-10 w-32 h-32 bg-pink-100 rounded-full opacity-20"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto p-8 relative z-10">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
+      >
+        <Award class="w-4 h-4" />
+        Excelencia médica
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+        ¿Por qué DeltaScan es tu clínica de ultrasonidos renales?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {
+        advantages.map((advantage, index) => {
+          const Icon = advantage.icon;
+          return (
+            <div
+              key={index}
+              class="group bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center relative overflow-hidden"
+            >
+              <div class="absolute top-0 right-0 w-24 h-24 bg-gray-50 rounded-full -translate-y-12 translate-x-12 opacity-50" />
+              <div
+                class={`bg-gradient-to-br ${advantage.color} w-18 h-18 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10`}
+              >
+                <Icon class="w-9 h-9 text-white" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">
+                {advantage.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                {advantage.description}
+              </p>
+              <div class="w-12 h-1 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full mx-auto" />
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <div class="text-center">
+      <div
+        class="bg-gradient-to-r from-pink-600 to-pink-700 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden"
+      >
+        <div class="absolute top-6 left-6 w-20 h-20 bg-white/10 rounded-full">
+        </div>
+        <div
+          class="absolute bottom-6 right-6 w-16 h-16 bg-white/5 rounded-full"
+        >
+        </div>
+        <div class="relative z-10">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <Star class="w-6 h-6 text-yellow-300 fill-yellow-300" />
+            <Star class="w-6 h-6 text-yellow-300 fill-yellow-300" />
+            <Star class="w-6 h-6 text-yellow-300 fill-yellow-300" />
+            <Star class="w-6 h-6 text-yellow-300 fill-yellow-300" />
+            <Star class="w-6 h-6 text-yellow-300 fill-yellow-300" />
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold mb-4">
+            La diferencia DeltaScan
+          </h3>
+          <p class="text-pink-100 mb-8 text-lg max-w-3xl mx-auto">
+            Experiencia, tecnología y dedicación al servicio de tu salud. Confía
+            en los especialistas.
+          </p>
+          <a
+            href="/hacer-cita"
+            class="bg-white text-pink-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-50 transition-all duration-300 inline-flex items-center gap-3 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+          >
+            <Phone class="w-6 h-6" />
+            Agenda con nosotros
+            <ArrowRight class="w-5 h-5" />
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

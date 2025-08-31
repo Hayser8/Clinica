@@ -1,0 +1,63 @@
+---
+import { Users, Shield, Clock, Heart, Stethoscope } from "@lucide/astro";
+const features = [
+  {
+    icon: Users,
+    title: "Dos médicos radiólogos revisando cada estudio al mismo tiempo",
+    description:
+      "Somos dos radiólogos especializados viendo un mismo resultado, lo que incrementa la precisión diagnóstica y reduce el margen de error.",
+  },
+  {
+    icon: Shield,
+    title: "Respeto absoluto a tu privacidad",
+    description:
+      "El procedimiento se realiza en un ambiente seguro, con personal femenino disponible cuando lo prefieras, cuidando siempre tu intimidad y comodidad.",
+  },
+  {
+    icon: Clock,
+    title: "Más de 10 años de experiencia en ecografía médica",
+    description:
+      "Trayectoria respaldada en estudios diagnósticos de alta calidad.",
+  },
+  {
+    icon: Heart,
+    title: "Atención personalizada y empática",
+    description:
+      "Cada paciente recibe explicaciones claras, indicaciones específicas y un seguimiento individualizado.",
+  },
+  {
+    icon: Stethoscope,
+    title: "Protocolos actualizados y tecnología moderna",
+    description:
+      "Usamos guías radiológicas vigentes y equipos de última generación que aseguran resultados confiables",
+  },
+];
+---
+
+<div class="max-w-7xl mx-auto p-8">
+  <div class="text-center space-y-4 mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+      ¿Por qué <span class="text-pink-600">DeltaScan</span> es tu clínica de ultrasonidos
+      transvaginales?
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+    {
+      features.map((feature, index) => (
+        <div
+          key={index}
+          class="bg-pink-50 rounded-2xl p-8 hover:bg-pink-100 transition-colors"
+        >
+          <div class="w-16 h-16 bg-pink-600 text-white rounded-2xl flex items-center justify-center mb-6">
+            <feature.icon class="w-8 h-8" />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
+            {feature.title}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>

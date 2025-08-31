@@ -1,0 +1,116 @@
+---
+import { Phone, Shield, Heart, AlertTriangle, CheckCircle, Users } from "@lucide/astro"
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6"
+      >
+        <Shield class="w-8 h-8 text-green-600" />
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Seguridad y contraindicaciones
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          La ecografía, al no usar radiación, es segura en distintas etapas de
+          la vida, incluido el embarazo.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white rounded-3xl p-8 shadow-sm">
+        <div class="flex items-center gap-3 mb-6">
+          <div
+            class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
+          >
+            <CheckCircle class="w-6 h-6 text-green-600" />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">100% Seguro</h3>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0">
+            </div>
+            <p class="text-gray-600">Sin radiación ionizante</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0">
+            </div>
+            <p class="text-gray-600">Seguro durante el embarazo</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0">
+            </div>
+            <p class="text-gray-600">Apto para todas las edades</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0">
+            </div>
+            <p class="text-gray-600">No invasivo ni doloroso</p>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-green-50 rounded-2xl flex items-center gap-3">
+          <Heart class="w-5 h-5 text-green-600 flex-shrink-0" />
+          <p class="text-sm text-green-700 font-medium">
+            Recomendado por organizaciones médicas mundiales
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 shadow-sm">
+        <div class="flex items-center gap-3 mb-6">
+          <div
+            class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center"
+          >
+            <AlertTriangle class="w-6 h-6 text-orange-600" />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Consideraciones</h3>
+        </div>
+
+        <p class="text-gray-600 mb-6">
+          Las contraindicaciones reales son raras. Ocasionalmente se reprograma
+          en casos de:
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0">
+            </div>
+            <p class="text-gray-600">Dolor abdominal intenso</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0">
+            </div>
+            <p class="text-gray-600">Heridas abiertas en la zona</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0">
+            </div>
+            <p class="text-gray-600">Condiciones que impiden visualización</p>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-blue-50 rounded-2xl flex items-center gap-3">
+          <Users class="w-5 h-5 text-blue-600 flex-shrink-0" />
+          <p class="text-sm text-blue-700 font-medium">
+            Nuestro equipo evaluará cada caso individualmente
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button
+        class="inline-flex items-center gap-3 bg-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu Cita
+      </button>
+    </div>
+  </div>
+</section>

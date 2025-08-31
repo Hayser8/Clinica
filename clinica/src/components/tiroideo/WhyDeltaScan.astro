@@ -1,0 +1,70 @@
+---
+import { Users, Shield, Clock, Award } from "@lucide/astro";
+const reasons = [
+  {
+    icon: Users,
+    title: "Dos radiólogos para un mismo estudio",
+    description:
+      "Somos dos médicos radiólogos trabajando de forma simultánea, evaluando las imágenes desde dos perspectivas clínicas, lo que disminuye márgenes de error y optimiza el tiempo de diagnóstico.",
+  },
+  {
+    icon: Shield,
+    title: "Protocolos actualizados y tecnología de alta resolución",
+    description:
+      "Seguimos guías internacionales TI-RADS y utilizamos equipos de ultrasonido con capacidad Doppler para evaluar no solo la anatomía, sino también la circulación sanguínea de la tiroides.",
+  },
+  {
+    icon: Clock,
+    title: "Resultados inmediatos y explicación en persona",
+    description:
+      "Tu informe se entrega el mismo día, acompañado de una interpretación clara para que salgas con respuestas, no con dudas.",
+  },
+  {
+    icon: Award,
+    title: "Experiencia",
+    description:
+      "Contamos con más de 10 años en ecografía diagnóstica y biopsias tiroideas, combinados con un ambiente profesional, pero cercano, donde tu comodidad y tranquilidad son parte del proceso.",
+  },
+];
+---
+
+<section class="py-20 bg-gradient-to-b from-white to-pink-50/30">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
+        ¿Por qué DeltaScan es tu clínica de ultrasonidos tiroideos?
+      </h2>
+      <div
+        class="w-20 h-1.5 bg-gradient-to-r from-pink-500 to-pink-600 mx-auto rounded-full"
+      >
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      {
+        reasons.map((reason, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-pink-100/50 group hover:-translate-y-1"
+          >
+            <div class="flex items-start gap-6">
+              <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <reason.icon class="w-8 h-8 text-white" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                  {reason.title}
+                </h3>
+                <p class="text-gray-700 leading-relaxed text-md">
+                  {reason.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    
+  </div>
+</section>

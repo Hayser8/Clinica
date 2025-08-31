@@ -1,0 +1,87 @@
+---
+import { AlertTriangle, Thermometer, Droplets, Clock, Stethoscope, Calendar } from "@lucide/astro"
+  const symptoms = [
+    {
+      icon: AlertTriangle,
+      title: "Dolor tipo cólico",
+      description: "Dolor intenso en la zona lumbar o lateral",
+    },
+    {
+      icon: Droplets,
+      title: "Molestias al orinar",
+      description: "Ardor, dolor o dificultad para orinar",
+    },
+    {
+      icon: Thermometer,
+      title: "Infecciones repetidas",
+      description: "Infecciones urinarias recurrentes",
+    },
+    {
+      icon: Clock,
+      title: "Cambios en la orina",
+      description: "Color, olor o frecuencia anormal",
+    },
+    {
+      icon: Stethoscope,
+      title: "Antecedentes médicos",
+      description: "Historial de litos o enfermedad renal",
+    },
+    {
+      icon: Calendar,
+      title: "Control médico",
+      description: "Seguimiento post-tratamiento",
+    },
+  ]
+---
+<section class="py-16 relative overflow-hidden">
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-gray-50 via-pink-50 to-white"
+  >
+  </div>
+  <div
+    class="absolute top-20 right-10 w-24 h-24 bg-pink-200 rounded-full opacity-20"
+  >
+  </div>
+  <div
+    class="absolute bottom-10 left-20 w-16 h-16 bg-pink-300 rounded-full opacity-15"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto p-8 relative">
+    <div class="text-center mb-12">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
+      >
+        <Calendar class="w-4 h-4" />
+        Cuándo realizarse el estudio
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+        ¿Cuándo debo realizarme un ultrasonido renal?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {
+        symptoms.map((symptom, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-pink-200 transition-all duration-300 group"
+          >
+            <div class="flex items-start gap-4">
+              <div class="bg-pink-600 p-3 rounded-xl group-hover:bg-pink-700 transition-colors">
+                <symptom.icon class="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-2">{symptom.title}</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  {symptom.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    
+</section>

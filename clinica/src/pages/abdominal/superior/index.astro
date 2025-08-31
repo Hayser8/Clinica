@@ -1,0 +1,85 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/common/Header.astro";
+import Footer from "../../../components/common/Footer.astro";
+import HeroSection from "../../../components/abdominal/superior/HeroSection.astro";
+import WhatIs from "../../../components/abdominal/superior/WhatIs.astro";
+import Organs from "../../../components/abdominal/superior/Organs.astro";
+import WhenIndicated from "../../../components/abdominal/superior/WhenIndicated.astro";
+import WhyDeltaScan from "../../../components/abdominal/superior/WhyDeltaScan.astro";
+import HowitIs from "../../../components/abdominal/superior/HowItIs.astro";
+import Results from "../../../components/abdominal/superior/Results.astro";
+import Safety from "../../../components/abdominal/superior/Safety.astro";
+import CTA from "../../../components/common/CTA.astro";
+import FAQ from "../../../components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Qué factores pueden afectar la calidad de las imágenes?",
+    answer:
+      "La presencia de gas intestinal o una digestión reciente puede dificultar la visualización de algunos órganos. También influyen aspectos como el ayuno recomendado o la complexión del paciente. Seguir las indicaciones previas al estudio ayuda a obtener imágenes más claras y diagnósticos más precisos.",
+  },
+  {
+    id: 2,
+    question: "¿Puede repetirse el estudio si mi médico necesita control en poco tiempo?",
+    answer:
+      "Sí, el ultrasonido abdominal superior puede repetirse tantas veces como el médico lo considere necesario, ya que no utiliza radiación. Esto permite dar seguimiento cercano a un tratamiento, verificar la evolución de una condición o confirmar la respuesta a un medicamento, con la tranquilidad de que el procedimiento es seguro y no invasivo.",
+  },
+  {
+    id: 3,
+    question: "¿Se puede realizar un ultrasonido abdominal superior durante el embarazo?",
+    answer:
+      "Este tipo de ultrasonido es completamente seguro durante el embarazo. De hecho, puede ser útil para descartar o monitorear condiciones en los órganos de la madre sin afectar al bebé. La ausencia de radiación lo convierte en una herramienta confiable para evaluar la salud abdominal en cualquier etapa de la gestación.",
+  },
+  {
+    id: 4,
+    question: "¿Qué información debo llevar a mi cita para que el estudio sea más útil?",
+    answer:
+      "Llevar estudios previos, resultados de laboratorio recientes y la orden médica, cuando exista, facilita que el radiólogo tenga un panorama más completo. Estos antecedentes ayudan a comparar resultados, detectar cambios en el tiempo y brindar un diagnóstico más certero, asegurando que cada detalle de tu historia clínica sea considerado.",
+  },
+  {
+    id: 5,
+    question: "¿Un ultrasonido abdominal superior puede detectar cáncer?",
+    answer:
+      "El ultrasonido no confirma por sí solo un diagnóstico de cáncer, pero sí puede mostrar imágenes de lesiones sospechosas que requieren más estudios. Por ejemplo, masas, quistes o irregularidades en órganos abdominales que podrían ser indicio de una condición que merece investigación adicional. De esta forma, se convierte en un primer paso clave para la detección temprana.",
+  },
+  {
+    id: 6,
+    question: "¿Qué otros estudios pueden complementarse con el ultrasonido de abdomen superior?",
+    answer:
+      "En algunos casos, el médico puede recomendar estudios complementarios como tomografía, resonancia magnética o análisis de laboratorio. Estos exámenes, junto al ultrasonido, permiten construir una visión más completa del estado de los órganos y establecer un plan de diagnóstico o tratamiento mucho más preciso.",
+  },
+];
+
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <Organs />
+    <WhenIndicated />
+    <WhyDeltaScan />
+    <HowitIs />
+    <Results />
+    <Safety />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Abdominal Superior"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Abdominales Superiores"
+      description="Encuentra respuestas a las preguntas más comunes sobre ecografías abdominales superiores"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

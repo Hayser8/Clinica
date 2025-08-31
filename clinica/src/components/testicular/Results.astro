@@ -1,0 +1,98 @@
+---
+import { FileCheck, Send, Clock, Users, Shield } from "@lucide/astro";
+const deliveryFeatures = [
+  {
+    icon: Clock,
+    title: "Mismo día",
+    description: "Resultados entregados el día del estudio",
+  },
+  {
+    icon: Users,
+    title: "Doble revisión",
+    description: "Validados por dos radiólogos especialistas",
+  },
+  {
+    icon: Send,
+    title: "Envío digital",
+    description: "Compartimos con tu médico tratante",
+  },
+  {
+    icon: Shield,
+    title: "100% Seguro",
+    description: "Manejo confidencial de tu información",
+  },
+];
+---
+
+<section class="py-16 md:py-20">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center space-y-6">
+        <div
+          class="inline-flex items-center bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-medium"
+        >
+          Resultados rápidos
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+          Entrega de resultados
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Obtén tu diagnóstico de manera rápida y confiable
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          deliveryFeatures.map((feature, index) => (
+            <div
+              key={index}
+              class="bg-white rounded-2xl p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="w-14 h-14 bg-pink-600 rounded-2xl flex items-center justify-center mx-auto">
+                <feature.icon class="w-7 h-7 text-white" />
+              </div>
+              <h3 class="font-bold text-gray-900">{feature.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div
+        class="bg-gradient-to-r from-pink-50 to-pink-100 rounded-3xl p-8 md:p-12"
+      >
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+          <div
+            class="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center mx-auto"
+          >
+            <FileCheck class="w-10 h-10 text-white" />
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+            Diagnóstico el mismo día
+          </h3>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+            Entendemos la importancia de un diagnóstico oportuno. Por eso, te
+            entregamos los resultados{" "}
+            <span class="font-bold text-pink-600">el mismo día del estudio</span
+            >, revisados y validados por nuestros dos radiólogos especialistas.
+          </p>
+
+          <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm">
+            <div class="flex items-center justify-center gap-4 mb-4">
+              <Send class="w-8 h-8 text-pink-600" />
+              <h4 class="text-xl font-bold text-gray-900">
+                Envío digital incluido
+              </h4>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Si tu médico tratante requiere el informe, lo enviamos de forma
+              rápida y segura por medios digitales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

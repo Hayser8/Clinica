@@ -1,5 +1,5 @@
 ---
-import { Waves } from "@lucide/astro";
+import { Waves, Phone } from "@lucide/astro";
 ---
 <section class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto p-8">
@@ -28,6 +28,16 @@ import { Waves } from "@lucide/astro";
           con la confianza de que cada imagen ha sido interpretada por
           especialistas.
         </p>
+
+        <!-- CTA: Agenda tu Cita -->
+        <a
+          href="/hacer-cita"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 transition-colors w-full sm:w-auto"
+          aria-label="Agenda tu Cita"
+        >
+          <Phone class="w-5 h-5 mr-2" />
+          Agenda tu Cita
+        </a>
       </div>
 
       <div class="bg-white rounded-2xl p-8 shadow-lg">
@@ -41,23 +51,19 @@ import { Waves } from "@lucide/astro";
         </h3>
         <ul class="space-y-3 text-gray-700">
           <li class="flex items-start gap-3">
-            <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0">
-            </div>
+            <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0"></div>
             <span>Imágenes de alta definición en tiempo real</span>
           </li>
           <li class="flex items-start gap-3">
-            <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0">
-            </div>
+            <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0"></div>
             <span>Sin radiación ionizante</span>
           </li>
           <li class="flex items-start gap-3">
-            <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0">
-            </div>
+            <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0"></div>
             <span>Procedimiento indoloro</span>
           </li>
           <li class="flex items-start gap-3">
-            <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0">
-            </div>
+            <div class="w-2 h-2 bg-pink-600 rounded-full mt-2 flex-shrink-0"></div>
             <span>Interpretación por especialistas</span>
           </li>
         </ul>

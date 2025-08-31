@@ -1,5 +1,5 @@
 ---
-import { Baby, Ruler } from "@lucide/astro";
+import { Baby, Ruler, Phone } from "@lucide/astro";
 ---
 
 <section class="py-20 bg-white">
@@ -13,9 +13,7 @@ import { Baby, Ruler } from "@lucide/astro";
     <div class="grid lg:grid-cols-2 gap-12">
       <div class="bg-pink-50 rounded-xl p-8">
         <div class="flex items-center gap-4 mb-6">
-          <div
-            class="bg-pink-600 w-14 h-14 rounded-xl flex items-center justify-center"
-          >
+          <div class="bg-pink-600 w-14 h-14 rounded-xl flex items-center justify-center">
             <Baby class="w-7 h-7 text-white" />
           </div>
           <div>
@@ -25,45 +23,50 @@ import { Baby, Ruler } from "@lucide/astro";
         </div>
 
         <p class="text-gray-700 leading-relaxed">
-          En la etapa inicial, entre la semana 6 y 13, realizamos el primer
-          ultrasonido materno para confirmar el embarazo. Aquí medimos la
-          longitud cráneo-caudal, contamos sacos gestacionales y latidos.
-          Además, desde este punto podemos detectar si es 1 o varios embriones.
+          En la etapa inicial, entre la semana 6 y 13, realizamos el primer ultrasonido
+          materno para confirmar el embarazo. Aquí medimos la longitud cráneo-caudal,
+          contamos sacos gestacionales y latidos. Además, desde este punto podemos
+          detectar si es 1 o varios embriones.
         </p>
       </div>
 
       <div class="bg-pink-50 rounded-xl p-8">
         <div class="flex items-center gap-4 mb-6">
-          <div
-            class="bg-pink-600 w-14 h-14 rounded-xl flex items-center justify-center"
-          >
+          <div class="bg-pink-600 w-14 h-14 rounded-xl flex items-center justify-center">
             <Ruler class="w-7 h-7 text-white" />
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-gray-900">
-              Segundo y tercer trimestre
-            </h3>
+            <h3 class="text-2xl font-bold text-gray-900">Segundo y tercer trimestre</h3>
             <p class="text-pink-600 font-medium">(a partir de la semana 13)</p>
           </div>
         </div>
 
         <div class="space-y-4 text-gray-700">
           <p>
-            A partir de la semana 13, la ecografía transabdominal de anatomía
-            fetal cobra protagonismo.
+            A partir de la semana 13, la ecografía transabdominal de anatomía fetal cobra protagonismo.
           </p>
           <p>
-            <span class="font-semibold">Desde la semana 13:</span> tomamos biometrías
-            completas (diámetro biparietal, circunferencia abdominal, longitud femoral),
-            así como grado de placentación.
+            <span class="font-semibold">Desde la semana 13:</span> tomamos biometrías completas
+            (diámetro biparietal, circunferencia abdominal, longitud femoral), así como grado de placentación.
           </p>
           <p>
-            <span class="font-semibold">Hacia la semana 32:</span> verificamos de
-            manera cuantitativa el volumen de líquido amniótico para un seguimiento
-            preciso.
+            <span class="font-semibold">Hacia la semana 32:</span> verificamos de manera cuantitativa
+            el volumen de líquido amniótico para un seguimiento preciso.
           </p>
         </div>
       </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 transition-colors w-full sm:w-auto"
+        aria-label="Agenda tu Cita"
+      >
+        <Phone class="w-5 h-5 mr-2" />
+        Agenda tu Cita
+      </a>
     </div>
   </div>
 </section>

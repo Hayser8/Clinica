@@ -1,5 +1,5 @@
 ---
-import { Shirt, Coffee, FileText, Clock } from "@lucide/astro";
+import { Shirt, Coffee, FileText, Clock, Phone } from "@lucide/astro";
 const preparations = [
   {
     icon: Shirt,
@@ -50,6 +50,18 @@ const preparations = [
           </div>
         ))
       }
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 transition-colors w-full sm:w-auto"
+        aria-label="Agenda tu Cita"
+      >
+        <Phone class="w-5 h-5 mr-2" />
+        Agenda tu Cita
+      </a>
     </div>
   </div>
 </section>

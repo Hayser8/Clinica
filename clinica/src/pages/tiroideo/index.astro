@@ -1,0 +1,90 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/tiroideo/HeroSection.astro";
+import WhatIs from "@/components/tiroideo/WhatIs.astro";
+import Difference from "@/components/tiroideo/Difference.astro";
+import WhenRecommended from "@/components/tiroideo/WhenRecommended.astro";
+import WhatDetects from "@/components/tiroideo/WhatDetects.astro";
+import WhyDeltaScan from "@/components/tiroideo/WhyDeltaScan.astro";
+import HowItIs from "@/components/tiroideo/HowItIs.astro";
+import NormalAltered from "@/components/tiroideo/NormalAltered.astro";
+import BiopsySection from "@/components/tiroideo/BiopsySection.astro";
+import Benefits from "@/components/tiroideo/Benefits.astro";
+import CTA from "@/components/common/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Es necesario estar en ayunas para un ultrasonido tiroideo?",
+    answer:
+      "No, el ultrasonido tiroideo no requiere ayuno. Puedes comer y beber con normalidad antes del estudio. En casos muy específicos, tu médico podría indicarte alguna preparación extra, pero en la mayoría de los pacientes no es necesario.",
+  },
+  {
+    id: 2,
+    question: "¿Qué síntomas pueden indicar la necesidad de un ultrasonido tiroideo?",
+    answer:
+      "Algunos signos que podrían motivar el estudio incluyen: bultos visibles o palpables en la parte frontal del cuello, cambios inexplicables en la voz, sensación de presión o dificultad para tragar, hinchazón localizada, alteración de las pruebas tiroideas de laboratorio (T3, T4, TSH o TSH libre) o antecedentes familiares de enfermedad tiroidea.",
+  },
+  {
+    id: 3,
+    question: "¿Qué pasa si el ultrasonido detecta nódulos en la tiroides?",
+    answer:
+      "No todos los nódulos son peligrosos. Cuando aparecen, el radiólogo evalúa su tamaño, forma y características internas. Si el aspecto es benigno, probablemente solo se recomiende seguimiento periódico. En cambio, si existen características sospechosas, puede sugerirse una biopsia guiada por ultrasonido para obtener un diagnóstico definitivo.",
+  },
+  {
+    id: 4,
+    question: "¿Se puede hacer un ultrasonido tiroideo durante el embarazo?",
+    answer:
+      "Sí, es completamente seguro. El ultrasonido no utiliza radiación, por lo que no representa riesgo para la madre ni para el bebé. Además, permite evaluar la tiroides de manera precisa en cualquier etapa del embarazo, incluso cuando se presentan cambios hormonales propios de esta etapa.",
+  },
+  {
+    id: 5,
+    question: "¿Qué diferencia hay entre un ultrasonido tiroideo con Doppler y uno convencional?",
+    answer:
+      "El ultrasonido tiroideo convencional muestra la forma, tamaño y estructura de la glándula. El estudio con Doppler, además, analiza el flujo sanguíneo dentro de la tiroides. Esta información adicional es muy útil para detectar inflamaciones, cambios vasculares o características que puedan indicar actividad anormal en la glándula.",
+  },
+  {
+    id: 6,
+    question: "¿Qué señales de alerta pueden aparecer en un ultrasonido tiroideo?",
+    answer:
+      "Entre los hallazgos que pueden requerir más estudios se incluyen: nódulos con bordes irregulares, microcalcificaciones, zonas con flujo sanguíneo aumentado o cambios significativos en el tamaño de la glándula. Estos signos no siempre significan malignidad, pero sí justifican una evaluación más detallada por tu médico.",
+  },
+];
+
+
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <Difference />
+    <WhenRecommended />
+    <WhatDetects />
+    <WhyDeltaScan />
+    <HowItIs />
+    <NormalAltered />
+    <BiopsySection />
+    <Benefits />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Tiroideo"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Tiroideos"
+      description="Encuentra respuestas a las preguntas más comunes sobre Ultrasonidos Tiroideos"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,102 @@
+---
+import {
+  AlertTriangle,
+  User,
+  Activity,
+  Stethoscope,
+  TrendingUp,
+  Clock,
+} from "@lucide/astro";
+const symptoms = [
+  {
+    icon: AlertTriangle,
+    title: "Dolor o inflamación",
+    description: "En uno o ambos testículos",
+  },
+  {
+    icon: User,
+    title: "Presencia de bulto",
+    description: "O endurecimiento en la zona",
+  },
+  {
+    icon: Activity,
+    title: "Golpes recientes",
+    description: "Traumatismos en la zona testicular",
+  },
+  {
+    icon: Stethoscope,
+    title: "Problemas de fertilidad",
+    description: "O espermiograma alterado",
+  },
+  {
+    icon: TrendingUp,
+    title: "Cambios de tamaño",
+    description: "Alteraciones en los testículos",
+  },
+  {
+    icon: Clock,
+    title: "Chequeo preventivo",
+    description: "Revisión de rutina recomendada",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-pink-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="space-y-12">
+      <div class="text-center space-y-6">
+        <div
+          class="inline-flex items-center bg-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium"
+        >
+          Síntomas importantes
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+          ¿Cuándo debo hacerme el estudio?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Identifica las señales que indican la necesidad de un ultrasonido
+          testicular
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          symptoms.map((symptom, index) => (
+            <div
+              key={index}
+              class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+            >
+              <div class="space-y-4">
+                <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
+                  <symptom.icon class="w-6 h-6 text-pink-600" />
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-2">{symptom.title}</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    {symptom.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="bg-pink-600 rounded-3xl p-8 md:p-12 text-center text-white">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">
+          ¿Tienes alguno de estos síntomas?
+        </h3>
+        <p class="text-pink-100 mb-8 text-lg max-w-2xl mx-auto">
+          No esperes más. Agenda tu ultrasonido testicular y obtén un
+          diagnóstico preciso
+        </p>
+        <a
+          href="/hacer-cita"
+          class="inline-flex items-center bg-white text-pink-600 hover:bg-pink-50 px-8 py-4 rounded-full font-bold text-lg transition-colors"
+        >
+          Agenda tu cita
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

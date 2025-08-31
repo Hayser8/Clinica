@@ -1,17 +1,114 @@
-<section class="py-16 lg:py-20 bg-white">
-  <div class="max-w-7xl mx-auto p-8">
-    <div class="max-w-4xl mx-auto text-center space-y-6">
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+---
+import { Eye, Shield, Waves, Zap, Heart, Activity } from "@lucide/astro";
+---
+<section class="min-h-screen bg-gradient-to-br from-pink-50 to-pink-100 py-12 px-4">
+  <div class="max-w-7xl mx-auto">
+    {/* Header Section */}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-black mb-4 text-balance">
         ¿Qué es el ultrasonido musculoesquelético?
       </h2>
-      <p class="text-lg text-gray-700 leading-relaxed">
-        Por medio del ultrasonido se crean imágenes en tiempo real para evaluar
-        los músculos, ligamentos, tendones y articulaciones. A diferencia de las
-        radiografías o tomografías que se enfocan en tejido óseo (huesos), esta
-        entre sus ventajas es que no usa radiación ionizante, por eso es una
-        opción confiable para estudiar esguinces o patologías de músculos o
-        tendones.
+      <div class="w-24 h-1 bg-pink-700 mx-auto"></div>
+    </div>
+
+    {/* Main Content Grid */}
+    <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+      {/* Definition Section */}
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-pink-200">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-pink-700 rounded-lg flex items-center justify-center">
+              <Eye class="w-6 h-6 text-white" />
+            </div>
+            <h2 class="text-2xl font-semibold text-pink-900">Definición</h2>
+          </div>
+          <p class="text-gray-700 text-lg leading-relaxed">
+            Por medio del ultrasonido se crean{" "}
+            <span class="font-semibold text-pink-700">imágenes en tiempo real</span>
+            {" "}para evaluar los músculos, ligamentos, tendones y articulaciones.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-pink-200">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-pink-700 rounded-lg flex items-center justify-center">
+              <Shield class="w-6 h-6 text-white" />
+            </div>
+            <h2 class="text-2xl font-semibold text-pink-900">Ventaja Principal</h2>
+          </div>
+          <p class="text-gray-700 text-lg leading-relaxed">
+            A diferencia de las radiografías o tomografías que se enfocan en tejido óseo (huesos),
+            <span class="font-semibold text-pink-700"> no usa radiación ionizante</span>, por eso es una opción
+            confiable para estudiar esguinces o patologías de músculos o tendones.
+          </p>
+        </div>
+      </div>
+
+      {/* Features Grid */}
+      <div class="grid gap-6">
+        <div class="bg-pink-700 rounded-2xl p-8 text-white">
+          <div class="flex items-center gap-4 mb-4">
+            <Zap class="w-8 h-8" />
+            <h3 class="text-xl font-semibold">Tiempo Real</h3>
+          </div>
+          <p class="text-pink-100">Visualización instantánea de estructuras en movimiento</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-pink-200">
+            <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
+              <Heart class="w-5 h-5 text-pink-700" />
+            </div>
+            <h4 class="font-semibold text-pink-900 mb-2">Músculos</h4>
+            <p class="text-sm text-gray-600">Evaluación detallada</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-pink-200">
+            <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
+              <Activity class="w-5 h-5 text-pink-700" />
+            </div>
+            <h4 class="font-semibold text-pink-900 mb-2">Tendones</h4>
+            <p class="text-sm text-gray-600">Diagnóstico preciso</p>
+          </div>
+        </div>
+
+        <div class="bg-pink-50 rounded-xl p-6 border-2 border-pink-200">
+          <h4 class="font-semibold text-pink-900 mb-3">Ideal para diagnosticar:</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pink-700 rounded-full"></div>
+              Esguinces
+            </li>
+            <li class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pink-700 rounded-full"></div>
+              Patologías musculares
+            </li>
+            <li class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pink-700 rounded-full"></div>
+              Lesiones de tendones
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {/* Bottom Banner */}
+    <div class="bg-pink-700 rounded-2xl p-8 text-center text-white">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <Shield class="w-8 h-8" />
+        <h3 class="text-2xl font-bold">Sin Radiación Ionizante</h3>
+      </div>
+      <p class="text-pink-100 text-lg max-w-3xl mx-auto">
+        Una alternativa segura y efectiva para el diagnóstico de lesiones musculoesqueléticas
       </p>
+      <!-- CTA blanco dentro de la sección pink -->
+      <a
+        href="/hacer-cita"
+        class="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-white text-pink-700 hover:bg-pink-50 transition-colors w-full sm:w-auto"
+        aria-label="Agenda tu Cita"
+      >
+        Agenda tu Cita
+      </a>
     </div>
   </div>
 </section>

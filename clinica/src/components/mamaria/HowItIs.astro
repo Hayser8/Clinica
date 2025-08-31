@@ -1,0 +1,111 @@
+---
+import {
+  Phone,
+  User,
+  Droplets,
+  Search,
+  FileText,
+  Clock,
+  CheckCircle,
+} from "@lucide/astro";
+const steps = [
+  {
+    number: 1,
+    icon: Phone,
+    title: "Agendar tu cita",
+    description:
+      "Contáctanos vía WhatsApp o llámanos para elegir tu horario y recibir indicaciones previas",
+  },
+  {
+    number: 2,
+    icon: User,
+    title: "Posicionamiento",
+    description:
+      "Te pediremos que te recuestes boca arriba, con el brazo ligeramente elevado para exponer la región axilar.",
+  },
+  {
+    number: 3,
+    icon: Droplets,
+    title: "Aplicación de gel",
+    description:
+      "Aplicaremos un gel acuoso que extenderemos suavemente sobre ambas glándulas mamarias y axilas, para poder asegurar un buen contacto con la piel.",
+  },
+  {
+    number: 4,
+    icon: Search,
+    title: "Exploración de alta resolución",
+    description:
+      "Recorreremos sistemáticamente las mamas y regiones axilares capturando imágenes en tiempo real. Además, si es necesario activamos Doppler para evaluar vascularización de lesiones.",
+  },
+  {
+    number: 5,
+    icon: FileText,
+    title: "Interpretación de resultados",
+    description:
+      "Interpretaremos cada hallazgo de tu estudio y te lo iremos comentando.",
+  },
+  {
+    number: 6,
+    icon: CheckCircle,
+    title: "Entrega de resultados",
+    description:
+      "Recibirás un informe detallado al finalizar el estudio, junto con imágenes clave en alta resolución.",
+  },
+  {
+    number: 7,
+    icon: Clock,
+    title: "Duración del estudio",
+    description:
+      "El ultrasonido mamario tiene una duración de aproximadamente 15 a 30 minutos",
+  },
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-16 text-center">
+      ¿Cómo es una ecografía mamaria en DeltaScan?
+    </h2>
+
+    <div class="relative">
+      {/* Timeline line - hidden on mobile */}
+      <div
+        class="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-pink-200"
+      >
+      </div>
+
+      <div class="space-y-12">
+        {
+          steps.map((step, index) => (
+            <div key={index} class="relative flex items-start">
+              {/* Timeline dot */}
+              <div class="hidden md:flex absolute left-6 w-4 h-4 bg-pink-600 rounded-full border-4 border-white shadow-lg" />
+
+              {/* Content */}
+              <div class="md:ml-20 w-full">
+                <div class="bg-pink-50 rounded-lg p-6 md:p-8">
+                  <div class="flex items-start space-x-4">
+                    <div class="bg-pink-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                      {step.number}
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center space-x-3 mb-3">
+                        <step.icon class="w-6 h-6 text-pink-600" />
+                        <h3 class="text-xl font-semibold text-gray-900">
+                          {step.title}
+                        </h3>
+                      </div>
+                      <p class="text-gray-700 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

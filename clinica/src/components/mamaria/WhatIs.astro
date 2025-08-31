@@ -1,0 +1,81 @@
+---
+import { Waves, Heart, Zap } from "@lucide/astro";
+---
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        ¿Qué es un ultrasonido mamario?
+      </h2>
+      <div class="w-24 h-1 bg-pink-500 mx-auto"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <div class="flex items-start space-x-4">
+          <div class="bg-pink-100 rounded-full p-3 flex-shrink-0">
+            <Waves class="w-6 h-6 text-pink-600" />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg text-gray-900 mb-2">
+              Ondas de sonido seguras
+            </h3>
+            <p class="text-gray-700">
+              Utiliza ondas de sonido de alta frecuencia para crear imágenes en
+              tiempo real del interior de las mamas.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="bg-pink-100 rounded-full p-3 flex-shrink-0">
+            <Heart class="w-6 h-6 text-pink-600" />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg text-gray-900 mb-2">
+              Sin radiación
+            </h3>
+            <p class="text-gray-700">
+              Completamente seguro incluso en mujeres jóvenes o embarazadas.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="bg-pink-100 rounded-full p-3 flex-shrink-0">
+            <Zap class="w-6 h-6 text-pink-600" />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg text-gray-900 mb-2">
+              Detección precisa
+            </h3>
+            <p class="text-gray-700">
+              Observa la estructura del tejido mamario, detecta quistes, nódulos
+              u otras alteraciones.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-pink-50 rounded-2xl p-8">
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h4 class="font-bold text-pink-600 mb-3">¿Sabías que?</h4>
+          <p class="text-gray-700 leading-relaxed">
+            El ultrasonido mamario complementa perfectamente la información
+            obtenida en una mamografía, especialmente en mujeres con tejido
+            mamario denso donde otros métodos pueden ser menos efectivos.
+          </p>
+        </div>
+
+        <!-- Botón debajo de la información -->
+        <a
+          href="/hacer-cita"
+          class="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 transition-colors w-full sm:w-auto"
+          aria-label="Agenda tu cita"
+        >
+          Agenda tu cita
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

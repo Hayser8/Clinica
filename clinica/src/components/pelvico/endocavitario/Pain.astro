@@ -1,0 +1,79 @@
+---
+import { Shield, Phone, Heart, Clock, Users } from "@lucide/astro";
+
+const comfortFeatures = [
+  { icon: Heart, title: "Sin dolor",            description: "La mayoría describe la experiencia como tolerable" },
+  { icon: Clock, title: "Procedimiento rápido", description: "Ambulatorio y diseñado para tu comodidad" },
+  { icon: Users, title: "Total privacidad",     description: "Realizado con respeto absoluto a tu intimidad" },
+];
+---
+
+<section class="relative bg-white py-16 md:py-24">
+  <!-- decorativos suaves -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-10 -right-8 w-64 h-64 bg-pink-100/60 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 -left-10 w-48 h-48 bg-pink-50/70 rounded-full blur-2xl"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-8">
+    <!-- Header -->
+    <div class="text-center">
+      <div class="mx-auto w-16 h-16 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center shadow-inner ring-1 ring-pink-200">
+        <Shield class="w-8 h-8" />
+      </div>
+      <h2 class="mt-6 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+        ¿Duele o causa molestias?
+      </h2>
+    </div>
+
+    <!-- Features -->
+    <div class="mt-12 grid sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+      {
+        comfortFeatures.map((feature, index) => (
+          <div
+            key={index}
+            class="group rounded-2xl border border-pink-100 bg-white p-6 md:p-7 shadow-sm transition
+                   hover:-translate-y-0.5 hover:shadow-lg hover:border-pink-200"
+          >
+            <div class="w-12 h-12 mb-4 mx-auto rounded-full flex items-center justify-center
+                        bg-gradient-to-br from-pink-100 to-pink-50 text-pink-600
+                        ring-1 ring-white/70 shadow-sm transition group-hover:scale-105">
+              <feature.icon class="w-6 h-6" />
+            </div>
+            <h3 class="text-base font-semibold text-gray-900 mb-1">{feature.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Callout -->
+    <div class="mt-10">
+      <div class="relative overflow-hidden rounded-2xl border border-pink-100 bg-gradient-to-r from-pink-50 to-white p-6 md:p-8">
+        <div class="absolute -right-8 -top-10 w-32 h-32 bg-pink-100 rounded-full blur-2xl opacity-50"></div>
+        <div class="relative flex items-start gap-4">
+          <div class="shrink-0 w-10 h-10 rounded-full bg-white text-pink-600 flex items-center justify-center shadow ring-1 ring-pink-100">
+            <Shield class="w-5 h-5" />
+          </div>
+          <p class="text-lg leading-relaxed text-gray-700 py-1">
+            Puede haber una ligera presión al insertar la sonda, pero el uso de gel y un protector estéril
+            garantizan <strong>higiene y seguridad</strong> total.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <button
+        class="inline-flex items-center gap-3 bg-pink-600 text-white px-8 py-4 rounded-full
+               font-semibold text-lg shadow-md hover:shadow-lg hover:bg-pink-700 transition
+               focus:outline-none focus:ring-2 focus:ring-pink-300 group"
+        aria-label="Agendar cita"
+      >
+        <Phone class="w-5 h-5 transition-transform group-hover:scale-110" />
+        Agenda tu Cita
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,77 @@
+---
+import { Shield, Zap, Eye, DollarSign, Clock, RotateCcw } from "@lucide/astro";
+
+const benefits = [
+  {
+    icon: Shield,
+    title: "Sin radiación",
+    description: "Apto para cualquier edad y para controles frecuentes",
+  },
+  {
+    icon: Zap,
+    title: "No invasivo",
+    description: "No requiere incisiones ni agujas",
+  },
+  {
+    icon: Eye,
+    title: "Imágenes en tiempo real",
+    description: "Permite diagnósticos más rápidos y precisos",
+  },
+  {
+    icon: DollarSign,
+    title: "Accesible",
+    description: "Disponible en nuestra clínica con equipos de alta resolución",
+  },
+  {
+    icon: Clock,
+    title: "Resultados inmediatos",
+    description: "Entrega e interpretación el mismo día",
+  },
+  {
+    icon: RotateCcw,
+    title: "Ideal para seguimiento",
+    description:
+      "Facilita el control periódico de nódulos o patologías tiroideas",
+  },
+];
+---
+
+<section class="py-20 bg-gradient-to-b from-pink-50/30 to-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Beneficios y seguridad del ultrasonido tiroideo
+      </h2>
+      <div
+        class="w-20 h-1.5 bg-gradient-to-r from-pink-500 to-pink-600 mx-auto mb-8 rounded-full"
+      >
+      </div>
+      <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+        El ultrasonido tiroideo es un procedimiento seguro y no invasivo que
+        puede realizarse tantas veces como sea necesario, sin exponer al
+        paciente a radiación.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        benefits.map((benefit, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 border border-pink-100/50 group hover:-translate-y-1"
+          >
+            <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <benefit.icon class="w-10 h-10 text-white" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              {benefit.title}
+            </h3>
+            <p class="text-gray-600 text-md leading-relaxed">
+              {benefit.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

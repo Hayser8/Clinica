@@ -1,0 +1,68 @@
+---
+import { Phone, Users, Clock } from "@lucide/astro";
+---
+
+<section class="py-16 md:py-24 bg-pink-600">
+  <div class="max-w-7xl mx-auto px-6 md:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Columna izquierda */}
+      <div class="space-y-8">
+        {/* Wrapper para alinear TODO al mismo ancho */}
+        <div class="max-w-2xl space-y-6">
+          {/* p como titular grande */}
+          <p class="text-left text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            ¿Dolor, inflamación o un bulto que no desaparece?
+          </p>
+
+          {/* h1 simple, sin pill */}
+          <h1 class="text-left text-xl md:text-2xl lg:text-3xl font-semibold text-pink-100">
+            Ultrasonido testicular
+          </h1>
+
+          <p class="text-lg md:text-xl text-white/90 leading-relaxed">
+            Nuestro ultrasonido testicular es 100% seguro, indoloro y recibes
+            claridad en minutos, dos radiólogos revisan tu estudio y te entregan
+            los resultados el mismo día.
+          </p>
+
+          <div class="pt-2">
+            <a
+              href="/hacer-cita"
+              class="w-full md:w-auto inline-flex items-center gap-3 justify-center md:justify-start bg-white text-pink-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              aria-label="Agendar cita"
+            >
+              <Phone class="w-5 h-5" />
+              Agenda tu Cita
+          </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Columna derecha */}
+      <div>
+        <div class="bg-white rounded-3xl p-3 shadow-2xl relative">
+          <img
+            src="/testicular/doctordeultrasonidostesticulares.webp"
+            alt="Radiólogo Profesional de Ultrasonidos Testiculares"
+            class="w-full h-80 object-cover rounded-2xl"
+          />
+
+          {/* Info badges */}
+          <div
+            class="absolute -top-4 -right-4 bg-pink-600 text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg"
+          >
+            <Users class="w-4 h-4" />
+            <span class="font-semibold">2 Radiólogos</span>
+          </div>
+
+          <div
+            class="absolute -bottom-4 -left-4 bg-white text-pink-600 px-4 py-2 rounded-full flex items-center gap-2 shadow-lg border-2 border-pink-100"
+          >
+            <Clock class="w-4 h-4" />
+            <span class="font-semibold">15-30 Minutos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

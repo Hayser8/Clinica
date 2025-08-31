@@ -1,0 +1,62 @@
+---
+import {
+  Droplets,
+  Circle,
+  Heart,
+  Flame,
+  Sparkles,
+  Shield,
+  Activity,
+  Scissors,
+} from "@lucide/astro";
+const anomalies = [
+  { icon: Droplets, text: "Quistes y ductos mamarios llenos de líquido" },
+  { icon: Circle, text: "Masa sólida o nódulo" },
+  { icon: Heart, text: "Fibroadenomas y lesiones fibroquísticas" },
+  { icon: Flame, text: "Inflamación e infecciones (mastitis, abscesos)" },
+  { icon: Sparkles, text: "Calcificaciones de mediano tamaño." },
+  { icon: Shield, text: "Evaluación de implantes y fugas" },
+  { icon: Activity, text: "Vascularización anómala" },
+  {
+    icon: Scissors,
+    text: "Cambios cicatrízales en pacientes sometidas a cirugías",
+  },
+];
+---
+
+<section class="py-20 bg-pink-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+      ¿Qué tipos de anomalías puede detectar un ultrasonido mamario?
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        anomalies.map((anomaly, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div class="flex items-start space-x-4">
+              <div class="bg-pink-100 rounded-full p-3 flex-shrink-0">
+                <anomaly.icon class="w-6 h-6 text-pink-600" />
+              </div>
+              <p class="text-gray-700 leading-relaxed">{anomaly.text}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-10">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 transition-colors w-full sm:w-auto"
+        aria-label="Agenda tu cita"
+      >
+        Agenda tu cita
+      </a>
+    </div>
+  </div>
+</section>

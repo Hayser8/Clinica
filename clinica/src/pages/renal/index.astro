@@ -1,0 +1,143 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/renal/HeroSection.astro";
+import WhatIs from "@/components/renal/WhatIs.astro";
+import WhatIsItFor from "@/components/renal/WhatIsItFor.astro";
+import WhatDetects from "@/components/renal/WhatDetects.astro";
+import WhyDeltaScan from "@/components/renal/WhyDeltaScan.astro";
+import Preparation from "@/components/renal/Preparation.astro";
+import HowItIs from "@/components/common/HowItIs.astro";
+import WhenToGet from "@/components/renal/WhenToGet.astro";
+import CTA from "@/components/common/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+
+import {
+  Phone,
+  Calendar,
+  Droplets,
+  Zap,
+  Eye,
+  FileText,
+  ArrowRight,
+} from "@lucide/astro";
+
+const steps = [
+  {
+    number: 1,
+    title: "Agenda tu cita",
+    description:
+      "Llámanos o escríbenos por WhatsApp. Trabajamos con cita previa para atenderte sin esperas y en el horario que mejor te convenga.",
+    icon: Calendar,
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    title: "Preparación simple",
+    description:
+      "Para el estudio renal estándar no pedimos ayuno. Te sugeriremos hidratarte si tu médico solicitó evaluación renal-vesical ya que llegar con vejiga llena ayuda a medir antes y después de orinar.",
+    icon: Droplets,
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    title: "Aplicación de gel",
+    description:
+      "Te aplicamos un gel conductor y deslizamos suavemente el transductor por abdomen y flancos para obtener imágenes nítidas, en tiempo real y sin radiación. Es rápido e indoloro.",
+    icon: Zap,
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    title: "Exploración en tiempo real",
+    description:
+      "Mientras los radiólogos exploran tus riñones y vías urinarias, ajustan el equipo para responder a las preguntas clínicas y van respondiendo a las dudas que te vayan surgiendo.",
+    icon: Eye,
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    title: "Entrega de resultados",
+    description:
+      "Terminando el estudio, te entregamos los resultados en el mismo día en formato físico y digital para que tomes decisiones sin demoras.",
+    icon: FileText,
+    color: "from-pink-500 to-pink-600",
+  },
+];
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿El ultrasonido renal duele o causa molestias?",
+    answer:
+      "No, es un procedimiento indoloro. Lo único que sientes es el gel y una ligera presión del transductor sobre el abdomen. La experiencia es rápida, cómoda y sin riesgos.",
+  },
+  {
+    id: 2,
+    question: "¿Con qué frecuencia debería hacerme un ultrasonido renal si tengo enfermedad crónica (ERC)?",
+    answer:
+      "Si vives con una condición renal, la periodicidad del ultrasonido la define tu médico tratante. En general, suele recomendarse un control cada cierto tiempo para monitorear la evolución y ajustar el tratamiento.",
+  },
+  {
+    id: 3,
+    question: "¿Un ultrasonido renal puede detectar infecciones?",
+    answer:
+      "La ecografía no confirma una infección por sí sola, pero sí revela signos que la acompañan, como inflamación, acumulación de líquido o cambios en el tamaño de los riñones. Estos hallazgos ayudan a tu médico tratante a complementar el diagnóstico junto con análisis de laboratorio.",
+  },
+  {
+    id: 4,
+    question: "¿Qué diferencia hay entre un ultrasonido renal y uno renal-vesical?",
+    answer:
+      "El ultrasonido renal se centra únicamente en los riñones y sus características. En cambio, el estudio renal-vesical incluye también la evaluación de la vejiga antes y después de orinar. Esto resulta útil para valorar el vaciamiento urinario y detectar posibles obstrucciones o retenciones.",
+  },
+  {
+    id: 5,
+    question: "¿Puedo hacerme un ultrasonido renal si estoy embarazada?",
+    answer:
+      "Sí, es una de las pruebas más seguras durante el embarazo porque no usa radiación. De hecho, suele indicarse si hay molestias urinarias, infecciones o sospecha de cálculos ya que permite obtener imágenes claras sin exponer al bebé.",
+  },
+  {
+    id: 6,
+    question: "¿El ultrasonido renal tiene algún riesgo o contraindicación?",
+    answer:
+      "No existen riesgos asociados. Al ser un examen no invasivo y sin radiación, puede realizarse en prácticamente cualquier persona. La única consideración son indicaciones especiales según tu caso: por ejemplo, beber agua antes del estudio si también se evaluará la vejiga.",
+  },
+];
+
+const timeEstimate="15 a 30 minutos";
+const heading="¿Cómo es un Ultrasonido Renal en DeltaScan?"
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <WhatIsItFor />
+    <WhatDetects />
+    <WhyDeltaScan />
+    <HowItIs 
+    steps={steps}
+    timeEstimate={timeEstimate}
+    heading={heading}
+    />
+    <Preparation />
+    <WhenToGet />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Renal"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Renales"
+      description="Encuentra respuestas a las preguntas más comunes sobre Ultrasonidos Renales"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

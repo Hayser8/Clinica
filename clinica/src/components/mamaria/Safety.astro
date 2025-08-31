@@ -1,0 +1,61 @@
+---
+import { RefreshCw, Heart, Shield } from "@lucide/astro";
+---
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <div
+        class="bg-pink-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6"
+      >
+        <Shield class="w-10 h-10 text-pink-600" />
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        El ultrasonido mamario es un estudio seguro
+      </h2>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <p class="text-lg text-gray-700 leading-relaxed mb-8">
+        Al no utilizar radiación ionizante, la ecografía mamaria puede repetirse
+        tantas veces como sea necesario sin efectos secundarios. La mayoría de
+        los pacientes describe una sensación de ligera presión, comparable a un
+        masaje suave. Miles de mujeres encuentran este estudio una forma
+        confiable y cómoda de cuidar su salud, con resultados inmediatos que les
+        permite un seguimiento oportuno sin exponer el cuerpo a riesgos
+        innecesarios.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 mt-12">
+        <div class="text-center">
+          <div
+            class="bg-pink-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
+            <RefreshCw class="w-8 h-8 text-pink-600" />
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">Sin límites</h3>
+          <p class="text-gray-600">Puede repetirse las veces necesarias</p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="bg-pink-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
+            <Heart class="w-8 h-8 text-pink-600" />
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">Cómodo</h3>
+          <p class="text-gray-600">Sensación de masaje suave</p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="bg-pink-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
+            <Shield class="w-8 h-8 text-pink-600" />
+          </div>
+          <h3 class="font-semibold text-gray-900 mb-2">Sin riesgos</h3>
+          <p class="text-gray-600">Cero radiación ionizante</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

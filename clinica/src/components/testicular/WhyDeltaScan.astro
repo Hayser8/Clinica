@@ -1,0 +1,66 @@
+---
+import { Award, Users, Zap, Heart } from "@lucide/astro";
+const features = [
+  {
+    icon: Award,
+    title: "Más de 10 años de experiencia",
+    description: "en diagnóstico por imágenes",
+  },
+  {
+    icon: Users,
+    title: "Dos médicos radiólogos",
+    description:
+      "revisan tu estudio al mismo tiempo, optimizando el diagnóstico y asegurando resultados más certeros",
+  },
+  {
+    icon: Zap,
+    title: "Protocolos actualizados",
+    description:
+      "y tecnología moderna, para obtener imágenes de alta resolución",
+  },
+  {
+    icon: Heart,
+    title: "Atención personalizada",
+    description:
+      "con un trato humano que te acompaña desde la llegada hasta la entrega de resultados",
+  },
+];
+---
+
+<section class="py-16 md:py-20">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="space-y-12">
+      <div class="text-center space-y-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+          ¿Por qué DeltaScan es tu clínica de ultrasonidos testiculares?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {
+          features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div key={index} class="bg-pink-50 p-8 rounded-2xl space-y-4">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-pink-600 rounded-full">
+                  <Icon class="w-6 h-6 text-white" />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">{feature.title}</h3>
+                <p class="text-gray-700 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })
+        }
+      </div>
+
+      <div class="bg-pink-600 text-white p-8 rounded-2xl text-center">
+        <p class="text-lg md:text-xl font-medium leading-relaxed">
+          Nuestro compromiso es que recibas un diagnóstico confiable, con la
+          tranquilidad de estar en manos de especialistas.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

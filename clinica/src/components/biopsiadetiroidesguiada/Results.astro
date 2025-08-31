@@ -1,0 +1,55 @@
+---
+import { FileText, CheckCircle, Pill } from "@lucide/astro";
+  const features = [
+    {
+      icon: FileText,
+      title: "Resultados el mismo día",
+      description:
+        "Los resultados se entregan el mismo día de tu procedimiento, listos para ser llevados a tu médico tratante.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Informe completo",
+      description: "Incluimos un informe claro y completo, respaldado por nuestro equipo de patología.",
+    },
+    {
+      icon: Pill,
+      title: "Medicamento incluido",
+      description: "Entregamos una receta con un medicamento para el dolor y disminuir tus molestias.",
+    },
+  ]
+---
+<section
+  class="py-16 md:py-24 bg-gradient-to-br from-pink-600 to-pink-700 text-white"
+>
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Entrega de resultados</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        features.map((feature, index) => (
+          <div
+            key={index}
+            class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 text-center"
+          >
+            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <feature.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-xl font-bold mb-4">{feature.title}</h3>
+            <p class="text-pink-100 leading-relaxed">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center mt-12">
+      <button
+        class="inline-flex items-center gap-3 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-50 transition-colors"
+      >
+        Agenda tu cita ahora
+      </button>
+    </div>
+  </div>
+</section>

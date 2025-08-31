@@ -1,0 +1,89 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/common/Header.astro";
+import Footer from "@/components/common/Footer.astro";
+import HeroSection from "@/components/biopsiadetiroidesguiada/HeroSection.astro";
+import WhatIs from "@/components/biopsiadetiroidesguiada/WhatIs.astro";
+import PreviousStudies from "@/components/biopsiadetiroidesguiada/PreviousStudies.astro";
+import Detection from "@/components/biopsiadetiroidesguiada/Detection.astro";
+import Indications from "@/components/biopsiadetiroidesguiada/Indications.astro";
+import WhyDeltaScan from "@/components/biopsiadetiroidesguiada/WhyDeltaScan.astro";
+import HowItIs from "@/components/biopsiadetiroidesguiada/HowItIs.astro";
+import Preparation from "@/components/biopsiadetiroidesguiada/Preparation.astro";
+import Pain from "@/components/biopsiadetiroidesguiada/Pain.astro";
+import Risk from "@/components/biopsiadetiroidesguiada/Risk.astro";
+import Results from "@/components/biopsiadetiroidesguiada/Results.astro";
+import CTA from "@/components/common/CTA.astro";
+import FAQ from "@/components/common/FAQ.astro";
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Cuánto tarda en cicatrizar el sitio de la biopsia tiroidea?",
+    answer:
+      "La mayoría de los pacientes notan que la pequeña punción en el cuello mejora en pocos días. El enrojecimiento o moretón leve suele resolverse de manera rápida, y la piel cicatriza sin dejar marcas visibles. Cada organismo sana a su propio ritmo, pero en general el sitio se recupera en menos de una semana.",
+  },
+  {
+    id: 2,
+    question: "¿Qué síntomas leves son normales después de una biopsia de tiroides?",
+    answer:
+      "Es común experimentar una ligera molestia en el cuello, sensibilidad al tacto o un pequeño moretón donde se hizo la punción. Algunos pacientes describen una sensación de presión pasajera al tragar. Estos síntomas desaparecen pronto y se pueden manejar con analgésicos suaves recomendados por el médico.",
+  },
+  {
+    id: 3,
+    question: "¿Qué no debo hacer después de una biopsia de tiroides?",
+    answer:
+      "Tras el estudio, se aconseja evitar esfuerzos físicos intensos, cargar peso excesivo o frotar la zona del cuello durante las primeras horas. También es mejor no aplicar compresas calientes ni masajes sobre la punción. Seguir estos cuidados simples ayuda a que la recuperación sea más rápida y cómoda.",
+  },
+  {
+    id: 4,
+    question: "¿Por qué aparecen nódulos en la tiroides?",
+    answer:
+      "Los nódulos tiroideos son frecuentes y en la mayoría de los casos son benignos. Pueden originarse por cambios en el tejido tiroideo, quistes llenos de líquido, inflamaciones previas o desequilibrios hormonales. Solo en un pequeño porcentaje se relacionan con cáncer, por eso la biopsia es importante para diferenciarlos con certeza.",
+  },
+  {
+    id: 5,
+    question: "¿Es posible que la biopsia no sea concluyente?",
+    answer:
+      "Sí, en algunos casos la muestra obtenida puede no ser suficiente o no mostrar células claras para el diagnóstico. Cuando esto ocurre, el médico puede recomendar repetir la biopsia o complementar con otros estudios. Es una situación poco frecuente, pero forma parte de un proceso responsable para asegurar un resultado confiable.",
+  },
+  {
+    id: 6,
+    question: "¿Necesito reposo laboral después de la biopsia?",
+    answer:
+      "La biopsia tiroidea es un procedimiento ambulatorio, lo que significa que la mayoría de las personas pueden retomar sus actividades normales el mismo día. Sin embargo, si tu trabajo implica esfuerzo físico intenso, lo ideal es descansar el resto de la jornada y reintegrarte al día siguiente.",
+  },
+];
+---
+
+<Layout
+  title="Terrarios para reptiles | EcoRefugio"
+  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
+  url="https://ecorefugio.com/"
+>
+  <Header />
+  <main>
+    <HeroSection />
+    <WhatIs />
+    <PreviousStudies />
+    <Detection />
+    <Indications />
+    <WhyDeltaScan />
+    <HowItIs />
+    <Preparation />
+    <Pain />
+    <Results />
+    <Risk />
+    <CTA
+      title="Reserva ahora tu Biopsia Tiroidea con guía de Ultrasonido"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Biopsias Tiroideas con guía de Ultrasonido"
+      description="Encuentra respuestas a las preguntas más comunes sobre Biopsias Tiroideas con guía de Ultrasonido"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

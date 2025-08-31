@@ -1,0 +1,95 @@
+---
+import { Stethoscope, AlertCircle, Search, TrendingUp, Scissors, CheckCircle } from "@lucide/astro";
+  const indications = [
+    {
+      icon: Search,
+      text: "Un ultrasonido revela un nódulo tiroideo sospechoso",
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      icon: AlertCircle,
+      text: "El examen físico que sospeche de un crecimiento de la glándula",
+      color: "from-orange-500 to-orange-600",
+    },
+    {
+      icon: CheckCircle,
+      text: "El médico necesita confirmar si una lesión es benigna o maligna",
+      color: "from-green-500 to-green-600",
+    },
+    {
+      icon: TrendingUp,
+      text: "Se requiere seguimiento de nódulos con cambios en tamaño o características",
+      color: "from-purple-500 to-purple-600",
+    },
+    {
+      icon: Scissors,
+      text: "Es necesario descartar malignidad antes de decidir una cirugía",
+      color: "from-red-500 to-red-600",
+    },
+  ]
+
+---
+<section class="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-600 rounded-full px-4 py-2 text-sm font-medium mb-6"
+      >
+        <Stethoscope class="w-4 h-4" />
+        Aplicaciones clínicas
+      </div>
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+        ¿Cuándo se indica este estudio?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Este procedimiento se recomienda en las siguientes situaciones clínicas:
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {
+        indications.map((indication, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class={`w-12 h-12 bg-gradient-to-br ${indication.color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}
+              >
+                <indication.icon class="w-6 h-6 text-white" />
+              </div>
+              <div class="flex-1">
+                <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mb-3">
+                  <span class="text-pink-600 font-bold text-sm">
+                    {index + 1}
+                  </span>
+                </div>
+                <p class="text-gray-700 leading-relaxed">{indication.text}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center">
+      <div
+        class="bg-gradient-to-r from-pink-600 to-pink-700 rounded-3xl p-8 text-white shadow-xl"
+      >
+        <h3 class="text-2xl font-bold mb-4">
+          ¿Tienes síntomas o necesitas un chequeo?
+        </h3>
+        <p class="text-pink-100 mb-6 max-w-2xl mx-auto">
+          Agenda tu ultrasonido renal y obtén respuestas claras sobre tu salud
+        </p>
+        <button
+          class="inline-flex items-center gap-3 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-50 transition-colors shadow-lg"
+        >
+          <Stethoscope class="w-5 h-5" />
+          Agenda tu cita
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

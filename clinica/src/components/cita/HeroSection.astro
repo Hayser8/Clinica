@@ -1,13 +1,69 @@
-<section class="py-20 bg-gradient-to-br from-pink-600 via-pink-500 to-pink-700">
-  <div class="max-w-7xl mx-auto p-8">
-    <div class="text-center text-white space-y-6">
-      <h1 class="text-4xl lg:text-5xl font-bold">
-        Hacer <span class="text-pink-100">Cita</span>
-      </h1>
-      <p class="text-xl text-pink-100 max-w-3xl mx-auto leading-relaxed">
-        Estamos aquí para atenderte. Contáctanos por cualquiera de nuestros
-        medios disponibles y agenda tu cita de forma rápida y sencilla.
-      </p>
+---
+// Importa los iconos como ya lo haces:
+import { Phone, MessageCircle, Clock } from "@lucide/astro";
+---
+
+<section class="bg-pink-600">
+  <div class="container mx-auto px-4 py-10 md:py-14 lg:py-16">
+    <div class="max-w-7xl mx-auto">
+      <!-- Le damos la altura mínima acotada al contenedor del grid -->
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center min-h-[clamp(520px,65svh,820px)]">
+        <!-- Contenido de texto - Izquierda -->
+        <div class="space-y-7 text-center lg:text-left">
+          <div class="space-y-4">
+            <h1
+              class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight text-balance max-w-[22ch] mx-auto lg:mx-0"
+            >
+              Agenda tu ultrasonido por <span class="text-pink-100">WhatsApp</span> o por <span class="text-pink-100">llamada</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-pink-50 leading-relaxed text-pretty">
+              Obtén resultados el mismo día y una explicación clara por especialistas.
+            </p>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+            <a
+              href="tel:+50200000000"
+              class="inline-flex items-center gap-2 h-11 px-5 rounded-xl bg-white text-pink-600 font-semibold shadow-md hover:shadow-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/40 active:scale-[0.99]"
+              aria-label="Llamar ahora"
+            >
+              <Phone class="w-5 h-5 shrink-0" />
+              <span class="leading-none">Llamar ahora</span>
+            </a>
+
+            <a
+              href="https://wa.me/50200000000?text=Hola%2C%20quisiera%20agendar%20un%20ultrasonido"
+              class="inline-flex items-center gap-2 h-11 px-5 rounded-xl border-2 border-white text-white hover:bg-white hover:text-pink-600 font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/40 active:scale-[0.99] bg-transparent"
+              aria-label="Abrir WhatsApp"
+              rel="noopener"
+            >
+              <MessageCircle class="w-5 h-5 shrink-0" />
+              <span class="leading-none">Abrir WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Microcopy -->
+          <div class="flex items-center justify-center lg:justify-start gap-2 text-pink-100">
+            <Clock class="w-4 h-4" />
+            <span class="text-sm font-medium">Duración 20–30 min</span>
+          </div>
+        </div>
+
+        <!-- Imagen - Derecha -->
+        <div class="relative">
+          <div class="relative bg-white rounded-3xl p-3 shadow-2xl">
+            <img
+              src="/prostatico/doctoresdeultrasonidosprostaticos.webp"
+              alt="Equipo de ultrasonido moderno en clínica"
+              class="w-full h-auto max-h-[520px] lg:max-h-[600px] rounded-2xl shadow-lg object-cover"
+            />
+            <div class="absolute -top-4 -right-4 w-24 h-24 bg-pink-200 rounded-full opacity-30"></div>
+            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-pink-100 rounded-full opacity-20"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
