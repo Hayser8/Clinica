@@ -1,0 +1,95 @@
+---
+import { Phone, Zap, Shield, Clock, CheckCircle } from "@lucide/astro";
+---
+<section
+  class="bg-gradient-to-br from-pink-600 to-pink-700 text-white py-8 md:py-8"
+>
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <div
+          class="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 text-sm font-medium"
+        >
+          <div class="w-2 h-2 bg-white rounded-full"></div>
+          Clínica Especializada
+        </div>
+
+        <div class="space-y-4">
+          <!-- Título (p grande en blanco) -->
+          <p class="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+            Con los años cambia la próstata, pero no debería cambiar tu tranquilidad
+          </p>
+
+          <!-- H1 (más pequeño, en pink-100) -->
+          <h1
+            class="text-2xl md:text-3xl font-semibold text-pink-100"
+          >
+            Ultrasonido Transrectal (TRUS)
+          </h1>
+
+          <p class="text-lg md:text-xl opacity-90 text-pretty">
+            El TRUS mide el tamaño y estructura según tu edad, diferenciando
+            entre lo normal y lo que necesita seguimiento. Un examen sencillo
+            que puede marcar la diferencia en tu salud a largo plazo.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a
+            href="/hacer-cita"
+            class="inline-flex items-center gap-2 bg-white text-pink-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+            aria-label="Agendar cita para ultrasonido transrectal"
+          >
+            <Phone class="w-5 h-5" />
+            Agenda tu Cita
+          </a>
+          <div class="flex items-center gap-4 text-sm">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div
+          class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 relative overflow-hidden"
+        >
+          <img
+            src="/testicular/doctordeultrasonidostesticulares.webp"
+            alt="Doctor especialista en ultrasonido transrectal (TRUS)"
+            class="w-full h-auto rounded-xl"
+          />
+
+          <!-- Decorative mini pills overlaid on image -->
+          <div
+            class="absolute top-4 left-4 bg-white/90 text-pink-600 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-lg"
+          >
+            <Shield class="w-3 h-3" />
+            100% Seguro
+          </div>
+
+          <!-- Oculta en mobile, visible en desktop -->
+          <div
+            class="absolute top-4 right-4 bg-pink-500/90 text-white px-3 py-1.5 rounded-full text-xs font-semibold hidden md:flex items-center gap-1.5 shadow-lg"
+          >
+            <Clock class="w-3 h-3" />
+            Sin dolor
+          </div>
+
+          <!-- Oculta en mobile, visible en desktop -->
+          <div
+            class="absolute bottom-4 left-4 bg-white/90 text-pink-600 px-3 py-1.5 rounded-full text-xs font-semibold hidden md:flex items-center gap-1.5 shadow-lg"
+          >
+            <CheckCircle class="w-3 h-3" />
+            Resultados inmediatos
+          </div>
+
+          <div
+            class="absolute bottom-4 right-4 bg-pink-500/90 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg"
+          >
+            Tecnología avanzada
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

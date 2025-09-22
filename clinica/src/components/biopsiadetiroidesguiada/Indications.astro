@@ -1,34 +1,41 @@
 ---
-import { Stethoscope, AlertCircle, Search, TrendingUp, Scissors, CheckCircle } from "@lucide/astro";
-  const indications = [
-    {
-      icon: Search,
-      text: "Un ultrasonido revela un nódulo tiroideo sospechoso",
-      color: "from-blue-500 to-blue-600",
-    },
-    {
-      icon: AlertCircle,
-      text: "El examen físico que sospeche de un crecimiento de la glándula",
-      color: "from-orange-500 to-orange-600",
-    },
-    {
-      icon: CheckCircle,
-      text: "El médico necesita confirmar si una lesión es benigna o maligna",
-      color: "from-green-500 to-green-600",
-    },
-    {
-      icon: TrendingUp,
-      text: "Se requiere seguimiento de nódulos con cambios en tamaño o características",
-      color: "from-purple-500 to-purple-600",
-    },
-    {
-      icon: Scissors,
-      text: "Es necesario descartar malignidad antes de decidir una cirugía",
-      color: "from-red-500 to-red-600",
-    },
-  ]
-
+import {
+  Stethoscope,
+  AlertCircle,
+  Search,
+  TrendingUp,
+  Scissors,
+  CheckCircle,
+} from "@lucide/astro";
+const indications = [
+  {
+    icon: Search,
+    text: "Un ultrasonido revela un nódulo tiroideo sospechoso",
+    color: "from-blue-500 to-blue-600",
+  },
+  {
+    icon: AlertCircle,
+    text: "El examen físico que sospeche de un crecimiento de la glándula",
+    color: "from-orange-500 to-orange-600",
+  },
+  {
+    icon: CheckCircle,
+    text: "El médico necesita confirmar si una lesión es benigna o maligna",
+    color: "from-green-500 to-green-600",
+  },
+  {
+    icon: TrendingUp,
+    text: "Se requiere seguimiento de nódulos con cambios en tamaño o características",
+    color: "from-purple-500 to-purple-600",
+  },
+  {
+    icon: Scissors,
+    text: "Es necesario descartar malignidad antes de decidir una cirugía",
+    color: "from-red-500 to-red-600",
+  },
+];
 ---
+
 <section class="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
   <div class="max-w-7xl mx-auto p-8">
     <div class="text-center mb-16">
@@ -83,12 +90,13 @@ import { Stethoscope, AlertCircle, Search, TrendingUp, Scissors, CheckCircle } f
         <p class="text-pink-100 mb-6 max-w-2xl mx-auto">
           Agenda tu ultrasonido renal y obtén respuestas claras sobre tu salud
         </p>
-        <button
+        <a
+          href="/hacer-cita"
           class="inline-flex items-center gap-3 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-50 transition-colors shadow-lg"
         >
           <Stethoscope class="w-5 h-5" />
           Agenda tu cita
-        </button>
+        </a>
       </div>
     </div>
   </div>

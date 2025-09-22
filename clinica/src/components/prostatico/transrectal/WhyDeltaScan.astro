@@ -1,0 +1,68 @@
+---
+import { Users, Heart, Award, UserCheck, Settings } from "@lucide/astro";
+  const benefits = [
+    {
+      icon: Users,
+      title: "Dos médicos radiólogos interpretando tus resultados",
+      description:
+        "En DeltaScan tus imágenes son valoradas en conjunto por dos especialistas, lo que reduce el margen de error y aumenta la certeza diagnóstica.",
+    },
+    {
+      icon: Heart,
+      title: "Respeto y acompañamiento en cada paso",
+      description:
+        "Sabemos que un examen transrectal puede generar inquietud. Por eso, lo realizamos en un ambiente seguro y profesional, cuidando tu privacidad y comodidad en todo momento.",
+    },
+    {
+      icon: Award,
+      title: "Más de 10 años de experiencia en ecografía médica",
+      description:
+        "Nuestra clínica está respaldada por más de una década de trayectoria en estudios de ultrasonido en Guatemala, con tecnología y protocolos actualizados.",
+    },
+    {
+      icon: UserCheck,
+      title: "Atención personalizada y cercana",
+      description:
+        "Te explicamos cada hallazgo de forma clara y resolvemos tus dudas antes y después del examen. Nuestro objetivo es que no solo tengas un resultado, sino también la tranquilidad de comprenderlo.",
+    },
+    {
+      icon: Settings,
+      title: "Protocolos actualizados y equipos modernos",
+      description:
+        "Aplicamos guías radiológicas internacionales y usamos ecógrafos de alta resolución que garantizan resultados confiables.",
+    },
+  ]
+---
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-balance"
+      >
+        ¿Por qué DeltaScan es tu clínica de ultrasonidos prostáticos
+        transrectales?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        benefits.map((benefit, index) => (
+          <div
+            key={index}
+            class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow"
+          >
+            <div class="bg-pink-500 rounded-2xl p-4 w-16 h-16 mb-4 flex items-center justify-center">
+              <benefit.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3 text-balance">
+              {benefit.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-pretty">
+              {benefit.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

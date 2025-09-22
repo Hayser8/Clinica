@@ -1,0 +1,258 @@
+---
+// src/components/PrivacyPolicy.astro
+// Componente Astro para la Política de Privacidad de la clínica.
+// Uso: import PrivacyPolicy from "@/components/PrivacyPolicy.astro"; <PrivacyPolicy />
+
+export interface Props {
+  clinicName?: string;
+  contactEmail?: string;
+  contactPhone?: string;
+  contactWhatsapp?: string;
+  address?: string;
+  lastUpdated?: string; // Ej.: "3 de septiembre de 2025"
+}
+
+const {
+  clinicName = "DeltaScan – Clínica de Ultrasonido",
+  contactEmail = "deltascangt@gmail.com",
+  contactPhone = "2448-1110",
+  contactWhatsapp = "4565-0865",
+  address = "Ciudad de Guatemala, Guatemala",
+  lastUpdated = "3 de septiembre de 2025",
+} = Astro.props;
+---
+
+<section class="bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-16">
+
+  <header class="mb-10">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+      Política de Privacidad
+    </h1>
+    <p class="mt-2 text-sm text-gray-600">
+      Última actualización: {lastUpdated}
+    </p>
+    <p class="mt-6 text-gray-700 leading-relaxed">
+      En <span class="font-semibold">{clinicName}</span> respetamos y protegemos
+      tu privacidad. Este documento explica qué datos personales recopilamos, con
+      qué fines, bajo qué bases legales, con quién los compartimos, por cuánto
+      tiempo los conservamos y qué derechos tienes como titular de los datos.
+    </p>
+  </header>
+
+  <!-- Índice -->
+  <nav aria-label="Índice" class="mb-10">
+    <ul class="grid gap-2 text-sm md:text-base list-disc pl-5 marker:text-pink-600">
+      <li><a href="#alcance" class="hover:underline text-pink-700">1. Alcance y responsable</a></li>
+      <li><a href="#datos-que-recopilamos" class="hover:underline text-pink-700">2. Datos que recopilamos</a></li>
+      <li><a href="#finalidades" class="hover:underline text-pink-700">3. Finalidades del tratamiento</a></li>
+      <li><a href="#base-legal" class="hover:underline text-pink-700">4. Base legal</a></li>
+      <li><a href="#fuentes" class="hover:underline text-pink-700">5. Fuentes de obtención</a></li>
+      <li><a href="#terceros" class="hover:underline text-pink-700">6. Terceros y encargados</a></li>
+      <li><a href="#transferencias" class="hover:underline text-pink-700">7. Transferencias internacionales</a></li>
+      <li><a href="#retencion" class="hover:underline text-pink-700">8. Plazos de conservación</a></li>
+      <li><a href="#seguridad" class="hover:underline text-pink-700">9. Seguridad de la información</a></li>
+      <li><a href="#cookies" class="hover:underline text-pink-700">10. Cookies y tecnologías similares</a></li>
+      <li><a href="#derechos" class="hover:underline text-pink-700">11. Tus derechos</a></li>
+      <li><a href="#menores" class="hover:underline text-pink-700">12. Menores de edad</a></li>
+      <li><a href="#contacto" class="hover:underline text-pink-700">13. Contacto del responsable</a></li>
+      <li><a href="#cambios" class="hover:underline text-pink-700">14. Cambios a este aviso</a></li>
+      <li><a href="#definiciones" class="hover:underline text-pink-700">15. Definiciones rápidas</a></li>
+      <li><a href="#nota-legal" class="hover:underline text-pink-700">16. Nota legal</a></li>
+    </ul>
+  </nav>
+
+  <section id="alcance" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">1. Alcance y responsable</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Este aviso aplica a los datos personales recabados por {clinicName} en todos
+      nuestros puntos de contacto: clínica física, sitio web, chats (incluido WhatsApp),
+      llamadas telefónicas, formularios y redes sociales. {clinicName} actúa como
+      “responsable del tratamiento” de tus datos personales.
+    </p>
+  </section>
+
+  <section id="datos-que-recopilamos" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">2. Datos que recopilamos</h2>
+    <ul class="mt-4 space-y-2 text-gray-700 leading-relaxed list-disc pl-6">
+      <li><span class="font-medium">Identificación y contacto:</span> nombre, DPI/pasaporte, fecha de nacimiento, correo, teléfono, dirección.</li>
+      <li><span class="font-medium">Citas y facturación:</span> historial de citas, forma de pago, datos de facturación.</li>
+      <li><span class="font-medium">Datos de salud:</span> motivo de consulta, antecedentes, estudios de imagen (p. ej., ultrasonidos), informes diagnósticos, indicaciones médicas que nos compartas.</li>
+      <li><span class="font-medium">Uso del sitio:</span> dirección IP, identificadores de dispositivo, páginas visitadas, eventos de navegación, cookies (ver sección 10).</li>
+      <li><span class="font-medium">Comunicación:</span> mensajes enviados por formularios, correo, teléfono y aplicaciones de mensajería.</li>
+      <li><span class="font-medium">Reclutamiento (si aplica):</span> CV, experiencia, referencias.</li>
+    </ul>
+  </section>
+
+  <section id="finalidades" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">3. Finalidades del tratamiento</h2>
+    <ul class="mt-4 space-y-2 text-gray-700 leading-relaxed list-disc pl-6">
+      <li><span class="font-medium">Atención médica:</span> agendar citas, realizar estudios de imagen, emitir e interpretar resultados, brindar seguimiento clínico.</li>
+      <li><span class="font-medium">Administrativas y legales:</span> facturación, cobros, contabilidad, cumplimiento de obligaciones legales y sanitarias.</li>
+      <li><span class="font-medium">Servicio al paciente:</span> comunicación sobre tus citas y resultados, encuestas de satisfacción, soporte.</li>
+      <li><span class="font-medium">Mejora de servicios:</span> analítica, seguridad del sitio, control de calidad y auditorías clínicas.</li>
+      <li><span class="font-medium">Marketing (opcional):</span> envío de recordatorios, información de nuevos servicios o promociones, únicamente con tu consentimiento y con opción de baja en cualquier momento.</li>
+    </ul>
+  </section>
+
+  <section id="base-legal" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">4. Base legal</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Tratamos tus datos con fundamento en una o más de las siguientes bases:
+    </p>
+    <ul class="mt-2 space-y-2 text-gray-700 leading-relaxed list-disc pl-6">
+      <li><span class="font-medium">Consentimiento:</span> por ejemplo, para marketing o cuando nos lo otorgas explícitamente.</li>
+      <li><span class="font-medium">Ejecución de una relación o servicios solicitados:</span> p. ej., realizar tus estudios de imagen.</li>
+      <li><span class="font-medium">Obligación legal o sanitaria:</span> normativa clínica y contable aplicable.</li>
+      <li><span class="font-medium">Interés legítimo:</span> seguridad, prevención de fraude, mejora continua del servicio.</li>
+      <li><span class="font-medium">Interés vital:</span> en casos de urgencia para proteger tu vida o integridad.</li>
+    </ul>
+  </section>
+
+  <section id="fuentes" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">5. Fuentes de obtención</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Recibimos datos directamente de ti, de médicos remitentes o aseguradoras (cuando tú lo autorizas),
+      y de manera automática mediante cookies o herramientas de analítica al usar nuestro sitio.
+    </p>
+  </section>
+
+  <section id="terceros" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">6. Terceros y encargados</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Podemos compartir datos con proveedores que actúan como “encargados de tratamiento”, exclusivamente
+      para prestar servicios a {clinicName} (p. ej., hosting, mensajería, analítica, facturación, laboratorio
+      asociado o radiólogos consultores). Exigimos contratos de confidencialidad y medidas de seguridad.
+      No vendemos tus datos personales.
+    </p>
+  </section>
+
+  <section id="transferencias" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">7. Transferencias internacionales</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Si por razones técnicas algún proveedor procesa datos fuera de tu país, adoptaremos salvaguardas
+      apropiadas (cláusulas contractuales estándar u otros mecanismos reconocidos) para proteger tu información.
+    </p>
+  </section>
+
+  <section id="retencion" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">8. Plazos de conservación</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Conservamos los datos únicamente durante el tiempo necesario para cumplir las finalidades anteriores y
+      las obligaciones legales y sanitarias aplicables. Al concluir dichos plazos, eliminamos o anonimizamos
+      la información de forma segura.
+    </p>
+  </section>
+
+  <section id="seguridad" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">9. Seguridad de la información</h2>
+    <ul class="mt-4 space-y-2 text-gray-700 leading-relaxed list-disc pl-6">
+      <li>Cifrado en tránsito (HTTPS) y, cuando aplica, en reposo.</li>
+      <li>Controles de acceso por rol y principio de mínimo privilegio.</li>
+      <li>Registros de acceso y auditorías periódicas.</li>
+      <li>Copias de respaldo y planes de continuidad.</li>
+      <li>Capacitaciones de confidencialidad al personal.</li>
+    </ul>
+    <p class="mt-4 text-gray-700">
+      Aunque implementamos medidas sólidas, ningún método es 100% infalible. Te avisaremos conforme a la
+      normativa si se llegara a producir una brecha que te afecte de forma significativa.
+    </p>
+  </section>
+
+  <section id="cookies" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">10. Cookies y tecnologías similares</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Usamos cookies para operar el sitio, recordar preferencias y mejorar el servicio. Puedes gestionar
+      tus preferencias desde la configuración de tu navegador o, si ofrecemos banner de consentimiento,
+      desde ese panel. Tipos:
+    </p>
+    <ul class="mt-2 space-y-2 text-gray-700 leading-relaxed list-disc pl-6">
+      <li><span class="font-medium">Necesarias:</span> habilitan funciones básicas del sitio.</li>
+      <li><span class="font-medium">De preferencia:</span> recuerdan idioma u opciones del usuario.</li>
+      <li><span class="font-medium">Analítica:</span> nos ayudan a entender uso y rendimiento del sitio.</li>
+      <li><span class="font-medium">Seguridad/anti-fraude:</span> protegen la integridad del servicio.</li>
+    </ul>
+  </section>
+
+  <section id="derechos" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">11. Tus derechos</h2>
+    <p class="mt-4 text-gray-700">
+      Dependiendo de la normativa aplicable, puedes ejercer los derechos de acceso, rectificación,
+      actualización, oposición, limitación, supresión/olvido y portabilidad. También puedes
+      <span class="font-medium">retirar tu consentimiento</span> en cualquier momento cuando esa sea la base del tratamiento.
+    </p>
+    <p class="mt-3 text-gray-700">
+      Para ejercerlos, escríbenos a
+      <a
+        href={`mailto:${contactEmail}`}
+        target="_blank" rel="noopener noreferrer"
+        class="text-pink-700 underline"
+        >{contactEmail}</a
+      >
+      indicando tu nombre, medio de respuesta y una descripción clara del derecho que deseas ejercer.
+      Podemos solicitar verificación de identidad para proteger tu información.
+    </p>
+  </section>
+
+  <section id="menores" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">12. Menores de edad</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Nuestros servicios de salud pueden involucrar a menores, pero el registro y la
+      gestión de su información debe realizarse por sus padres, madres o representantes
+      legales. No realizamos envíos promocionales dirigidos directamente a menores.
+    </p>
+  </section>
+
+  <section id="contacto" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">13. Contacto del responsable</h2>
+    <address class="not-italic mt-4 text-gray-700 leading-relaxed">
+      <span class="font-semibold">{clinicName}</span><br />
+      {address}<br />
+      Correo privacidad:
+      <a
+        href={`mailto:${contactEmail}`}
+        target="_blank" rel="noopener noreferrer"
+        class="text-pink-700 underline"
+        >{contactEmail}</a
+      ><br />
+      Teléfono:
+      <a href={`tel:${contactPhone}`} class="text-pink-700 underline">{contactPhone}</a><br />
+      WhatsApp:
+      <a
+        href={`https://wa.me/${contactWhatsapp.replace(/[^0-9]/g, "")}`}
+        target="_blank" rel="noopener noreferrer"
+        class="text-pink-700 underline"
+        >{contactWhatsapp}</a
+      >
+    </address>
+  </section>
+
+  <section id="cambios" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">14. Cambios a este aviso</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Podremos actualizar esta Política para reflejar cambios normativos o mejoras del servicio.
+      Publicaremos la versión vigente y, si los cambios son sustanciales, te lo notificaremos por
+      un medio razonable.
+    </p>
+  </section>
+
+  <section id="definiciones" class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">15. Definiciones rápidas</h2>
+    <ul class="mt-4 space-y-2 text-gray-700 leading-relaxed list-disc pl-6">
+      <li><span class="font-medium">Datos personales:</span> información que identifica o puede identificar a una persona.</li>
+      <li><span class="font-medium">Datos de salud:</span> información relativa al estado de salud presente, pasado o futuro.</li>
+      <li><span class="font-medium">Responsable:</span> quien decide sobre el tratamiento de datos.</li>
+      <li><span class="font-medium">Encargado:</span> quien trata datos por cuenta del responsable.</li>
+      <li><span class="font-medium">Tratamiento:</span> cualquier operación sobre datos (recopilar, usar, almacenar, transferir, eliminar, etc.).</li>
+    </ul>
+  </section>
+
+  <section id="nota-legal" class="mb-2">
+    <h2 class="text-2xl font-semibold text-gray-900">16. Nota legal</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Este documento es informativo y no constituye asesoría legal. La aplicación específica puede variar
+      según la normativa vigente en tu jurisdicción. Si lo necesitas, consulta con tu asesor legal.
+    </p>
+  </section>
+  </div>
+</section>

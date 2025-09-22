@@ -1,0 +1,54 @@
+---
+import { MessageCircle, Calendar, Stethoscope } from "@lucide/astro";
+---
+
+<div class="bg-pink-700 text-white py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Content */}
+      <div class="space-y-6">
+        <div class="space-y-4">
+          <div
+            class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium"
+          >
+            Clínica Especializada
+          </div>
+
+          <!-- Visualmente grande pero como <p> -->
+          <p class="text-4xl lg:text-5xl font-bold leading-tight">
+            Dra. Berta Elisa Coto Pacheco
+          </p>
+
+          <!-- Visualmente pequeño pero como <h1> -->
+          <h1 class="text-2xl font-medium text-pink-100">Radióloga</h1>
+        </div>
+
+        <p class="text-lg text-pink-100 leading-relaxed">
+          Formada en la Universidad de San Carlos de Guatemala, donde
+          se graduó como Médico y Cirujano en 2010 y obtuvo la Maestría en
+          Radiología e Imágenes Diagnósticas con mención Cum Laude en 2015.
+          Desde 2016 ha ejercido en Hospitales La Paz y, a partir de 2017, es
+          fundadora y radióloga encargada en Clínica DeltaScan.
+        </p>
+      </div>
+
+      {/* Image */}
+      <div class="flex justify-center lg:justify-end">
+        <div class="relative">
+          <div class="w-80 h-96 bg-white/20 rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="/bertacoto/radiologa.webp"
+              alt="Dra. Berta Elisa Coto Pacheco - Radióloga"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="absolute -bottom-4 -right-4 bg-white text-pink-700 p-4 rounded-xl shadow-lg"
+          >
+            <Stethoscope class="w-8 h-8" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,14 @@
 ---
-import { CheckCircle, Phone } from "@lucide/astro"
-  const indications = [
-    "Sangrado irregular o dolor pélvico persistente.",
-    "Control en tratamientos de fertilidad.",
-    "Valoración temprana de un embarazo.",
-    "Detección de miomas, pólipos, endometriosis o masas anexiales.",
-    "Estudio de infertilidad femenina.",
-  ]
+import { CheckCircle, Phone } from "@lucide/astro";
+const indications = [
+  "Sangrado irregular o dolor pélvico persistente.",
+  "Control en tratamientos de fertilidad.",
+  "Valoración temprana de un embarazo.",
+  "Detección de miomas, pólipos, endometriosis o masas anexiales.",
+  "Estudio de infertilidad femenina.",
+];
 ---
+
 <section class="bg-white py-16 md:py-24">
   <div class="max-w-7xl mx-auto p-8">
     <div class="text-center space-y-4 mb-12">
@@ -41,12 +42,15 @@ import { CheckCircle, Phone } from "@lucide/astro"
         poder aclarar tu caso.
       </p>
 
-      <button
-        class="bg-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-700 transition-colors flex items-center gap-3 mx-auto group"
+      <!-- CTA: enlace “normal”, no se estira -->
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold bg-pink-600 text-white hover:bg-pink-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 whitespace-nowrap"
+        aria-label="Agenda tu Cita"
       >
-        <Phone class="w-5 h-5 group-hover:scale-110 transition-transform" />
+        <Phone class="w-5 h-5" />
         Agenda tu Cita
-      </button>
+      </a>
     </div>
   </div>
 </section>

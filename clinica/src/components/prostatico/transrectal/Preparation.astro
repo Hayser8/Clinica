@@ -1,0 +1,56 @@
+---
+import { CheckCircle, Clock, Shirt } from "@lucide/astro";
+  const preparations = [
+    {
+      icon: CheckCircle,
+      title: "Enema rectal previo",
+      description: "Generalmente se recomienda si así lo indica el médico tratante",
+    },
+    {
+      icon: Clock,
+      title: "No se requiere ayuno",
+      description: "Puedes comer normalmente antes del examen",
+    },
+    {
+      icon: Shirt,
+      title: "Ropa cómoda",
+      description: "Llegar puntual y con ropa cómoda facilita el procedimiento",
+    },
+  ]
+---
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-balance"
+      >
+        ¿Cómo me preparo para mi examen?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        preparations.map((prep, index) => (
+          <div key={index} class="bg-gray-50 rounded-2xl p-6 text-center">
+            <div class="bg-pink-500 rounded-2xl p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+              <prep.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {prep.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">{prep.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="mt-12 bg-pink-50 rounded-2xl p-8 border border-pink-100 text-center"
+    >
+      <p class="text-gray-700 leading-relaxed">
+        <strong>Importante:</strong> Avisar al radiólogo en caso de estar tomando
+        anticoagulantes.
+      </p>
+    </div>
+  </div>
+</section>

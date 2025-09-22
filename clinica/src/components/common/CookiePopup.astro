@@ -1,0 +1,154 @@
+---
+// src/components/common/CookiePopup.astro
+import { Cookie, X } from '@lucide/astro';
+---
+
+<div id="cookie-popup" class="hidden">
+  <!-- Overlay -->
+  <div id="cookie-overlay" class="fixed inset-0 bg-black/40 z-[9998]"></div>
+
+  <!-- Popup -->
+  <div class="fixed inset-0 z-[9999] flex items-end justify-center p-4 md:items-center">
+    <div
+  id="cookie-dialog"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cookie-title"
+  aria-describedby="cookie-desc"
+  tabindex="-1"
+  class="w-full max-w-md md:max-w-lg bg-white rounded-xl shadow-2xl ring-1 ring-pink-200/60 outline-none focus:outline-none focus-visible:outline-none"
+  style="transform: translateY(6px); opacity: 0; transition: transform 220ms ease, opacity 220ms ease;"
+>
+      <div class="p-6">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+              <Cookie class="w-6 h-6 text-pink-600" />
+            </div>
+          </div>
+
+          <div class="flex-1 space-y-4">
+            <!-- Título + botón cerrar -->
+            <div class="flex items-start justify-between">
+              <h3 id="cookie-title" class="text-lg font-semibold text-gray-900">
+                Política de Cookies
+              </h3>
+              <button
+                id="close-cookie-popup-btn"
+                class="text-gray-400 hover:text-gray-600 p-2 -m-2"
+                aria-label="Cerrar"
+                type="button"
+              >
+                <X class="w-4 h-4" />
+              </button>
+            </div>
+
+            <p id="cookie-desc" class="text-sm text-gray-600 leading-relaxed">
+              Utilizamos cookies para mejorar tu experiencia de navegación, analizar el tráfico del sitio y personalizar el contenido. Al hacer clic en “Aceptar”, consientes el uso de todas las cookies.
+            </p>
+
+            <!-- Botones de acción -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+              <button
+                id="accept-cookies-btn"
+                class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-md flex-1 sm:flex-none"
+                type="button"
+              >
+                Aceptar Cookies
+              </button>
+              <button
+                id="reject-cookies-btn"
+                class="border border-pink-200 text-pink-700 hover:bg-pink-50 px-4 py-2 rounded-md flex-1 sm:flex-none"
+                type="button"
+              >
+                Rechazar
+              </button>
+            </div>
+
+            <p class="text-xs text-gray-500">
+              Puedes cambiar tus preferencias en cualquier momento en la configuración de cookies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    // Helpers visibles para debug
+    window.__cookiesReset = function () {
+      try { localStorage.removeItem('cookies-accepted'); console.info('[CookiePopup] Reset hecho'); }
+      catch (e) { console.warn('[CookiePopup] No se pudo hacer reset:', e); }
+    };
+
+    const ready = (fn) => {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fn, { once: true });
+      } else {
+        fn();
+      }
+    };
+
+    ready(() => {
+      const popup    = document.getElementById('cookie-popup');
+      const overlay  = document.getElementById('cookie-overlay');
+      const dialog   = document.getElementById('cookie-dialog');
+      const accept   = document.getElementById('accept-cookies-btn');
+      const reject   = document.getElementById('reject-cookies-btn');
+      const closeBtn = document.getElementById('close-cookie-popup-btn');
+
+      if (!popup) return;
+
+      const show = () => {
+        // Quita hidden y aplica transición simple (fallback sin plugins)
+        popup.classList.remove('hidden');
+        // Fallback por si alguna clase persiste
+        popup.style.display = 'block';
+        requestAnimationFrame(() => {
+          if (dialog) {
+            dialog.style.opacity = '1';
+            dialog.style.transform = 'translateY(0)';
+            dialog.focus?.();
+          }
+        });
+      };
+
+      const hide = () => {
+        if (dialog) {
+          dialog.style.opacity = '0';
+          dialog.style.transform = 'translateY(6px)';
+        }
+        setTimeout(() => {
+          popup.classList.add('hidden');
+          popup.style.display = 'none';
+        }, 180);
+      };
+
+      // Mostrar si no hay decisión previa, o si vamos en modo debug
+      const decided = localStorage.getItem('cookies-accepted');
+      const debugOn = new URLSearchParams(location.search).has('debugCookies');
+
+      if (!decided || debugOn) {
+        // Usa un pequeño delay para evitar conflictos con estilos iniciales
+        setTimeout(show, 300);
+      }
+
+      accept?.addEventListener('click', () => {
+        try { localStorage.setItem('cookies-accepted', 'true'); } catch {}
+        hide();
+      });
+      reject?.addEventListener('click', () => {
+        try { localStorage.setItem('cookies-accepted', 'false'); } catch {}
+        hide();
+      });
+      closeBtn?.addEventListener('click', hide);
+      overlay?.addEventListener('click', hide);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !popup.classList.contains('hidden')) hide();
+      });
+    });
+  })();
+</script>

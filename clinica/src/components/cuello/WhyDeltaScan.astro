@@ -1,0 +1,61 @@
+---
+import { Users, Award, Heart, Phone, ArrowRight } from "@lucide/astro";
+const reasons = [
+  {
+    icon: Users,
+    title: "Dos médicos radiólogos revisando cada estudio al mismo tiempo",
+    description:
+      "En DeltaScan, dos especialistas en radiología interpretan tus imágenes de manera conjunta, lo que incrementa la precisión diagnóstica y brinda mayor seguridad en los resultados.",
+  },
+  {
+    icon: Award,
+    title: "Más de 10 años de experiencia en ecografía médica",
+    description:
+      "Nuestra trayectoria está respaldada por más de una década de práctica en estudios de ultrasonido, incluyendo cuello y tejidos blandos, lo que nos permite detectar hallazgos con confianza.",
+  },
+  {
+    icon: Heart,
+    title: "Atención personalizada y cercana",
+    description:
+      "Explicamos cada hallazgo con claridad, respondemos tus preguntas y mantenemos un trato empático, para que sientas acompañamiento en todo el proceso.",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-pink-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-2xl md:text-4xl font-bold text-gray-900 mb-6 text-balance"
+      >
+        ¿Por qué DeltaScan es tu clínica de ultrasonidos de cuello?
+      </h2>
+    </div>
+
+    <div class="space-y-8 mb-16">
+      {
+        reasons.map((reason, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-2xl p-8 md:p-12 border border-gray-100 hover:shadow-xl hover:border-pink-200 transition-all duration-300"
+          >
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div class="bg-gradient-to-br from-pink-500 to-pink-600 w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-pink-500/25">
+                <reason.icon class="w-8 h-8 text-white" />
+              </div>
+              <div class="flex-1 space-y-4">
+                <h3 class="text-2xl font-semibold text-gray-900 text-balance">
+                  {reason.title}
+                </h3>
+                <p class="text-lg text-gray-600 leading-relaxed text-pretty">
+                  {reason.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

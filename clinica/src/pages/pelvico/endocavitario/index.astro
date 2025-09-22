@@ -8,22 +8,83 @@ import Organs from "../../../components/pelvico/endocavitario/Organs.astro";
 import Indications from "../../../components/pelvico/endocavitario/Indications.astro";
 import Pain from "../../../components/pelvico/endocavitario/Pain.astro";
 import WhyDeltaScan from "../../../components/pelvico/endocavitario/WhyDeltaScan.astro";
-import HowItIs from "../../../components/pelvico/endocavitario/HowItIs.astro";
+import HowItIs from "../../../components/common/HowItIs.astro";
 import Results from "../../../components/pelvico/endocavitario/Results.astro";
 import Preparation from "../../../components/pelvico/endocavitario/Preparation.astro";
 import CTA from "../../../components/common/CTA.astro";
 import FAQ from "../../../components/common/FAQ.astro";
+import MedAprrove from "../../../components/common/MedApprove.astro";
+import {
+  ArrowRight,
+  Calendar,
+  Clock,
+  Eye,
+  FileText,
+  Phone,
+  Users,
+} from "@lucide/astro";
+import BreadCrumb from "../../../components/common/BreadCrumb.astro";
+
+const crumbs = [
+  { label: "Ultrasonido Pélvico", href: "/pelvico" },
+  { label: "Ultrasonido Endocavitario", href: "/pelvico/endocavitario" },
+];
+
+const steps = [
+  {
+    number: 1,
+    icon: Calendar,
+    title: "Agenda tu cita",
+    description:
+      "Contáctanos al 2448-1110 o por WhatsApp 4565-0865. Te damos horarios flexibles para que no tengas que esperar.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 2,
+    icon: FileText,
+    title: "Preparación simple",
+    description:
+      "Generalmente no requiere preparación especial. Te daremos indicaciones específicas si tu médico tratante lo considera necesario.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 3,
+    icon: Eye,
+    title: "Exploración en tiempo real",
+    description:
+      "Una sonda especial, cubierta con material estéril, se introduce suavemente en la cavidad vaginal. Desde ese instante se generan imágenes de alta resolución del útero, ovarios y otras estructuras pélvicas.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 4,
+    icon: Users,
+    title: "Dos médicos, un mismo estudio",
+    description:
+      "En DeltaScan, dos radiólogos valoran tus imágenes en conjunto, garantizando un diagnóstico más completo y confiable.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 5,
+    icon: Clock,
+    title: "Resultados inmediatos",
+    description:
+      "Recibes el informe y las imágenes el mismo día, listos para llevar a tu médico o continuar tu tratamiento.",
+    color: "from-pink-600 to-pink-700",
+  },
+];
 
 const faqData = [
   {
     id: 1,
-    question: "¿Se puede realizar un ultrasonido endocavitario durante la menstruación?",
+    question:
+      "¿Se puede realizar un ultrasonido endocavitario durante la menstruación?",
     answer:
       "Sí, el estudio puede realizarse aunque la paciente esté con su período menstrual. En muchos casos, de hecho, aporta información valiosa sobre el endometrio y el ciclo.",
   },
   {
     id: 2,
-    question: "¿Puede un ultrasonido endocavitario detectar endometriosis o quistes ováricos pequeños?",
+    question:
+      "¿Puede un ultrasonido endocavitario detectar endometriosis o quistes ováricos pequeños?",
     answer:
       "Sí, el ultrasonido endocavitario puede detectar quistes ováricos de muy pequeño tamaño y, en algunos casos, mostrar signos sugestivos de endometriosis. Sin embargo, es importante aclarar que el diagnóstico definitivo de endometriosis suele requerir otros estudios, como la resonancia magnética o la laparoscopia.",
   },
@@ -35,7 +96,8 @@ const faqData = [
   },
   {
     id: 4,
-    question: "¿Qué es un transductor endocavitario y cómo se higieniza antes de usarse?",
+    question:
+      "¿Qué es un transductor endocavitario y cómo se higieniza antes de usarse?",
     answer:
       "El transductor es la sonda especial que se introduce en la cavidad vaginal para generar las imágenes en tiempo real. Siempre se cubre con una funda estéril y se utiliza gel conductor para mayor comodidad. Después de cada uso, el equipo es limpiado y desinfectado siguiendo protocolos médicos estrictos, garantizando seguridad, higiene y un ambiente de total confianza.",
   },
@@ -46,24 +108,71 @@ const faqData = [
       "El ultrasonido endocavitario es muy útil para evaluar el útero, endometrio y ovarios, pero tiene limitaciones, no siempre detecta focos pequeños de endometriosis, no puede diferenciar con certeza si una lesión es benigna o maligna, su campo de visión se restringe a la pelvis cercana a la sonda y, en algunos casos, debe complementarse con estudios como resonancia magnética, histeroscopia o biopsia para obtener un diagnóstico completo.",
   },
 ];
+const timeEstimate="15 a 30 minutos";
+const heading="¿Cómo es un Ultrasonido Transvaginal en DeltaScan?";
 
+// ── SEO/OG para pasar al Layout
+const pageTitle = "Ultrasonido Transvaginal (Endocavitario) en Guatemala | DeltaScan";
+const pageDescription =
+  "Ecografía transvaginal endocavitaria con radiólogos especialistas. Resultados el mismo día. Preparación simple, equipo moderno y atención humana.";
+const pageUrl = "https://www.deltascan.gt/pelvico/endocavitario";
+const pageOgImage = "/og/ultrasonidoendocavitario.webp"; // 1200×630 recomendado
+
+// HowTo JSON-LD a partir de los steps (sin modificar textos)
+const howToData = {
+  name: heading,
+  steps: steps.map((s) => ({ name: s.title, text: s.description })),
+};
+
+// Schema extra: Service de esta página
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Ultrasonido Endocavitario (Transvaginal)",
+    serviceType: "Diagnóstico por imagen",
+    url: pageUrl,
+    areaServed: "GT",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+      availableLanguage: ["es"],
+    },
+    provider: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
 ---
 
 <Layout
-  title="Terrarios para reptiles | EcoRefugio"
-  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
-  url="https://ecorefugio.com/"
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  faqData={faqData}
+  howToData={howToData}
+  schemaExtra={schemaExtra}
+  dateModified={lastUpdatedISO}
 >
   <Header />
 
-  <main>
+  <main class="bg-gradient-to-br from-pink-600 to-pink-700">
+    <BreadCrumb crumbs={crumbs} color="pink"/>
     <HeroSection />
+    <MedAprrove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
     <WhatIs />
     <Organs />
     <Indications />
     <Pain />
     <WhyDeltaScan />
-    <HowItIs />
+    <HowItIs 
+      steps={steps}
+      timeEstimate={timeEstimate}
+      heading={heading}
+    />
     <Results />
     <Preparation />
     <CTA

@@ -1,0 +1,100 @@
+---
+import { Search, Activity, BarChart3, Target } from "@lucide/astro";
+---
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-600 rounded-full px-4 py-2 text-sm font-medium mb-6"
+      >
+        <Target class="w-4 h-4" />
+        Evaluación completa
+      </div>
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-balance"
+      >
+        ¿Qué evalúa el TRUS?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto text-pretty">
+        Análisis detallado de la próstata y estructuras relacionadas para un
+        diagnóstico preciso
+      </p>
+    </div>
+
+    <!-- Igualar alturas y alinear los badges al fondo -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+      <div
+        class="bg-gradient-to-br from-pink-50 to-pink-100/30 rounded-2xl p-8 border border-pink-200 h-full flex flex-col"
+      >
+        <div class="bg-pink-500 rounded-xl p-4 w-fit mb-6">
+          <Search class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">
+          Visión detallada
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Ofrece una visión completa de la próstata y las vesículas seminales,
+          midiendo su volumen exacto.
+        </p>
+        <div class="bg-white/60 rounded-lg p-3 mt-auto">
+          <p class="text-sm text-pink-700 font-medium">
+            ✓ Medición precisa del volumen
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="bg-gradient-to-br from-pink-50 to-pink-100/30 rounded-2xl p-8 border border-pink-200 h-full flex flex-col"
+      >
+        <div class="bg-pink-500 rounded-xl p-4 w-fit mb-6">
+          <Activity class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">
+          Evaluación de flujo
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Identifica zonas irregulares o con alteraciones de flujo sanguíneo.
+        </p>
+        <div class="bg-white/60 rounded-lg p-3 mt-auto">
+          <p class="text-sm text-pink-700 font-medium">
+            ✓ Análisis vascular completo
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="bg-gradient-to-br from-pink-50 to-pink-100/30 rounded-2xl p-8 border border-pink-200 md:col-span-2 lg:col-span-1 h-full flex flex-col"
+      >
+        <div class="bg-pink-500 rounded-xl p-4 w-fit mb-6">
+          <BarChart3 class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">
+          Diferenciación precisa
+        </h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Permite diferenciar entre cambios benignos y lesiones que requieren
+          seguimiento adicional.
+        </p>
+        <div class="bg-white/60 rounded-lg p-3 mt-auto">
+          <p class="text-sm text-pink-700 font-medium">
+            ✓ Diagnóstico diferencial
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-gray-50 rounded-2xl p-8 border border-gray-200">
+      <div class="text-center">
+        <h4 class="text-lg font-semibold text-gray-900 mb-3">
+          Información clave para tu médico
+        </h4>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Con esta evaluación completa, los especialistas pueden tomar
+          decisiones informadas sobre tu tratamiento y seguimiento,
+          diferenciando claramente entre condiciones benignas y aquellas que
+          requieren atención especial.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

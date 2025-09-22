@@ -1,0 +1,58 @@
+---
+import { Droplets, Shirt, FileText } from "@lucide/astro";
+  const preparations = [
+    {
+      icon: Droplets,
+      title: "Hidratación previa",
+      description: "Beber entre 4 y 6 vasos de agua una hora antes del examen y no orinar hasta después del estudio.",
+    },
+    {
+      icon: Shirt,
+      title: "Ropa cómoda",
+      description: "Llegar con ropa cómoda facilita el procedimiento y tu comodidad durante el examen.",
+    },
+    {
+      icon: FileText,
+      title: "Estudios previos",
+      description:
+        "Si cuentas con estudios previos, llévalos contigo ya que compararlos puede marcar la diferencia en el diagnóstico.",
+    },
+  ]
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-balance"
+      >
+        ¿Cómo me preparo para este examen?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      {
+        preparations.map((prep, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-3xl p-8 shadow-lg text-center"
+          >
+            <div class="w-20 h-20 bg-pink-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+              <prep.icon class="w-10 h-10 text-white" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{prep.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{prep.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center gap-3 bg-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-700 transition-colors"
+      >
+        Agenda tu cita
+    </a>
+    </div>
+  </div>
+</section>

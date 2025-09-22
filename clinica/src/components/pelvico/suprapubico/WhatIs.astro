@@ -1,0 +1,85 @@
+---
+import { Zap, Shield, Clock } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-medium mb-6"
+      >
+        <Zap class="w-4 h-4" />
+        Tecnología médica avanzada
+      </div>
+      <h2
+        class="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-balance"
+      >
+        ¿Qué es el ultrasonido pélvico suprapúbico?
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- TARJETA IZQUIERDA -->
+      <div class="bg-pink-50 rounded-3xl p-8">
+        <!-- 🔧 Cambio clave:
+             - En mobile: 1 columna (icono arriba, texto abajo).
+             - En md+: 2 columnas (64px para el icono, el resto para el texto). -->
+        <div class="grid grid-cols-1 md:grid-cols-[4rem,1fr] md:gap-4 items-start mb-6">
+          <!-- Icono -->
+          <div class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-3 md:mb-0">
+            <Zap class="w-8 h-8 text-white" />
+          </div>
+          <!-- Texto del encabezado -->
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-bold text-gray-900">Tecnología avanzada</h3>
+            <p class="text-gray-600">Sin radiación, resultados inmediatos</p>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <p class="text-gray-700 leading-relaxed">
+          El ultrasonido pélvico suprapúbico es un examen diagnóstico no
+          invasivo que se realiza colocando un transductor sobre la parte baja
+          del abdomen. A través de ondas sonoras de alta frecuencia, permite
+          observar en tiempo real estructuras internas como el útero, los
+          ovarios y la vejiga, sin necesidad de radiación.
+        </p>
+      </div>
+
+      <!-- COLUMNA DERECHA (tarjetas) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+          <div
+            class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          >
+            <Zap class="w-8 h-8 text-white" />
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">100% Seguro</h4>
+          <p class="text-gray-600 text-sm">Sin dolor</p>
+          <div class="w-8 h-1 bg-pink-600 mx-auto mt-4"></div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+          <div
+            class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          >
+            <Shield class="w-8 h-8 text-white" />
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">Sin radiación</h4>
+          <p class="text-gray-600 text-sm">Procedimiento seguro</p>
+          <div class="w-8 h-1 bg-pink-600 mx-auto mt-4"></div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+          <div
+            class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          >
+            <Clock class="w-8 h-8 text-white" />
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">Resultados inmediatos</h4>
+          <p class="text-gray-600 text-sm">El mismo día</p>
+          <div class="w-8 h-1 bg-pink-600 mx-auto mt-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

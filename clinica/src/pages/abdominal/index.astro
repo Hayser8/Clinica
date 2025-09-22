@@ -1,16 +1,27 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/common/Header.astro";
-import Footer from "@/components/common/Footer.astro";
-import HeroSection from "@/components/abdominal/HeroSection.astro";
-import WhenTo from "@/components/abdominal/WhenTo.astro";
-import Services from "@/components/abdominal/Services.astro";
-import WhyDeltaScan from "@/components/abdominal/WhyDeltaScan.astro";
-import HowItIs from "@/components/common/HowItIs.astro";
-import UltrasoundTypes from "@/components/abdominal/UltrasoundTypes.astro";
-import Preparation from "@/components/abdominal/Preparation.astro";
-import CTA from "@/components/common/CTA.astro";
-import FAQ from "@/components/common/FAQ.astro";
+// src/pages/abdominal/index.astro
+// Pasa solo lo esencial al Layout: title, description, url (canonical), image (og), crumbs, faqData, howToData, schemaExtra
+
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
+import HeroSection from "../../components/abdominal/HeroSection.astro";
+import WhenTo from "../../components/abdominal/WhenTo.astro";
+import Services from "../../components/abdominal/Services.astro";
+import WhyDeltaScan from "../../components/abdominal/WhyDeltaScan.astro";
+import HowItIs from "../../components/common/HowItIs.astro";
+import UltrasoundTypes from "../../components/abdominal/UltrasoundTypes.astro";
+import Preparation from "../../components/abdominal/Preparation.astro";
+import CTA from "../../components/common/CTA.astro";
+import FAQ from "../../components/common/FAQ.astro";
+import BreadCrumb from "../../components/common/BreadCrumb.astro";
+import Types from "../../components/abdominal/Types.astro";
+import MedApprove from "../../components/common/MedApprove.astro";
+
+
+const crumbs = [
+  { label: "Ultrasonido Abdominal", href: "/abdominal" }
+];
 
 import {
   Phone,
@@ -28,7 +39,7 @@ const steps = [
     icon: Phone,
     title: "Hacer cita",
     description:
-      "Resuelve tus inquietudes y agenta tu cita llamando o escribiéndonos.",
+      "Resuelve tus inquietudes y agenda tu cita llamando o escribiéndonos.",
     color: "from-pink-500 to-pink-600",
   },
   {
@@ -44,7 +55,7 @@ const steps = [
     icon: Shirt,
     title: "Preparación",
     description:
-      "Viste prendas cómodas y sueltas. Evita joyas de la zona a evaluar. Evite la ingesta de alimentos de 8 a 12 horas antes del examen. E ingiere de 4 a 6 vasos de líquido (preferentemente agua pura), aproximadamente 1 hora antes del examen.",
+      "Viste prendas cómodas y sueltas. Evita joyas de la zona a evaluar. Evit la ingesta de alimentos de 8 a 12 horas antes del examen. E ingiere de 4 a 6 vasos de líquido (preferentemente agua pura), aproximadamente 1 hora antes del examen.",
     color: "from-pink-500 to-pink-600",
   },
   {
@@ -87,7 +98,7 @@ const faqData = [
     question:
       "¿Necesito una indicación médica o receta para programar un ultrasonido abdominal?",
     answer:
-      "No es necesario contar con orden médico; sin embargo, si se cuenta con ella presentarla al momento del estudio.",
+      "No es necesario contar con orden médica; sin embargo, si se cuenta con ella presentarla al momento del estudio.",
   },
   {
     id: 2,
@@ -130,21 +141,69 @@ const faqData = [
       "Si llegas habiendo ingerido alimentos recientemente, la calidad de las imágenes podría verse afectada. Contáctanos tan pronto lo notes y evaluaremos si reprogramar tu cita o usar técnicas complementarias, para asegurarnos de que obtengas un diagnóstico preciso.",
   },
 ];
+
 const timeEstimate = "15 a 20 minutos";
 const heading = "¿Cómo es un Ultrasonido Abdominal en DeltaScan?";
+
+// ── SEO/OG específicos de la página
+const pageTitle = "Ultrasonido Abdominal en Guatemala | DeltaScan";
+const pageDescription =
+  "Ecografía abdominal con radiólogos especialistas. Resultados el mismo día. Preparación guiada, equipo moderno y atención humana.";
+const pageUrl = "https://www.deltascan.gt/abdominal";
+const pageOgImage = "/og/ultrasonidoabdominal.webp"; // 1200×630 recomendado
+
+// HowTo JSON-LD derivado del mismo contenido del componente (sin modificar textos)
+const howToData = {
+  name: heading,
+  steps: steps.map(s => ({ name: s.title, text: s.description })),
+};
+
+// Schema extra: Service de esta página (sin precio)
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Ultrasonido Abdominal",
+    serviceType: "Diagnóstico por imagen",
+    url: pageUrl,
+    areaServed: "GT",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+      availableLanguage: ["es"],
+    },
+    provider: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
 ---
 
 <Layout
-  title="Terrarios para reptiles | EcoRefugio"
-  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
-  url="https://ecorefugio.com/"
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  faqData={faqData}
+  howToData={howToData}
+  schemaExtra={schemaExtra}
+  dateModified={lastUpdatedISO}  
 >
   <Header />
 
-  <main>
+  <main class="bg-gradient-to-br from-pink-600 via-pink-700 to-pink-800">
+    <BreadCrumb 
+      crumbs={crumbs}
+      color="pink"
+    />
     <HeroSection />
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
     <WhenTo />
     <Services />
+    <Types />
     <WhyDeltaScan />
     <HowItIs steps={steps} timeEstimate={timeEstimate} heading={heading} />
     <UltrasoundTypes />

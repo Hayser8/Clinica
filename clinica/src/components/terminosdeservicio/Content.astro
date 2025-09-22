@@ -1,0 +1,144 @@
+---
+// src/components/TermsOfService.astro
+// Uso: import TermsOfService from "@/components/TermsOfService.astro"; <TermsOfService />
+
+export interface Props {
+  clinicName?: string;
+  contactEmail?: string;
+  contactPhone?: string;
+  address?: string;
+  governingLaw?: string;
+  lastUpdated?: string;
+  cancellationWindowHours?: number; // p.ej. 24
+  noShowPolicy?: string; // texto visible al paciente
+}
+
+const {
+  clinicName = "DeltaScan – Clínica de Ultrasonido",
+  contactEmail = "deltascangt@gmail.com",
+  contactPhone = "2448-1110",
+  address = "Ciudad de Guatemala, Guatemala",
+  governingLaw = "Leyes de Guatemala",
+  lastUpdated = "3 de septiembre de 2025",
+  cancellationWindowHours = 24,
+  noShowPolicy = "Las inasistencias (‘no-show’) o cancelaciones fuera del plazo pueden generar un cargo administrativo."
+} = Astro.props;
+---
+
+<section class="bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-16">
+  <header class="mb-10">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">Términos de Servicio</h1>
+    <p class="mt-2 text-sm text-gray-600">Última actualización: {lastUpdated}</p>
+    <p class="mt-6 text-gray-700 leading-relaxed">
+      Estos Términos regulan el uso del sitio web y de los servicios de <span class="font-semibold">{clinicName}</span>.
+      Al navegar o reservar una cita, aceptas íntegramente estos Términos.
+    </p>
+  </header>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">1. Servicios ofrecidos</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Proveemos estudios de imagen (ultrasonido) y servicios relacionados. No atendemos emergencias.
+      En caso de sospecha de emergencia médica, solicita atención inmediata mediante los servicios de emergencia.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">2. Uso del sitio</h2>
+    <ul class="mt-4 space-y-2 text-gray-700 list-disc pl-6">
+      <li>Te comprometes a proporcionar información veraz y a usar el sitio de forma lícita y respetuosa.</li>
+      <li>Nos reservamos el derecho de suspender o limitar el acceso ante usos indebidos o riesgos de seguridad.</li>
+      <li>El contenido del sitio es informativo y no reemplaza una consulta médica presencial.</li>
+    </ul>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">3. Citas, cambios y cancelaciones</h2>
+    <ul class="mt-4 space-y-2 text-gray-700 list-disc pl-6">
+      <li>Las citas se confirman vía llamada, mensaje o correo. Te pediremos puntualidad.</li>
+      <li>Puedes reprogramar o cancelar hasta {cancellationWindowHours} horas antes sin costo adicional.</li>
+      <li>{noShowPolicy}</li>
+    </ul>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">4. Resultados y tiempos de entrega</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Los tiempos de entrega son estimados y pueden variar por complejidad del estudio, validaciones médicas
+      o disponibilidad de especialistas. Te notificaremos cuando los resultados estén listos.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">5. Pagos y facturación</h2>
+    <ul class="mt-4 space-y-2 text-gray-700 list-disc pl-6">
+      <li>Los precios se informan al momento de la reserva o en recepción. Pueden cambiar sin previo aviso.</li>
+      <li>Aceptamos los métodos de pago informados en el sitio/recepción. Facturamos conforme a normativa vigente.</li>
+      <li>Los reembolsos, si aplican, se gestionan caso por caso según la política interna y la regulación aplicable.</li>
+    </ul>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">6. Comunicaciones</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Podemos comunicarnos contigo por teléfono, correo o apps de mensajería para gestionar tus citas y recordatorios.
+      Puedes solicitar dejar de recibir comunicaciones comerciales en cualquier momento.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">7. Propiedad intelectual</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      El contenido del sitio (textos, marcas, imágenes, diseño) pertenece a {clinicName} o a sus licenciantes.
+      No se permite su uso no autorizado.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">8. Limitación de responsabilidad</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      En la medida permitida por la ley, {clinicName} no será responsable por daños indirectos o consecuenciales derivados
+      del uso del sitio. La información publicada es orientativa y no sustituye la valoración médica profesional.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">9. Enlaces a terceros</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Los enlaces externos se ofrecen para conveniencia. No controlamos ni respondemos por sus contenidos o políticas.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">10. Privacidad</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      El tratamiento de datos personales se rige por nuestra <a href="/privacidad" class="text-pink-700 underline">Política de Privacidad</a>.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">11. Cambios a los Términos</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Podemos actualizar estos Términos. Publicaremos la versión vigente con su fecha de actualización.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">12. Ley aplicable y jurisdicción</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Estos Términos se rigen por {governingLaw}. Cualquier disputa se someterá a los tribunales competentes de la Ciudad de Guatemala.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-semibold text-gray-900">13. Contacto</h2>
+    <address class="not-italic mt-4 text-gray-700 leading-relaxed">
+      <span class="font-semibold">{clinicName}</span><br />
+      {address}<br />
+      Tel: <a href={`tel:${contactPhone}`} class="text-pink-700 underline">{contactPhone}</a><br />
+      Email: <a href={`mailto:${contactEmail}`} class="text-pink-700 underline">{contactEmail}</a>
+    </address>
+  </section>
+  </div>
+</section>

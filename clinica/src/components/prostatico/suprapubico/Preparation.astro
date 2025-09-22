@@ -1,0 +1,75 @@
+---
+import { Calendar, Droplets, Clock, Shirt } from "@lucide/astro";
+  const tips = [
+    {
+      icon: Droplets,
+      title: "Beber agua",
+      description: "Entre 40 y 60 minutos antes de tu cita",
+    },
+    {
+      icon: Clock,
+      title: "No ir al baño",
+      description: "Evitar hasta después del examen",
+    },
+    {
+      icon: Shirt,
+      title: "Ropa cómoda",
+      description: "Llegar relajado y con vestimenta apropiada",
+    },
+  ]
+
+---
+<section class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <h2
+          class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 text-balance"
+        >
+          ¿Cómo me preparo para el examen?
+        </h2>
+        <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+          <p class="text-pretty">
+            Para este estudio no necesitas ayuno ni suspender tus actividades
+            habituales. Lo único importante es que acudas con la vejiga
+            moderadamente llena.
+          </p>
+          <p class="text-pretty">
+            Un consejo práctico es beber agua pura entre 40 y 60 minutos antes
+            de tu cita y evitar ir al baño hasta después del examen. Esto
+            permite que la vejiga actúe como una "ventana acústica" que mejora
+            la visualización de la próstata.
+          </p>
+        </div>
+        <a
+          href="/hacer-cita"
+          class="inline-flex items-center gap-3 bg-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-700 transition-colors"
+        >
+          <Calendar class="w-5 h-5" />
+          Agenda tu Cita
+    </a>
+      </div>
+
+      <div class="space-y-6">
+        {
+          tips.map((tip, index) => (
+            <div
+              key={index}
+              class="flex items-center gap-6 bg-pink-50 rounded-2xl p-6"
+            >
+              <div class="bg-pink-600 rounded-2xl p-4 flex-shrink-0">
+                <tip.icon class="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  {tip.title}
+                </h3>
+                <p class="text-gray-600 text-pretty">{tip.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

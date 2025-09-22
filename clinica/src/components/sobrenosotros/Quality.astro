@@ -1,0 +1,40 @@
+---
+import { CheckCircle, FileText, MessageSquare } from "@lucide/astro";
+const qualityPoints = [
+  {
+    icon: CheckCircle,
+    text: "Protocolo de toma sistemática y verificación de imágenes.",
+  },
+  {
+    icon: FileText,
+    text: "Informe claro y oportuno.",
+  },
+  {
+    icon: MessageSquare,
+    text: "Comunicación con tu médico tratante cuando se requiera.",
+  },
+];
+---
+
+<div class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+        Nuestro enfoque de calidad
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          qualityPoints.map((point, index) => (
+            <div key={index} class="text-center space-y-4">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 text-pink-700 rounded-full">
+                <point.icon class="w-8 h-8" />
+              </div>
+              <p class="text-gray-600 leading-relaxed">{point.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

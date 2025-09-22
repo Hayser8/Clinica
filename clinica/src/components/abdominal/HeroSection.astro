@@ -3,22 +3,24 @@ import { Phone, CheckCircle } from "@lucide/astro";
 ---
 
 <section
-  class="bg-gradient-to-br from-pink-600 via-pink-700 to-pink-800 text-white py-24 relative overflow-hidden"
+  class="bg-gradient-to-br from-pink-600 via-pink-700 to-pink-800 text-white py-12 relative overflow-hidden"
 >
   <!-- Background decorative elements -->
   <div class="absolute top-0 right-0 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-64 h-64 bg-pink-400/10 rounded-full blur-2xl"></div>
 
   <div class="max-w-7xl mx-auto px-8 relative z-10">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <div class="text-left space-y-8">
+    <!-- items-start para alinear arriba texto e imagen -->
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <!-- Columna de texto -->
+      <div class="text-left space-y-8 self-start">
         <!-- Título (p grande en blanco) -->
         <p class="text-3xl md:text-5xl font-bold leading-tight tracking-tight mb-3">
           El dolor abdominal merece respuestas, no suposiciones
         </p>
 
         <!-- H1 (más pequeño, en pink-100) -->
-        <h1 class="text-2xl md:text-3xl font-semibold text-pink-100 mb-6">
+        <h1 class="text-2xl md:text-3xl font-semibold text-pink-100 mb-3">
           Ultrasonido  Abdominal Completo
         </h1>
 
@@ -29,8 +31,6 @@ import { Phone, CheckCircle } from "@lucide/astro";
           ayuda a entender el origen del dolor y decidir el siguiente paso con
           calma.
         </p>
-
-     
 
         <!-- CTA -->
         <div class="pt-6">
@@ -46,9 +46,9 @@ import { Phone, CheckCircle } from "@lucide/astro";
       </div>
 
       <!-- Columna de imagen -->
-      <div class="relative">
-        <!-- Decorative background -->
-        <div class="absolute -inset-4 bg-gradient-to-r from-pink-400/20 to-pink-600/20 rounded-3xl blur-xl"></div>
+      <div class="relative self-start">
+        <!-- Decorative background (sin negativo para no sobresalir arriba) -->
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-pink-600/20 rounded-3xl blur-xl pointer-events-none"></div>
 
         <!-- Main image container -->
         <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 backdrop-blur-sm">
@@ -61,6 +61,7 @@ import { Phone, CheckCircle } from "@lucide/astro";
         </div>
 
         <!-- Floating badges -->
+        <!-- Si quieres que no “salten” por encima, cambia -top-4/-bottom-4 por top-4/bottom-4 -->
         <div class="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl text-center">
           <div class="text-2xl font-bold text-pink-600">2</div>
           <div class="text-xs text-gray-600 font-medium">Radiólogos</div>

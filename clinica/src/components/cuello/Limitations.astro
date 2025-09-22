@@ -1,0 +1,65 @@
+---
+import { AlertTriangle, Scan, Microscope } from "@lucide/astro";
+---
+<section class="bg-white py-16 md:py-24">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-2xl md:text-4xl font-bold text-gray-900 mb-6 text-balance"
+      >
+        Limitaciones del ultrasonido de cuello
+      </h2>
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto text-pretty">
+        Cuándo complementar con TC/RM o procedimientos guiados
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 mb-12">
+      <div class="bg-pink-50 rounded-2xl p-8 border border-pink-100">
+        <div
+          class="bg-pink-500 w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+        >
+          <AlertTriangle class="w-7 h-7 text-white" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">
+          Limitaciones del ultrasonido
+        </h3>
+        <p class="text-gray-600 leading-relaxed text-pretty">
+          Excelente para tejidos blandos y estructuras superficiales, pero puede
+          tener limitaciones al evaluar zonas profundas o masas ocultas detrás
+          de huesos o aire.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 border border-gray-100">
+        <div
+          class="bg-pink-500 w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+        >
+          <Scan class="w-7 h-7 text-white" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">
+          Estudios complementarios
+        </h3>
+        <p class="text-gray-600 leading-relaxed text-pretty">
+          En casos necesarios, el médico puede indicar tomografía (TC) o
+          resonancia magnética (RM) para completar la evaluación.
+        </p>
+      </div>
+
+      <div class="bg-pink-50 rounded-2xl p-8 border border-pink-100">
+        <div
+          class="bg-pink-500 w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+        >
+          <Microscope class="w-7 h-7 text-white" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">
+          Procedimientos guiados
+        </h3>
+        <p class="text-gray-600 leading-relaxed text-pretty">
+          Si se identifica una lesión sospechosa, el ultrasonido puede guiar
+          procedimientos como biopsias de forma precisa y segura.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

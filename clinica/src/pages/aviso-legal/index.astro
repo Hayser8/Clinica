@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
+import Content from "../../components/avisolegal/Content.astro";
+
+// ── SEO/OG mínimos + noindex
+const pageTitle = "Aviso Legal | DeltaScan";
+const pageDescription =
+  "Términos legales, condiciones de uso y avisos obligatorios de DeltaScan.";
+const pageUrl = "https://www.deltascan.gt/aviso-legal";
+const pageOgImage = "/og/aviso-legal.webp"; // 1200×630 recomendado
+
+// Migas para JSON-LD (si tu Layout las usa)
+const crumbs = [{ label: "Aviso legal", href: "/aviso-legal" }];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  noindex={true}
+>
+  <Header />
+
+  <main>
+    <Content />
+  </main>
+
+  <Footer />
+</Layout>

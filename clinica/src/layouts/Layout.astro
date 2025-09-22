@@ -1,41 +1,297 @@
 ---
+// src/layouts/Layout.astro (DeltaScan)
+// Layout con defaults de sitio; cada página pasa solo lo esencial (title, description, url, image, crumbs, faqData, howToData, schemaExtra).
+
 import "../styles/global.css";
+import CookiePopup from "../components/common/CookiePopup.astro";
+
 const {
-  title = 'DeltaScan – Clínica de Ultrasonido en Guatemala',
-  description = 'DeltaScan ofrece servicios de ultrasonido abdominal, mamario, pélvico, prostático, doppler y más. Atención profesional y resultados inmediatos.',
-  url = 'https://deltascan.gt/',
+  // SEO básicos (pueden ser sobreescritos por la página)
+  title = "DeltaScan – Clínica de Ultrasonido en Guatemala",
+  description = "Ultrasonidos diagnósticos con radiólogos especialistas. Resultados el mismo día. Abdominal, mamario, tiroideo, pélvico, obstétrico, prostático y Doppler.",
+  url = "https://www.deltascan.gt/",               // La página puede pasar su canonical (ej. /abdominal)
+  image = "/og/deltascan-og.webp",            // OG por defecto (la página puede pasar otro)
+  logo = "/logoprueba.webp",                  // Logo por defecto
+  type = "website",
+  siteName = "DeltaScan",
+  robots, 
+  noindex = false, 
+  dateModified,
+
+  // Migas (la página puede pasar crumbs; si no, se dejan vacías)
+  crumbs = [],
+  
+  // Datos de contacto por defecto (no es necesario que la página los pase)
+  phone = "+502 2448-1110",
+  whatsapp = "+502 4565-0865",
+  address = {
+    streetAddress: "10 Calle 2-30, Zona 14, Edificio Prospere 14, 4to Nivel, Oficina 405",
+    addressLocality: "Ciudad de Guatemala",
+    addressRegion: "Guatemala",
+    postalCode: "01014",
+    addressCountry: "GT",
+  },
+  socialLinks = {
+    facebook: "",
+    instagram: "",
+  },
+
+  // Catálogo general del sitio (no lo pasan las páginas)
+  serviceCatalog = [
+    { name: "Ultrasonido Abdominal", slug: "/abdominal" },
+    { name: "Ultrasonido Mamario", slug: "/mamario" },
+    { name: "Ultrasonido Tiroideo", slug: "/tiroideo" },
+    { name: "Ultrasonido Pélvico (suprapúbico y endovaginal)", slug: "/pelvico" },
+    { name: "Ultrasonido Obstétrico", slug: "/obstetrico" },
+    { name: "Ultrasonido Prostático (suprapúbico y transrectal)", slug: "/prostatico" },
+    { name: "Ultrasonido Musculoesquelético", slug: "/musculoesqueletico" },
+    { name: "Doppler Vascular (arterial/venoso)", slug: "/doppler" },
+    { name: "Biopsia de Mama guiada por Ultrasonido", slug: "/biopsia-mama" },
+    { name: "Biopsia de Tiroides guiada por Ultrasonido", slug: "/biopsia-tiroides" },
+    { name: "Ultrasonido de Cuello", slug: "/cuello" },
+    { name: "Ultrasonido Testicular", slug: "/testicular" },
+    { name: "Ultrasonido Renal", slug: "/renal" },
+  ],
+
+  // Médicos (no lo pasan las páginas)
+  physicians = [
+    {
+      name: "Dra. Berta Coto",
+      jobTitle: "Médico Radiólogo",
+      description: "Maestro en ciencias médicas con especialidad en Radiología e Imágenes Diagnósticas.",
+    },
+    {
+      name: "Dr. Estuardo Pérez Reyes",
+      jobTitle: "Médico Radiólogo",
+      description: "Maestro en ciencias médicas con especialidad en Radiología e Imágenes Diagnósticas.",
+    },
+  ],
+
+  // Datos por página (opcionales)
+  faqData = [],
+  howToData = null,
+  schemaExtra = [],
 } = Astro.props;
+
+const dateModifiedIso  = dateModified  ? new Date(dateModified).toISOString()  : undefined;
+const robotsContent = robots ?? (noindex ? "noindex, follow" : "index, follow");
+
+// --------- Helpers ----------
+const siteOrigin = new URL(url).origin;
+const siteHome = `${siteOrigin}/`;
+const clinicId = `${siteHome}#clinic`;
+
+const toAbs = (u) => {
+  if (!u) return undefined;
+  return /^https?:\/\//i.test(u) ? u : `${siteOrigin}${u.startsWith("/") ? u : `/${u}`}`;
+};
+
+const imageAbs = toAbs(image);
+const logoAbs = toAbs(logo);
+
+// Migas
+const breadcrumbList = [
+  { "@type": "ListItem", position: 1, name: "Inicio", item: siteHome },
+  ...crumbs.map((crumb, i) => ({
+    "@type": "ListItem",
+    position: i + 2,
+    name: crumb.label,
+    item: `${siteOrigin}${crumb.href}`,
+  })),
+];
+
+// FAQ JSON-LD
+const faqJsonLd = faqData?.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqData.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    }
+  : null;
+
+// HowTo JSON-LD (1 o varios)
+function toHowToJsonLd(entry) {
+  if (!entry) return null;
+  const steps = (entry.steps || []).map((s, idx) => ({
+    "@type": "HowToStep",
+    position: idx + 1,
+    name: s.name || undefined,
+    text: s.text,
+    url: s.url ? `${siteOrigin}${s.url}` : undefined,
+    image: s.image || undefined,
+  }));
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: entry.name,
+    description: entry.description || undefined,
+    image: entry.image || undefined,
+    totalTime: entry.totalTime || undefined,
+    estimatedCost: entry.estimatedCost || undefined,
+    step: steps,
+    supply: entry.supplies || undefined,
+    tool: entry.tools || undefined,
+  };
+}
+
+const howToJson = Array.isArray(howToData)
+  ? howToData.map(toHowToJsonLd).filter(Boolean)
+  : howToData
+  ? [toHowToJsonLd(howToData)].filter(Boolean)
+  : [];
+
+// MedicalClinic (siempre con URL de home)
+const medicalClinicJson = {
+  "@id": clinicId,
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  name: siteName,
+  url: siteHome,
+  image: imageAbs,
+  logo: logoAbs,
+  telephone: phone,
+  medicalSpecialty: "Radiology",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: address.streetAddress,
+    addressLocality: address.addressLocality,
+    addressRegion: address.addressRegion,
+    postalCode: address.postalCode || undefined,
+    addressCountry: address.addressCountry || "GT",
+  },
+  sameAs: [socialLinks.facebook || undefined, socialLinks.instagram || undefined].filter(Boolean),
+  availableService: serviceCatalog.map((s) => ({
+    "@type": "MedicalProcedure",
+    name: s.name,
+    url: `${siteOrigin}${s.slug}`,
+  })),
+};
+
+// OfferCatalog (cada servicio con su propia serviceUrl)
+const offerCatalogJson = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  name: "Catálogo de servicios",
+  url: `${siteOrigin}#catalogo`,
+  itemListElement: serviceCatalog.map((s, i) => ({
+    "@type": "Offer",
+    position: i + 1,
+    itemOffered: {
+      "@type": "Service",
+      name: s.name,
+      url: `${siteOrigin}${s.slug}`,
+      provider: { "@id": clinicId },
+      areaServed: "Guatemala",
+      availableChannel: {
+        "@type": "ServiceChannel",
+        serviceUrl: `${siteOrigin}${s.slug}`,
+        availableLanguage: ["es"],
+      },
+    },
+  })),
+};
+
+// Médicos como Person (no Physician)
+const physiciansJson = physicians.map((p) => ({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: p.name,
+  jobTitle: p.jobTitle || "Médico Radiólogo",
+  medicalSpecialty: "Radiology",
+  worksFor: { "@id": clinicId },
+  description: p.description || undefined,
+}));
+
+// WebPage (página actual) y WebSite (home)
+const webPageJson = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description,
+  url, // canonical de la página
+  ...(dateModifiedIso  ? { dateModified:  dateModifiedIso  } : {}),
+};
+
+const webSiteJson = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: siteHome, // dominio raíz
+  name: siteName,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${siteHome}?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
+
+// Schema extra de la página (si la página lo envía)
+const extraBlocks = Array.isArray(schemaExtra) ? schemaExtra : schemaExtra ? [schemaExtra] : [];
+
+const allJsonLdBlocks = [
+  webPageJson,
+  webSiteJson,
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: breadcrumbList },
+  medicalClinicJson,
+  offerCatalogJson,
+  ...physiciansJson,
+  ...(faqJsonLd ? [faqJsonLd] : []),
+  ...howToJson,
+  ...extraBlocks,
+];
 ---
-<!DOCTYPE html>
-<html lang="es">
+
+<!doctype html>
+<html lang="es-GT">
   <head>
+    <!-- Básicos -->
     <meta charset="utf-8" />
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content={robotsContent} />
+    <meta name="googlebot" content={robotsContent} />
+    <meta name="bingbot" content={robotsContent} />
+    <meta property="og:locale" content="es_GT">
 
     <!-- Title & Description -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={url} />
 
-    <!-- JSON-LD para SEO médico -->
-    <script type="application/ld+json">
-      {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "MedicalClinic",
-        "name": "DeltaScan",
-        "description": description,
-        "url": url,
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "GT"
-        },
-        "medicalSpecialty": "DiagnosticImaging",
-        "image": `${url}logo.webp`
-      })}
-    </script>
+    <!-- Open Graph (Facebook/WhatsApp/LinkedIn) -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={url} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content={imageAbs} />
+    <meta property="og:image:alt" content={`${siteName} – Clínica de Ultrasonido`} />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageAbs} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/webp" sizes="48x48" href="/favicon48x48.webp" />
+    <link rel="icon" type="image/webp" sizes="32x32" href="/favicon32x32.webp" />
+    <link rel="icon" type="image/webp" sizes="16x16" href="/favicon16x16.webp" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#DB2777" />
+
+    <!-- JSON-LD (múltiples bloques) -->
+    {allJsonLdBlocks.map((node) => (
+      <script type="application/ld+json" set:html={JSON.stringify(node)} />
+    ))}
   </head>
-  <body class="min-h-screen bg-gradient-to-b from-sky-50 to-white text-gray-800">
-    <slot />
+
+  <body>
+    <main id="main">
+      <slot />
+    </main>
+    <CookiePopup />
   </body>
 </html>

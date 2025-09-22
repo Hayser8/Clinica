@@ -6,45 +6,26 @@ import {
   Activity,
   Eye,
   TrendingUp,
+  Phone,
 } from "@lucide/astro";
+
 const recommendations = [
-  {
-    icon: Eye,
-    text: "Bultos o nódulos visibles o palpables en la parte frontal del cuello.",
-  },
-  {
-    icon: AlertTriangle,
-    text: "Inflamación de la glándula tiroides.",
-  },
-  {
-    icon: Activity,
-    text: "Resultados de laboratorio alterados (TSH, T3, T4).",
-  },
-  {
-    icon: Users,
-    text: "Antecedentes familiares de enfermedad tiroidea.",
-  },
-  {
-    icon: TrendingUp,
-    text: "Seguimiento de nódulos previamente detectados.",
-  },
-  {
-    icon: CheckCircle,
-    text: "Monitoreo de bocio o tiroiditis crónica.",
-  },
+  { icon: Eye, text: "Bultos o nódulos visibles o palpables en la parte frontal del cuello." },
+  { icon: AlertTriangle, text: "Inflamación de la glándula tiroides." },
+  { icon: Activity, text: "Resultados de laboratorio alterados (TSH, T3, T4)." },
+  { icon: Users, text: "Antecedentes familiares de enfermedad tiroidea." },
+  { icon: TrendingUp, text: "Seguimiento de nódulos previamente detectados." },
+  { icon: CheckCircle, text: "Monitoreo de bocio o tiroiditis crónica." },
 ];
 ---
 
-<section class="py-20 bg-gradient-to-b from-white to-pink-50/30">
+<section class="py-20 bg-white">
   <div class="max-w-7xl mx-auto p-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
         ¿Cuándo se recomienda realizar una ecografía de tiroides?
       </h2>
-      <div
-        class="w-20 h-1.5 bg-gradient-to-r from-pink-500 to-pink-600 mx-auto mb-8 rounded-full"
-      >
-      </div>
+      <div class="w-20 h-1.5 bg-gradient-to-r from-pink-500 to-pink-600 mx-auto mb-8 rounded-full"></div>
       <p class="text-xl text-gray-700 max-w-3xl mx-auto">
         Se recomienda en situaciones como:
       </p>
@@ -70,6 +51,16 @@ const recommendations = [
       }
     </div>
 
-  
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 transition-colors w-full sm:w-auto"
+        aria-label="Agenda tu Cita"
+      >
+        <Phone class="w-5 h-5 mr-2" />
+        Agenda tu Cita
+      </a>
+    </div>
   </div>
 </section>

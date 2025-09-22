@@ -1,0 +1,58 @@
+---
+import { MessageCircle, Heart } from "@lucide/astro";
+---
+<div class="bg-pink-700 text-white py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Content */}
+      <div class="space-y-6">
+        <div class="space-y-4">
+          <div
+            class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium"
+          >
+            Clínica Especializada
+          </div>
+          <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+            Sobre DeltaScan
+          </h1>
+        </div>
+
+        <p class="text-lg text-pink-100 leading-relaxed">
+          En DeltaScan realizamos estudios de imágenes con un enfoque claro:
+          tratarte con respeto, explicarte cada paso y ofrecer resultados
+          confiables.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/hacer-cita"
+            class="bg-white text-pink-700 hover:bg-pink-50 px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors"
+          >
+            <MessageCircle class="w-5 h-5" />
+            Agenda tu cita
+        </a>
+        </div>
+      </div>
+
+      {/* Image */}
+      <div class="flex justify-center lg:justify-end">
+        <div class="relative">
+          <div
+            class="w-80 h-96 bg-white/20 rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <img
+              src="/sobre-nosotros/doctoresradiologos.webp"
+              alt="Doctores Radiólogos de la clínica DeltaScan"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="absolute -bottom-4 -right-4 bg-white text-pink-700 p-4 rounded-xl shadow-lg"
+          >
+            <Heart class="w-8 h-8" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

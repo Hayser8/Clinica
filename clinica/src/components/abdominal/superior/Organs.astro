@@ -1,26 +1,33 @@
 ---
-import { Heart, Phone, Clover as Liver, Key as Kidney, Activity } from "@lucide/astro";
-  const organGroups = [
-    {
-      category: "Sistema Digestivo",
-      icon: Liver,
-      color: "pink-600",
-      organs: ["Hígado y vías biliares", "Vesícula biliar", "Páncreas"],
-    },
-    {
-      category: "Sistema Circulatorio",
-      icon: Activity,
-      color: "pink-500",
-      organs: ["Aorta y vasos sanguíneos principales"],
-    },
-    {
-      category: "Sistema Urinario",
-      icon: Kidney,
-      color: "pink-700",
-      organs: ["Riñones", "Bazo"],
-    },
-  ]
+import {
+  Heart,
+  Phone,
+  Clover as Liver,
+  Key as Kidney,
+  Activity,
+} from "@lucide/astro";
+const organGroups = [
+  {
+    category: "Sistema Digestivo",
+    icon: Liver,
+    color: "pink-600",
+    organs: ["Hígado y vías biliares", "Vesícula biliar", "Páncreas"],
+  },
+  {
+    category: "Sistema Circulatorio",
+    icon: Activity,
+    color: "pink-500",
+    organs: ["Aorta y vasos sanguíneos principales"],
+  },
+  {
+    category: "Sistema Urinario",
+    icon: Kidney,
+    color: "pink-700",
+    organs: ["Riñones", "Bazo"],
+  },
+];
 ---
+
 <section class="bg-white py-16">
   <div class="max-w-7xl mx-auto p-8">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
@@ -77,12 +84,13 @@ import { Heart, Phone, Clover as Liver, Key as Kidney, Activity } from "@lucide/
     </div>
 
     <div class="text-center">
-      <button
+      <a
+        href="/hacer-cita"
         class="bg-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-pink-700 transition-colors inline-flex items-center gap-2"
       >
         <Phone class="w-5 h-5" />
         Agenda tu cita
-      </button>
+      </a>
     </div>
   </div>
 </section>

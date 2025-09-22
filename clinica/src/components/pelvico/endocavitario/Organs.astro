@@ -1,32 +1,33 @@
 ---
 import { Heart, Activity, Droplets, Phone, Shield } from "@lucide/astro";
-  const organs = [
-    {
-      icon: Heart,
-      title: "Útero y endometrio",
-      description: "forma, tamaño y grosor.",
-      color: "bg-pink-100 text-pink-600",
-    },
-    {
-      icon: Activity,
-      title: "Ovarios",
-      description: "detección de quistes o seguimiento de la ovulación.",
-      color: "bg-pink-100 text-pink-600",
-    },
-    {
-      icon: Droplets,
-      title: "Cuello uterino",
-      description: "control de alteraciones que pueden influir en la fertilidad.",
-      color: "bg-pink-100 text-pink-600",
-    },
-    {
-      icon: Shield,
-      title: "Vejiga y estructuras anexas",
-      description: "apoyo diagnóstico en procesos inflamatorios o masas.",
-      color: "bg-pink-100 text-pink-600",
-    },
-  ]
+const organs = [
+  {
+    icon: Heart,
+    title: "Útero y endometrio",
+    description: "forma, tamaño y grosor.",
+    color: "bg-pink-100 text-pink-600",
+  },
+  {
+    icon: Activity,
+    title: "Ovarios",
+    description: "detección de quistes o seguimiento de la ovulación.",
+    color: "bg-pink-100 text-pink-600",
+  },
+  {
+    icon: Droplets,
+    title: "Cuello uterino",
+    description: "control de alteraciones que pueden influir en la fertilidad.",
+    color: "bg-pink-100 text-pink-600",
+  },
+  {
+    icon: Shield,
+    title: "Vejiga y estructuras anexas",
+    description: "apoyo diagnóstico en procesos inflamatorios o masas.",
+    color: "bg-pink-100 text-pink-600",
+  },
+];
 ---
+
 <section class="bg-white py-16 md:py-24">
   <div class="max-w-7xl mx-auto p-8">
     <div class="text-center space-y-4 mb-16">
@@ -45,9 +46,7 @@ import { Heart, Activity, Droplets, Phone, Shield } from "@lucide/astro";
             key={index}
             class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow text-center"
           >
-            <div
-              class={`w-16 h-16 ${organ.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}
-            >
+            <div class={`w-16 h-16 ${organ.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
               <organ.icon class="w-8 h-8" />
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-3">{organ.title}</h3>
@@ -60,9 +59,7 @@ import { Heart, Activity, Droplets, Phone, Shield } from "@lucide/astro";
     </div>
 
     <div class="max-w-7xl mx-auto p-8 bg-pink-100 rounded-2xl text-center">
-      <div
-        class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-6"
-      >
+      <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
         <Heart class="w-8 h-8 text-white" />
       </div>
       <p class="text-lg text-gray-700 mb-8">
@@ -71,12 +68,15 @@ import { Heart, Activity, Droplets, Phone, Shield } from "@lucide/astro";
         precisión.
       </p>
 
-      <button
-        class="bg-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-700 transition-colors flex items-center gap-3 mx-auto group"
+      <!-- CTA: enlace “normal” que no se estira -->
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold bg-pink-600 text-white hover:bg-pink-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 whitespace-nowrap"
+        aria-label="Agenda tu Cita"
       >
-        <Phone class="w-5 h-5 group-hover:scale-110 transition-transform" />
+        <Phone class="w-5 h-5" />
         Agenda tu Cita
-      </button>
+      </a>
     </div>
   </div>
 </section>

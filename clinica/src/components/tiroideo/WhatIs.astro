@@ -1,5 +1,5 @@
 ---
-import { Heart, Eye, Shield, Zap } from "@lucide/astro";
+import { Heart, Eye, Shield, Zap, Phone } from "@lucide/astro";
 const features = [
   {
     icon: Eye,
@@ -24,7 +24,7 @@ const features = [
 ];
 ---
 
-<section class="py-20 bg-gradient-to-b from-white to-pink-50/30">
+<section class="py-20 bg-white">
   <div class="max-w-7xl mx-auto p-8">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -32,8 +32,7 @@ const features = [
       </h2>
       <div
         class="w-20 h-1.5 bg-gradient-to-r from-pink-500 to-pink-600 mx-auto mb-8 rounded-full"
-      >
-      </div>
+      ></div>
       <p class="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
         Es un estudio en el cual se obtiene imágenes claras de la glándula
         tiroides y sus estructuras vecinas. Permite evaluar tamaño, forma,
@@ -58,6 +57,18 @@ const features = [
           </div>
         ))
       }
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white hover:from-pink-700 hover:to-pink-800 transition-colors w-full sm:w-auto"
+        aria-label="Agenda tu Cita"
+      >
+        <Phone class="w-5 h-5 mr-2" />
+        Agenda tu Cita
+      </a>
     </div>
   </div>
 </section>

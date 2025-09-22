@@ -1,19 +1,26 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/common/Header.astro";
-import Footer from "@/components/common/Footer.astro";
-import HeroSection from "@/components/testicular/HeroSection.astro";
-import WhatIs from "@/components/testicular/WhatIs.astro";
-import WhatIsFor from "@/components/testicular/WhatIsFor.astro";
-import WhenDoppler from "@/components/testicular/WhenDoppler.astro";
-import WhenToGet from "@/components/testicular/WhenToGet.astro";
-import WhyDeltaScan from "@/components/testicular/WhyDeltaScan.astro";
-import HowItIs from "@/components/common/HowItIs.astro";
-import Preparation from "@/components/testicular/Preparation.astro";
-import Results from "@/components/testicular/Results.astro";
-import CTA from "@/components/common/CTA.astro";
-import FAQ from "@/components/common/FAQ.astro";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
+import HeroSection from "../../components/testicular/HeroSection.astro";
+import WhatIs from "../../components/testicular/WhatIs.astro";
+import WhatIsFor from "../../components/testicular/WhatIsFor.astro";
+import WhenDoppler from "../../components/testicular/WhenDoppler.astro";
+import WhenToGet from "../../components/testicular/WhenToGet.astro";
+import WhyDeltaScan from "../../components/testicular/WhyDeltaScan.astro";
+import HowItIs from "../../components/common/HowItIs.astro";
+import Preparation from "../../components/testicular/Preparation.astro";
+import Results from "../../components/testicular/Results.astro";
+import CTA from "../../components/common/CTA.astro";
+import FAQ from "../../components/common/FAQ.astro";
 import { Phone, FileText, Droplets, Search, Clock } from "@lucide/astro";
+import BreadCrumb from "../../components/common/BreadCrumb.astro";
+import MedApprove from "../../components/common/MedApprove.astro";
+
+const crumbs = [
+  { label: "Ultrasonido Testicular", href: "/testicular" },
+];
+
 const steps = [
   {
     number: 1,
@@ -91,26 +98,68 @@ const faqData = [
 ];
 
 const timeEstimate="20 a 25 minutos";
-const heading="¿Cómo es un Ultrasonido Testicular en DeltaScan?"
+const heading="¿Cómo es un Ultrasonido Testicular en DeltaScan?";
+
+// ── SEO/OG específicos de la página (solo props necesarios para Layout)
+const pageTitle = "Ultrasonido Testicular en Guatemala | DeltaScan";
+const pageDescription =
+  "Ecografía testicular con radiólogos especialistas. Resultados el mismo día. Preparación simple, atención humana y equipo moderno.";
+const pageUrl = "https://www.deltascan.gt/testicular";
+const pageOgImage = "/og/ultrasonidotesticular.webp"; // 1200×630 recomendado
+
+// HowTo JSON-LD (derivado de los pasos sin modificar textos)
+const howToData = {
+  name: heading,
+  steps: steps.map(s => ({ name: s.title, text: s.description })),
+};
+
+// Schema extra: Service de esta página
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Ultrasonido Testicular",
+    serviceType: "Diagnóstico por imagen",
+    url: pageUrl,
+    areaServed: "GT",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+      availableLanguage: ["es"],
+    },
+    provider: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
 ---
 
 <Layout
-  title="Terrarios para reptiles | EcoRefugio"
-  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
-  url="https://ecorefugio.com/"
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  faqData={faqData}
+  howToData={howToData}
+  schemaExtra={schemaExtra}
+  dateModified={lastUpdatedISO}
 >
   <Header />
-  <main>
+  <main class="bg-pink-600">
+    <BreadCrumb crumbs={crumbs} color="pink" />
     <HeroSection />
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
     <WhatIs />
     <WhatIsFor />
     <WhenDoppler />
     <WhenToGet />
     <WhyDeltaScan />
     <HowItIs 
-    steps={steps}
-    timeEstimate={timeEstimate}
-    heading={heading}
+      steps={steps}
+      timeEstimate={timeEstimate}
+      heading={heading}
     />
     <Preparation />
     <Results />

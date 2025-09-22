@@ -1,0 +1,76 @@
+---
+import { Clock, FileText, CheckCircle, Calendar } from "@lucide/astro";
+---
+
+<section class="py-16 md:py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-balance"
+      >
+        Resultados y tiempo de entrega
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <div class="flex items-start gap-4">
+          <div class="bg-pink-500 rounded-xl p-3 flex-shrink-0">
+            <Clock class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Mismo día</h3>
+            <p class="text-gray-600 leading-relaxed">
+              En DeltaScan los resultados se entregan el mismo día de tu
+              estudio.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="bg-pink-500 rounded-xl p-3 flex-shrink-0">
+            <FileText class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Información completa
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              En pocos minutos tendrás la información lista para tu médico.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="bg-pink-500 rounded-xl p-3 flex-shrink-0">
+            <CheckCircle class="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Sin esperas
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Reduciendo la espera y la incertidumbre.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-pink-600 rounded-2xl p-8 text-white text-center">
+        <h3 class="text-2xl font-bold mb-4">
+          ¿Tienes síntomas o necesitas un chequeo?
+        </h3>
+        <p class="text-pink-100 mb-6">
+          Agenda tu ultrasonido prostático y obtén respuestas claras
+        </p>
+        <a
+          href="/hacer-cita"
+          class="bg-white text-pink-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors inline-flex items-center gap-2"
+        >
+          <Calendar class="w-5 h-5" />
+          Agenda tu cita
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

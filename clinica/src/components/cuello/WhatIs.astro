@@ -1,0 +1,74 @@
+---
+import { Zap, CheckCircle, Clock, Target, Shield } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-600 rounded-full px-4 py-2 text-sm font-medium mb-6"
+      >
+        <div class="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+        Tecnología médica avanzada
+      </div>
+      <h2
+        class="text-2xl md:text-4xl font-bold text-gray-900 mb-6 text-balance"
+      >
+        ¿Qué es el ultrasonido de cuello?
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+      <div class="space-y-6">
+        <div
+          class="bg-gradient-to-br from-pink-500 to-pink-600 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-pink-500/25"
+        >
+          <Zap class="w-8 h-8 text-white" />
+        </div>
+        <p class="text-lg text-gray-700 leading-relaxed text-pretty">
+          Es un estudio diagnóstico no invasivo que utiliza ondas sonoras para
+          generar imágenes en tiempo real de las estructuras blandas del cuello.
+          Permite observar con detalle los ganglios linfáticos, las glándulas
+          salivales, los vasos sanguíneos y los tejidos musculares de la región.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed text-pretty">
+          No requiere radiación ni agujas, por lo que se ha convertido en la
+          primera herramienta para investigar bultos, inflamaciones o masas en
+          esta zona tan sensible del cuerpo.
+        </p>
+      </div>
+
+      <div
+        class="bg-gradient-to-br from-pink-50 to-pink-100/50 rounded-3xl p-8 border border-pink-200/50 shadow-lg"
+      >
+        <div class="grid grid-cols-1 gap-6">
+          <div
+            class="flex items-center gap-4 p-4 bg-white/60 rounded-xl backdrop-blur-sm"
+          >
+            <CheckCircle class="w-6 h-6 text-pink-500 flex-shrink-0" />
+            <span class="text-pink-700 font-semibold">100% Seguro</span>
+          </div>
+          <div
+            class="flex items-center gap-4 p-4 bg-white/60 rounded-xl backdrop-blur-sm"
+          >
+            <Shield class="w-6 h-6 text-pink-500 flex-shrink-0" />
+            <span class="text-pink-700 font-semibold">Sin radiación</span>
+          </div>
+          <div
+            class="flex items-center gap-4 p-4 bg-white/60 rounded-xl backdrop-blur-sm"
+          >
+            <Target class="w-6 h-6 text-pink-500 flex-shrink-0" />
+            <span class="text-pink-700 font-semibold">Sin dolor</span>
+          </div>
+          <div
+            class="flex items-center gap-4 p-4 bg-white/60 rounded-xl backdrop-blur-sm"
+          >
+            <Clock class="w-6 h-6 text-pink-500 flex-shrink-0" />
+            <span class="text-pink-700 font-semibold"
+              >Resultados inmediatos</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

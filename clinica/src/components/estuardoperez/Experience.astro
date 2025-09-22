@@ -1,0 +1,57 @@
+---
+import { Building2, Calendar, MapPin } from "@lucide/astro";
+---
+<div class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        Experiencia Clínica
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Trayectoria profesional en instituciones de prestigio
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div
+        class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow"
+      >
+        <div class="flex items-start gap-4">
+          <div class="bg-pink-700 text-white p-3 rounded-lg">
+            <Building2 class="w-6 h-6" />
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Médico Radiólogo
+            </h3>
+            <p class="text-pink-700 font-medium mb-2">Hospitales La Paz</p>
+            <div class="flex items-center gap-2 text-gray-600">
+              <Calendar class="w-4 h-4" />
+              <span>2017 a la fecha</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow"
+      >
+        <div class="flex items-start gap-4">
+          <div class="bg-pink-700 text-white p-3 rounded-lg">
+            <MapPin class="w-6 h-6" />
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Fundador y Radiólogo Encargado
+            </h3>
+            <p class="text-pink-700 font-medium mb-2">Clínica DeltaScan</p>
+            <div class="flex items-center gap-2 text-gray-600">
+              <Calendar class="w-4 h-4" />
+              <span>2017 a la fecha</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,167 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/common/Header.astro";
+import Footer from "../../../components/common/Footer.astro";
+import HeroSection from "../../../components/prostatico/transrectal/HeroSection.astro";
+import HowItIs from "../../../components/common/HowItIs.astro";
+import WhatIs from "../../../components/prostatico/transrectal/WhatIs.astro";
+import WhatDetects from "../../../components/prostatico/transrectal/WhatDetects.astro";
+import WhatEvaluates from "../../../components/prostatico/transrectal/WhatEvaluates.astro";
+import WhyDeltaScan from "../../../components/prostatico/transrectal/WhyDeltaScan.astro";
+import Preparation from "../../../components/prostatico/transrectal/Preparation.astro";
+import Results from "../../../components/prostatico/transrectal/Results.astro";
+import CTA from "../../../components/common/CTA.astro";
+import FAQ from "../../../components/common/FAQ.astro";
+import { Calendar, Bed, Search, Users, FileText } from "@lucide/astro";
+import BreadCrumb from "../../../components/common/BreadCrumb.astro";
+import MedApprove from "../../../components/common/MedApprove.astro";
+
+const crumbs = [
+  { label: "Ultrasonido Prostático", href: "/prostatico" },
+  { label: "Ultrasonido Transrectal", href: "/prostatico/transrectal" },
+];
+const steps = [
+  {
+    number: 1,
+    icon: Calendar,
+    title: "Agenda tu cita fácilmente",
+    description:
+      "Puedes llamarnos al 2448-1110 o escribirnos por WhatsApp al 4565-0865. Te ofrecemos horarios flexibles y atención con cita previa.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    icon: Bed,
+    title: "Posicionamiento en la camilla",
+    description:
+      "Te recostarás de lado, con las rodillas flexionadas suavemente hacia el pecho. Esta posición permite que la sonda, cubierta con material estéril y lubricante, se introduzca con cuidado para obtener imágenes claras y detalladas.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    icon: Search,
+    title: "Exploración de órganos clave",
+    description:
+      "Durante el examen se observan la próstata, sus diferentes zonas y las vesículas seminales, lo que permite evaluar crecimiento, nódulos, inflamación o masas sospechosas.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    icon: Users,
+    title: "Interpretación de resultados en conjunto",
+    description:
+      "Tras la toma de imágenes, dos radiólogos experimentados revisan tu estudio de manera conjunta, lo que garantiza un análisis más completo y confiable.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    icon: FileText,
+    title: "Resultados inmediatos",
+    description:
+      "Recibirás tu informe el mismo día, junto con las imágenes, para compartirlas con tu médico y definir el siguiente paso.",
+    color: "from-pink-500 to-pink-600",
+  },
+];
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Es doloroso un ultrasonido prostático transrectal?",
+    answer:
+      "La mayoría de los pacientes describen el TRUS como un estudio tolerable más que doloroso. Se puede sentir una ligera presión cuando se introduce la sonda, pero no suele generar dolor intenso ni requiere anestesia. El procedimiento dura pocos minutos y está diseñado para que sea lo más cómodo posible.",
+  },
+  {
+    id: 2,
+    question: "¿En qué casos se combina el TRUS con resonancia magnética?",
+    answer:
+      "El ultrasonido transrectal se usa para ver en detalle la próstata, pero en algunas situaciones el médico puede recomendar complementarlo con una resonancia magnética. Esto ocurre sobre todo cuando hay sospecha de cáncer, lesiones pequeñas difíciles de ver con ecografía o cuando se requiere una biopsia guiada por fusión RM–TRUS.",
+  },
+  {
+    id: 3,
+    question: "¿Qué significa que mi próstata esté agrandada en el TRUS?",
+    answer:
+      "Un aumento en el tamaño de la próstata observado en el TRUS suele estar asociado a hiperplasia prostática benigna (HPB), una condición muy común a partir de los 50 años. No significa necesariamente que exista cáncer, pero sí puede explicar síntomas como dificultad para orinar o aumento en la frecuencia urinaria.",
+  },
+  {
+    id: 4,
+    question:
+      "¿El ultrasonido transrectal puede medir el volumen prostático normal por edad?",
+    answer:
+      "Sí, el TRUS permite calcular con precisión el volumen prostático y compararlo con los rangos considerados normales según la edad del paciente. Esta información es clave para diferenciar entre cambios propios del envejecimiento y alteraciones que requieren seguimiento médico.",
+  },
+];
+const timeEstimate = "20 a 30 minutos";
+const heading = "¿Cómo es un Ultrasonido Transrectal en DeltaScan?";
+
+// ── SEO/OG para el Layout (sin cambiar textos de la página)
+const pageTitle = "Ultrasonido Prostático Transrectal en Guatemala | DeltaScan";
+const pageDescription =
+  "Ecografía prostática transrectal con radiólogos especialistas. Resultados el mismo día. Preparación guiada, equipo moderno y atención humana.";
+const pageUrl = "https://www.deltascan.gt/prostatico/transrectal";
+const pageOgImage = "/og/ultrasonidoprostaticotransrectal.webp"; // 1200×630 recomendado
+
+// HowTo JSON-LD basado en los pasos
+const howToData = {
+  name: heading,
+  steps: steps.map((s) => ({ name: s.title, text: s.description })),
+};
+
+// Schema extra: Service de esta página
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Ultrasonido Prostático Transrectal",
+    serviceType: "Diagnóstico por imagen",
+    url: pageUrl,
+    areaServed: "GT",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+      availableLanguage: ["es"],
+    },
+    provider: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  faqData={faqData}
+  howToData={howToData}
+  schemaExtra={schemaExtra}
+  dateModified={lastUpdatedISO}
+>
+  <Header />
+
+  <main class="bg-gradient-to-br from-pink-600 to-pink-700">
+    <BreadCrumb crumbs={crumbs} color="pink" />
+    <HeroSection />
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
+    <WhatIs />
+    <WhatDetects />
+    <WhatEvaluates />
+    <WhyDeltaScan />
+    <HowItIs steps={steps} timeEstimate={timeEstimate} heading={heading} />
+    <Preparation />
+    <Results />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Transrectal"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Transrectales"
+      description="Encuentra respuestas a las preguntas más comunes sobre ecografías transrectales"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

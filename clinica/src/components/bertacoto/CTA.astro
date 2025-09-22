@@ -1,0 +1,36 @@
+---
+import { MessageCircle, Calendar, Heart } from "@lucide/astro"
+---
+<div class="py-20 bg-gradient-to-br from-pink-700 to-pink-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center text-white space-y-8">
+      <div class="space-y-4">
+        <div class="flex justify-center">
+          <Heart class="w-12 h-12 text-pink-200" />
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold">
+          Agenda tu cita con la
+          <span class="block text-pink-200">Doctora Berta hoy</span>
+        </h2>
+        <p class="text-xl text-pink-100 max-w-2xl mx-auto leading-relaxed">
+          Recibe atención especializada en radiología e imágenes diagnósticas
+          con más de 11 años de experiencia
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="text-2xl font-semibold text-pink-100">Clínica DeltaScan</h3>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/hacer-cita"
+            rel="follow"
+            class="bg-white text-pink-700 hover:bg-pink-50 px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-lg"
+          >
+            <MessageCircle class="w-6 h-6" />
+            Agenda tu cita
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

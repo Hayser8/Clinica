@@ -1,0 +1,39 @@
+---
+import { Heart, MessageCircle, Clock } from "@lucide/astro";
+const values = [
+    {
+      icon: Heart,
+      text: "Respeto y calidez en cada atención.",
+    },
+    {
+      icon: MessageCircle,
+      text: "Claridad para explicar el estudio y los resultados.",
+    },
+    {
+      icon: Clock,
+      text: "Responsabilidad en tiempos de entrega y seguimiento.",
+    },
+  ]
+---
+<div class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+        Nuestros valores
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          values.map((value, index) => (
+            <div key={index} class="text-center space-y-4">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-pink-700 text-white rounded-full">
+                <value.icon class="w-8 h-8" />
+              </div>
+              <p class="text-gray-600 leading-relaxed">{value.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

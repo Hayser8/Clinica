@@ -2,7 +2,7 @@
 import { Phone } from "@lucide/astro";
 ---
 
-<section class="bg-pink-600 text-white py-16">
+<section class="bg-pink-600 text-white py-6">
   <div class="max-w-7xl mx-auto p-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div>
@@ -12,23 +12,26 @@ import { Phone } from "@lucide/astro";
         </p>
 
         <!-- H1 más pequeño y en pink-100 -->
-        <h1 class="text-2xl md:text-3xl font-semibold leading-tight text-pink-100 mb-6">
+        <h1
+          class="text-2xl md:text-3xl font-semibold leading-tight text-pink-100 mb-6"
+        >
           Ultrasonido abdominal superior
         </h1>
 
         <p class="text-xl opacity-90 leading-relaxed mb-8">
-        Revisamos tus imágenes con tecnología moderna y
-          te entregamos resultados el mismo día, para que recuperes la
-          tranquilidad y des el siguiente paso con certeza.
+          Revisamos tus imágenes con tecnología moderna y te entregamos
+          resultados el mismo día, para que recuperes la tranquilidad y des el
+          siguiente paso con certeza.
         </p>
 
-        <button
+        <a
+          href="/hacer-cita"
           class="w-full md:w-auto inline-flex items-center gap-3 justify-center md:justify-start bg-white text-pink-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           aria-label="Agendar cita"
         >
           <Phone class="w-5 h-5" />
           Agenda tu Cita
-        </button>
+        </a>
       </div>
 
       <div class="relative">

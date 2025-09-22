@@ -1,0 +1,184 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/common/Header.astro";
+import Footer from "../../../components/common/Footer.astro";
+import HeroSection from "../../../components/prostatico/suprapubico/HeroSection.astro";
+import HowItIs from "../../../components/common/HowItIs.astro";
+import WhatIs from "../../../components/prostatico/suprapubico/WhatIs.astro";
+import WhenIndicated from "../../../components/prostatico/suprapubico/WhenIndicated.astro";
+import WhatEvaluates from "../../../components/prostatico/suprapubico/WhatEvaluates.astro";
+import WhyDeltaScan from "../../../components/prostatico/suprapubico/WhyDeltaScan.astro";
+import Preparation from "../../../components/prostatico/suprapubico/Preparation.astro";
+import Limitations from "../../../components/prostatico/suprapubico/Limitations.astro";
+import Results from "../../../components/prostatico/suprapubico/Results.astro";
+import CTA from "../../../components/common/CTA.astro";
+import FAQ from "../../../components/common/FAQ.astro";
+import MedApprove from "../../../components/common/MedApprove.astro";
+import { Calendar, User, Search, Users, FileText } from "@lucide/astro";
+import BreadCrumb from "../../../components/common/BreadCrumb.astro";
+
+const crumbs = [
+  { label: "Ultrasonido Prostático", href: "/prostatico" },
+  { label: "Ultrasonido Prostático Suprapúbico", href: "/prostatico/suprapubico" },
+];
+
+const steps = [
+  {
+    number: 1,
+    icon: Calendar,
+    title: "Agenda tu cita fácilmente",
+    description:
+      "Puedes llamarnos al 2448-1110 o escribirnos por WhatsApp al 4565-0865. Ofrecemos horarios flexibles y atención con cita previa.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    icon: User,
+    title: "Posicionamiento en la camilla",
+    description:
+      "Te recostarás boca arriba. El médico aplicará un gel conductor en la parte baja del abdomen (suprapúbica) para deslizar el transductor sin molestias.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    icon: Search,
+    title: "Exploración de órganos clave",
+    description:
+      "Durante el estudio se observan la próstata, la vejiga y, de ser necesario, las vesículas seminales. Se mide el tamaño prostático y se evalúa el residuo de orina tras la micción.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    icon: Users,
+    title: "Interpretación de resultados en conjunto",
+    description:
+      "Dos radiólogos revisan tus imágenes para asegurar un análisis preciso y completo.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    icon: FileText,
+    title: "Resultados inmediatos",
+    description:
+      "Recibirás tu informe el mismo día, acompañado de las imágenes, para que tu médico pueda definir el siguiente paso.",
+    color: "from-pink-500 to-pink-600",
+  },
+];
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿El ultrasonido prostático suprapúbico puede detectar cáncer de próstata?",
+    answer:
+      "Este estudio permite identificar alteraciones en el tamaño y la forma de la próstata, así como la presencia de nódulos o áreas sospechosas. Sin embargo, no es suficiente por sí solo para confirmar o descartar cáncer. En los casos en que se detecta una anormalidad, el médico suele recomendar estudios complementarios como el ultrasonido transrectal, la resonancia magnética o una biopsia.",
+  },
+  {
+    id: 2,
+    question: "¿Cuál es el tamaño normal de la próstata según la edad?",
+    answer:
+      "La próstata no mantiene el mismo tamaño a lo largo de la vida. En hombres jóvenes suele pesar alrededor de 20 gramos, mientras que en mayores de 50 años es común que aumente de volumen debido a la hiperplasia prostática benigna (HPB). Este crecimiento no siempre es sinónimo de enfermedad, pero puede explicar síntomas como la dificultad para orinar o el aumento de las micciones nocturnas.",
+  },
+  {
+    id: 3,
+    question: "¿Qué significa “suprapúbico” en este examen?",
+    answer:
+      "El término “suprapúbico” hace referencia a la zona anatómica justo por encima del pubis. Es en esa región donde el médico coloca el transductor del ultrasonido, utilizando gel conductor para obtener imágenes de la próstata y la vejiga sin necesidad de introducir sondas. Gracias a esta vía abdominal baja, el examen resulta cómodo y no invasivo, lo que lo convierte en una opción muy valorada por los pacientes en su primera aproximación diagnóstica.",
+  },
+  {
+    id: 4,
+    question: "¿Qué síntomas suelen motivar la solicitud de este estudio?",
+    answer:
+      "Los síntomas más comunes que llevan a los hombres a realizarse un ultrasonido prostático suprapúbico son la dificultad para iniciar la micción, la necesidad de orinar con frecuencia (sobre todo en la noche), la sensación de vaciado incompleto y un chorro débil o interrumpido. También se solicita cuando hay antecedentes de infecciones urinarias recurrentes o valores anormales en análisis de sangre.",
+  },
+  {
+    id: 5,
+    question: "¿El examen requiere anestesia o implica dolor?",
+    answer:
+      "No. El ultrasonido prostático suprapúbico es un procedimiento completamente indoloro y no invasivo. Solo se aplica un gel frío en la parte baja del abdomen para que el transductor pueda deslizarse con facilidad y transmitir las ondas sonoras. Permanecerás recostado y relajado durante pocos minutos, mientras se capturan las imágenes. No requiere anestesia ni recuperación posterior, al finalizar, puedes retomar tu rutina diaria de inmediato.",
+  },
+  {
+    id: 6,
+    question: "¿Dónde duele cuando la próstata está inflamada y cómo ayuda este examen?",
+    answer:
+      "Cuando la próstata está inflamada, el malestar suele sentirse en la zona baja del abdomen, entre el pubis y el periné. Algunos pacientes también refieren dolor lumbar, molestias al orinar o presión en la parte inferior de la pelvis. El ultrasonido suprapúbico ayuda a entender estas molestias al mostrar si existe aumento del tamaño prostático, inflamación o residuo urinario que explique la sensación de incomodidad.",
+  },
+];
+const timeEstimate = "15 a 20 minutos";
+const heading = "¿Cómo es un Ultrasonido Prostático Suprapúbico en DeltaScan?";
+
+// ── SEO/OG específicos para pasar al Layout (sin cambiar textos de la página)
+const pageTitle = "Ultrasonido Prostático Suprapúbico en Guatemala | DeltaScan";
+const pageDescription =
+  "Ecografía prostática suprapúbica con radiólogos especialistas. Resultados el mismo día. Preparación guiada, equipo moderno y atención humana.";
+const pageUrl = "https://www.deltascan.gt/prostatico/suprapubico";
+const pageOgImage = "/og/ultrasonidoprostaticosuprapubico.webp"; // 1200×630 recomendado
+
+// HowTo JSON-LD basado en los pasos (solo estructura)
+const howToData = {
+  name: heading,
+  steps: steps.map((s) => ({ name: s.title, text: s.description })),
+};
+
+// Schema extra: Service de esta página
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Ultrasonido Prostático Suprapúbico",
+    serviceType: "Diagnóstico por imagen",
+    url: pageUrl,
+    areaServed: "GT",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+      availableLanguage: ["es"],
+    },
+    provider: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  faqData={faqData}
+  howToData={howToData}
+  schemaExtra={schemaExtra}
+  dateModified={lastUpdatedISO}
+>
+  <Header />
+
+  <main class="bg-gradient-to-br from-pink-600 to-pink-700">
+    <BreadCrumb 
+      crumbs={crumbs}
+      color="pink"
+    />
+    <HeroSection />
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
+    <WhatIs />
+    <WhenIndicated />
+    <WhatEvaluates />
+    <WhyDeltaScan />
+    <HowItIs steps={steps} timeEstimate={timeEstimate} heading={heading} />
+    <Preparation />
+    <Limitations />
+    <Results />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Prostático Suprapúbico"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Prostáticos Suprapúbicos"
+      description="Encuentra respuestas a las preguntas más comunes sobre ecografías prostáticos suprapúbicos."
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

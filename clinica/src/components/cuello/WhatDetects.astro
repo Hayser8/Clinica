@@ -1,0 +1,67 @@
+---
+import { Search, Shield, Heart, Droplets, Zap, Eye } from "@lucide/astro";
+  const detections = [
+    {
+      icon: Search,
+      title: "Inflamaciones y adenopatías",
+      description: "Ganglios linfáticos aumentados de tamaño por infecciones o procesos más complejos",
+    },
+    {
+      icon: Shield,
+      title: "Quistes y masas benignas",
+      description: "Como lipomas, quistes branquiales o alteraciones en glándulas salivales",
+    },
+    {
+      icon: Heart,
+      title: "Evalúa la glándula tiroides",
+      description: "Es útil para evaluar la glándula tiroides y descartar masas en su interior",
+    },
+    {
+      icon: Droplets,
+      title: "Abscesos o colecciones",
+      description: "Útiles para diferenciar infecciones agudas que requieren tratamiento inmediato",
+    },
+    {
+      icon: Zap,
+      title: "Obstrucciones en glándulas",
+      description: "Cálculos en glándulas salivales que explican dolor e inflamación recurrente",
+    },
+    {
+      icon: Eye,
+      title: "Alteraciones en flujo sanguíneo",
+      description: "Con modo Doppler, puede mostrar estrechamientos u obstrucciones en vasos del cuello",
+    },
+  ]
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-2xl md:text-4xl font-bold text-gray-900 mb-6 text-balance"
+      >
+        ¿Qué detecta este estudio?
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        detections.map((detection, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow"
+          >
+            <div class="bg-pink-500 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+              <detection.icon class="w-7 h-7 text-white" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              {detection.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-pretty">
+              {detection.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

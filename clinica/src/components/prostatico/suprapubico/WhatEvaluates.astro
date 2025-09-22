@@ -1,0 +1,59 @@
+---
+import { Search, Ruler, Activity, AlertTriangle } from "@lucide/astro";
+  const evaluations = [
+    {
+      icon: Ruler,
+      title: "Tamaño y volumen",
+      description: "Medición precisa de la próstata",
+    },
+    {
+      icon: Search,
+      title: "Características glandulares",
+      description: "Análisis de la glándula y vesículas seminales",
+    },
+    {
+      icon: Activity,
+      title: "Estado vesical",
+      description: "Evaluación antes y después de orinar",
+    },
+    {
+      icon: AlertTriangle,
+      title: "Alteraciones estructurales",
+      description: "Detección de masas, nódulos o cambios",
+    },
+  ]
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 text-balance"
+      >
+        ¿Qué evalúa y qué mide?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto text-pretty">
+        El ultrasonido suprapúbico permite obtener estos datos clave:
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        evaluations.map((item, index) => (
+          <div
+            key={index}
+            class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center"
+          >
+            <div class="bg-pink-600 rounded-2xl p-4 w-fit mx-auto mb-6">
+              <item.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
+            <p class="text-gray-600 leading-relaxed text-pretty">
+              {item.description}
+            </p>
+            <div class="w-12 h-1 bg-pink-600 rounded-full mx-auto mt-6" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

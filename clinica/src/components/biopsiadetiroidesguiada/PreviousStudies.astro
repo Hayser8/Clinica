@@ -1,5 +1,5 @@
 ---
-import { Eye, Search } from "@lucide/astro";
+import { Eye, Search, ArrowRight } from "@lucide/astro";
 ---
 <section class="bg-white py-16 md:py-24">
   <div class="max-w-7xl mx-auto p-8">
@@ -16,13 +16,18 @@ import { Eye, Search } from "@lucide/astro";
 
     <div class="grid md:grid-cols-2 gap-8 mb-12">
       <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-3xl p-8">
-        <div
-          class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mb-6"
-        >
+        <div class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mb-6">
           <Eye class="w-8 h-8 text-white" />
         </div>
         <h3 class="text-2xl font-bold text-gray-900 mb-4">
-          Ultrasonido de tiroides
+          <a
+            href="/tiroideo"
+            class="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 hover:underline rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 group"
+            aria-label="Ir a Ultrasonido de tiroides"
+          >
+            Ultrasonido de tiroides
+            <ArrowRight class="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </a>
         </h3>
         <p class="text-gray-700 leading-relaxed">
           Es el primer paso para valorar tamaño, forma y características de la
@@ -32,13 +37,18 @@ import { Eye, Search } from "@lucide/astro";
       </div>
 
       <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-3xl p-8">
-        <div
-          class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mb-6"
-        >
+        <div class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mb-6">
           <Search class="w-8 h-8 text-white" />
         </div>
         <h3 class="text-2xl font-bold text-gray-900 mb-4">
-          Ultrasonido de cuello
+          <a
+            href="/cuello"
+            class="inline-flex items-center gap-2 text-pink-600 hover:text-pink-700 hover:underline rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 group"
+            aria-label="Ir a Ultrasonido de cuello"
+          >
+            Ultrasonido de cuello
+            <ArrowRight class="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </a>
         </h3>
         <p class="text-gray-700 leading-relaxed">
           En algunos casos, el estudio se complementa para evaluar ganglios
@@ -54,5 +64,6 @@ import { Eye, Search } from "@lucide/astro";
         verdaderamente necesaria, evitando procedimientos invasivos cuando no
         aportan valor al diagnóstico.
       </p>
+    </div>
   </div>
 </section>

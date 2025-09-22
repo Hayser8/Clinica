@@ -1,0 +1,121 @@
+---
+import { ArrowRight, Activity, Zap } from "@lucide/astro";
+---
+
+<section class="bg-white">
+  <div class="max-w-7xl mx-auto p-8 py-16">
+    <div class="text-center mb-12">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-50 text-pink-600 px-4 py-2 rounded-full text-sm font-medium mb-6"
+      >
+        <Activity class="w-4 h-4" />
+        Nuestros servicios
+      </div>
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-balance"
+      >
+        Tenemos otros dos tipos de Ultrasonidos Abdominales
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto text-pretty">
+        Contamos con estudios especializados para diferentes necesidades
+        diagnósticas
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {/* Hepatobiliar Card */}
+      <div
+        class="group bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300 hover:-translate-y-1"
+      >
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg"
+          >
+            <Zap class="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Hepatobiliar</h3>
+            <p class="text-pink-600 font-medium">Hígado y vías biliares</p>
+          </div>
+        </div>
+
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Evaluación completa del hígado, vesícula biliar y vías biliares.
+          Detecta cálculos, inflamación, tumores y alteraciones en la función
+          hepática de manera precisa y no invasiva.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span
+            class="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-sm font-medium"
+            >Sin radiación</span
+          >
+          <span
+            class="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-sm font-medium"
+          >
+            Resultados inmediatos
+          </span>
+          <span
+            class="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-sm font-medium"
+            >No invasivo</span
+          >
+        </div>
+
+        <a
+          href="/abdominal/hepatobiliar"
+          class="inline-flex items-center gap-2 text-pink-600 font-semibold hover:text-pink-700 transition-colors group-hover:gap-3 duration-300"
+        >
+          Ver más información
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+
+      {/* Abdominal Superior Card */}
+      <div
+        class="group bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300 hover:-translate-y-1"
+      >
+        <div class="flex items-center gap-4 mb-6">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg"
+          >
+            <Activity class="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Abdominal Superior</h3>
+            <p class="text-pink-600 font-medium">Órganos abdominales</p>
+          </div>
+        </div>
+
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Estudio integral de hígado, vesícula, páncreas, bazo y riñones.
+          Identifica masas, quistes, cálculos y alteraciones estructurales en
+          los principales órganos abdominales.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span
+            class="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-sm font-medium"
+          >
+            Evaluación completa
+          </span>
+          <span
+            class="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-sm font-medium"
+            >Alta precisión</span
+          >
+          <span
+            class="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-sm font-medium"
+            >Indoloro</span
+          >
+        </div>
+
+        <a
+          href="/abdominal/superior"
+          class="inline-flex items-center gap-2 text-pink-600 font-semibold hover:text-pink-700 transition-colors group-hover:gap-3 duration-300"
+        >
+          Ver más información
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

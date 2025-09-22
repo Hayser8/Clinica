@@ -1,0 +1,53 @@
+---
+import { ArrowRight, User } from "@lucide/astro";
+const doctors = [
+    {
+      name: "Dra. Berta Elisa Coto Pacheco",
+      role: "Radióloga. Fundadora y radióloga encargada.",
+      link: "/bertacoto",
+    },
+    {
+      name: "Dr. Estuardo Rodrigo Pérez Reyes",
+      role: "Radiólogo. Fundador y radiólogo encargado.",
+      link: "/estuardoperez",
+    },
+  ]
+---
+<div class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+        Equipo médico
+      </h2>
+      <p class="text-lg text-gray-600">
+        Conoce a quienes realizan tus estudios:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {
+          doctors.map((doctor, index) => (
+            <div
+              key={index}
+              class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <div class="text-center space-y-4">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-pink-100 text-pink-700 rounded-full">
+                  <User class="w-8 h-8" />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">{doctor.name}</h3>
+                <p class="text-gray-600">{doctor.role}</p>
+                <a
+                  href={doctor.link}
+                  class="inline-flex items-center gap-2 text-pink-700 hover:text-pink-800 font-medium transition-colors"
+                >
+                  Ver biografía
+                  <ArrowRight class="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

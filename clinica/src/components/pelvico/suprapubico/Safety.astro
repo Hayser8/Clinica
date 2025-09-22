@@ -1,0 +1,59 @@
+---
+import { Shield, Zap, Heart, CheckCircle } from "@lucide/astro";
+  const safetyFeatures = [
+    {
+      icon: Shield,
+      title: "Sin radiación ionizante",
+      description: "Completamente seguro para todas las edades",
+    },
+    {
+      icon: Zap,
+      title: "Procedimiento indoloro",
+      description: "Rápido y con riesgos mínimos",
+    },
+    {
+      icon: Heart,
+      title: "Seguro durante embarazo",
+      description: "Puede usarse sin preocupaciones",
+    },
+    {
+      icon: CheckCircle,
+      title: "Repetible",
+      description: "Se puede usar tantas veces como sea necesario",
+    },
+  ]
+---
+<section class="py-16 md:py-24 bg-pink-600 text-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2 class="text-2xl md:text-4xl font-bold mb-8 text-balance">
+        Es un estudio seguro, sin radiación
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      {
+        safetyFeatures.map((feature, index) => (
+          <div key={index} class="bg-pink-500 rounded-2xl p-6 text-center">
+            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <feature.icon class="w-8 h-8 text-pink-600" />
+            </div>
+            <h3 class="font-bold mb-2">{feature.title}</h3>
+            <p class="text-pink-100 text-sm leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center gap-3 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold hover:bg-pink-50 transition-colors"
+      >
+        Agenda tu cita
+    </a>
+    </div>
+  </div>
+</section>

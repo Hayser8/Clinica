@@ -1,0 +1,35 @@
+---
+import { Target, Eye } from "@lucide/astro";
+---
+<div class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12">
+      {/* Misión */}
+      <div class="text-center space-y-6">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-pink-700 text-white rounded-full"
+        >
+          <Target class="w-8 h-8" />
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900">Misión</h3>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Brindar estudios de imágenes con la mejor atención y un diagnóstico
+          preciso.
+        </p>
+      </div>
+
+      {/* Visión */}
+      <div class="text-center space-y-6">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-pink-700 text-white rounded-full"
+        >
+          <Eye class="w-8 h-8" />
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900">Visión</h3>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Ser la clínica privada de ultrasonido con la mejor atención del país.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

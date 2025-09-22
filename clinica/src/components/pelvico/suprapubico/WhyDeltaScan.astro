@@ -1,0 +1,63 @@
+---
+import { Users, Heart, Award, UserCheck } from "@lucide/astro";
+const benefits = [
+  {
+    icon: Users,
+    title: "Dos médicos radiólogos revisando cada estudio al mismo tiempo",
+    description:
+      "En DeltaScan, dos especialistas en radiología valoran tus imágenes de manera conjunta, aumentando la precisión diagnóstica y disminuyendo el margen de error.",
+  },
+  {
+    icon: Heart,
+    title: "Respeto y acompañamiento durante el examen",
+    description:
+      "Tu bienestar es prioridad: realizamos el procedimiento en un ambiente seguro y profesional, cuidando tu comodidad en cada momento.",
+  },
+  {
+    icon: Award,
+    title: "Más de 10 años de experiencia en ecografía médica",
+    description:
+      "Nuestra trayectoria está respaldada por más de una década de práctica en estudios de diagnóstico por ultrasonido.",
+  },
+  {
+    icon: UserCheck,
+    title: "Atención personalizada y cercana",
+    description:
+      "Explicamos cada hallazgo de forma clara, resolvemos tus dudas y ofrecemos un trato empático para que te sientas acompañada en todo el proceso.",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-balance"
+      >
+        ¿Por qué <span class="text-pink-600">DeltaScan </span>es tu clínica de ultrasonidos pélvico suprapúbicos?
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      {
+        benefits.map((benefit, index) => (
+          <div key={index} class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="flex items-start gap-6">
+              <div class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <benefit.icon class="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                  {benefit.title}
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

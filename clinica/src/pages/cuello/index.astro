@@ -1,0 +1,183 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
+import HeroSection from "../../components/cuello/HeroSection.astro";
+import HowItIs from "../../components/common/HowItIs.astro";
+import Cases from "../../components/cuello/Cases.astro";
+import WhatIs from "../../components/cuello/WhatIs.astro";
+import WhatDetects from "../../components/cuello/WhatDetects.astro";
+import WhatEvaluates from "../../components/cuello/WhatEvaluates.astro";
+import WhyDeltaScan from "../../components/cuello/WhyDeltaScan.astro";
+import Preparation from "../../components/cuello/Preparation.astro";
+import Limitations from "../../components/cuello/Limitations.astro";
+import Results from "../../components/cuello/Results.astro";
+import CTA from "../../components/common/CTA.astro";
+import FAQ from "../../components/common/FAQ.astro";
+import BreadCrumb from "../../components/common/BreadCrumb.astro";
+import MedApprove from "../../components/common/MedApprove.astro";
+
+const crumbs = [
+  {
+    label: "Ultrasonido de Cuello",
+    href: "/cuello",
+  },
+];
+
+import {
+    Phone, User, Search, Users, FileText
+} from "@lucide/astro";
+
+const steps = [
+  {
+    number: 1,
+    icon: Phone,
+    title: "Agenda tu cita fácilmente",
+    description:
+      "Llámanos al 2448-1110 o escríbenos por WhatsApp al 4565-0865. Contamos con horarios flexibles y atención con cita previa.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    icon: User,
+    title: "Posicionamiento en la camilla",
+    description:
+      "Te recostarás boca arriba, con el cuello levemente extendido. El médico aplicará un gel conductor para deslizar el transductor suavemente sobre la piel.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    icon: Search,
+    title: "Exploración de estructuras clave",
+    description:
+      "Se analizan ganglios, glándulas salivales, vasos y tejidos blandos del cuello. El estudio permite detectar inflamaciones, masas o alteraciones que pasan desapercibidas en una exploración física.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    icon: Users,
+    title: "Interpretación de resultados en conjunto",
+    description:
+      "Dos radiólogos revisan las imágenes, lo que brinda mayor certeza diagnóstica.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    icon: FileText,
+    title: "Resultados inmediatos",
+    description:
+      "En pocos minutos tendrás tu informe escrito y las imágenes, listos para compartir con tu médico.",
+    color: "from-pink-500 to-pink-600",
+  },
+];
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿Qué descarta un ultrasonido de cuello?",
+    answer:
+      "El ultrasonido de cuello no solo ayuda a detectar alteraciones, también permite descartar preocupaciones frecuentes. Un estudio normal puede descartar la presencia de masas sólidas, quistes, abscesos o inflamaciones evidentes en ganglios linfáticos y glándulas salivales. Además, da tranquilidad al confirmar que las estructuras exploradas tienen un aspecto habitual.",
+  },
+  {
+    id: 2,
+    question: "¿Es seguro el ultrasonido de cuello en niños y embarazadas?",
+    answer:
+      "Sí, es completamente seguro. El ultrasonido utiliza ondas sonoras, las cuales no son radiactivas, lo que lo hace apropiado para todas las edades, incluyendo niños pequeños y mujeres embarazadas. Por eso se considera un examen de primera elección en pediatría y en obstetricia.",
+  },
+  {
+    id: 3,
+    question: "¿Qué significa que mi ecografía de cuello salió “normal”?",
+    answer:
+      "Un resultado “normal” en una ecografía de cuello significa que las estructuras estudiadas se ven dentro de los parámetros habituales, es decir, sin masas, sin inflamaciones y con un aspecto homogéneo. En términos sencillos, no se encontró ninguna alteración relevante en el examen.",
+  },
+  {
+    id: 4,
+    question: "¿Por qué mi médico me pidió este estudio si no tengo bultos visibles?",
+    answer:
+      "En ocasiones, los cambios internos no se manifiestan con un bulto palpable. El médico puede solicitarte un ultrasonido de cuello para investigar síntomas como dolor, molestias al tragar, sensación de presión, alteración de laboratorios o antecedentes clínicos que sugieren un problema oculto. También puede ser parte de un control preventivo, sobre todo en pacientes con antecedentes familiares de enfermedades en cuello o cabeza.",
+  },
+  {
+    id: 5,
+    question: "¿El ultrasonido de cuello puede guiar procedimientos médicos?",
+    answer:
+      "Sí. Además de ser una herramienta diagnóstica, el ultrasonido de cuello se utiliza como guía en procedimientos mínimamente invasivos. Por ejemplo, puede dirigir una biopsia de ganglios o masas para obtener una muestra precisa, o apoyar el drenaje de colecciones líquidas.",
+  },
+];
+
+const timeEstimate = "15 a 20 minutos";
+const heading = "¿Cómo es un Ultrasonido de Cuello en DeltaScan?";
+
+// ── SEO/OG específicos para el Layout (sin cambiar textos del contenido)
+const pageTitle = "Ultrasonido de Cuello en Guatemala | DeltaScan";
+const pageDescription =
+  "Ecografía de cuello con radiólogos especialistas. Resultados el mismo día. Evaluación de ganglios, glándulas salivales, vasos y tejidos blandos con equipo moderno y atención humana.";
+const pageUrl = "https://www.deltascan.gt/cuello";
+const pageOgImage = "/og/ultrasonidodecuello.webp"; // 1200×630 recomendado
+
+// HowTo JSON-LD derivado de los steps (sin modificar textos)
+const howToData = {
+  name: heading,
+  steps: steps.map((s) => ({ name: s.title, text: s.description })),
+};
+
+// Schema extra: Service de esta página
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Ultrasonido de Cuello",
+    serviceType: "Diagnóstico por imagen",
+    url: pageUrl,
+    areaServed: "GT",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+      availableLanguage: ["es"],
+    },
+    provider: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  faqData={faqData}
+  howToData={howToData}
+  schemaExtra={schemaExtra}
+  dateModified={lastUpdatedISO}
+>
+  <Header />
+
+  <main class="bg-gradient-to-br from-pink-600 to-pink-700">
+    <BreadCrumb crumbs={crumbs} color="pink" />
+    <HeroSection />
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
+    <WhatIs />
+    <Cases />
+    <WhatDetects />
+    <WhatEvaluates />
+    <WhyDeltaScan />
+    <HowItIs steps={steps} timeEstimate={timeEstimate} heading={heading} />
+    <Preparation />
+    <Limitations />
+    <Results />
+    <CTA
+      title="Reserva ahora tu Ultrasonido de Cuello"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos de Cuello"
+      description="Encuentra respuestas a las preguntas más comunes sobre ecografías de cuello"
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

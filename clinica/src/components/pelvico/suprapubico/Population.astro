@@ -1,0 +1,69 @@
+---
+import { Users, Heart, Baby, Shield } from "@lucide/astro";
+const populations = [
+    {
+      icon: Users,
+      title: "Niñas y adolescentes",
+      description: "Especialmente útil para quienes aún no han iniciado vida sexual",
+    },
+    {
+      icon: Heart,
+      title: "Dolor pélvico",
+      description: "Ideal para pacientes con molestias en la zona pélvica",
+    },
+    {
+      icon: Baby,
+      title: "Control de embarazo",
+      description: "Seguimiento durante las primeras etapas del embarazo",
+    },
+    {
+      icon: Shield,
+      title: "Patologías ginecológicas",
+      description: "Cuando se requiere descartar condiciones ginecológicas frecuentes",
+    },
+  ]
+---
+<section class="bg-white py-16 md:py-24">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-balance"
+      >
+        ¿Para qué población se recomienda este estudio?
+      </h2>
+      <p
+        class="text-xl text-gray-600 leading-relaxed text-pretty max-w-4xl mx-auto"
+      >
+        El suprapúbico es especialmente útil en niñas, adolescentes y mujeres
+        que aún no han iniciado vida sexual, ya que ofrece información clara sin
+        necesidad de métodos un poco más invasivos, como el ultrasonido
+        endovaginal.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      {
+        populations.map((pop, index) => (
+          <div key={index} class="bg-pink-50 rounded-2xl p-6 text-center">
+            <div class="w-16 h-16 bg-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <pop.icon class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">{pop.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              {pop.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="text-center">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center gap-3 bg-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-700 transition-colors"
+      >
+        Agenda tu cita
+    </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,87 @@
+---
+import { FileText, ImageIcon, MessageCircle, ArrowRight, Phone } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 text-balance"
+      >
+        Entrega de Resultados
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+      <div class="space-y-8">
+        <div class="flex items-start gap-6">
+          <div
+            class="bg-pink-500 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+          >
+            <FileText class="w-7 h-7 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Resultados el mismo día
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-pretty">
+              Te entregamos los resultados el mismo día del estudio, acompañados
+              de imágenes digitales.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-6">
+          <div
+            class="bg-pink-500 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+          >
+            <MessageCircle class="w-7 h-7 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Explicación clara
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-pretty">
+              Te explicamos los hallazgos de manera clara, resaltando lo que es
+              normal y lo que requiere seguimiento.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-6">
+          <div
+            class="bg-pink-500 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+          >
+            <ImageIcon class="w-7 h-7 text-white" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Imágenes digitales incluidas
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-pretty">
+              Con este informe, tu médico tratante podrá decidir los siguientes
+              pasos: observación, tratamiento o exámenes complementarios.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-pink-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-balance">
+          ¿Tienes síntomas o necesitas un chequeo?
+        </h3>
+        <p class="text-xl text-pink-100 mb-8 text-pretty">
+          Agenda tu ultrasonido de cuello y obtén respuestas claras
+        </p>
+        <button
+          class="inline-flex items-center gap-3 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-50 transition-colors group"
+        >
+          <Phone class="w-5 h-5" />
+          Agenda tu cita
+          <ArrowRight
+            class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

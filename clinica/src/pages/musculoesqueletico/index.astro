@@ -1,17 +1,23 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/common/Header.astro";
-import Footer from "@/components/common/Footer.astro";
-import HeroSection from "@/components/musculoesqueletico/HeroSection.astro";
-import WhatIs from "@/components/musculoesqueletico/WhatIs.astro";
-import HowItIs from "@/components/common/HowItIs.astro";
-import Pathologies from "@/components/musculoesqueletico/Pathologies.astro";
-import WhyDeltaScan from "@/components/musculoesqueletico/WhyDeltaScan.astro"
-import Advantages from "@/components/musculoesqueletico/Advantages.astro";
-import Results from "@/components/musculoesqueletico/Results.astro";
-import Preparation from "@/components/musculoesqueletico/Preparation.astro";
-import CTA from "@/components/common/CTA.astro";
-import FAQ from "@/components/common/FAQ.astro";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
+import HeroSection from "../../components/musculoesqueletico/HeroSection.astro";
+import WhatIs from "../../components/musculoesqueletico/WhatIs.astro";
+import HowItIs from "../../components/common/HowItIs.astro";
+import Pathologies from "../../components/musculoesqueletico/Pathologies.astro";
+import WhyDeltaScan from "../../components/musculoesqueletico/WhyDeltaScan.astro"
+import Advantages from "../../components/musculoesqueletico/Advantages.astro";
+import Results from "../../components/musculoesqueletico/Results.astro";
+import Preparation from "../../components/musculoesqueletico/Preparation.astro";
+import CTA from "../../components/common/CTA.astro";
+import FAQ from "../../components/common/FAQ.astro";
+import BreadCrumb from "../../components/common/BreadCrumb.astro";
+import MedApprove from "../../components/common/MedApprove.astro";
+
+const crumbs = [
+  { label: "Ultrasonido Musculoesquelético", href: "/musculoesqueletico" }
+];
 
 import {
   Bed,
@@ -20,6 +26,7 @@ import {
   FileText,
   FolderOpen,
 } from "@lucide/astro";
+
 const steps = [
   {
     number: 1,
@@ -97,18 +104,63 @@ const faqData = [
   },
 ];
 const timeEstimate="30 a 45 minutos";
-const heading="¿Cómo es un Ultrasonido Musculoesquelético en DeltaScan?"
+const heading="¿Cómo es un Ultrasonido Musculoesquelético en DeltaScan?";
+
+// ── SEO/OG específicos para el Layout
+const pageTitle = "Ultrasonido Musculoesquelético en Guatemala | DeltaScan";
+const pageDescription =
+  "Ecografía musculoesquelética con radiólogos especialistas. Resultados el mismo día. Preparación guiada, equipo moderno y atención humana.";
+const pageUrl = "https://www.deltascan.gt/musculoesqueletico";
+const pageOgImage = "/og/ultrasonidomusculoesqueletico.webp"; // 1200×630 recomendado
+
+// HowTo JSON-LD derivado de los steps (sin modificar textos)
+const howToData = {
+  name: heading,
+  steps: steps.map((s) => ({ name: s.title, text: s.description })),
+};
+
+// Schema extra: Service de esta página
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Ultrasonido Musculoesquelético",
+    serviceType: "Diagnóstico por imagen",
+    url: pageUrl,
+    areaServed: "GT",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+      availableLanguage: ["es"],
+    },
+    provider: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
 ---
 
 <Layout
-  title="Terrarios para reptiles | EcoRefugio"
-  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
-  url="https://ecorefugio.com/"
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  faqData={faqData}
+  howToData={howToData}
+  schemaExtra={schemaExtra}
+  dateModified={lastUpdatedISO}
 >
   <Header />
 
-  <main>
+  <main class="bg-gradient-to-br from-pink-600 to-pink-700">
+    <BreadCrumb 
+      crumbs={crumbs}
+      color="pink"
+    />
     <HeroSection />
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
     <WhatIs />
     <Pathologies />
     <WhyDeltaScan />

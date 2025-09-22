@@ -1,0 +1,41 @@
+---
+import { GraduationCap, Award } from "@lucide/astro";
+---
+<div class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Formación y Certificaciones</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Formación académica sólida con reconocimientos de excelencia
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+            <div class="flex items-start gap-4">
+              <div class="bg-pink-700 text-white p-3 rounded-lg">
+                <GraduationCap class="w-6 h-6" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Médico y Cirujano</h3>
+                <p class="text-pink-700 font-medium mb-2">Universidad de San Carlos de Guatemala (USAC)</p>
+                <p class="text-gray-600">2010</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+            <div class="flex items-start gap-4">
+              <div class="bg-pink-700 text-white p-3 rounded-lg">
+                <Award class="w-6 h-6" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Maestría en Ciencias Médicas</h3>
+                <p class="text-pink-700 font-medium mb-2">Especialidad en Radiología e Imágenes Diagnósticas</p>
+                <p class="text-gray-600">USAC, 2015 (Cum Laude)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

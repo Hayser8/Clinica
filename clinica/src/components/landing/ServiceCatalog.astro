@@ -8,11 +8,12 @@ import {
   User,
   Shield,
   Users,
-  BabyIcon as Kidney,
+  Droplet as Kidney,
   LeafIcon as Liver,
   TestTube,
   Syringe,
   ArrowRight,
+  Stethoscope,
 } from "@lucide/astro";
 
 const services = [
@@ -93,6 +94,13 @@ const services = [
       "No utiliza radiación ionizante y se utiliza para evaluar “bultos” o nódulos detectados durante un examen físico rutinario u otros exámenes por imágenes.",
     href: "/tiroideo",
   },
+  {
+  icon: Stethoscope,
+  title: "Ultrasonido de Cuello",
+  description:
+    "Evalúa ganglios linfáticos, glándulas salivales, tiroides, vasos y tejidos blandos del cuello para detectar inflamaciones, quistes o masas.",
+  href: "/cuello",
+}
 ];
 ---
 
@@ -152,11 +160,12 @@ const services = [
           Llámanos y te ayudaremos a elegir el estudio adecuado para ti.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
+          <a
+            href="/hacer-cita"
             class="bg-white text-pink-600 px-8 py-3 rounded-xl font-semibold hover:bg-pink-50 transition-colors"
           >
             Contactar Especialista
-          </button>
+        </a>
         </div>
       </div>
     </div>

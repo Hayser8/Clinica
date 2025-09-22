@@ -1,9 +1,21 @@
 ---
 import { Heart, Smile, Clock, Shield, ThumbsUp } from "@lucide/astro";
 const comfortFeatures = [
-  { icon: Shield, text: "Anestesia local", description: "Adormecemos completamente la zona" },
-  { icon: Clock,  text: "Procedimiento rápido", description: "Solo toma 15-30 minutos" },
-  { icon: ThumbsUp, text: "Mínima molestia", description: "Similar a una inyección común" },
+  {
+    icon: Shield,
+    text: "Anestesia local",
+    description: "Adormecemos completamente la zona",
+  },
+  {
+    icon: Clock,
+    text: "Procedimiento rápido",
+    description: "Solo toma 15-30 minutos",
+  },
+  {
+    icon: ThumbsUp,
+    text: "Mínima molestia",
+    description: "Similar a una inyección común",
+  },
 ];
 ---
 
@@ -63,11 +75,12 @@ const comfortFeatures = [
 
         {/* CTA: full en mobile, centrado en desktop */}
         <div class="flex justify-start md:justify-center">
-          <button
+          <a
+            href="/hacer-cita"
             class="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-600 to-pink-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-pink-700 hover:to-pink-800 transition-all shadow-lg"
           >
             Agenda tu cita
-          </button>
+          </a>
         </div>
       </div>
     </div>

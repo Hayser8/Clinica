@@ -1,0 +1,98 @@
+---
+import { Zap, Shield, Eye, Clock } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-600 rounded-full px-4 py-2 text-sm font-medium mb-6"
+      >
+        <div class="w-2 h-2 bg-pink-600 rounded-full"></div>
+        Tecnología médica avanzada
+      </div>
+      <h2
+        class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 text-balance"
+      >
+        ¿Qué es el ultrasonido prostático suprapúbico?
+      </h2>
+    </div>
+
+    <div class="bg-pink-50 rounded-3xl p-8 md:p-12 mb-16">
+      <div class="flex items-start gap-6">
+        <div class="bg-pink-600 rounded-2xl p-4 flex-shrink-0">
+          <Zap class="w-8 h-8 text-white" />
+        </div>
+        <div class="space-y-4">
+          <p
+            class="text-lg md:text-xl text-gray-700 leading-relaxed text-pretty"
+          >
+            Es un estudio diagnóstico no invasivo que permite observar la
+            próstata y la vejiga a través de la parte baja del abdomen. A
+            diferencia de otros métodos, se realiza colocando el transductor
+            sobre la piel, con la vejiga llena, para obtener imágenes claras y
+            en tiempo real.
+          </p>
+          <div class="flex flex-wrap gap-6 text-pink-600 font-medium">
+            <div class="flex items-center gap-2">
+              <Shield class="w-4 h-4" />
+              100% Seguro
+            </div>
+            <div class="flex items-center gap-2">
+              <Eye class="w-4 h-4" />
+              Sin dolor
+            </div>
+            <div class="flex items-center gap-2">
+              <Clock class="w-4 h-4" />
+              Resultados inmediatos
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div
+        class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="bg-pink-600 rounded-2xl p-4 w-fit mb-6">
+          <Eye class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">
+          Imágenes en tiempo real
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          Visualización inmediata de la próstata y estructuras urinarias
+        </p>
+        <div class="w-12 h-1 bg-pink-600 rounded-full mt-6"></div>
+      </div>
+
+      <div
+        class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="bg-pink-600 rounded-2xl p-4 w-fit mb-6">
+          <Shield class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Sin radiación</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Procedimiento seguro y no invasivo
+        </p>
+        <div class="w-12 h-1 bg-pink-600 rounded-full mt-6"></div>
+      </div>
+
+      <div
+        class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="bg-pink-600 rounded-2xl p-4 w-fit mb-6">
+          <Clock class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">
+          Evaluación completa
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          Tamaño, forma, textura y funcionamiento renal
+        </p>
+        <div class="w-12 h-1 bg-pink-600 rounded-full mt-6"></div>
+      </div>
+    </div>
+  </div>
+</section>

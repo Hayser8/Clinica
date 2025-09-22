@@ -1,0 +1,194 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/common/Header.astro";
+import Footer from "../../../components/common/Footer.astro";
+import HeroSection from "../../../components/pelvico/suprapubico/HeroSection.astro";
+import HowItIs from "../../../components/common/HowItIs.astro";
+import WhatIs from "../../../components/pelvico/suprapubico/WhatIs.astro";
+import WhatDetects from "../../../components/pelvico/suprapubico/WhatDetects.astro";
+import Organs from "../../../components/pelvico/suprapubico/Organs.astro";
+import WhyDeltaScan from "../../../components/pelvico/suprapubico/WhyDeltaScan.astro";
+import Preparation from "../../../components/pelvico/suprapubico/Preparation.astro";
+import Population from "../../../components/pelvico/suprapubico/Population.astro";
+import Safety from "../../../components/pelvico/suprapubico/Safety.astro";
+import Results from "../../../components/pelvico/suprapubico/Results.astro";
+import CTA from "../../../components/common/CTA.astro";
+import FAQ from "../../../components/common/FAQ.astro";
+import MedApprove from "../../../components/common/MedApprove.astro";
+import {
+  Calendar,
+  Bed,
+  Search,
+  FileText,
+  Clock,
+} from "@lucide/astro";
+import BreadCrumb from "../../../components/common/BreadCrumb.astro";
+
+const crumbs = [
+  { label: "Ultrasonido Pélvico", href: "/pelvico" },
+  { label: "Ultrasonido Pélvico Suprapúbico", href: "/pelvico/suprapubico" },
+];
+
+const steps = [
+  {
+    number: 1,
+    icon: Calendar,
+    title: "Agenda tu cita fácilmente",
+    description:
+      "Llámanos al 2448-1110 o envíanos un mensaje por WhatsApp al 4565-0865. Te daremos horarios flexibles para que encaje en tu rutina.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 2,
+    icon: Bed,
+    title: "Posicionamiento en la camilla",
+    description:
+      "Te recostarás boca arriba mientras aplicamos un gel transparente en el abdomen bajo. Luego, desplazaremos suavemente el transductor sobre la piel para obtener imágenes en tiempo real.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 3,
+    icon: Search,
+    title: "Exploración de órganos clave",
+    description:
+      "El examen permite observar con nitidez útero, ovarios y vejiga. Dependiendo de la indicación, también evaluamos líquido libre en la pelvis o alteraciones de flujo sanguíneo con apoyo de Doppler.",
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    number: 4,
+    icon: FileText,
+    title: "Interpretación conjunta de resultados",
+    description:
+      "Al finalizar, analizaremos las imágenes y elaboraremos un informe detallado, lo que se traduce en un diagnóstico más completo y confiable.",
+    color: "from-pink-600 to-pink-700",
+  },
+  {
+    number: 5,
+    icon: Clock,
+    title: "Resultados inmediatos",
+    description:
+      "Recibirás tu reporte el mismo día, junto con las imágenes listas para compartir con tu médico y continuar tu tratamiento.",
+    color: "from-pink-500 to-pink-600",
+  },
+];
+
+const faqData = [
+  {
+    id: 1,
+    question: "¿El ultrasonido pélvico suprapúbico puede hacerse durante la menstruación?",
+    answer:
+      "Sí, el examen puede realizarse aunque estés con tu período. En muchos casos incluso resulta útil, porque permite observar el grosor del endometrio y el comportamiento del ciclo. Lo importante es que vengas tranquila ya que el sangrado no interfiere con la obtención de imágenes y tampoco afecta la seguridad del procedimiento.",
+  },
+  {
+    id: 2,
+    question: "¿Es normal sentir presión o incomodidad durante el estudio?",
+    answer:
+      "Lo más común es sentir una ligera presión en la parte baja del abdomen, sobre todo porque la vejiga debe estar llena para mejorar la calidad de las imágenes. No es doloroso ni invasivo, pero sí puede resultar un poco incómodo.",
+  },
+  {
+    id: 3,
+    question: "¿Puede un ultrasonido suprapúbico detectar embarazo?",
+    answer:
+      "El estudio puede mostrar signos tempranos de embarazo y ayudar a confirmar su evolución en las primeras semanas. Sin embargo, muchas veces se complementa con un ultrasonido transvaginal para obtener más detalle en etapas iniciales.",
+  },
+  {
+    id: 4,
+    question: "¿Con qué frecuencia se recomienda realizar un ultrasonido pélvico?",
+    answer:
+      "No existe una frecuencia estándar para todas las personas ya que depende de tus síntomas, tu edad y lo que tu médico tratante quiera evaluar. Puede ser parte de un chequeo anual, de un control de fertilidad o de la vigilancia de una condición previamente diagnosticada.",
+  },
+  {
+    id: 5,
+    question: "¿El ultrasonido pélvico suprapúbico puede detectar cáncer?",
+    answer:
+      "El ultrasonido puede mostrar masas, quistes o alteraciones sospechosas, pero no confirma por sí solo un diagnóstico de cáncer. Su verdadero valor es servir como alerta temprana ya que permite identificar algo que requiere estudios adicionales, como resonancia, tomografía o biopsia.",
+  },
+  {
+    id: 6,
+    question: "¿Qué pasa si no llego con la vejiga llena?",
+    answer:
+      "La vejiga llena funciona como una especie de “ventana” que permite ver con mayor nitidez los órganos pélvicos. Si llegas sin suficiente líquido, la imagen puede no ser clara y en algunos casos será necesario esperar, beber más agua y repetir la toma. Es un detalle sencillo, pero clave para obtener un estudio útil y completo.",
+  },
+];
+
+const timeEstimate = "15 a 20 minutos";
+const heading = "¿Cómo es un Ultrasonido Pélvico Suprapúbico en DeltaScan?";
+
+// ── SEO/OG para pasar al Layout
+const pageTitle = "Ultrasonido Pélvico Suprapúbico en Guatemala | DeltaScan";
+const pageDescription =
+  "Ecografía pélvica suprapúbica con radiólogos especialistas. Resultados el mismo día. Preparación sencilla, equipo moderno y atención humana.";
+const pageUrl = "https://www.deltascan.gt/pelvico/suprapubico";
+const pageOgImage = "/og/ultrasonidosuprapubico.webp"; // 1200×630 recomendado
+
+// HowTo JSON-LD desde los pasos (sin modificar textos)
+const howToData = {
+  name: heading,
+  steps: steps.map((s) => ({ name: s.title, text: s.description })),
+};
+
+// Schema extra: Service de esta página
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Ultrasonido Pélvico Suprapúbico",
+    serviceType: "Diagnóstico por imagen",
+    url: pageUrl,
+    areaServed: "GT",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+      availableLanguage: ["es"],
+    },
+    provider: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  faqData={faqData}
+  howToData={howToData}
+  schemaExtra={schemaExtra}
+  dateModified={lastUpdatedISO}
+>
+  <Header />
+
+  <main class="bg-pink-600">
+    <BreadCrumb crumbs={crumbs} color="pink" />
+    <HeroSection />
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
+    <WhatIs />
+    <WhatDetects />
+    <Organs />
+    <WhyDeltaScan />
+    <HowItIs 
+      steps={steps}
+      timeEstimate={timeEstimate}
+      heading={heading}
+    />
+    <Preparation />
+    <Population />
+    <Safety />
+    <Results />
+    <CTA
+      title="Reserva ahora tu Ultrasonido Pélvico Suprapúbico"
+      subtitle="y resuelve todas tus dudas con nuestros especialistas"
+    />
+    <FAQ
+      title="Preguntas Frecuentes sobre Ultrasonidos Pélvicos Suprapúbicos"
+      description="Encuentra respuestas a las preguntas más comunes sobre ecografías pélvicas suprapúbicas."
+      faqData={faqData}
+    />
+  </main>
+
+  <Footer />
+</Layout>

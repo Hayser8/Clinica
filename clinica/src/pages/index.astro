@@ -1,30 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from "@/components/common/Header.astro";
-import Footer from "@/components/common/Footer.astro";
-import HeroSection from "@/components/landing/HeroSection.astro";
-import WhatIs from "@/components/landing/WhatIs.astro";
-import Specialists from "@/components/landing/Specialists.astro";
-import FeaturedService from "@/components/landing/FeaturedService.astro";
-import WhyUs from "@/components/landing/WhyUs.astro";
-import Applications from "@/components/landing/Applications.astro";
-import ServiceCatalog from "@/components/landing/ServiceCatalog.astro";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import HeroSection from "../components/landing/HeroSection.astro";
+import WhatIs from "../components/landing/WhatIs.astro";
+import Specialists from "../components/landing/Specialists.astro";
+import FeaturedService from "../components/landing/FeaturedService.astro";
+import WhyUs from "../components/landing/WhyUs.astro";
+import Applications from "../components/landing/Applications.astro";
+import ServiceCatalog from "../components/landing/ServiceCatalog.astro";
+import MedApprove from "../components/common/MedApprove.astro";
+
+
+// ── SEO/OG para la home (solo props necesarios para Layout)
+const pageTitle = "Clínica de Ultrasonido en Guatemala | DeltaScan";
+const pageDescription =
+  "Ultrasonidos con radiólogos especialistas. Resultados el mismo día, atención humana y equipo moderno para un diagnóstico claro y confiable.";
+const pageUrl = "https://www.deltascan.gt/";
+const pageOgImage = "/og/home.webp"; // 1200×630 recomendado
+
+// Schema extra para la home: definimos la entidad principal del sitio
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "@id": "https://www.deltascan.gt/#clinic",
+    name: "DeltaScan",
+    url: "https://www.deltascan.gt/",
+    areaServed: "GT",
+    availableLanguage: ["es"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.deltascan.gt/#website",
+    url: "https://www.deltascan.gt/",
+    name: "DeltaScan",
+    inLanguage: "es",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.deltascan.gt/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+];
+
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
 ---
+
 <Layout
-  title="Terrarios para reptiles | EcoRefugio"
-  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
-  url="https://ecorefugio.com/"
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  schemaExtra={schemaExtra}
 >
   <Header />
 
   <main>
-	<HeroSection />
-	<WhatIs />
-	<Specialists />
-	<FeaturedService />
-	<WhyUs />
-	<Applications />
-	<ServiceCatalog />
+    <HeroSection />
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
+    <WhatIs />
+    <Specialists />
+    <FeaturedService />
+    <WhyUs />
+    <Applications />
+    <ServiceCatalog />
   </main>
 
   <Footer />

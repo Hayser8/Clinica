@@ -1,0 +1,75 @@
+---
+// src/components/common/BreadCrumb.astro
+import { ChevronRight } from "@lucide/astro";
+
+interface Crumb { label: string; href?: string }
+interface Props { crumbs?: Crumb[]; color?: string }
+
+const { crumbs = [], color = "green" } = Astro.props as Props;
+---
+<nav class="w-full" aria-label="Breadcrumb">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+
+    {/** ===== MOBILE: apilado, limpio y alineado ===== */}
+    <ol class="sm:hidden bg-white rounded-xl border border-gray-200 px-4 py-3 shadow-sm text-[15px]">
+      {/* Inicio */}
+      <li class="grid grid-cols-[1rem_auto] items-start gap-2 py-1">
+        <ChevronRight class="w-4 h-4 text-gray-300 mt-1 shrink-0" />
+        <a
+          href="/"
+          class={`text-${color}-600 hover:text-${color}-700 font-semibold leading-tight break-words`}
+        >
+          Inicio
+        </a>
+      </li>
+
+      {/* Resto de crumbs */}
+      {crumbs.map((item, index) => (
+        <li class="grid grid-cols-[1rem_auto] items-start gap-2 py-1" key={index}>
+          <ChevronRight class="w-4 h-4 text-gray-300 mt-1 shrink-0" />
+          <div class="leading-tight break-words border-l border-gray-200 pl-3">
+            {item.href && index < crumbs.length - 1 ? (
+              <a
+                href={item.href}
+                class={`text-${color}-600 hover:text-${color}-700 font-medium`}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <span class="text-gray-700" aria-current="page">
+                {item.label}
+              </span>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    {/** ===== DESKTOP/TABLET: en línea ===== */}
+    <ol class="hidden sm:flex items-center gap-1 text-sm bg-white rounded-lg border border-gray-200 px-4 py-3 shadow-sm">
+      <li class="shrink-0">
+        <a href="/" class={`text-${color}-600 hover:text-${color}-700 font-medium transition-colors`}>
+          Inicio
+        </a>
+      </li>
+
+      {crumbs.map((item, index) => (
+        <li class="flex items-center min-w-0" key={index}>
+          <ChevronRight class="w-4 h-4 text-gray-400 mx-3 shrink-0" />
+          {item.href && index < crumbs.length - 1 ? (
+            <a
+              href={item.href}
+              class={`text-${color}-600 hover:text-${color}-700 font-medium transition-colors break-words`}
+            >
+              {item.label}
+            </a>
+          ) : (
+            <span class="text-gray-700 break-words" aria-current="page">
+              {item.label}
+            </span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>

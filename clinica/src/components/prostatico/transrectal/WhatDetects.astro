@@ -1,0 +1,90 @@
+---
+import { Search, AlertTriangle, Droplets, Gem, Target, Activity, TrendingUp, Phone } from "@lucide/astro";
+const detections = [
+  {
+    icon: Search,
+    title: "Agrandamiento prostático",
+    description: "Identifica hiperplasia benigna y cambios en el tamaño de la glándula",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Inflamación",
+    description: "Detecta procesos inflamatorios en la próstata (prostatitis)",
+  },
+  {
+    icon: Droplets,
+    title: "Quistes y líquidos",
+    description: "Visualiza quistes prostáticos y acumulaciones de líquido",
+  },
+  {
+    icon: Gem,
+    title: "Cálculos prostáticos",
+    description: "Identifica depósitos minerales dentro de la glándula",
+  },
+  {
+    icon: Target,
+    title: "Masas sospechosas",
+    description: "Detecta áreas anómalas que requieren evaluación adicional",
+  },
+  {
+    icon: Activity,
+    title: "Monitoreo continuo",
+    description: "Seguimiento de enfermedades ya diagnosticadas",
+  },
+];
+---
+
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-balance">
+        ¿Qué detecta una ecografía prostática transrectal?
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto text-pretty">
+        Un TRUS puede identificar cambios en la glándula prostática como agrandamiento, inflamación, quistes,
+        cálculos o masas sospechosas con gran precisión.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      {detections.map((item, index) => (
+        <div key={index} class="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+          <div class="bg-pink-500 rounded-2xl p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <item.icon class="w-8 h-8 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
+          <p class="text-gray-600 leading-relaxed">{item.description}</p>
+          <div class="w-12 h-1 bg-pink-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-pink-50 rounded-2xl p-8 border border-pink-100">
+      <div class="flex items-start gap-4">
+        <div class="bg-pink-500 rounded-xl p-3 flex-shrink-0">
+          <TrendingUp class="w-6 h-6 text-white" />
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Diagnóstico de cáncer prostático</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Es clave en el diagnóstico inicial de cáncer de próstata, ya que permite visualizar áreas que necesitan
+            mayor estudio y guiar biopsias con precisión. Además, ayuda a monitorear la evolución de enfermedades ya
+            diagnosticadas.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-pink-600 text-white hover:bg-pink-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 whitespace-nowrap"
+        aria-label="Agenda tu Cita"
+      >
+        <Phone class="w-5 h-5" />
+        Agenda tu Cita
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,18 +1,25 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/common/Header.astro";
-import Footer from "@/components/common/Footer.astro";
-import HeroSection from "@/components/mamaria/HeroSection.astro";
-import WhatIs from "@/components/mamaria/WhatIs.astro";
-import WhatIsUsedFor from "@/components/mamaria/WhatIsUsedFor.astro";
-import WhoShouldGetIt from "@/components/mamaria/WhoShouldGetIt.astro";
-import WhyDeltaScan from "@/components/mamaria/WhyDeltaScan.astro";
-import HowItIs from "@/components/common/HowItIs.astro";
-import Anomalies from "@/components/mamaria/Anomalies.astro";
-import Safety from "@/components/mamaria/Safety.astro";
-import Preparation from "@/components/mamaria/Preparation.astro";
-import CTA from "@/components/common/CTA.astro";
-import FAQ from "@/components/common/FAQ.astro";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
+import HeroSection from "../../components/mamaria/HeroSection.astro";
+import WhatIs from "../../components/mamaria/WhatIs.astro";
+import WhatIsUsedFor from "../../components/mamaria/WhatIsUsedFor.astro";
+import WhoShouldGetIt from "../../components/mamaria/WhoShouldGetIt.astro";
+import WhyDeltaScan from "../../components/mamaria/WhyDeltaScan.astro";
+import HowItIs from "../../components/common/HowItIs.astro";
+import Anomalies from "../../components/mamaria/Anomalies.astro";
+import Safety from "../../components/mamaria/Safety.astro";
+import Preparation from "../../components/mamaria/Preparation.astro";
+import CTA from "../../components/common/CTA.astro";
+import FAQ from "../../components/common/FAQ.astro";
+import BreadCrumb from "../../components/common/BreadCrumb.astro";
+import MedApprove from "../../components/common/MedApprove.astro";
+
+const crumbs = [
+  { label: "Ultrasonido Mamario", href: "/mamaria" }
+];
+
 import {
   Phone,
   User,
@@ -111,18 +118,63 @@ const faqData = [
   },
 ];
 const timeEstimate = "20 a 30 minutos";
-const heading ="¿Cómo es un ultrasonido mamario en DeltaScan?"
+const heading ="¿Cómo es un ultrasonido mamario en DeltaScan?";
+
+// ── SEO/OG específicos de la página (solo para el Layout)
+const pageTitle = "Ultrasonido Mamario en Guatemala | DeltaScan";
+const pageDescription =
+  "Ecografía mamaria con radiólogos especialistas. Resultados el mismo día. Preparación guiada, equipo moderno y atención humana.";
+const pageUrl = "https://www.deltascan.gt/mamaria";
+const pageOgImage = "/og/ultrasonidomamario.webp"; // 1200×630 recomendado
+
+// HowTo JSON-LD derivado de los steps (sin modificar textos)
+const howToData = {
+  name: heading,
+  steps: steps.map((s) => ({ name: s.title, text: s.description })),
+};
+
+// Schema extra: Service de esta página
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Ultrasonido Mamario",
+    serviceType: "Diagnóstico por imagen",
+    url: pageUrl,
+    areaServed: "GT",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl,
+      availableLanguage: ["es"],
+    },
+    provider: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+const lastUpdatedHuman = "22 de septiembre de 2025";
+const lastUpdatedISO = new Date("2025-09-22").toISOString()
 ---
 
 <Layout
-  title="Terrarios para reptiles | EcoRefugio"
-  description="Terrarios premium con higrómetro y termómetro integrados, cierre magnético ultra seguro, entre otros accesorios. Recorre las mejores guías y comparativas para elegir el tuyo."
-  url="https://ecorefugio.com/"
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  faqData={faqData}
+  howToData={howToData}
+  schemaExtra={schemaExtra}
+  dateModified={lastUpdatedISO}
 >
   <Header />
 
-  <main>
+  <main class="bg-gradient-to-br from-pink-600 to-pink-700">
+    <BreadCrumb 
+      crumbs={crumbs}
+      color="pink"
+    />
     <HeroSection />
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
     <WhatIs />
     <WhatIsUsedFor />
     <WhoShouldGetIt />

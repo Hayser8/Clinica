@@ -1,0 +1,88 @@
+---
+// src/components/LegalNotice.astro
+// Uso: import LegalNotice from "@/components/LegalNotice.astro"; <LegalNotice />
+
+export interface Props {
+  siteOwner?: string;
+  clinicName?: string;
+  address?: string;
+  contactEmail?: string;
+  contactPhone?: string;
+  lastUpdated?: string;
+}
+
+const {
+  siteOwner = "DeltaScan, S.A.",
+  clinicName = "DeltaScan – Clínica de Ultrasonido",
+  address = "Ciudad de Guatemala, Guatemala",
+  contactEmail = "deltascangt@gmail.com",
+  contactPhone = "2448-1110",
+  lastUpdated = "3 de septiembre de 2025",
+} = Astro.props;
+---
+
+<section class="bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-16">
+  <header class="mb-10">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">Aviso Legal / Disclaimer</h1>
+    <p class="mt-2 text-sm text-gray-600">Última actualización: {lastUpdated}</p>
+  </header>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">1. Titular del sitio</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Este sitio es operado por <span class="font-semibold">{siteOwner}</span> en representación de <span class="font-semibold">{clinicName}</span>.
+      Domicilio: {address}. Contacto: <a href={`mailto:${contactEmail}`} class="text-pink-700 underline">{contactEmail}</a>, 
+      Tel: <a href={`tel:${contactPhone}`} class="text-pink-700 underline">{contactPhone}</a>.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">2. Carácter informativo del contenido</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      La información del sitio es de carácter general y educativo. No constituye diagnóstico, prescripción ni
+      asesoría médica. No reemplaza una consulta con profesionales de la salud. Si presentas síntomas, consulta a tu médico.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">3. Relación médico-paciente</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      La navegación en el sitio o el envío de mensajes no crea por sí misma una relación médico-paciente.
+      Esta relación se establece al agendar y presentarte a una cita, con el consentimiento y documentación correspondiente.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">4. Exactitud y actualización</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Procuramos mantener la información actualizada, pero podrían existir errores u omisiones. Nos reservamos el derecho de
+      modificar contenidos sin previo aviso.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">5. Enlaces externos</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Los enlaces a sitios de terceros se brindan como referencia. {clinicName} no controla su contenido ni políticas y no asume
+      responsabilidad por ellos.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-2xl font-semibold text-gray-900">6. Propiedad intelectual</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Los contenidos, marcas y diseños del sitio pertenecen a {clinicName} o a sus titulares autorizados.
+      Se prohíbe su reproducción sin permiso escrito.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-semibold text-gray-900">7. Disponibilidad y seguridad</h2>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      No garantizamos disponibilidad ininterrumpida del sitio. Implementamos medidas razonables de seguridad;
+      sin embargo, ningún sistema es 100% infalible.
+    </p>
+  </section>
+  </div>
+</section>

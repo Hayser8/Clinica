@@ -1,0 +1,57 @@
+---
+import { FileText, Clock, Phone } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 text-balance"
+      >
+        Resultados del estudio
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div
+        class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center"
+      >
+        <div class="bg-pink-600 rounded-2xl p-4 w-fit mx-auto mb-6">
+          <Clock class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Mismo día</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Recibirás tus resultados el mismo día junto con las imágenes digitales
+        </p>
+        <div class="w-12 h-1 bg-pink-600 rounded-full mx-auto mt-6"></div>
+      </div>
+
+      <div
+        class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center"
+      >
+        <div class="bg-pink-600 rounded-2xl p-4 w-fit mx-auto mb-6">
+          <FileText class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">
+          Compartir inmediato
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+          El informe puede compartirse de inmediato con tu médico tratante
+        </p>
+        <div class="w-12 h-1 bg-pink-600 rounded-full mx-auto mt-6"></div>
+      </div>
+
+      <div
+        class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center"
+      >
+        <div class="bg-pink-600 rounded-2xl p-4 w-fit mx-auto mb-6">
+          <Phone class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Soporte disponible</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Estamos disponibles para resolver tus dudas y orientarte
+        </p>
+        <div class="w-12 h-1 bg-pink-600 rounded-full mx-auto mt-6"></div>
+      </div>
+    </div>
+  </div>
+</section>

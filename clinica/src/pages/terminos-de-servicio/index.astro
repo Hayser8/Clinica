@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
+import Content from "../../components/terminosdeservicio/Content.astro";
+
+// ── SEO/OG mínimos + noindex
+const pageTitle = "Términos de Servicio | DeltaScan";
+const pageDescription =
+  "Condiciones de uso de los servicios de DeltaScan: alcances, responsabilidades, limitaciones y vías de contacto.";
+const pageUrl = "https://www.deltascan.gt/terminos-de-servicio";
+const pageOgImage = "/og/terminos-de-servicio.webp"; // 1200×630 recomendado
+
+// Migas (si tu Layout las usa para JSON-LD)
+const crumbs = [{ label: "Términos de Servicio", href: "/terminos-de-servicio" }];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  noindex={true}
+>
+  <Header />
+
+  <main>
+    <Content />
+  </main>
+
+  <Footer />
+</Layout>

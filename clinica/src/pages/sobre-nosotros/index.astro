@@ -1,0 +1,61 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/common/Header.astro";
+import Footer from "../../components/common/Footer.astro";
+import HeroSection from "../../components/sobrenosotros/HeroSection.astro";
+import AboutUs from "../../components/sobrenosotros/AboutUs.astro";
+import MisionVision from "../../components/sobrenosotros/MisionVision.astro";
+import Quality from "../../components/sobrenosotros/Quality.astro";
+import MedTeam from "../../components/sobrenosotros/MedTeam.astro";
+import Values from "../../components/sobrenosotros/Values.astro";
+import BreadCrumb from "../../components/common/BreadCrumb.astro";
+
+const crumbs = [
+  { label: "Sobre Nosotros", href: "/sobre-nosotros" },
+];
+
+// ── SEO/OG específicos de la página (solo para el Layout)
+const pageTitle = "Dra. Berta Coto | Radióloga en Guatemala | DeltaScan";
+const pageDescription =
+  "Profesional Dra. Berta Coto, médico radiólogo en DeltaScan. Formación, certificaciones, experiencia y áreas de enfoque en ultrasonido diagnóstico.";
+const pageUrl = "https://www.deltascan.gt/bertacoto";
+const pageOgImage = "/og/berta-coto.webp"; // 1200×630 recomendado
+
+// Schema extra: perfil de Persona (médico radiólogo)
+const schemaExtra = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${pageUrl}#person`,
+    name: "Dra. Berta Coto",
+    jobTitle: "Médico Radiólogo",
+    medicalSpecialty: "Radiology",
+    url: pageUrl,
+    image: pageOgImage,
+    worksFor: { "@id": "https://www.deltascan.gt/#clinic" },
+  },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  image={pageOgImage}
+  crumbs={crumbs}
+  schemaExtra={schemaExtra}
+>
+  <Header />
+
+  <main class="bg-pink-700">
+    <BreadCrumb crumbs={crumbs} color="pink" />
+    <HeroSection />
+    <AboutUs />
+    <MisionVision />
+    <Quality />
+    <MedTeam />
+    <Values />
+  </main>
+
+  <Footer />
+</Layout>

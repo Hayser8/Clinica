@@ -1,0 +1,103 @@
+---
+import { Search, AlertTriangle, Heart, Shield, Baby, Zap } from "@lucide/astro";
+const detections = [
+  {
+    icon: Search,
+    title: "Quistes ováricos",
+    description: "Detección temprana de quistes simples y complejos",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Fibromas uterinos",
+    description: "Identificación de miomas y su ubicación exacta",
+  },
+  {
+    icon: Zap,
+    title: "Inflamación pélvica",
+    description: "Diagnóstico de procesos inflamatorios en órganos pélvicos",
+  },
+  {
+    icon: Baby,
+    title: "Embarazos ectópicos",
+    description: "Detección precoz de embarazos fuera del útero",
+  },
+  {
+    icon: Shield,
+    title: "Posición del DIU",
+    description: "Verificación de la correcta colocación del dispositivo",
+  },
+  {
+    icon: Heart,
+    title: "Tratamientos de fertilidad",
+    description: "Monitoreo y seguimiento en procesos reproductivos",
+  },
+];
+---
+
+<section class="bg-white py-16 md:py-24">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-12">
+      <div
+        class="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-medium mb-6"
+      >
+        <Search class="w-4 h-4" />
+        Diagnóstico preciso
+      </div>
+      <h2
+        class="text-3xl md:text-4xl font-bold mb-6 text-balance text-gray-900"
+      >
+        ¿Qué detecta un ultrasonido pélvico suprapúbico?
+      </h2>
+      <p
+        class="text-gray-600 text-lg leading-relaxed text-pretty max-w-3xl mx-auto"
+      >
+        Este estudio puede revelar desde hallazgos simples hasta condiciones más
+        complejas, siendo clave en el diagnóstico y tratamiento de diversas
+        patologías ginecológicas.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {
+        detections.map((detection, index) => {
+          const IconComponent = detection.icon;
+          return (
+            <div
+              key={index}
+              class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+            >
+              <div class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center mb-4">
+                <IconComponent class="w-6 h-6 text-white" />
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">
+                {detection.title}
+              </h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                {detection.description}
+              </p>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <div class="bg-pink-600 rounded-3xl p-8 md:p-12 text-center text-white">
+      <h3 class="text-2xl md:text-3xl font-bold mb-4 text-balance">
+        ¿Tienes síntomas o necesitas un chequeo?
+      </h3>
+      <p
+        class="text-pink-100 text-lg leading-relaxed mb-8 text-pretty max-w-2xl mx-auto"
+      >
+        Agenda tu ultrasonido pélvico y obtén respuestas claras sobre tu salud
+        reproductiva
+      </p>
+      <a
+        href="/hacer-cita"
+        class="inline-flex items-center gap-3 bg-white text-pink-600 px-8 py-4 rounded-full font-semibold hover:bg-pink-50 transition-colors"
+      >
+        <Heart class="w-5 h-5" />
+        Agenda tu cita
+    </a>
+    </div>
+  </div>
+</section>

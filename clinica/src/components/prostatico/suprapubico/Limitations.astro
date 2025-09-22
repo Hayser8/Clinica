@@ -1,0 +1,79 @@
+---
+import { Calendar, AlertCircle, Zap } from "@lucide/astro";
+---
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto p-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 text-balance"
+      >
+        Limitaciones del suprapúbico y cuándo se complementa con TRUS o RM
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="flex items-start gap-6">
+            <div class="bg-pink-600 rounded-2xl p-4 flex-shrink-0">
+              <Zap class="w-8 h-8 text-white" />
+            </div>
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold text-gray-900">
+                Ideal como primera evaluación
+              </h3>
+              <p class="text-gray-600 leading-relaxed text-pretty">
+                El ultrasonido suprapúbico es rápido, cómodo y no invasivo,
+                perfecto para una evaluación inicial completa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="flex items-start gap-6">
+            <div class="bg-pink-600 rounded-2xl p-4 flex-shrink-0">
+              <AlertCircle class="w-8 h-8 text-white" />
+            </div>
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold text-gray-900">
+                Limitaciones específicas
+              </h3>
+              <p class="text-gray-600 leading-relaxed text-pretty">
+                Al realizarse desde la parte baja del abdomen, no siempre logra
+                mostrar detalles finos dentro de la próstata, sobre todo si la
+                glándula es pequeña o se buscan lesiones muy localizadas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-pink-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            Complemento con otros estudios
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-pretty mb-6">
+            Cuando el especialista necesita mayor precisión, por ejemplo, al
+            estudiar nódulos internos, planificar una biopsia o descartar cáncer
+            prostático, el suprapúbico suele complementarse con el ultrasonido
+            transrectal (TRUS) o incluso con una resonancia magnética.
+          </p>
+          <p class="text-gray-600 leading-relaxed text-pretty">
+            La combinación de métodos asegura un diagnóstico más completo, sin
+            perder la ventaja inicial de un examen cómodo y accesible.
+          </p>
+        </div>
+
+        <a
+          href="/hacer-cita"
+          class="inline-flex items-center gap-3 bg-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-pink-700 transition-colors w-full justify-center"
+        >
+          <Calendar class="w-5 h-5" />
+          Agenda tu Cita
+    </a>
+      </div>
+    </div>
+  </div>
+</section>
