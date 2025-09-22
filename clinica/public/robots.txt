@@ -1,0 +1,25 @@
+# robots.txt para deltascan.gt
+
+# 1) Todas las arañas pueden rastrear el sitio
+User-agent: *
+
+# 2) Bloquea rutas internas/sensibles o de build
+Disallow: /admin/
+Disallow: /api/
+Disallow: /drafts/
+Disallow: /404
+Disallow: /404.html
+Disallow: /_astro/        # assets generados por Astro
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /scripts/
+Disallow: /tmp/
+
+# 3) Permite todo lo demás
+Allow: /
+
+# 4) Sitemap canónico
+Sitemap: https://www.deltascan.gt/sitemap.xml
+
+# 5) (Opcional) Host preferido para crawlers que lo usan (p.ej., Yandex)
+Host: www.deltascan.gt

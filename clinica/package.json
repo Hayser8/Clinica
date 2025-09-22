@@ -10,8 +10,13 @@
   },
   "dependencies": {
     "@lucide/astro": "^0.526.0",
-    "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.3",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/vercel": "^8.2.8",
+    "@tailwindcss/vite": "^4.1.13",
+    "vite-plugin-compression": "^0.5.1"
   }
 }
