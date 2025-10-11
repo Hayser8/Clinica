@@ -10,6 +10,7 @@ import WhyUs from "../components/landing/WhyUs.astro";
 import Applications from "../components/landing/Applications.astro";
 import ServiceCatalog from "../components/landing/ServiceCatalog.astro";
 import MedApprove from "../components/common/MedApprove.astro";
+import Testimonials from "../components/landing/Testimonials.astro";
 
 
 // ── SEO/OG para la home (solo props necesarios para Layout)
@@ -45,8 +46,8 @@ const schemaExtra = [
   }
 ];
 
-const lastUpdatedHuman = "22 de septiembre de 2025";
-const lastUpdatedISO = new Date("2025-09-22").toISOString()
+const lastUpdatedHuman = "12 de octubre de 2025";
+const lastUpdatedISO = new Date("2025-10-12").toISOString()
 ---
 
 <Layout
@@ -60,11 +61,12 @@ const lastUpdatedISO = new Date("2025-09-22").toISOString()
 
   <main>
     <HeroSection />
-    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO} reviewer="dr"/>
     <WhatIs />
     <Specialists />
     <FeaturedService />
     <WhyUs />
+    <Testimonials />
     <Applications />
     <ServiceCatalog />
   </main>

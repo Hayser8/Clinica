@@ -1,43 +1,73 @@
 ---
 import { Shield, Calendar } from "@lucide/astro";
+
 interface Props {
-  lastUpdated?: string;    // "22 de septiembre de 2025"
-  lastUpdatedISO?: string; // "2025-09-22T00:00:00.000Z"
+  lastUpdated?: string;    // "12 de octubre de 2025"
+  lastUpdatedISO?: string; // "2025-10-12T00:00:00.000Z"
+  reviewer?: "dr" | "dra"; // "dr" -> /estuardoperez | "dra" -> /bertacoto
 }
-const { lastUpdated = "", lastUpdatedISO } = Astro.props as Props;
+
+const { lastUpdated = "", lastUpdatedISO, reviewer } = Astro.props as Props;
+
+const reviewerData =
+  reviewer === "dr"
+    ? { name: "Dr. Estuardo Pérez", href: "/estuardoperez" }
+    : reviewer === "dra"
+    ? { name: "Dra. Berta Coto", href: "/bertacoto" }
+    : null;
 ---
 
-<section class="pt-3 pb-3 bg-white border-t border-gray-200">
+<section class="bg-white border-t border-gray-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Mobile: misma disposición (izq/der) pero más pequeño -->
-    <div class="flex items-center justify-between gap-3 sm:gap-4 md:gap-6">
-
+    <!-- Mobile: tarjetas apiladas; Desktop: 2 columnas -->
+    <div
+      class="py-3 md:py-4 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6"
+      role="region"
+      aria-label="Metadatos de revisión y actualización"
+    >
       <!-- Revisión clínica -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <div class="w-8 h-8 md:w-10 md:h-10 bg-pink-100 rounded-full grid place-items-center">
-          <Shield class="w-4 h-4 md:w-5 md:h-5 text-pink-700" />
+      <div class="flex items-start gap-3 p-3 rounded-xl ring-1 ring-gray-200/70 bg-white/70 md:ring-0 md:bg-transparent md:p-0">
+        <div class="w-9 h-9 md:w-10 md:h-10 bg-pink-100 rounded-full grid place-items-center flex-shrink-0">
+          <Shield class="w-4.5 h-4.5 md:w-5 md:h-5 text-pink-700" />
         </div>
-        <div>
-          <p class="text-xs md:text-sm font-medium text-gray-900">Revisión clínica</p>
-          <p class="text-[11px] md:text-xs text-gray-600">Validado por especialistas.</p>
+        <div class="min-w-0">
+          <p class="text-sm md:text-sm font-semibold text-gray-900 leading-none">Revisión clínica</p>
+          <p class="mt-1 text-[13px] md:text-xs text-gray-700 leading-snug">
+            El contenido de esta web ha sido revisado por:
+            {reviewerData ? (
+              <>
+                {" "}
+                <a
+                  href={reviewerData.href}
+                  class="inline-flex items-center font-medium text-pink-700 hover:text-pink-800 underline decoration-1 underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink-500/70 rounded-sm"
+                  itemprop="reviewedBy"
+                  aria-label={`Ver perfil de ${reviewerData.name}`}
+                >
+                  {reviewerData.name}
+                </a>
+                .
+              </>
+            ) : (
+              " nuestro equipo médico."
+            )}
+          </p>
         </div>
       </div>
 
       <!-- Última actualización -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <div class="w-8 h-8 md:w-10 md:h-10 bg-pink-100 rounded-full grid place-items-center">
-          <Calendar class="w-4 h-4 md:w-5 md:h-5 text-pink-700" />
+      <div class="flex items-start md:items-center md:justify-end gap-3 p-3 rounded-xl ring-1 ring-gray-200/70 bg-white/70 md:ring-0 md:bg-transparent md:p-0">
+        <div class="w-9 h-9 md:w-10 md:h-10 bg-pink-100 rounded-full grid place-items-center flex-shrink-0">
+          <Calendar class="w-4.5 h-4.5 md:w-5 md:h-5 text-pink-700" />
         </div>
-        <div class="text-right">
-          <p class="text-xs md:text-sm font-medium text-gray-900">Última actualización</p>
-          <p class="text-[11px] md:text-xs text-gray-600">
+        <div class="min-w-0 text-left md:text-right">
+          <p class="text-sm md:text-sm font-semibold text-gray-900 leading-none">Última actualización</p>
+          <p class="mt-1 text-[13px] md:text-xs text-gray-700 leading-snug">
             {lastUpdatedISO
               ? <time datetime={lastUpdatedISO} itemprop="dateModified">{lastUpdated}</time>
               : lastUpdated}
           </p>
         </div>
       </div>
-
     </div>
   </div>
 </section>

@@ -1,0 +1,86 @@
+---
+import { Quote, Star } from "@lucide/astro";
+const testimonials = [
+  {
+    text:
+      "Me siento muy agradecida con los doctores de DeltaScan por su buena atención y paciencia. Me ha ido muy bien con ellos. ¡Que Dios les bendiga siempre!",
+    patient: "Paula Mazariegos",
+  },
+  {
+    text:
+      "Llegué con mucho miedo, pero me explicaron el procedimiento y me dieron seguridad. Me advirtieron sobre posibles reacciones después de la biopsia; en mi caso, todo fue excelente. Biopsia con aguja Tru-Cut, sin dolor. ¡Dios bendiga a los doctores! Recomendados 10/10",
+    patient: "Elvira Monterroso",
+  },
+  {
+    text:
+      "Doctora quiero que sepa que la quiero mucho y que estoy muy agradecida con usted por todo lo que me ha apoyado y por todas las palabras de ánimo que me ha dado y por estar pendiente de mí. Es la mejor Doctora.",
+    patient: "Anabella Donis",
+  },
+];
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Lo que dicen nuestros pacientes
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        La confianza y satisfacción de nuestros pacientes es nuestra mayor
+        recompensa
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+      {
+        testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            class="relative bg-white rounded-2xl p-8 pt-12 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
+          >
+            {/* Quote icon */}
+            <div class="absolute -top-4 left-8">
+              <div class="bg-pink-700 rounded-full p-3">
+                <Quote class="h-6 w-6 text-white" />
+              </div>
+            </div>
+
+            {/* Stars */}
+            <div class="flex justify-center mb-6">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} class="h-5 w-5 text-yellow-400 fill-current" />
+              ))}
+            </div>
+
+            {/* Testimonial text */}
+            <blockquote class="text-gray-700 text-center leading-relaxed">
+              "{testimonial.text}"
+            </blockquote>
+
+            {/* Patient name (sticky bottom) */}
+            <div class="mt-auto pt-8 text-center">
+              <div class="w-12 h-0.5 bg-pink-700 mx-auto mb-4"></div>
+              <p class="font-semibold text-pink-700 text-lg">
+                {testimonial.patient}
+              </p>
+              <p class="text-gray-500 text-sm">Paciente DeltaScan</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    {/* Call to action */}
+    <div class="text-center mt-12">
+      <p class="text-gray-600 mb-6">
+        ¿Quieres ser parte de nuestras historias de éxito?
+      </p>
+      <a
+        href="/hacer-cita"
+        class="bg-pink-700 hover:bg-pink-800 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl"
+      >
+        Agenda tu cita hoy
+    </a>
+    </div>
+  </div>
+</section>

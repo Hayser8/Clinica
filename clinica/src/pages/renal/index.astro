@@ -145,8 +145,8 @@ const schemaExtra = [
     provider: { "@id": "https://www.deltascan.gt/#clinic" },
   },
 ];
-const lastUpdatedHuman = "22 de septiembre de 2025";
-const lastUpdatedISO = new Date("2025-09-22").toISOString()
+const lastUpdatedHuman = "12 de octubre de 2025";
+const lastUpdatedISO = new Date("2025-10-12").toISOString()
 ---
 
 <Layout
@@ -164,7 +164,7 @@ const lastUpdatedISO = new Date("2025-09-22").toISOString()
   <main class="bg-gradient-to-br from-pink-600 via-pink-600 to-pink-700">
     <BreadCrumb crumbs={crumbs} color="pink" />
     <HeroSection />
-    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO}/>
+    <MedApprove  lastUpdated={lastUpdatedHuman} lastUpdatedISO={lastUpdatedISO} reviewer="dr"/>
     <WhatIs />
     <WhatIsItFor />
     <WhatDetects />
